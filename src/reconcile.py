@@ -247,27 +247,67 @@ def predictive_variance(quantiles):
     return ((quantiles[..., -1] - quantiles[..., 0]) / (2.0 * Z90)) ** 2
 
 
-def W_pv(quantiles):
-    """W = diag(v_hat) for one horizon (PREREG §5, WLS-pv).
+PV_FLOOR_FACTOR = 1e-4   # Deviations log: v_hat = max(v_hat, 1e-4 * rmsse_scale) per series
 
-    quantiles: (n_series, 9) for one horizon, columns q10..q90 in S row order.
-    For every horizon at once, pass (n_series, h, 9) and get a list of h
-    matrices, one per horizon, for `reconcile_by_horizon`.
 
-    Raises if any q90 <= q10. PREREG §5 has no rule for a zero or negative
-    interval width, and W must be positive definite, so none is applied here.
+def pv_floor(rmsse_scale):
+    """The floor of the predictive variance, per series (Deviations log, §5).
+
+    rmsse_scale is the mean squared seasonal-naive error on the training data,
+    so the floor is in the units of a variance. It says that no forecast is
+    trusted more than 100 times (in standard deviation) the seasonal-naive
+    forecast of the same series.
     """
-    quantiles = np.asarray(quantiles, dtype=np.float64)
-    if quantiles.ndim == 3:
-        return [W_pv(quantiles[:, t, :]) for t in range(quantiles.shape[1])]
-    if quantiles.ndim != 2:
-        raise ValueError(f"quantiles must be (n_series, 9) or (n_series, h, 9), got {quantiles.shape}.")
-    v = predictive_variance(quantiles)
-    width = quantiles[:, -1] - quantiles[:, 0]
-    if (width <= 0).any():
+    return PV_FLOOR_FACTOR * np.asarray(rmsse_scale, dtype=np.float64)
+
+
+def _floored(v, floor):
+    """Apply the per-series floor to variances of shape (n_series,) or (n_series, h)."""
+    v = np.asarray(v, dtype=np.float64)
+    if not np.isfinite(v).all() or (v < 0).any():
+        raise ValueError("The predictive variance contains NaN, inf or negative values.")
+    if floor is not None:
+        floor = np.asarray(floor, dtype=np.float64)
+        if floor.shape != v.shape[:1]:
+            raise ValueError(f"floor must have shape ({v.shape[0]},), got {floor.shape}.")
+        v = np.maximum(v, floor.reshape((-1,) + (1,) * (v.ndim - 1)))
+    if (v <= 0).any():
         raise ValueError(
-            f"{int((width <= 0).sum())} series have q90 <= q10; W_pv would not be positive definite."
+            f"{int((v <= 0).sum())} predictive variances are zero; W would not be positive "
+            "definite. Pass the floor of the Deviations log (pv_floor)."
         )
+    return v
+
+
+def W_pv(quantiles=None, *, variance=None, floor=None):
+    """W = diag(v_hat) (PREREG §5, WLS-pv).
+
+    quantiles: (n_series, 9) for one horizon, columns q10..q90 in S row order;
+        v_hat is then `predictive_variance(quantiles)`.
+    variance: v_hat given directly, (n_series,). For sample-path models it is
+        the sample variance (PREREG §5). Give either quantiles or variance.
+    floor: per-series floor (n_series,), see `pv_floor`. Without it, a zero
+        variance raises.
+
+    For every horizon at once, pass quantiles (n_series, h, 9) or variance
+    (n_series, h) and get a list of h matrices for `reconcile_by_horizon`.
+    """
+    if (quantiles is None) == (variance is None):
+        raise ValueError("Give either quantiles or variance.")
+    if quantiles is not None:
+        quantiles = np.asarray(quantiles, dtype=np.float64)
+        if quantiles.ndim not in (2, 3):
+            raise ValueError(
+                f"quantiles must be (n_series, 9) or (n_series, h, 9), got {quantiles.shape}.")
+        variance = predictive_variance(quantiles)
+        if floor is None and (quantiles[..., -1] <= quantiles[..., 0]).any():
+            n_bad = int((quantiles[..., -1] <= quantiles[..., 0]).sum())
+            raise ValueError(f"{n_bad} series have q90 <= q10; W_pv would not be positive definite.")
+    v = _floored(variance, floor)
+    if v.ndim == 2:
+        return [np.diag(v[:, t]) for t in range(v.shape[1])]
+    if v.ndim != 1:
+        raise ValueError(f"variance must be (n_series,) or (n_series, h), got {v.shape}.")
     return np.diag(v)
 
 
@@ -301,12 +341,12 @@ def W_shrink_bt(resid, ridge=EPS, return_lambda=False):
     return (Ws, lams) if return_lambda else Ws
 
 
-def W_hybrid(quantiles, resid, return_lambda=False):
+def W_hybrid(quantiles=None, resid=None, return_lambda=False, *, variance=None, floor=None):
     """Hybrid (PREREG §5): variances from the model's predictive distribution,
     correlations from the backtest residuals, shrunk toward no correlation.
 
         W = D_pv^1/2 R_shr D_pv^1/2
-        D_pv  = diag(v_hat), v_hat as in `predictive_variance`
+        D_pv  = diag(v_hat), as in `W_pv` (quantiles or variance, with the floor)
         R_shr = lambda I + (1 - lambda) R_hat
 
     R_hat is the correlation matrix of the backtest residuals and lambda is the
@@ -315,29 +355,32 @@ def W_hybrid(quantiles, resid, return_lambda=False):
     it is computed here. A series whose residuals do not vary has correlation 0
     with every other series.
 
-    One horizon: quantiles (n_series, 9), resid (n_series, T).
-    Every horizon: quantiles (n_series, h, 9), resid (n_series, n_inner, h);
-    returns a list of h matrices.
+    One horizon: quantiles (n_series, 9) or variance (n_series,), resid (n_series, T).
+    Every horizon: quantiles (n_series, h, 9) or variance (n_series, h), resid
+    (n_series, n_inner, h); returns a list of h matrices.
 
     W is positive definite when lambda > 0. With lambda = 0 and fewer residuals
     than series, R_hat is singular and so is W.
     """
-    quantiles = np.asarray(quantiles, dtype=np.float64)
     resid = np.asarray(resid, dtype=np.float64)
-    if quantiles.ndim == 3:
+    D = W_pv(quantiles, variance=variance, floor=floor)
+    if isinstance(D, list):
         rs = _per_horizon(resid)
-        if quantiles.shape[1] != len(rs):
-            raise ValueError("quantiles and resid have a different number of horizons.")
-        out = [W_hybrid(quantiles[:, t, :], rs[t], return_lambda=True) for t in range(len(rs))]
+        if len(D) != len(rs):
+            raise ValueError("The predictive variance and resid have a different number of horizons.")
+        out = [_hybrid(np.diag(D[t]), rs[t]) for t in range(len(rs))]
         Ws, lams = [w for w, _ in out], [lam for _, lam in out]
         return (Ws, lams) if return_lambda else Ws
+    W, lam = _hybrid(np.diag(D), resid)
+    return (W, lam) if return_lambda else W
 
-    d_pv = np.sqrt(np.diag(W_pv(quantiles)))           # also checks q90 > q10
+
+def _hybrid(v, resid):
+    d_pv = np.sqrt(v)
     if resid.ndim != 2 or resid.shape[0] != d_pv.shape[0]:
         raise ValueError(f"resid must have shape ({d_pv.shape[0]}, T), got {resid.shape}.")
     W_s, lam = W_shrink(resid, return_lambda=True)
     d_s = np.sqrt(np.diag(W_s))
     R = W_s / np.outer(d_s, d_s)
     R[np.diag_indices_from(R)] = 1.0
-    W = d_pv[:, None] * R * d_pv[None, :]
-    return (W, lam) if return_lambda else W
+    return d_pv[:, None] * R * d_pv[None, :], lam

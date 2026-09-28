@@ -16,8 +16,8 @@ from hierarchicalforecast.utils import (
 
 from src.data import load_hierarchy
 from src.reconcile import (
-    W_hybrid, W_ols, W_pv, W_shrink, W_shrink_bt, W_struct, W_var, W_var_bt, predictive_variance,
-    projection_matrix, reconcile, reconcile_by_horizon,
+    PV_FLOOR_FACTOR, W_hybrid, W_ols, W_pv, W_shrink, W_shrink_bt, W_struct, W_var, W_var_bt,
+    predictive_variance, projection_matrix, pv_floor, reconcile, reconcile_by_horizon,
 )
 
 TOL = 1e-8
@@ -533,3 +533,98 @@ def test_backtest_W_reconciles_coherently(builder):
     for W in Ws:
         G = projection_matrix(S3, W)
         np.testing.assert_allclose(S3 @ G @ S3, S3, atol=1e-10)
+
+
+# ------------------------------------------------ predictive-variance floor
+
+def test_pv_floor_is_the_registered_fraction_of_rmsse_scale():
+    assert PV_FLOOR_FACTOR == 1e-4
+    np.testing.assert_allclose(pv_floor([4.0, 0.0, 2.5e6]), [4e-4, 0.0, 250.0])
+
+
+def test_W_pv_floor_hand_computed():
+    # v = 1, 0 and 1e-6; floors 0.5, 0.25, 0.01 -> 1 (kept), 0.25 and 0.01 (floored)
+    q = _quantiles([0.0, 5.0, 0.0], [2.5632, 5.0, 2.5632e-3])
+    np.testing.assert_allclose(predictive_variance(q), [1.0, 0.0, 1e-6], rtol=1e-12, atol=0)
+    W = W_pv(q, floor=np.array([0.5, 0.25, 0.01]))
+    np.testing.assert_allclose(np.diag(W), [1.0, 0.25, 0.01], rtol=1e-12)
+    assert np.count_nonzero(W - np.diag(np.diag(W))) == 0
+
+
+def test_W_pv_floor_does_not_change_variances_above_it():
+    q = _q_with_variance([1.0, 4.0, 9.0])
+    np.testing.assert_array_equal(W_pv(q, floor=pv_floor([1.0, 1.0, 1.0])), W_pv(q))
+
+
+def test_W_pv_floor_makes_a_zero_width_usable():
+    q = _quantiles([0.0, 1.0], [1.0, 1.0])
+    with pytest.raises(ValueError, match="q90 <= q10"):
+        W_pv(q)
+    W = W_pv(q, floor=pv_floor([100.0, 100.0]))
+    assert W[1, 1] == pytest.approx(0.01)
+    assert np.linalg.eigvalsh(W).min() > 0
+
+
+def test_W_pv_floor_of_zero_cannot_rescue_a_zero_variance():
+    # rmsse_scale 0 means a perfectly seasonal series: the floor is 0 too
+    with pytest.raises(ValueError, match="zero"):
+        W_pv(_quantiles([0.0, 1.0], [1.0, 1.0]), floor=pv_floor([1.0, 0.0]))
+
+
+def test_W_pv_floor_per_horizon_is_per_series():
+    q = np.stack([_q_with_variance([1.0, 1e-8]), _q_with_variance([4.0, 1.0])], axis=1)   # (2, h=2, 9)
+    Ws = W_pv(q, floor=np.array([2.0, 0.5]))
+    np.testing.assert_allclose(np.diag(Ws[0]), [2.0, 0.5], rtol=1e-12)
+    np.testing.assert_allclose(np.diag(Ws[1]), [4.0, 1.0], rtol=1e-12)
+    with pytest.raises(ValueError, match="floor must have shape"):
+        W_pv(q, floor=np.array([2.0, 0.5, 1.0]))
+
+
+def test_W_pv_from_a_variance():
+    # sample-path models give the sample variance directly
+    np.testing.assert_allclose(np.diag(W_pv(variance=[2.0, 3.0])), [2.0, 3.0])
+    np.testing.assert_allclose(np.diag(W_pv(variance=[2.0, 0.0], floor=[1.0, 0.5])), [2.0, 0.5])
+    Ws = W_pv(variance=np.array([[1.0, 2.0], [0.0, 4.0]]), floor=[0.1, 0.3])
+    np.testing.assert_allclose(np.diag(Ws[0]), [1.0, 0.3])
+    np.testing.assert_allclose(np.diag(Ws[1]), [2.0, 4.0])
+    with pytest.raises(ValueError, match="zero"):
+        W_pv(variance=[2.0, 0.0])
+    with pytest.raises(ValueError, match="negative"):
+        W_pv(variance=[2.0, -1.0])
+    with pytest.raises(ValueError, match="either"):
+        W_pv()
+    with pytest.raises(ValueError, match="either"):
+        W_pv(_q_with_variance([1.0]), variance=[1.0])
+
+
+def test_W_hybrid_uses_the_floor_and_stays_positive_definite():
+    r = _resid3(n=4, h=1)[:, :, 0]
+    q = _quantiles([0.0, 0.0, 3.0, 0.0], [2.5632, 2.5632, 3.0, 2.5632])      # third has zero width
+    with pytest.raises(ValueError):
+        W_hybrid(q, r)
+    W, lam = W_hybrid(q, r, return_lambda=True, floor=np.array([0.1, 0.1, 0.04, 0.1]))
+    np.testing.assert_allclose(np.diag(W), [1.0, 1.0, 0.04, 1.0], rtol=1e-12)
+    assert np.linalg.eigvalsh(W).min() > 0
+    # the correlations are untouched by the floor
+    expected = (1 - lam) * np.corrcoef(r)
+    expected[np.diag_indices(4)] = 1.0
+    d = np.sqrt(np.diag(W))
+    np.testing.assert_allclose(W / np.outer(d, d), expected, rtol=1e-9, atol=1e-12)
+
+
+def test_W_hybrid_from_a_sample_variance():
+    r = _resid3(n=3, h=2)
+    v = np.array([[1.0, 2.0], [0.0, 3.0], [4.0, 5.0]])
+    Ws = W_hybrid(resid=r, variance=v, floor=np.array([0.5, 0.5, 0.5]))
+    np.testing.assert_allclose(np.diag(Ws[0]), [1.0, 0.5, 4.0], rtol=1e-12)
+    np.testing.assert_allclose(np.diag(Ws[1]), [2.0, 3.0, 5.0], rtol=1e-12)
+    for W in Ws:
+        assert np.linalg.eigvalsh(W).min() > 0
+
+
+def test_floored_W_reconciles_coherently():
+    q = _quantiles(Y3 - 1.0, [Y3[0] + 1.0, Y3[1] - 1.0, Y3[2] + 1.0])          # middle has zero width
+    out = reconcile(Y3, S3, W_pv(q, floor=pv_floor([1.0, 1.0, 1.0])))
+    assert out[0] == pytest.approx(out[1] + out[2])
+    # the series with the floored, tiny variance is almost kept as it is
+    assert abs(out[1] - Y3[1]) < 1e-3

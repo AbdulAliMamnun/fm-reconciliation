@@ -172,3 +172,18 @@ def test_residual_array_raises_on_missing_series(last_value_model):
     r = backtest_residuals("last_value", _y(), H, N_INNER)
     with pytest.raises(ValueError):
         residual_array(r, ["a", "b", "c", "zzz"])
+
+
+def test_mean9_residuals(register_model):
+    levels = [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95]
+    extra = np.array([-100.0, 0, 0, 0, 0, 0, 1, 2, 3, 12, 210])      # mean9 = 2, mean of 11 = 128 / 11
+
+    def run(contexts, h):
+        last = np.array([c[-1] for c in contexts])
+        return last[:, None, None] + np.zeros((1, h, 1)) + extra
+
+    register_model("wide", quantiles=run, levels=levels)
+    m9 = backtest_residuals("wide", _y(), H, N_INNER, point="mean9")
+    m = backtest_residuals("wide", _y(), H, N_INNER, point="mean")
+    np.testing.assert_allclose(m9["resid"], m9["horizon"] - 2.0)
+    np.testing.assert_allclose(m["resid"], m["horizon"] - 128 / 11)

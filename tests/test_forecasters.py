@@ -113,6 +113,23 @@ def test_point_forecast_median_is_yhat(fake_model):
     np.testing.assert_array_equal(point_forecast(out, "mean"), out["mean"].to_numpy())
 
 
+def test_mean9_is_the_average_of_the_nine_common_levels(register_model):
+    levels = [0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 0.99]
+    values = np.array([-50.0, -5, 1, 2, 3, 4, 5, 6, 7, 8, 18, 40, 400])
+    register_model("wide", levels=levels,
+                   quantiles=lambda contexts, h: np.zeros((len(contexts), h, 1)) + values)
+    out = forecast("wide", _context(), 2)
+    np.testing.assert_allclose(point_forecast(out, "mean9"), 54 / 9)            # 1 + ... + 8 + 18
+    np.testing.assert_allclose(point_forecast(out, "mean"), values.mean())      # all 13 levels
+    np.testing.assert_allclose(point_forecast(out, "median"), 5.0)
+    assert not np.allclose(point_forecast(out, "mean"), point_forecast(out, "mean9"))
+
+
+def test_mean9_equals_mean_for_a_nine_level_model(fake_model):
+    out = forecast("fake", _context(), 3)
+    np.testing.assert_allclose(point_forecast(out, "mean9"), point_forecast(out, "mean"))
+
+
 def test_frames_cached_before_the_mean_column_still_work(fake_model):
     old = forecast("fake", _context(), 4).drop(columns=["mean"])
     np.testing.assert_allclose(point_forecast(old, "mean"), old[QUANTILE_COLS].mean(axis=1))
@@ -150,7 +167,7 @@ def test_sample_model_median_mean_and_quantiles(register_model, tmp_path):
     register_model("sampler", samples=samples)
     ctx = _context()
     out = forecast("sampler", ctx, 3, dataset="Toy", cache_dir=tmp_path)
-    assert list(out.columns) == COLUMNS
+    assert list(out.columns) == COLUMNS + ["sample_var"]
     s = pd.read_parquet(forecasters.samples_path("Toy", "2013-12-01", "sampler", tmp_path))
     assert list(s.columns) == ["unique_id", "ds"] + [f"s{i}" for i in range(100)]
     assert len(s) == len(out) and list(s["unique_id"]) == list(out["unique_id"])
@@ -159,6 +176,12 @@ def test_sample_model_median_mean_and_quantiles(register_model, tmp_path):
     np.testing.assert_allclose(out["mean"], draws.mean(axis=1), rtol=1e-6)
     np.testing.assert_allclose(out["q10"], np.quantile(draws, 0.1, axis=1), rtol=1e-6)
     np.testing.assert_allclose(out["q90"], np.quantile(draws, 0.9, axis=1), rtol=1e-6)
+    np.testing.assert_allclose(out["sample_var"], draws.var(axis=1, ddof=1), rtol=1e-6)
+    # a frame cached before the column existed gets it back from the stored sample paths
+    base_path, _ = cache_paths("Toy", "2013-12-01", "sampler", tmp_path)
+    pd.read_parquet(base_path).drop(columns="sample_var").to_parquet(base_path, index=False)
+    restored = forecast("sampler", ctx, 3, dataset="Toy", cache_dir=tmp_path)
+    np.testing.assert_allclose(restored["sample_var"], draws.var(axis=1, ddof=1), rtol=1e-6)
     assert (out["mean"] > out["yhat"]).mean() > 0.9        # right-skewed
     # the seed is fixed per origin: the same call gives the same samples
     again = forecast("sampler", ctx, 3)

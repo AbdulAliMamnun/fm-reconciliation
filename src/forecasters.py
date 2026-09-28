@@ -38,6 +38,9 @@ def point_forecast(base, point):
         beyond the lowest and highest level. For sample models it is the sample
         mean. Frames cached before the column existed come from a model with the
         9 levels 0.1..0.9, so the average of q10..q90 is used for them.
+    mean9: the average of the 9 levels 0.1..0.9 (Deviations log, mean-arm
+        sensitivity). It differs from `mean` only for a model with more native
+        levels, such as Chronos-2.
     """
     if point == "median":
         return base["yhat" if "yhat" in base else "q50"].to_numpy(dtype=np.float64)
@@ -45,7 +48,9 @@ def point_forecast(base, point):
         if "mean" in base:
             return base["mean"].to_numpy(dtype=np.float64)
         return base[QUANTILE_COLS].to_numpy(dtype=np.float64).mean(axis=1)
-    raise ValueError(f"point must be 'median' or 'mean', got {point!r}.")
+    if point == "mean9":
+        return base[QUANTILE_COLS].to_numpy(dtype=np.float64).mean(axis=1)
+    raise ValueError(f"point must be 'median', 'mean' or 'mean9', got {point!r}.")
 
 
 def with_mean(frame):
@@ -54,6 +59,18 @@ def with_mean(frame):
         frame = frame.copy()
         frame.insert(frame.columns.get_loc("q10"), "mean", point_forecast(frame, "mean"))
     return frame
+
+
+def with_sample_var(frame, samples_file):
+    """Add sample_var to the frame of a sample-path model cached before the
+    column existed, from its stored sample paths."""
+    if "sample_var" in frame:
+        return frame
+    s = pd.read_parquet(samples_file)
+    if list(s["unique_id"]) != list(frame["unique_id"]) or list(s["ds"]) != list(frame["ds"]):
+        raise RuntimeError(f"{samples_file} does not line up with the cached forecast.")
+    draws = s[[c for c in s.columns if c not in ("unique_id", "ds")]].to_numpy(dtype=np.float64)
+    return frame.assign(sample_var=draws.var(axis=1, ddof=1))
 
 
 def current_env():
@@ -153,7 +170,10 @@ def forecast(model, context_df, h, *, freq=None, device="cpu", dataset=None, cac
     if dataset is not None:
         base_path, timing_path = cache_paths(dataset, origin, model, cache_dir)
         if base_path.exists():
-            return with_mean(pd.read_parquet(base_path))
+            cached = with_mean(pd.read_parquet(base_path))
+            if MODELS[model]["output"] == "samples":
+                cached = with_sample_var(cached, samples_path(dataset, origin, model, cache_dir))
+            return cached
 
     forecasts, info = forecast_cutoffs(model, context_df, [origin], h, freq=freq, device=device,
                                        keep_samples=dataset is not None)

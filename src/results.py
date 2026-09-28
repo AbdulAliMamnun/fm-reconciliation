@@ -10,10 +10,11 @@ import pandas as pd
 
 QUANTILE_COLS = [f"q{q}" for q in range(10, 100, 10)]
 KEY_COLS = ["dataset", "origin", "model", "W_est", "point"]
-POINTS = ("median", "mean")
+POINTS = ("median", "mean", "mean9")
 # Two columns were added to the PREREG §10 schema (Deviations log):
 #   rmsse_scale  mean squared seasonal-naive error in-sample, needed for RMSSE
-#   point        which point forecast `yhat` is, and was reconciled: median or mean
+#   point        which point forecast `yhat` is, and was reconciled: median, mean, or
+#                mean9 (the mean of the 9 levels 0.1..0.9, for models with more levels)
 COLUMNS = [
     "dataset", "origin", "model", "W_est", "point", "level", "series_id", "horizon",
     "y", "yhat", *QUANTILE_COLS, "mase_scale", "rmsse_scale",
@@ -29,7 +30,7 @@ def build_results(dataset, origin, model, forecasts, actuals, tags, scales, w_es
     tags: dict mapping level name -> array of series ids.
     scales: frame with unique_id, mase_scale, rmsse_scale (training data only).
     w_est: dict mapping forecast column -> W_est label.
-    point: "median" or "mean", what the forecasts in `forecasts` are.
+    point: "median", "mean" or "mean9", what the forecasts in `forecasts` are.
     quantiles: optional long frame with unique_id, ds, W_est (the label) and
         q10..q90. Rows of the table without a match keep NaN quantiles.
 

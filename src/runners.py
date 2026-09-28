@@ -208,7 +208,7 @@ def standardise(raw):
         s = np.asarray(raw["samples"], dtype=np.float64)
         q = np.moveaxis(np.quantile(s, QUANTILE_LEVELS, axis=-1), 0, -1)
         return {"median": np.median(s, axis=-1), "mean": s.mean(axis=-1), "q": q,
-                "levels": None, "native": None, "samples": s}
+                "var": s.var(axis=-1, ddof=1), "levels": None, "native": None, "samples": s}
     levels = [round(float(x), 6) for x in raw["levels"]]
     native = np.asarray(raw["quantiles"], dtype=np.float64)
     if native.shape[-1] != len(levels):
@@ -222,8 +222,9 @@ def standardise(raw):
 
 
 def to_frame(ids, future, std):
-    """Long frame: unique_id, ds, yhat (median), mean, q10..q90, then any other
-    native quantile levels (for example q1, q5, q95, q99)."""
+    """Long frame: unique_id, ds, yhat (median), mean, q10..q90, then for sample
+    models sample_var (the sample variance, ddof 1) and for quantile models any
+    other native quantile levels (for example q1, q5, q95, q99)."""
     h = len(future)
     out = pd.DataFrame({
         "unique_id": np.repeat(np.asarray(ids, dtype=object), h),
@@ -233,6 +234,8 @@ def to_frame(ids, future, std):
     })
     for j, col in enumerate(QUANTILE_COLS):
         out[col] = std["q"][:, :, j].reshape(-1)
+    if std.get("var") is not None:
+        out["sample_var"] = std["var"].reshape(-1)       # the predictive variance of PREREG §5
     if std["native"] is not None:
         for j, level in enumerate(std["levels"]):
             if quantile_col(level) not in out.columns:

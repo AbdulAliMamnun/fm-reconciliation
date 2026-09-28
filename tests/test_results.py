@@ -205,3 +205,12 @@ def test_append_results_refuses_an_old_schema(tmp_path):
     _build().drop(columns="point").to_parquet(path, index=False)
     with pytest.raises(ValueError, match="older schema"):
         append_results(path, _build())
+
+
+def test_mean9_is_a_third_arm(tmp_path):
+    path = tmp_path / "results.parquet"
+    for point in ["median", "mean", "mean9"]:
+        full = append_results(path, _build(point=point))
+    assert len(full) == 3 * len(_build())
+    assert set(full["point"]) == {"median", "mean", "mean9"}
+    assert len(series_metrics(full)) == 3 * 2 * 3           # arms x W_est x series
