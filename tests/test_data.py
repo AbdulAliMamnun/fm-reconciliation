@@ -2,11 +2,13 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from src.data import load_hierarchy, rolling_origins
+from src.data import M5_LEVELS, load_hierarchy, load_m5, rolling_origins
 
 EXPECTED = {
     "TourismSmall": {"freq": "QE", "h": 8, "n_series": 89, "n_bottom": 56},
     "TourismLarge": {"freq": "MS", "h": 12, "n_series": 555, "n_bottom": 304},
+    "Labour": {"freq": "MS", "h": 12, "n_series": 57, "n_bottom": 32},
+    "M5": {"freq": "D", "h": 28, "n_series": 3060, "n_bottom": 3049},
 }
 
 
@@ -94,3 +96,39 @@ def test_rolling_origins_raises_when_too_short():
     Y_df, _, _, _, h = load_hierarchy("TourismSmall")
     with pytest.raises(ValueError):
         rolling_origins(Y_df, h, 5)
+
+
+def test_labour_range_and_levels():
+    Y_df, _, tags, _, _ = load_hierarchy("Labour")
+    assert str(Y_df["ds"].min().date()) == "1978-02-01"
+    assert str(Y_df["ds"].max().date()) == "2019-12-01"          # the loader drops 2020 onwards
+    assert [len(v) for v in tags.values()] == [1, 8, 16, 32]
+
+
+def test_m5_subset_is_one_store_with_four_levels():
+    Y_df, S_df, tags, _, _ = load_hierarchy("M5")
+    assert list(tags) == M5_LEVELS
+    assert [len(v) for v in tags.values()] == [1, 3, 7, 3049]
+    assert list(tags["Store"]) == ["CA_1"]
+    assert list(tags["Store/Category"]) == ["CA_1/HOBBIES", "CA_1/HOUSEHOLD", "CA_1/FOODS"]
+    assert Y_df["ds"].nunique() == 1969
+    assert str(Y_df["ds"].min().date()) == "2011-01-29"
+    assert str(Y_df["ds"].max().date()) == "2016-06-19"
+    assert Y_df.groupby("unique_id").size().eq(1969).all()       # leading zeros are kept
+    # a department is the sum of its items, a category of its departments
+    bottom = [c for c in S_df.columns if c != "unique_id"]
+    S = S_df.set_index("unique_id")
+    dept = S.loc["CA_1/FOODS/FOODS_1", bottom]
+    assert dept.sum() == sum(b.startswith("CA_1/FOODS/FOODS_1/") for b in bottom)
+    assert set(dept[dept == 1].index) == {b for b in bottom if b.startswith("CA_1/FOODS/FOODS_1/")}
+    assert S.loc["CA_1", bottom].sum() == 3049
+
+
+def test_m5_two_stores_has_no_level_above_the_stores():
+    Y_df, S_df, tags = load_m5(("CA_1", "CA_2"))
+    assert [len(v) for v in tags.values()] == [2, 6, 14, 6098]
+    assert S_df.shape == (6120, 6099)
+    assert list(tags["Store"]) == ["CA_1", "CA_2"]
+    S = S_df.set_index("unique_id")
+    assert S.loc["CA_1"].sum() == 3049 and S.loc["CA_2"].sum() == 3049
+    assert (S.loc["CA_1"] * S.loc["CA_2"]).sum() == 0
