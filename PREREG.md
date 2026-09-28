@@ -131,3 +131,5 @@ These analyses are labelled exploratory wherever they are reported.
 | Date | Section | Change | Reason |
 |---|---|---|---|
 | | | | |
+| 2026-09-27 | §6 | Clarification: MASE within a level is the arithmetic mean over series. Series with seasonal-naive scale < 1e-8 at an origin are excluded from MASE at that origin; the count per level is reported. | Gap in original text; set before any forecast was scored. Diagnostic on TourismLarge found 0 such series. |
+| 2026-09-27 | §6 | Added: RMSSE reported as a secondary point metric on all datasets (not only M5). Primary metric unchanged. | TourismLarge bottom level is intermittent (50/304 series >50% zeros); set before any forecast was scored. |
