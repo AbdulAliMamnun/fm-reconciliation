@@ -3,3 +3,4 @@ data/
 results/*.parquet
 __pycache__/
 .DS_Store
+.vscode/
