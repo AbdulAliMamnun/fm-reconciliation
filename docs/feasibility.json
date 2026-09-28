@@ -1,0 +1,584 @@
+[
+ {
+  "model": "chronos_bolt_tiny",
+  "env": "fmrec",
+  "repo": "amazon/chronos-bolt-tiny",
+  "revision": "a0e552de83495b5c28c14c71c374f3e33280b340",
+  "output": "quantiles",
+  "device": "cpu",
+  "problems": [],
+  "versions": {
+   "python": "3.11.16",
+   "torch": "2.14.0",
+   "numpy": "2.4.6",
+   "pandas": "2.3.3",
+   "chronos-forecasting": "2.3.2",
+   "tirex-ts": "1.4.2",
+   "transformers": "5.17.0"
+  },
+  "probe": {
+   "cpu": {
+    "seconds": 0.020585417049005628,
+    "ok": true
+   },
+   "mps": {
+    "seconds": 0.01886529102921486,
+    "ok": true
+   },
+   "mps_vs_cpu_max_rel_diff": 1.9073486328125e-05
+  },
+  "native_levels": [
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5,
+   0.6,
+   0.7,
+   0.8,
+   0.9
+  ],
+  "num_samples": null,
+  "checks": {
+   "rows": 6660,
+   "rows_expected": 6660,
+   "series": 555,
+   "horizons": 12,
+   "columns": [
+    "unique_id",
+    "ds",
+    "yhat",
+    "mean",
+    "q10",
+    "q20",
+    "q30",
+    "q40",
+    "q50",
+    "q60",
+    "q70",
+    "q80",
+    "q90"
+   ],
+   "first_ds": "2016-01-01",
+   "last_ds": "2016-12-01",
+   "nan": 0,
+   "inf": 0,
+   "quantile_crossings_native": 40,
+   "quantile_crossings_q10_q90": 40,
+   "q90_le_q10": 0,
+   "min_width_q90_q10": 0.06742006540298462,
+   "negative_median": 31,
+   "negative_mean": 6,
+   "negative_q10": 766,
+   "median_is_q50": true,
+   "mean_above_median_share": 0.9954954954954955,
+   "cells": 6660
+  },
+  "backtest_rows": 159840,
+  "backtest_last_target": "2015-12-01",
+  "cached_before_this_run": {
+   "base": false,
+   "backtest": false
+  },
+  "timing": {
+   "base_seconds": 0.14370333298575133,
+   "backtest_seconds": 2.6839024586370215,
+   "backtest_calls": 24,
+   "load_seconds": 2.909218892455101e-07,
+   "seconds_per_origin": 2.827605791622773,
+   "projected_total_seconds": 14.138031867332757
+  },
+  "drop_candidate": false,
+  "wall_seconds_this_run": 10.123069416033104
+ },
+ {
+  "model": "chronos_bolt_mini",
+  "env": "fmrec",
+  "repo": "amazon/chronos-bolt-mini",
+  "revision": "251268337516a88e253628c43e1d26ec577b376b",
+  "output": "quantiles",
+  "device": "cpu",
+  "problems": [],
+  "versions": {
+   "python": "3.11.16",
+   "torch": "2.14.0",
+   "numpy": "2.4.6",
+   "pandas": "2.3.3",
+   "chronos-forecasting": "2.3.2",
+   "tirex-ts": "1.4.2",
+   "transformers": "5.17.0"
+  },
+  "probe": {
+   "cpu": {
+    "seconds": 0.03386745892930776,
+    "ok": true
+   },
+   "mps": {
+    "seconds": 0.014880208065733314,
+    "ok": true
+   },
+   "mps_vs_cpu_max_rel_diff": 1.811981201171875e-05
+  },
+  "native_levels": [
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5,
+   0.6,
+   0.7,
+   0.8,
+   0.9
+  ],
+  "num_samples": null,
+  "checks": {
+   "rows": 6660,
+   "rows_expected": 6660,
+   "series": 555,
+   "horizons": 12,
+   "columns": [
+    "unique_id",
+    "ds",
+    "yhat",
+    "mean",
+    "q10",
+    "q20",
+    "q30",
+    "q40",
+    "q50",
+    "q60",
+    "q70",
+    "q80",
+    "q90"
+   ],
+   "first_ds": "2016-01-01",
+   "last_ds": "2016-12-01",
+   "nan": 0,
+   "inf": 0,
+   "quantile_crossings_native": 84,
+   "quantile_crossings_q10_q90": 84,
+   "q90_le_q10": 0,
+   "min_width_q90_q10": 0.136004239320755,
+   "negative_median": 15,
+   "negative_mean": 0,
+   "negative_q10": 835,
+   "median_is_q50": true,
+   "mean_above_median_share": 0.9962462462462462,
+   "cells": 6660
+  },
+  "backtest_rows": 159840,
+  "backtest_last_target": "2015-12-01",
+  "cached_before_this_run": {
+   "base": false,
+   "backtest": false
+  },
+  "timing": {
+   "base_seconds": 0.25238016701769084,
+   "backtest_seconds": 5.282477418077178,
+   "backtest_calls": 24,
+   "load_seconds": 2.4994369596242905e-07,
+   "seconds_per_origin": 5.534857585094869,
+   "projected_total_seconds": 27.674290424911305
+  },
+  "drop_candidate": false,
+  "wall_seconds_this_run": 10.113445833092555
+ },
+ {
+  "model": "chronos_t5_small",
+  "env": "fmrec",
+  "repo": "amazon/chronos-t5-small",
+  "revision": "a971ba21945c4f1796b17a91fe69214b5f4ad472",
+  "output": "samples",
+  "device": "cpu",
+  "problems": [
+   "4 forecasts with zero sample variance and 391 with q90 = q10 (W_pv undefined)",
+   "projected over 2 hours"
+  ],
+  "versions": {
+   "python": "3.11.16",
+   "torch": "2.14.0",
+   "numpy": "2.4.6",
+   "pandas": "2.3.3",
+   "chronos-forecasting": "2.3.2",
+   "tirex-ts": "1.4.2",
+   "transformers": "5.17.0"
+  },
+  "probe": {
+   "cpu": {
+    "seconds": 21.504540499998257,
+    "ok": true
+   },
+   "mps": {
+    "seconds": 10.210919875069521,
+    "ok": true
+   },
+   "mps_vs_cpu_max_rel_diff": 5.170662935077953,
+   "mps_vs_cpu_median_rel_diff": 0.02208404444145079
+  },
+  "backtest_projected_from_calls": [
+   183.23442954104394,
+   195.39422250003554
+  ],
+  "native_levels": null,
+  "num_samples": 100,
+  "checks": {
+   "rows": 6660,
+   "rows_expected": 6660,
+   "series": 555,
+   "horizons": 12,
+   "columns": [
+    "unique_id",
+    "ds",
+    "yhat",
+    "mean",
+    "q10",
+    "q20",
+    "q30",
+    "q40",
+    "q50",
+    "q60",
+    "q70",
+    "q80",
+    "q90"
+   ],
+   "first_ds": "2016-01-01",
+   "last_ds": "2016-12-01",
+   "nan": 0,
+   "inf": 0,
+   "quantile_crossings_native": 0,
+   "quantile_crossings_q10_q90": 0,
+   "q90_le_q10": 391,
+   "min_width_q90_q10": 0.0,
+   "negative_median": 0,
+   "negative_mean": 0,
+   "negative_q10": 0,
+   "median_is_q50": null,
+   "mean_above_median_share": 0.6866366366366367,
+   "cells": 6660,
+   "samples_shape": [
+    6660,
+    100
+   ],
+   "samples_nan": 0,
+   "samples_negative_share": 0.0,
+   "zero_sample_variance": 4
+  },
+  "backtest_rows": 13320,
+  "backtest_last_target": "2015-12-01",
+  "cached_before_this_run": {
+   "base": false,
+   "backtest": false
+  },
+  "timing": {
+   "base_seconds": 209.55748404201586,
+   "backtest_seconds": 4543.543824492954,
+   "backtest_calls": 24,
+   "load_seconds": 1.8447455420391634,
+   "seconds_per_origin": 4753.10130853497,
+   "projected_total_seconds": 23783.95399809524
+  },
+  "drop_candidate": true,
+  "wall_seconds_this_run": 655.6142554580001
+ },
+ {
+  "model": "chronos_2",
+  "env": "fmrec",
+  "repo": "amazon/chronos-2",
+  "revision": "29ec3766d36d6f73f0696f85560a422f50e8498c",
+  "output": "quantiles",
+  "device": "cpu",
+  "problems": [],
+  "versions": {
+   "python": "3.11.16",
+   "torch": "2.14.0",
+   "numpy": "2.4.6",
+   "pandas": "2.3.3",
+   "chronos-forecasting": "2.3.2",
+   "tirex-ts": "1.4.2",
+   "transformers": "5.17.0"
+  },
+  "probe": {
+   "cpu": {
+    "seconds": 0.2462082919664681,
+    "ok": true
+   },
+   "mps": {
+    "seconds": 0.0973154999082908,
+    "ok": true
+   },
+   "mps_vs_cpu_max_rel_diff": 1.1444091796875e-05
+  },
+  "native_levels": [
+   0.01,
+   0.05,
+   0.1,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.35,
+   0.4,
+   0.45,
+   0.5,
+   0.55,
+   0.6,
+   0.65,
+   0.7,
+   0.75,
+   0.8,
+   0.85,
+   0.9,
+   0.95,
+   0.99
+  ],
+  "num_samples": null,
+  "checks": {
+   "rows": 6660,
+   "rows_expected": 6660,
+   "series": 555,
+   "horizons": 12,
+   "columns": [
+    "unique_id",
+    "ds",
+    "yhat",
+    "mean",
+    "q10",
+    "q20",
+    "q30",
+    "q40",
+    "q50",
+    "q60",
+    "q70",
+    "q80",
+    "q90",
+    "q1",
+    "q5",
+    "q15",
+    "q25",
+    "q35",
+    "q45",
+    "q55",
+    "q65",
+    "q75",
+    "q85",
+    "q95",
+    "q99"
+   ],
+   "first_ds": "2016-01-01",
+   "last_ds": "2016-12-01",
+   "nan": 0,
+   "inf": 0,
+   "quantile_crossings_native": 226,
+   "quantile_crossings_q10_q90": 66,
+   "q90_le_q10": 0,
+   "min_width_q90_q10": 0.038129210472106934,
+   "negative_median": 0,
+   "negative_mean": 0,
+   "negative_q10": 366,
+   "median_is_q50": true,
+   "mean_above_median_share": 0.9929429429429429,
+   "cells": 6660
+  },
+  "backtest_rows": 159840,
+  "backtest_last_target": "2015-12-01",
+  "cached_before_this_run": {
+   "base": false,
+   "backtest": false
+  },
+  "timing": {
+   "base_seconds": 1.9430332499323413,
+   "backtest_seconds": 43.05938429082744,
+   "backtest_calls": 24,
+   "load_seconds": 7.499475032091141e-07,
+   "seconds_per_origin": 45.00241754075978,
+   "projected_total_seconds": 225.01209520327393
+  },
+  "drop_candidate": false,
+  "wall_seconds_this_run": 52.59021579101682
+ },
+ {
+  "model": "tirex",
+  "env": "fmrec",
+  "repo": "NX-AI/TiRex",
+  "revision": "63c740922493f5fbe60b277609ec62babfba2762",
+  "output": "quantiles",
+  "device": "cpu",
+  "problems": [
+   "MPS forecasts differ from CPU by up to 4.1%"
+  ],
+  "versions": {
+   "python": "3.11.16",
+   "torch": "2.14.0",
+   "numpy": "2.4.6",
+   "pandas": "2.3.3",
+   "chronos-forecasting": "2.3.2",
+   "tirex-ts": "1.4.2",
+   "transformers": "5.17.0"
+  },
+  "probe": {
+   "cpu": {
+    "seconds": 5.967357208952308,
+    "ok": true
+   },
+   "mps": {
+    "seconds": 0.6506768750259653,
+    "ok": true
+   },
+   "mps_vs_cpu_max_rel_diff": 0.041431732620628214
+  },
+  "native_levels": [
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5,
+   0.6,
+   0.7,
+   0.8,
+   0.9
+  ],
+  "num_samples": null,
+  "checks": {
+   "rows": 6660,
+   "rows_expected": 6660,
+   "series": 555,
+   "horizons": 12,
+   "columns": [
+    "unique_id",
+    "ds",
+    "yhat",
+    "mean",
+    "q10",
+    "q20",
+    "q30",
+    "q40",
+    "q50",
+    "q60",
+    "q70",
+    "q80",
+    "q90"
+   ],
+   "first_ds": "2016-01-01",
+   "last_ds": "2016-12-01",
+   "nan": 0,
+   "inf": 0,
+   "quantile_crossings_native": 108,
+   "quantile_crossings_q10_q90": 108,
+   "q90_le_q10": 0,
+   "min_width_q90_q10": 0.009088873863220215,
+   "negative_median": 27,
+   "negative_mean": 0,
+   "negative_q10": 848,
+   "median_is_q50": true,
+   "mean_above_median_share": 0.9827327327327328,
+   "cells": 6660
+  },
+  "backtest_rows": 159840,
+  "backtest_last_target": "2015-12-01",
+  "cached_before_this_run": {
+   "base": false,
+   "backtest": false
+  },
+  "timing": {
+   "base_seconds": 51.790536833927035,
+   "backtest_seconds": 1221.5590256251162,
+   "backtest_calls": 24,
+   "load_seconds": 4.457891918718815e-06,
+   "seconds_per_origin": 1273.3495624590432,
+   "projected_total_seconds": 6366.747856874135
+  },
+  "drop_candidate": false,
+  "wall_seconds_this_run": 1289.5457484170329
+ },
+ {
+  "model": "moirai_2_small",
+  "env": "fmrec-moirai",
+  "repo": "Salesforce/moirai-2.0-R-small",
+  "revision": "30f43ff08c8494f4943ae1521e9d4e94a0fbb389",
+  "output": "quantiles",
+  "device": "cpu",
+  "problems": [
+   "does not run on MPS"
+  ],
+  "versions": {
+   "python": "3.11.16",
+   "torch": "2.4.1",
+   "numpy": "1.26.4",
+   "pandas": "2.1.4",
+   "uni2ts": "2.0.0"
+  },
+  "probe": {
+   "cpu": {
+    "seconds": 0.054681249894201756,
+    "ok": true
+   },
+   "mps": {
+    "ok": false,
+    "error": "RuntimeError: dqq57912v7gm2dnvmjlr0000gn/T/tmpk1q3yp4d/input.parquet --output /var/folders/w0/f3jtdqq57912v7gm2dnvmjlr0000gn/T/tmpk1q3yp4d/output.parquet --info /var/folders/w0/f3jtdqq57912v7gm2dnvmjlr0000gn/T/tmpk1q3yp4d/info.json --cutoffs 2015-12-01 --h 12 --freq MS --device mps` failed. (See above for error)\n"
+   }
+  },
+  "native_levels": [
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5,
+   0.6,
+   0.7,
+   0.8,
+   0.9
+  ],
+  "num_samples": null,
+  "checks": {
+   "rows": 6660,
+   "rows_expected": 6660,
+   "series": 555,
+   "horizons": 12,
+   "columns": [
+    "unique_id",
+    "ds",
+    "yhat",
+    "mean",
+    "q10",
+    "q20",
+    "q30",
+    "q40",
+    "q50",
+    "q60",
+    "q70",
+    "q80",
+    "q90"
+   ],
+   "first_ds": "2016-01-01",
+   "last_ds": "2016-12-01",
+   "nan": 0,
+   "inf": 0,
+   "quantile_crossings_native": 201,
+   "quantile_crossings_q10_q90": 201,
+   "q90_le_q10": 0,
+   "min_width_q90_q10": 0.020751357078552246,
+   "negative_median": 13,
+   "negative_mean": 0,
+   "negative_q10": 684,
+   "median_is_q50": true,
+   "mean_above_median_share": 0.9459459459459459,
+   "cells": 6660
+  },
+  "backtest_rows": 159840,
+  "backtest_last_target": "2015-12-01",
+  "cached_before_this_run": {
+   "base": false,
+   "backtest": false
+  },
+  "timing": {
+   "base_seconds": 0.4051015420118347,
+   "backtest_seconds": 8.443491332931444,
+   "backtest_calls": 24,
+   "load_seconds": 1.2213826660299674,
+   "seconds_per_origin": 8.848592874943279,
+   "projected_total_seconds": 56.45679103501607
+  },
+  "drop_candidate": false,
+  "wall_seconds_this_run": 27.50398491602391
+ }
+]

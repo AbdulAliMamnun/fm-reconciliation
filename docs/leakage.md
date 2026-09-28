@@ -127,6 +127,8 @@ On the Chronos zero-shot benchmark: "None of these datasets were included in the
 - Table 6 (from GIFT-Eval Pretrain) includes "kaggle web traffic weekly", 145,063 series. It does not include M5, tourism, Wiki-Rolling or Extended Web Traffic.
 - "TiRex's pre-training data has no overlap with Chronos-ZS benchmark", which contains M5 and Monash Tourism.
 
+**Checkpoint used in this study:** `NX-AI/TiRex`, revision `63c740922493f5fbe60b277609ec62babfba2762`. Its weight file was last changed on 2025-05-26, in the first commit of the repository, so it is the original checkpoint.
+
 **Version warning [P].** Appendix E describes TiRex 1.1: "(1) All datasets present in the GiftEval benchmark were removed from our training corpus ... (2) Datasets from the Chronos-ZS benchmark that do not overlap with GiftEval were included". That would add M5 and Monash Tourism and remove M4. The checkpoint must be recorded when TiRex is run.
 
 | Dataset | Verdict | Evidence |
