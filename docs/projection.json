@@ -1,0 +1,823 @@
+{
+ "data": [
+  {
+   "dataset": "TourismLarge",
+   "note": "",
+   "freq": "MS",
+   "h": 12,
+   "series": 555,
+   "bottom": 304,
+   "levels": {
+    "Country": 1,
+    "Country/State": 7,
+    "Country/State/Zone": 27,
+    "Country/State/Zone/Region": 76,
+    "Country/Purpose": 4,
+    "Country/State/Purpose": 28,
+    "Country/State/Zone/Purpose": 108,
+    "Country/State/Zone/Region/Purpose": 304
+   },
+   "first": "1998-01-01",
+   "last": "2016-12-01",
+   "periods": 228,
+   "origins": [
+    {
+     "origin": "2011-12-01",
+     "train_len": 168,
+     "test": "2012-01-01 to 2012-12-01"
+    },
+    {
+     "origin": "2012-12-01",
+     "train_len": 180,
+     "test": "2013-01-01 to 2013-12-01"
+    },
+    {
+     "origin": "2013-12-01",
+     "train_len": 192,
+     "test": "2014-01-01 to 2014-12-01"
+    },
+    {
+     "origin": "2014-12-01",
+     "train_len": 204,
+     "test": "2015-01-01 to 2015-12-01"
+    },
+    {
+     "origin": "2015-12-01",
+     "train_len": 216,
+     "test": "2016-01-01 to 2016-12-01"
+    }
+   ],
+   "context_base": [
+    168,
+    216
+   ],
+   "context_backtest": [
+    133,
+    204
+   ],
+   "mean_context_all_calls": 169.44,
+   "mean_context_base": 192.0
+  },
+  {
+   "dataset": "Labour",
+   "note": "confirmatory: the test years 2018 and 2019; exploratory: 2015 to 2019",
+   "freq": "MS",
+   "h": 12,
+   "series": 57,
+   "bottom": 32,
+   "levels": {
+    "Country": 1,
+    "Country/Region": 8,
+    "Country/Gender/Region": 16,
+    "Country/Employment/Gender/Region": 32
+   },
+   "first": "1978-02-01",
+   "last": "2019-12-01",
+   "periods": 503,
+   "origins": [
+    {
+     "origin": "2014-12-01",
+     "train_len": 443,
+     "test": "2015-01-01 to 2015-12-01"
+    },
+    {
+     "origin": "2015-12-01",
+     "train_len": 455,
+     "test": "2016-01-01 to 2016-12-01"
+    },
+    {
+     "origin": "2016-12-01",
+     "train_len": 467,
+     "test": "2017-01-01 to 2017-12-01"
+    },
+    {
+     "origin": "2017-12-01",
+     "train_len": 479,
+     "test": "2018-01-01 to 2018-12-01"
+    },
+    {
+     "origin": "2018-12-01",
+     "train_len": 491,
+     "test": "2019-01-01 to 2019-12-01"
+    }
+   ],
+   "context_base": [
+    443,
+    491
+   ],
+   "context_backtest": [
+    408,
+    479
+   ],
+   "mean_context_all_calls": 444.44,
+   "mean_context_base": 467.0
+  },
+  {
+   "dataset": "M5, 1 store (CA_1)",
+   "note": "",
+   "freq": "D",
+   "h": 28,
+   "series": 3060,
+   "bottom": 3049,
+   "levels": {
+    "Store": 1,
+    "Store/Category": 3,
+    "Store/Category/Department": 7,
+    "Store/Category/Department/Item": 3049
+   },
+   "first": "2011-01-29",
+   "last": "2016-06-19",
+   "periods": 1969,
+   "origins": [
+    {
+     "origin": "2016-01-31",
+     "train_len": 1829,
+     "test": "2016-02-01 to 2016-02-28"
+    },
+    {
+     "origin": "2016-02-28",
+     "train_len": 1857,
+     "test": "2016-02-29 to 2016-03-27"
+    },
+    {
+     "origin": "2016-03-27",
+     "train_len": 1885,
+     "test": "2016-03-28 to 2016-04-24"
+    },
+    {
+     "origin": "2016-04-24",
+     "train_len": 1913,
+     "test": "2016-04-25 to 2016-05-22"
+    },
+    {
+     "origin": "2016-05-22",
+     "train_len": 1941,
+     "test": "2016-05-23 to 2016-06-19"
+    }
+   ],
+   "context_base": [
+    1829,
+    1941
+   ],
+   "context_backtest": [
+    1778,
+    1913
+   ],
+   "mean_context_all_calls": 1847.08,
+   "mean_context_base": 1885.0
+  },
+  {
+   "dataset": "M5, 2 stores (CA_1, CA_2)",
+   "note": "",
+   "freq": "D",
+   "h": 28,
+   "series": 6120,
+   "bottom": 6098,
+   "levels": {
+    "Store": 2,
+    "Store/Category": 6,
+    "Store/Category/Department": 14,
+    "Store/Category/Department/Item": 6098
+   },
+   "first": "2011-01-29",
+   "last": "2016-06-19",
+   "periods": 1969,
+   "origins": [
+    {
+     "origin": "2016-01-31",
+     "train_len": 1829,
+     "test": "2016-02-01 to 2016-02-28"
+    },
+    {
+     "origin": "2016-02-28",
+     "train_len": 1857,
+     "test": "2016-02-29 to 2016-03-27"
+    },
+    {
+     "origin": "2016-03-27",
+     "train_len": 1885,
+     "test": "2016-03-28 to 2016-04-24"
+    },
+    {
+     "origin": "2016-04-24",
+     "train_len": 1913,
+     "test": "2016-04-25 to 2016-05-22"
+    },
+    {
+     "origin": "2016-05-22",
+     "train_len": 1941,
+     "test": "2016-05-23 to 2016-06-19"
+    }
+   ],
+   "context_base": [
+    1829,
+    1941
+   ],
+   "context_backtest": [
+    1778,
+    1913
+   ],
+   "mean_context_all_calls": 1847.08,
+   "mean_context_base": 1885.0
+  }
+ ],
+ "models": [
+  {
+   "model": "chronos_bolt_tiny",
+   "env": "fmrec",
+   "base_only": false,
+   "context_limit": 2048,
+   "per_series": {
+    "TourismLarge": {
+     "context": 169,
+     "h": 12,
+     "key": [
+      169,
+      12,
+      "MS"
+     ],
+     "synthetic": 0.0002482382824382512,
+     "projected": 0.00020379140840524489,
+     "ratio_to_tourism": 1.0
+    },
+    "Labour": {
+     "context": 444,
+     "h": 12,
+     "key": [
+      444,
+      12,
+      "MS"
+     ],
+     "synthetic": 0.0005766634058090858,
+     "projected": 0.00047341226538993446,
+     "ratio_to_tourism": 2.323023669616832
+    },
+    "M5, 1 store (CA_1)": {
+     "context": 1847,
+     "h": 28,
+     "key": [
+      1847,
+      28,
+      "D"
+     ],
+     "synthetic": 0.0020098717341170413,
+     "projected": 0.0016500057420091505,
+     "ratio_to_tourism": 8.096542218934314
+    },
+    "M5, 2 stores (CA_1, CA_2)": {
+     "context": 1847,
+     "h": 28,
+     "key": [
+      1847,
+      28,
+      "D"
+     ],
+     "synthetic": 0.0020098717341170413,
+     "projected": 0.0016500057420091505,
+     "ratio_to_tourism": 8.096542218934314
+    }
+   },
+   "cost": {
+    "TourismLarge": {
+     "calls": 125,
+     "series": 555,
+     "seconds": 14.138028958113864
+    },
+    "Labour": {
+     "calls": 125,
+     "series": 57,
+     "seconds": 3.373062390903283
+    },
+    "M5, 1 store (CA_1)": {
+     "calls": 125,
+     "series": 3060,
+     "seconds": 631.1271963185001
+    },
+    "M5, 2 stores (CA_1, CA_2)": {
+     "calls": 125,
+     "series": 6120,
+     "seconds": 1262.2543926370001
+    }
+   },
+   "measured_tourism_per_series": 0.00020379140840524489,
+   "calibration": 0.8209507671563012,
+   "total_1_store": 648.6382876675173,
+   "total_2_stores": 1279.7654839860172,
+   "over_limit_1_store": false,
+   "over_limit_2_stores": false,
+   "timing_seconds": 3.358619541977532
+  },
+  {
+   "model": "chronos_bolt_mini",
+   "env": "fmrec",
+   "base_only": false,
+   "context_limit": 2048,
+   "per_series": {
+    "TourismLarge": {
+     "context": 169,
+     "h": 12,
+     "key": [
+      169,
+      12,
+      "MS"
+     ],
+     "synthetic": 0.0004736035152745899,
+     "projected": 0.0003989086547816122,
+     "ratio_to_tourism": 1.0
+    },
+    "Labour": {
+     "context": 444,
+     "h": 12,
+     "key": [
+      444,
+      12,
+      "MS"
+     ],
+     "synthetic": 0.0008938769533415325,
+     "projected": 0.000752898239767115,
+     "ratio_to_tourism": 1.887395098457563
+    },
+    "M5, 1 store (CA_1)": {
+     "context": 1847,
+     "h": 28,
+     "key": [
+      1847,
+      28,
+      "D"
+     ],
+     "synthetic": 0.0027728574223147007,
+     "projected": 0.0023355333914602643,
+     "ratio_to_tourism": 5.854807519127111
+    },
+    "M5, 2 stores (CA_1, CA_2)": {
+     "context": 1847,
+     "h": 28,
+     "key": [
+      1847,
+      28,
+      "D"
+     ],
+     "synthetic": 0.0027728574223147007,
+     "projected": 0.0023355333914602643,
+     "ratio_to_tourism": 5.854807519127111
+    }
+   },
+   "cost": {
+    "TourismLarge": {
+     "calls": 125,
+     "series": 555,
+     "seconds": 27.674287925474346
+    },
+    "Labour": {
+     "calls": 125,
+     "series": 57,
+     "seconds": 5.3643999583406945
+    },
+    "M5, 1 store (CA_1)": {
+     "calls": 125,
+     "series": 3060,
+     "seconds": 893.3415222335511
+    },
+    "M5, 2 stores (CA_1, CA_2)": {
+     "calls": 125,
+     "series": 6120,
+     "seconds": 1786.6830444671023
+    }
+   },
+   "measured_tourism_per_series": 0.0003989086547816122,
+   "calibration": 0.8422839820990973,
+   "total_1_store": 926.3802101173662,
+   "total_2_stores": 1819.7217323509174,
+   "over_limit_1_store": false,
+   "over_limit_2_stores": false,
+   "timing_seconds": 0.8693682920420542
+  },
+  {
+   "model": "chronos_bolt_small",
+   "env": "fmrec",
+   "base_only": false,
+   "context_limit": 2048,
+   "per_series": {
+    "TourismLarge": {
+     "context": 169,
+     "h": 12,
+     "key": [
+      169,
+      12,
+      "MS"
+     ],
+     "synthetic": 0.0008528287817171076,
+     "projected": 0.0007578999700007943,
+     "ratio_to_tourism": 1.0
+    },
+    "Labour": {
+     "context": 444,
+     "h": 12,
+     "key": [
+      444,
+      12,
+      "MS"
+     ],
+     "synthetic": 0.001661749343838892,
+     "projected": 0.0014767791669841948,
+     "ratio_to_tourism": 1.94851461332377
+    },
+    "M5, 1 store (CA_1)": {
+     "context": 1847,
+     "h": 28,
+     "key": [
+      1847,
+      28,
+      "D"
+     ],
+     "synthetic": 0.005325462234395673,
+     "projected": 0.00473268228537306,
+     "ratio_to_tourism": 6.244468231563724
+    },
+    "M5, 2 stores (CA_1, CA_2)": {
+     "context": 1847,
+     "h": 28,
+     "key": [
+      1847,
+      28,
+      "D"
+     ],
+     "synthetic": 0.005325462234395673,
+     "projected": 0.00473268228537306,
+     "ratio_to_tourism": 6.244468231563724
+    }
+   },
+   "cost": {
+    "TourismLarge": {
+     "calls": 125,
+     "series": 555,
+     "seconds": 52.57931041880511
+    },
+    "Labour": {
+     "calls": 125,
+     "series": 57,
+     "seconds": 10.522051564762387
+    },
+    "M5, 1 store (CA_1)": {
+     "calls": 125,
+     "series": 3060,
+     "seconds": 1810.2509741551953
+    },
+    "M5, 2 stores (CA_1, CA_2)": {
+     "calls": 125,
+     "series": 6120,
+     "seconds": 3620.5019483103906
+    }
+   },
+   "measured_tourism_per_series": 0.0007578999700007943,
+   "calibration": 0.8886894840425282,
+   "total_1_store": 1873.352336138763,
+   "total_2_stores": 3683.603310293958,
+   "over_limit_1_store": false,
+   "over_limit_2_stores": false,
+   "timing_seconds": 1.4355881670489907
+  },
+  {
+   "model": "chronos_t5_small",
+   "env": "fmrec",
+   "base_only": true,
+   "context_limit": 512,
+   "per_series": {
+    "TourismLarge": {
+     "context": 192,
+     "h": 12,
+     "key": [
+      192,
+      12,
+      "MS"
+     ],
+     "synthetic": 0.3495150507806102,
+     "projected": 0.3775810523279565,
+     "ratio_to_tourism": 1.0
+    },
+    "Labour": {
+     "context": 467,
+     "h": 12,
+     "key": [
+      467,
+      12,
+      "MS"
+     ],
+     "synthetic": 0.6863826699209312,
+     "projected": 0.7414990863185889,
+     "ratio_to_tourism": 1.9638143432963981
+    },
+    "M5, 1 store (CA_1)": {
+     "context": 1885,
+     "h": 28,
+     "key": [
+      1885,
+      28,
+      "D"
+     ],
+     "synthetic": 1.3254098424531549,
+     "projected": 1.4318400365351487,
+     "ratio_to_tourism": 3.792139535888289
+    },
+    "M5, 2 stores (CA_1, CA_2)": {
+     "context": 1885,
+     "h": 28,
+     "key": [
+      1885,
+      28,
+      "D"
+     ],
+     "synthetic": 1.3254098424531549,
+     "projected": 1.4318400365351487,
+     "ratio_to_tourism": 3.792139535888289
+    }
+   },
+   "cost": {
+    "TourismLarge": {
+     "calls": 5,
+     "series": 555,
+     "seconds": 1047.7874202100793
+    },
+    "Labour": {
+     "calls": 5,
+     "series": 57,
+     "seconds": 211.3272396007978
+    },
+    "M5, 1 store (CA_1)": {
+     "calls": 5,
+     "series": 3060,
+     "seconds": 21907.152558987775
+    },
+    "M5, 2 stores (CA_1, CA_2)": {
+     "calls": 5,
+     "series": 6120,
+     "seconds": 43814.30511797555
+    }
+   },
+   "measured_tourism_per_series": 0.3775810523279565,
+   "calibration": 1.0802998368300978,
+   "total_1_store": 23166.267218798654,
+   "total_2_stores": 45073.419777786425,
+   "over_limit_1_store": false,
+   "over_limit_2_stores": true,
+   "timing_seconds": 313.17803895892575
+  },
+  {
+   "model": "chronos_2",
+   "env": "fmrec",
+   "base_only": false,
+   "context_limit": 8192,
+   "per_series": {
+    "TourismLarge": {
+     "context": 169,
+     "h": 12,
+     "key": [
+      169,
+      12,
+      "MS"
+     ],
+     "synthetic": 0.0033638033746683504,
+     "projected": 0.0032434174804151193,
+     "ratio_to_tourism": 1.0
+    },
+    "Labour": {
+     "context": 444,
+     "h": 12,
+     "key": [
+      444,
+      12,
+      "MS"
+     ],
+     "synthetic": 0.006541059907249291,
+     "projected": 0.0063069643735364144,
+     "ratio_to_tourism": 1.944542881580942
+    },
+    "M5, 1 store (CA_1)": {
+     "context": 1847,
+     "h": 28,
+     "key": [
+      1847,
+      28,
+      "D"
+     ],
+     "synthetic": 0.023633374343262403,
+     "projected": 0.02278756839456734,
+     "ratio_to_tourism": 7.025789474271071
+    },
+    "M5, 2 stores (CA_1, CA_2)": {
+     "context": 1847,
+     "h": 28,
+     "key": [
+      1847,
+      28,
+      "D"
+     ],
+     "synthetic": 0.023633374343262403,
+     "projected": 0.02278756839456734,
+     "ratio_to_tourism": 7.025789474271071
+    }
+   },
+   "cost": {
+    "TourismLarge": {
+     "calls": 125,
+     "series": 555,
+     "seconds": 225.0120877037989
+    },
+    "Labour": {
+     "calls": 125,
+     "series": 57,
+     "seconds": 44.93712116144695
+    },
+    "M5, 1 store (CA_1)": {
+     "calls": 125,
+     "series": 3060,
+     "seconds": 8716.244910922009
+    },
+    "M5, 2 stores (CA_1, CA_2)": {
+     "calls": 125,
+     "series": 6120,
+     "seconds": 17432.489821844018
+    }
+   },
+   "measured_tourism_per_series": 0.0032434174804151193,
+   "calibration": 0.9642113759799945,
+   "total_1_store": 8986.194119787255,
+   "total_2_stores": 17702.43903070926,
+   "over_limit_1_store": false,
+   "over_limit_2_stores": false,
+   "timing_seconds": 5.680332583957352
+  },
+  {
+   "model": "tirex",
+   "env": "fmrec",
+   "base_only": false,
+   "context_limit": 2016,
+   "per_series": {
+    "TourismLarge": {
+     "context": 169,
+     "h": 12,
+     "key": [
+      169,
+      12,
+      "MS"
+     ],
+     "synthetic": 0.08925981054744625,
+     "projected": 0.09177294143848959,
+     "ratio_to_tourism": 1.0
+    },
+    "Labour": {
+     "context": 444,
+     "h": 12,
+     "key": [
+      444,
+      12,
+      "MS"
+     ],
+     "synthetic": 0.08813347006253025,
+     "projected": 0.09061488857317401,
+     "ratio_to_tourism": 0.9873813256155491
+    },
+    "M5, 1 store (CA_1)": {
+     "context": 1847,
+     "h": 28,
+     "key": [
+      1847,
+      28,
+      "D"
+     ],
+     "synthetic": 0.08923321809379559,
+     "projected": 0.09174560026807235,
+     "ratio_to_tourism": 0.99970207808545
+    },
+    "M5, 2 stores (CA_1, CA_2)": {
+     "context": 1847,
+     "h": 28,
+     "key": [
+      1847,
+      28,
+      "D"
+     ],
+     "synthetic": 0.08923321809379559,
+     "projected": 0.09174560026807235,
+     "ratio_to_tourism": 0.99970207808545
+    }
+   },
+   "cost": {
+    "TourismLarge": {
+     "calls": 125,
+     "series": 555,
+     "seconds": 6366.747812295215
+    },
+    "Labour": {
+     "calls": 125,
+     "series": 57,
+     "seconds": 645.6310810838648
+    },
+    "M5, 1 store (CA_1)": {
+     "calls": 125,
+     "series": 3060,
+     "seconds": 35092.69210253767
+    },
+    "M5, 2 stores (CA_1, CA_2)": {
+     "calls": 125,
+     "series": 6120,
+     "seconds": 70185.38420507534
+    }
+   },
+   "measured_tourism_per_series": 0.0917729414384896,
+   "calibration": 1.0281552344289089,
+   "total_1_store": 42105.07099591675,
+   "total_2_stores": 77197.76309845442,
+   "over_limit_1_store": true,
+   "over_limit_2_stores": true,
+   "timing_seconds": 35.19164524995722
+  },
+  {
+   "model": "moirai_2_small",
+   "env": "fmrec-moirai",
+   "base_only": false,
+   "context_limit": null,
+   "per_series": {
+    "TourismLarge": {
+     "context": 169,
+     "h": 12,
+     "key": [
+      169,
+      12,
+      "MS"
+     ],
+     "synthetic": 0.00044752148460247554,
+     "projected": 0.0006377364234193354,
+     "ratio_to_tourism": 1.0
+    },
+    "Labour": {
+     "context": 444,
+     "h": 12,
+     "key": [
+      444,
+      12,
+      "MS"
+     ],
+     "synthetic": 0.0010803209534060443,
+     "projected": 0.0015395015539469053,
+     "ratio_to_tourism": 2.414009138277846
+    },
+    "M5, 1 store (CA_1)": {
+     "context": 1847,
+     "h": 28,
+     "key": [
+      1847,
+      28,
+      "D"
+     ],
+     "synthetic": 0.004467059890885139,
+     "projected": 0.006365743089504616,
+     "ratio_to_tourism": 9.981777511426383
+    },
+    "M5, 2 stores (CA_1, CA_2)": {
+     "context": 1847,
+     "h": 28,
+     "key": [
+      1847,
+      28,
+      "D"
+     ],
+     "synthetic": 0.004467059890885139,
+     "projected": 0.006365743089504616,
+     "ratio_to_tourism": 9.981777511426383
+    }
+   },
+   "cost": {
+    "TourismLarge": {
+     "calls": 125,
+     "series": 555,
+     "seconds": 44.242964374716394
+    },
+    "Labour": {
+     "calls": 125,
+     "series": 57,
+     "seconds": 10.9689485718717
+    },
+    "M5, 1 store (CA_1)": {
+     "calls": 125,
+     "series": 3060,
+     "seconds": 2434.8967317355155
+    },
+    "M5, 2 stores (CA_1, CA_2)": {
+     "calls": 125,
+     "series": 6120,
+     "seconds": 4869.793463471031
+    }
+   },
+   "measured_tourism_per_series": 0.0006377364234193354,
+   "calibration": 1.4250409094567247,
+   "total_1_store": 2490.1086446821037,
+   "total_2_stores": 4925.005376417619,
+   "over_limit_1_store": false,
+   "over_limit_2_stores": false,
+   "timing_seconds": 25.297819458064623
+  }
+ ],
+ "limit_hours": 8.0,
+ "n_timed": 64
+}
