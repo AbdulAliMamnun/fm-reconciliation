@@ -6,11 +6,36 @@ from datasetsforecast.hierarchical import HierarchicalData
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 
-# freq and horizon per dataset (PREREG §3).
+# freq, horizon (PREREG §3) and season length m per dataset.
 DATASETS = {
-    "TourismSmall": {"freq": "QE", "h": 8},
-    "TourismLarge": {"freq": "MS", "h": 12},
+    "TourismSmall": {"freq": "QE", "h": 8, "m": 4},
+    "TourismLarge": {"freq": "MS", "h": 12, "m": 12},
 }
+
+
+def rolling_origins(Y_df, h, n_origins):
+    """Split Y_df at rolling origins spaced h steps apart, ending at the last
+    observation (PREREG §3). Earliest origin first.
+
+    Returns a list of dicts with `origin` (the last training timestamp),
+    `train` (all rows up to and including the origin) and `test` (the next h
+    time points).
+    """
+    dates = pd.DatetimeIndex(sorted(Y_df["ds"].unique()))
+    T = len(dates)
+    if T - h * n_origins < 1:
+        raise ValueError(f"{T} time points are too few for {n_origins} origins with h={h}.")
+    out = []
+    for k in range(n_origins, 0, -1):
+        n_train = T - h * k
+        origin = dates[n_train - 1]
+        test_dates = dates[n_train : n_train + h]
+        out.append({
+            "origin": origin,
+            "train": Y_df[Y_df["ds"] <= origin],
+            "test": Y_df[Y_df["ds"].isin(test_dates)],
+        })
+    return out
 
 
 def load_hierarchy(name):

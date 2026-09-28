@@ -18,7 +18,8 @@ COLUMNS = [
 ]
 
 
-def build_results(dataset, origin, model, forecasts, actuals, tags, scales, w_est):
+def build_results(dataset, origin, model, forecasts, actuals, tags, scales, w_est,
+                  quantiles=None):
     """Put one origin's forecasts into the results-table format.
 
     forecasts: long frame with unique_id, ds and one column per forecast.
@@ -26,6 +27,8 @@ def build_results(dataset, origin, model, forecasts, actuals, tags, scales, w_es
     tags: dict mapping level name -> array of series ids.
     scales: frame with unique_id, mase_scale, rmsse_scale (training data only).
     w_est: dict mapping forecast column -> W_est label.
+    quantiles: optional long frame with unique_id, ds, W_est (the label) and
+        q10..q90. Rows of the table without a match keep NaN quantiles.
 
     `origin` is the last training timestamp. `horizon` counts from 1.
     """
@@ -68,9 +71,19 @@ def build_results(dataset, origin, model, forecasts, actuals, tags, scales, w_es
     long["dataset"] = dataset
     long["origin"] = pd.Timestamp(origin)
     long["model"] = model
-    for q in QUANTILE_COLS:
-        long[q] = np.nan
-    for c in ["y", "yhat", "mase_scale", "rmsse_scale"]:
+    if quantiles is None:
+        for q in QUANTILE_COLS:
+            long[q] = np.nan
+    else:
+        qdf = quantiles[["unique_id", "ds", "W_est", *QUANTILE_COLS]].copy()
+        unknown = set(qdf["W_est"]) - set(w_est.values())
+        if unknown or not set(qdf["ds"]) <= set(horizon_of):
+            raise ValueError("quantiles has W_est labels or dates that are not in forecasts.")
+        qdf["horizon"] = qdf["ds"].map(horizon_of).astype("int64")
+        qdf = qdf.rename(columns={"unique_id": "series_id"}).drop(columns="ds")
+        long = long.merge(qdf, on=["series_id", "horizon", "W_est"], how="left",
+                          validate="one_to_one")
+    for c in ["y", "yhat", "mase_scale", "rmsse_scale", *QUANTILE_COLS]:
         long[c] = long[c].astype("float64")
     return long[COLUMNS].reset_index(drop=True)
 

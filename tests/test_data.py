@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from src.data import load_hierarchy
+from src.data import load_hierarchy, rolling_origins
 
 EXPECTED = {
     "TourismSmall": {"freq": "QE", "h": 8, "n_series": 89, "n_bottom": 56},
@@ -70,3 +70,27 @@ def test_Y_df_order_matches_S_df(loaded):
 def test_unknown_dataset_raises():
     with pytest.raises(ValueError):
         load_hierarchy("NotADataset")
+
+
+def test_rolling_origins_tourism_large():
+    Y_df, _, _, _, h = load_hierarchy("TourismLarge")
+    splits = rolling_origins(Y_df, h, 5)
+    assert [str(s["origin"].date()) for s in splits] == [
+        "2011-12-01", "2012-12-01", "2013-12-01", "2014-12-01", "2015-12-01"]
+    for i, s in enumerate(splits):
+        assert s["train"]["ds"].max() == s["origin"]
+        assert s["train"]["ds"].nunique() == 168 + 12 * i
+        assert s["test"]["ds"].nunique() == h
+        assert s["test"]["ds"].min() > s["origin"]
+        assert s["train"]["unique_id"].nunique() == 555
+        assert len(s["test"]) == 555 * h
+    # origins are h apart, test windows do not overlap, and the last one ends at the last observation
+    assert splits[-1]["test"]["ds"].max() == Y_df["ds"].max()
+    for a, b in zip(splits[:-1], splits[1:]):
+        assert a["test"]["ds"].max() == b["origin"]
+
+
+def test_rolling_origins_raises_when_too_short():
+    Y_df, _, _, _, h = load_hierarchy("TourismSmall")
+    with pytest.raises(ValueError):
+        rolling_origins(Y_df, h, 5)

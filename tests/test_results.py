@@ -142,3 +142,34 @@ def test_level_mean_from_the_results_table():
     assert lm.loc[("base", "Bottom"), "mase"] == pytest.approx(0.375)
     assert lm.loc[("base", "All series"), "mase"] == pytest.approx((1.25 + 0.5 + 0.25) / 3)
     assert lm.loc[("base", "All series"), "n_series"] == 3
+
+
+def test_build_results_with_quantiles_for_base_only():
+    q = _long(BASE, "q50").assign(W_est="base")
+    for i, col in enumerate(QUANTILE_COLS):
+        q[col] = q["q50"] + (i - 4)
+    q = q.sample(frac=1, random_state=1)
+    res = build_results(
+        dataset="Toy", origin=ORIGIN, model="M", forecasts=_forecasts(), actuals=_long(Y, "y"),
+        tags=TAGS, scales=SCALES, w_est={"M": "base", "M/BottomUp": "bottomup"}, quantiles=q,
+    )
+    assert list(res.columns) == COLUMNS
+    assert len(res) == 12
+    base = res[res.W_est == "base"].set_index(["series_id", "horizon"])
+    assert base.loc[("T", 2), "q50"] == 17.0
+    assert base.loc[("T", 2), "q10"] == 13.0
+    assert base.loc[("b", 1), "q90"] == 10.0
+    assert (base["q50"] == base["yhat"]).all()
+    assert res.loc[res.W_est == "bottomup", QUANTILE_COLS].isna().all().all()
+    assert res[QUANTILE_COLS].dtypes.eq("float64").all()
+
+
+def test_build_results_rejects_unknown_quantile_label():
+    q = _long(BASE, "q50").assign(W_est="something_else")
+    for col in QUANTILE_COLS:
+        q[col] = 1.0
+    with pytest.raises(ValueError):
+        build_results(
+            dataset="Toy", origin=ORIGIN, model="M", forecasts=_forecasts(), actuals=_long(Y, "y"),
+            tags=TAGS, scales=SCALES, w_est={"M": "base", "M/BottomUp": "bottomup"}, quantiles=q,
+        )
