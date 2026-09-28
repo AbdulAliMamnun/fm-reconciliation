@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from src import forecasters
 from src.forecasters import QUANTILE_LEVELS
 from src.residuals import (
     RESIDUAL_COLUMNS, backtest_paths, backtest_residuals, inner_forecasts, inner_origins,
@@ -25,17 +24,17 @@ def _y(extra=0):
 
 
 @pytest.fixture
-def last_value_model(monkeypatch):
+def last_value_model(register_model):
     """Forecasts the last value it was given, with quantiles q = last + level - 0.5.
     Records the last context value of every call."""
     seen = []
 
-    def run(contexts, h, device):
+    def run(contexts, h):
         last = np.array([c[-1] for c in contexts])
         seen.append((len(contexts[0]), last.copy()))
         return last[:, None, None] + np.zeros((1, h, 1)) + (np.array(QUANTILE_LEVELS) - 0.5)
 
-    monkeypatch.setitem(forecasters.MODELS, "last_value", (run, "none/last_value"))
+    register_model("last_value", quantiles=run)
     return seen
 
 
@@ -92,18 +91,31 @@ def test_each_inner_forecast_sees_only_its_own_past(last_value_model):
     assert [last[0] for _, last in last_value_model] == [float(p - 1) for p in lengths]
 
 
-def test_median_and_mean_arms(monkeypatch):
-    def run(contexts, h, device):                       # right-skewed: mean above median
+def test_median_and_mean_arms(register_model):
+    def run(contexts, h):                               # right-skewed: mean above median
         last = np.array([c[-1] for c in contexts])
         q = np.array([0.0, 0, 0, 0, 0, 1, 2, 3, 12])    # median 0, mean 2
         return last[:, None, None] + np.zeros((1, h, 1)) + q
 
-    monkeypatch.setitem(forecasters.MODELS, "skewed", (run, "none/skewed"))
+    register_model("skewed", quantiles=run)
     med = backtest_residuals("skewed", _y(), H, N_INNER, point="median")
     mean = backtest_residuals("skewed", _y(), H, N_INNER, point="mean")
     assert (med["resid"] == med["horizon"]).all()
     np.testing.assert_allclose(mean["resid"], mean["horizon"] - 2.0)
     np.testing.assert_allclose(mean["yhat"] - med["yhat"], 2.0)
+
+
+def test_sample_model_residuals_use_the_sample_mean(register_model):
+    def samples(contexts, h, seed):
+        last = np.array([c[-1] for c in contexts])
+        draws = np.concatenate([np.zeros(90), np.full(10, 50.0)])   # median 0, mean 5
+        return last[:, None, None] + np.zeros((1, h, 1)) + draws
+
+    register_model("sampler", samples=samples)
+    med = backtest_residuals("sampler", _y(), H, N_INNER, point="median")
+    mean = backtest_residuals("sampler", _y(), H, N_INNER, point="mean")
+    np.testing.assert_allclose(med["resid"], med["horizon"])
+    np.testing.assert_allclose(mean["resid"], mean["horizon"] - 5.0)
 
 
 def test_cache_per_dataset_origin_model_point(last_value_model, tmp_path):

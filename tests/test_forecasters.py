@@ -22,16 +22,16 @@ def _context(n_obs=48, ids=("b", "a", "c")):
 
 
 @pytest.fixture
-def fake_model(monkeypatch):
+def fake_model(register_model):
     """A model whose quantiles are last value + level, and that counts its calls."""
     calls = []
 
-    def run(contexts, h, device):
+    def run(contexts, h):
         calls.append(len(contexts))
         last = np.array([c[-1] for c in contexts])
         return last[:, None, None] + np.zeros((1, h, 1)) + np.array(forecasters.QUANTILE_LEVELS)
 
-    monkeypatch.setitem(forecasters.MODELS, "fake", (run, "none/fake"))
+    register_model("fake", quantiles=run)
     return calls
 
 
@@ -110,6 +110,86 @@ def test_point_forecast_median_is_yhat(fake_model):
     out = forecast("fake", _context(), 4)
     np.testing.assert_array_equal(point_forecast(out, "median"), out["yhat"].to_numpy())
     np.testing.assert_allclose(point_forecast(out, "mean"), out["q50"].to_numpy())  # symmetric fake
+    np.testing.assert_array_equal(point_forecast(out, "mean"), out["mean"].to_numpy())
+
+
+def test_frames_cached_before_the_mean_column_still_work(fake_model):
+    old = forecast("fake", _context(), 4).drop(columns=["mean"])
+    np.testing.assert_allclose(point_forecast(old, "mean"), old[QUANTILE_COLS].mean(axis=1))
+    restored = forecasters.with_mean(old)
+    assert list(restored.columns) == COLUMNS
+    np.testing.assert_allclose(restored["mean"], old[QUANTILE_COLS].mean(axis=1))
+
+
+def test_quantile_model_with_more_native_levels(register_model):
+    # 11 native levels: the mean averages all 11, the extra levels are kept as columns.
+    levels = [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95]
+    register_model("wide", levels=levels,
+                   quantiles=lambda contexts, h: np.zeros((len(contexts), h, 1)) + 100 * np.array(levels) ** 2)
+    out = forecast("wide", _context(), 3)
+    assert list(out.columns) == COLUMNS + ["q5", "q95"]
+    np.testing.assert_allclose(out["q5"], 0.25)
+    np.testing.assert_allclose(out["q95"], 90.25)
+    np.testing.assert_allclose(out["yhat"], 25.0)
+    np.testing.assert_allclose(out["mean"], np.mean(100 * np.array(levels) ** 2))
+    assert not np.allclose(out["mean"], out[QUANTILE_COLS].mean(axis=1))
+
+
+def test_quantile_model_must_output_the_nine_levels(register_model):
+    register_model("narrow", levels=[0.25, 0.5, 0.75],
+                   quantiles=lambda contexts, h: np.zeros((len(contexts), h, 3)))
+    with pytest.raises(RuntimeError, match="quantile levels"):
+        forecast("narrow", _context(), 3)
+
+
+def test_sample_model_median_mean_and_quantiles(register_model, tmp_path):
+    def samples(contexts, h, seed):
+        rng = np.random.default_rng(seed)
+        return rng.lognormal(mean=2.0, sigma=1.0, size=(len(contexts), h, 100))
+
+    register_model("sampler", samples=samples)
+    ctx = _context()
+    out = forecast("sampler", ctx, 3, dataset="Toy", cache_dir=tmp_path)
+    assert list(out.columns) == COLUMNS
+    s = pd.read_parquet(forecasters.samples_path("Toy", "2013-12-01", "sampler", tmp_path))
+    assert list(s.columns) == ["unique_id", "ds"] + [f"s{i}" for i in range(100)]
+    assert len(s) == len(out) and list(s["unique_id"]) == list(out["unique_id"])
+    draws = s[[f"s{i}" for i in range(100)]].to_numpy(dtype=np.float64)
+    np.testing.assert_allclose(out["yhat"], np.median(draws, axis=1), rtol=1e-6)
+    np.testing.assert_allclose(out["mean"], draws.mean(axis=1), rtol=1e-6)
+    np.testing.assert_allclose(out["q10"], np.quantile(draws, 0.1, axis=1), rtol=1e-6)
+    np.testing.assert_allclose(out["q90"], np.quantile(draws, 0.9, axis=1), rtol=1e-6)
+    assert (out["mean"] > out["yhat"]).mean() > 0.9        # right-skewed
+    # the seed is fixed per origin: the same call gives the same samples
+    again = forecast("sampler", ctx, 3)
+    pd.testing.assert_frame_equal(out, again)
+    other = forecast("sampler", ctx[ctx["ds"] <= "2012-12-01"], 3)
+    assert not np.allclose(other["yhat"], out["yhat"])
+
+
+def test_forecast_cutoffs_uses_only_the_past(fake_model):
+    ctx = _context()
+    cutoffs = [pd.Timestamp("2012-06-01"), pd.Timestamp("2013-01-01")]
+    out, info = forecasters.forecast_cutoffs("fake", ctx, cutoffs, 2)
+    assert list(out["cutoff"].unique()) == cutoffs
+    assert len(info["seconds"]) == 2 and fake_model == [3, 3]
+    for cutoff, g in out.groupby("cutoff"):
+        assert g["ds"].min() > cutoff
+        last = ctx[ctx["ds"] == cutoff].set_index("unique_id")["y"]
+        np.testing.assert_allclose(g["q10"], g["unique_id"].map(last) + 0.1)
+
+
+def test_registry_is_pinned():
+    from src.runners import FAMILIES, MODELS
+    expected = {"chronos_bolt_tiny", "chronos_bolt_mini", "chronos_bolt_small", "chronos_t5_small",
+                "chronos_2", "tirex", "moirai_2_small"}
+    assert expected <= set(MODELS)
+    for name in expected:
+        spec = MODELS[name]
+        assert len(spec["revision"]) == 40 and spec["family"] in FAMILIES
+        assert spec["output"] in ("quantiles", "samples") and spec["env"]
+    assert MODELS["tirex"]["repo"] == "NX-AI/TiRex"        # not the 1.1 checkpoint
+    assert MODELS["chronos_t5_small"]["output"] == "samples"
 
 
 CHRONOS_CHECK = """
@@ -147,7 +227,9 @@ def test_chronos_bolt_small_runs():
 
 
 def test_forecast_refuses_to_run_torch_next_to_hierarchicalforecast(monkeypatch):
-    monkeypatch.setattr(forecasters.sys, "platform", "darwin")
-    monkeypatch.setitem(forecasters.sys.modules, "hierarchicalforecast._lib", object())
+    from src import runners
+    monkeypatch.setattr(runners.sys, "platform", "darwin")
+    monkeypatch.setitem(runners.sys.modules, "hierarchicalforecast._lib", object())
+    monkeypatch.setattr(runners, "_LOADED", {})
     with pytest.raises(RuntimeError, match="OpenMP"):
         forecast("chronos_bolt_small", _context(), 6)

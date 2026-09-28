@@ -14,15 +14,14 @@ The result is n_inner h-step residuals per series and horizon.
 The inner forecasts (quantiles) are cached once per (dataset, origin, model).
 The residuals are cached per (dataset, origin, model, point).
 """
-import time
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-from src.forecasters import QUANTILE_COLS, RESULTS, forecast, point_forecast
+from src.forecasters import QUANTILE_COLS, RESULTS, forecast_cutoffs, point_forecast, with_mean
 
-INNER_COLUMNS = ["unique_id", "inner_origin", "ds", "horizon", "y", *QUANTILE_COLS]
+INNER_COLUMNS = ["unique_id", "inner_origin", "ds", "horizon", "y", "yhat", "mean", *QUANTILE_COLS]
 RESIDUAL_COLUMNS = ["unique_id", "inner_origin", "ds", "horizon", "y", "yhat", "resid"]
 
 
@@ -64,20 +63,21 @@ def inner_forecasts(model, y_train, h, n_inner=24, *, freq=None, device="cpu", d
     if dataset is not None:
         paths = backtest_paths(dataset, outer, model, cache_dir)
         if paths["inner"].exists():
-            return pd.read_parquet(paths["inner"])
+            cached = pd.read_parquet(paths["inner"])
+            if "yhat" not in cached:                 # written before the column existed
+                cached.insert(cached.columns.get_loc("q10"), "yhat", cached["q50"])
+            return with_mean(cached)
 
-    out, seconds = [], []
-    for s in inner_origins(dates, h, n_inner):
-        context = y_train[y_train["ds"] <= s]
-        t0 = time.perf_counter()
-        f = forecast(model, context, h, freq=freq, device=device)   # not cached on its own
-        seconds.append(time.perf_counter() - t0)
-        f = f.merge(y_train[["unique_id", "ds", "y"]], on=["unique_id", "ds"], how="left",
-                    validate="one_to_one")
-        f["inner_origin"] = s
-        f["horizon"] = f.groupby("unique_id", sort=False).cumcount() + 1
-        out.append(f[INNER_COLUMNS])
-    out = pd.concat(out, ignore_index=True)
+    # The model is loaded once. Each inner origin still gets only its own past.
+    out, info = forecast_cutoffs(model, y_train, inner_origins(dates, h, n_inner), h, freq=freq,
+                                 device=device)
+    out = out.rename(columns={"cutoff": "inner_origin"})
+    out = out.merge(y_train[["unique_id", "ds", "y"]], on=["unique_id", "ds"], how="left",
+                    validate="many_to_one")
+    out["horizon"] = out.groupby(["inner_origin", "unique_id"], sort=False).cumcount() + 1
+    extra = [c for c in out.columns if c not in INNER_COLUMNS]
+    out = out[INNER_COLUMNS + extra]
+    seconds = info["seconds"]
 
     if out["y"].isna().any() or out["ds"].max() > outer:
         raise RuntimeError("An inner forecast target lies after the outer origin.")
@@ -88,7 +88,8 @@ def inner_forecasts(model, y_train, h, n_inner=24, *, freq=None, device="cpu", d
         pd.DataFrame({
             "stage": ["backtest_forecasts"], "seconds": [float(np.sum(seconds))],
             "forecast_calls": [len(seconds)], "series": [out["unique_id"].nunique()],
-            "device": [device],
+            "device": [device], "load_seconds": [info["load_seconds"]], "env": [info["env"]],
+            "revision": [info["revision"]],
         }).to_parquet(paths["timing"], index=False)
     return out
 
