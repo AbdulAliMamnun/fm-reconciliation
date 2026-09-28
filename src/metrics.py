@@ -44,6 +44,33 @@ def rmsse(y, yhat, scale_sq):
     return np.sqrt(np.mean((y - yhat) ** 2, axis=-1) / scale_sq)
 
 
+SERIES_KEYS = ["dataset", "origin", "model", "W_est", "level", "series_id"]
+
+
+def series_metrics(results):
+    """Per-series metrics from the long results table, averaged over horizons.
+
+    Returns one row per (dataset, origin, model, W_est, level, series_id) with
+    n_horizons, mase, rmsse, bias (mean of yhat - y), mase_scale, rmsse_scale.
+    A zero scale gives inf or NaN here; `level_mean` excludes those series.
+    """
+    err = results["yhat"] - results["y"]
+    df = results[[*SERIES_KEYS, "mase_scale", "rmsse_scale"]].assign(
+        _e=err, _ae=err.abs(), _se=err ** 2
+    )
+    out = df.groupby(SERIES_KEYS, sort=False).agg(
+        n_horizons=("_e", "size"),
+        mae=("_ae", "mean"),
+        mse=("_se", "mean"),
+        bias=("_e", "mean"),
+        mase_scale=("mase_scale", "first"),
+        rmsse_scale=("rmsse_scale", "first"),
+    ).reset_index()
+    out["mase"] = out["mae"] / out["mase_scale"]
+    out["rmsse"] = np.sqrt(out["mse"] / out["rmsse_scale"])
+    return out[[*SERIES_KEYS, "n_horizons", "mase", "rmsse", "bias", "mase_scale", "rmsse_scale"]]
+
+
 def level_mean(metric_df, tags, value_cols=None, by=None, scale_col="scale",
                id_col="unique_id", tol=SCALE_TOL):
     """Arithmetic mean over series within each level.
