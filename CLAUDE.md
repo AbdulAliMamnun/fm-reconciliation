@@ -10,6 +10,7 @@ Read `PREREG.md` and `docs/PLAN.md` before any work.
 - Public data only. Never use TD Insurance or other employer data.
 - No foundation-model code until the correctness gate (PREREG §8) passes and I've confirmed it.
 - Don't push to GitHub without asking. Commit locally in small steps with clear messages.
+- At the start of every task, if PREREG.md has uncommitted changes, commit it alone first ("PREREG deviations") and tell me the hash.
 
 ## Environment
 
