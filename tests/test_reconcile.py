@@ -16,7 +16,8 @@ from hierarchicalforecast.utils import (
 
 from src.data import load_hierarchy
 from src.reconcile import (
-    W_hybrid, W_ols, W_pv, W_shrink, W_struct, W_var, projection_matrix, reconcile,
+    W_hybrid, W_ols, W_pv, W_shrink, W_struct, W_var, predictive_variance, projection_matrix,
+    reconcile, reconcile_by_horizon,
 )
 
 TOL = 1e-8
@@ -290,6 +291,97 @@ def test_W_shrink_matches_library_function_with_nans():
 
 def test_stubs_raise():
     with pytest.raises(NotImplementedError):
-        W_pv(None)
-    with pytest.raises(NotImplementedError):
         W_hybrid(None, None)
+
+
+# ------------------------------------------------------------- W_pv (WLS-pv)
+
+def _quantiles(q10, q90):
+    """(n_series, 9) with the given q10 and q90 and a straight line between."""
+    q10, q90 = np.asarray(q10, dtype=float), np.asarray(q90, dtype=float)
+    return q10[:, None] + (q90 - q10)[:, None] * np.linspace(0, 1, 9)[None, :]
+
+
+def test_predictive_variance_hand_computed():
+    # width 2 * 1.2816 -> v = 1 ; width 3 * 2 * 1.2816 -> v = 9 ; location does not matter
+    q = _quantiles([0.0, 10.0, -5.0], [2.5632, 10.0 + 7.6896, -5.0 + 1.2816])
+    np.testing.assert_allclose(predictive_variance(q), [1.0, 9.0, 0.25], rtol=1e-12)
+
+
+def test_predictive_variance_uses_only_q10_and_q90():
+    q = _quantiles([0.0], [2.5632])
+    q2 = q.copy()
+    q2[:, 1:-1] = 99.0
+    np.testing.assert_allclose(predictive_variance(q2), predictive_variance(q))
+
+
+def test_predictive_variance_recovers_a_normal_variance():
+    from scipy.stats import norm
+
+    levels = np.arange(0.1, 1.0, 0.1)
+    sigma = np.array([0.5, 2.0, 30.0])
+    q = norm.ppf(levels[None, :], loc=np.array([3.0, -1.0, 100.0])[:, None], scale=sigma[:, None])
+    # 1.2816 is the 4-decimal rounding of 1.28155..., hence the 1e-4 tolerance
+    np.testing.assert_allclose(predictive_variance(q), sigma ** 2, rtol=1e-4)
+
+
+def test_W_pv_is_diagonal_with_the_variances():
+    q = _quantiles([0.0, 10.0, -5.0], [2.5632, 17.6896, -3.7184])
+    W = W_pv(q)
+    assert W.shape == (3, 3)
+    np.testing.assert_allclose(np.diag(W), [1.0, 9.0, 0.25], rtol=1e-12)
+    assert np.count_nonzero(W - np.diag(np.diag(W))) == 0
+
+
+def test_W_pv_per_horizon():
+    q1 = _quantiles([0.0, 0.0, 0.0], [2.5632, 2.5632, 2.5632])          # v = 1, 1, 1
+    q2 = _quantiles([0.0, 0.0, 0.0], [2.5632, 2 * 2.5632, 3 * 2.5632])  # v = 1, 4, 9
+    Ws = W_pv(np.stack([q1, q2], axis=1))  # (n_series, h=2, 9)
+    assert len(Ws) == 2
+    np.testing.assert_allclose(np.diag(Ws[0]), [1.0, 1.0, 1.0], rtol=1e-12)
+    np.testing.assert_allclose(np.diag(Ws[1]), [1.0, 4.0, 9.0], rtol=1e-12)
+
+
+def test_W_pv_raises_on_zero_or_negative_width():
+    with pytest.raises(ValueError, match="q90 <= q10"):
+        W_pv(_quantiles([0.0, 1.0], [1.0, 1.0]))
+    with pytest.raises(ValueError, match="q90 <= q10"):
+        W_pv(_quantiles([0.0, 1.0], [1.0, 0.5]))
+
+
+def test_W_pv_rejects_wrong_shape_and_nan():
+    with pytest.raises(ValueError):
+        W_pv(np.ones((3, 5)))
+    q = _quantiles([0.0], [1.0])
+    q[0, 0] = np.nan
+    with pytest.raises(ValueError):
+        W_pv(q)
+
+
+def test_hand_wls_pv():
+    # Variances 1, 2, 3 -> same answer as test_hand_wls_unequal_variances.
+    s = np.sqrt([1.0, 2.0, 3.0])
+    q = _quantiles(Y3 - 1.2816 * s, Y3 + 1.2816 * s)
+    np.testing.assert_allclose(np.diag(W_pv(q)), [1.0, 2.0, 3.0], rtol=1e-12)
+    np.testing.assert_allclose(reconcile(Y3, S3, W_pv(q)), [9.5, 4.0, 5.5], atol=1e-12)
+
+
+def test_reconcile_by_horizon_uses_each_horizons_W():
+    y_hat = np.column_stack([Y3, Y3])
+    Ws = [np.diag([1.0, 1.0, 1.0]), np.diag([1.0, 2.0, 3.0])]
+    out = reconcile_by_horizon(y_hat, S3, Ws)
+    assert out.shape == (3, 2)
+    np.testing.assert_allclose(out[:, 0], [9.0, 4.0, 5.0], atol=1e-12)
+    np.testing.assert_allclose(out[:, 1], [9.5, 4.0, 5.5], atol=1e-12)
+
+
+def test_reconcile_by_horizon_with_one_W_equals_reconcile(ets, ours):
+    S, y_hat = ets["S"], ets["y_hat"]
+    W = ours["wls_var"]
+    out = reconcile_by_horizon(y_hat, S, [W] * y_hat.shape[1])
+    assert np.abs(out - reconcile(y_hat, S, W)).max() <= TOL
+
+
+def test_reconcile_by_horizon_needs_one_W_per_horizon():
+    with pytest.raises(ValueError):
+        reconcile_by_horizon(np.column_stack([Y3, Y3]), S3, [np.eye(3)])

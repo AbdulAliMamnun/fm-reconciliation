@@ -66,6 +66,19 @@ def reconcile(y_hat, S, W):
     return S @ (projection_matrix(S, W) @ y_hat)
 
 
+def reconcile_by_horizon(y_hat, S, Ws):
+    """Reconcile each horizon with its own W (PREREG §5: W is estimated
+    separately for each horizon).
+
+    y_hat: (n_series, h). Ws: sequence of h matrices, each (n_series, n_series).
+    Column t of the result is reconcile(y_hat[:, t], S, Ws[t]).
+    """
+    y_hat = np.asarray(y_hat, dtype=np.float64)
+    if y_hat.ndim != 2 or len(Ws) != y_hat.shape[1]:
+        raise ValueError(f"Need one W per horizon: y_hat has shape {y_hat.shape}, got {len(Ws)} W.")
+    return np.column_stack([reconcile(y_hat[:, t], S, Ws[t]) for t in range(y_hat.shape[1])])
+
+
 # ---------------------------------------------------------------- W builders
 
 def W_ols(n):
@@ -215,9 +228,47 @@ def _W_shrink_nan(resid, ridge):
     return W, lam
 
 
+Z90 = 1.2816  # standard normal 0.9 quantile, to the 4 decimals registered in PREREG §5
+
+
+def predictive_variance(quantiles):
+    """v_hat = ((q90 - q10) / (2 * 1.2816))^2 (PREREG §5).
+
+    quantiles: (..., 9), the last axis holding q10, q20, ..., q90. Only q10 and
+    q90 are used. For a normal distribution the 10%-90% range is 2 * 1.2816
+    standard deviations, so v_hat is the variance of the normal that has the
+    same 80% interval as the model.
+    """
+    quantiles = np.asarray(quantiles, dtype=np.float64)
+    if quantiles.shape[-1] != 9:
+        raise ValueError(f"Expected 9 quantiles (q10..q90) on the last axis, got {quantiles.shape}.")
+    if not np.isfinite(quantiles).all():
+        raise ValueError("quantiles contains NaN or inf.")
+    return ((quantiles[..., -1] - quantiles[..., 0]) / (2.0 * Z90)) ** 2
+
+
 def W_pv(quantiles):
-    """W = diag(predictive variance at horizon h) (PREREG §5, WLS-pv)."""
-    raise NotImplementedError("W_pv is not implemented yet.")
+    """W = diag(v_hat) for one horizon (PREREG §5, WLS-pv).
+
+    quantiles: (n_series, 9) for one horizon, columns q10..q90 in S row order.
+    For every horizon at once, pass (n_series, h, 9) and get a list of h
+    matrices, one per horizon, for `reconcile_by_horizon`.
+
+    Raises if any q90 <= q10. PREREG §5 has no rule for a zero or negative
+    interval width, and W must be positive definite, so none is applied here.
+    """
+    quantiles = np.asarray(quantiles, dtype=np.float64)
+    if quantiles.ndim == 3:
+        return [W_pv(quantiles[:, t, :]) for t in range(quantiles.shape[1])]
+    if quantiles.ndim != 2:
+        raise ValueError(f"quantiles must be (n_series, 9) or (n_series, h, 9), got {quantiles.shape}.")
+    v = predictive_variance(quantiles)
+    width = quantiles[:, -1] - quantiles[:, 0]
+    if (width <= 0).any():
+        raise ValueError(
+            f"{int((width <= 0).sum())} series have q90 <= q10; W_pv would not be positive definite."
+        )
+    return np.diag(v)
 
 
 def W_hybrid(quantiles, resid):
