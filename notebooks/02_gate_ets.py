@@ -156,7 +156,9 @@ def main():
             "mase_scale": scale_mase(y_train, M),
             "rmsse_scale": scale_rmsse(y_train, M),
         })
-        new_rows.append(build_results(DATASET, origin, MODEL, Y_rec_df, actuals, tags, scales, W_EST))
+        # ETS point forecasts are means
+        new_rows.append(build_results(DATASET, origin, MODEL, Y_rec_df, actuals, tags, scales, W_EST,
+                                      point="mean"))
 
     append_results(TABLE, pd.concat(new_rows, ignore_index=True))
 

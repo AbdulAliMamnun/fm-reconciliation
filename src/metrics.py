@@ -44,13 +44,13 @@ def rmsse(y, yhat, scale_sq):
     return np.sqrt(np.mean((y - yhat) ** 2, axis=-1) / scale_sq)
 
 
-SERIES_KEYS = ["dataset", "origin", "model", "W_est", "level", "series_id"]
+SERIES_KEYS = ["dataset", "origin", "model", "W_est", "point", "level", "series_id"]
 
 
 def series_metrics(results):
     """Per-series metrics from the long results table, averaged over horizons.
 
-    Returns one row per (dataset, origin, model, W_est, level, series_id) with
+    Returns one row per (dataset, origin, model, W_est, point, level, series_id) with
     n_horizons, mase, rmsse, bias (mean of yhat - y), mase_scale, rmsse_scale.
     A zero scale gives inf or NaN here; `level_mean` excludes those series.
     """

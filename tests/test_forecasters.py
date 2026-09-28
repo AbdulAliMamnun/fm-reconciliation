@@ -7,7 +7,7 @@ import pandas as pd
 import pytest
 
 from src import forecasters
-from src.forecasters import COLUMNS, QUANTILE_COLS, cache_paths, forecast
+from src.forecasters import COLUMNS, QUANTILE_COLS, cache_paths, forecast, point_forecast
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -95,6 +95,21 @@ def test_forecast_rejects_bad_input(fake_model):
     bad.loc[5, "y"] = np.nan
     with pytest.raises(ValueError, match="NaN"):
         forecast("fake", bad, 6)
+
+
+def test_point_forecast_median_and_mean():
+    base = pd.DataFrame([[1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 18.0],
+                         [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 12.0]], columns=QUANTILE_COLS)
+    np.testing.assert_allclose(point_forecast(base, "median"), [5.0, 0.0])
+    np.testing.assert_allclose(point_forecast(base, "mean"), [6.0, 2.0])  # 54/9 and 18/9
+    with pytest.raises(ValueError):
+        point_forecast(base, "mode")
+
+
+def test_point_forecast_median_is_yhat(fake_model):
+    out = forecast("fake", _context(), 4)
+    np.testing.assert_array_equal(point_forecast(out, "median"), out["yhat"].to_numpy())
+    np.testing.assert_allclose(point_forecast(out, "mean"), out["q50"].to_numpy())  # symmetric fake
 
 
 CHRONOS_CHECK = """

@@ -21,6 +21,21 @@ COLUMNS = ["unique_id", "ds", "yhat", *QUANTILE_COLS]
 _PIPELINES = {}
 
 
+def point_forecast(base, point):
+    """The point forecast of each row of a `forecast` frame.
+
+    median: q50, the registered point forecast.
+    mean: the average of the model's 9 native quantile levels (Deviations log,
+        mean arm, for quantile-only models). It is an approximation: with
+        quantiles from 0.1 to 0.9 the tails beyond them do not enter.
+    """
+    if point == "median":
+        return base["q50"].to_numpy(dtype=np.float64)
+    if point == "mean":
+        return base[QUANTILE_COLS].to_numpy(dtype=np.float64).mean(axis=1)
+    raise ValueError(f"point must be 'median' or 'mean', got {point!r}.")
+
+
 def _check_openmp_clash():
     """hierarchicalforecast's compiled extension and torch each bundle their own
     OpenMP runtime. On macOS, loading both in one process hangs or segfaults at

@@ -1,7 +1,7 @@
 """The long results table (PREREG §10).
 
-One row per (dataset, origin, model, W_est, series_id, horizon). Metrics are
-computed from this table afterwards (see src/metrics.py).
+One row per (dataset, origin, model, W_est, point, series_id, horizon). Metrics
+are computed from this table afterwards (see src/metrics.py).
 """
 from pathlib import Path
 
@@ -9,16 +9,18 @@ import numpy as np
 import pandas as pd
 
 QUANTILE_COLS = [f"q{q}" for q in range(10, 100, 10)]
-KEY_COLS = ["dataset", "origin", "model", "W_est"]
-# `rmsse_scale` is not in the PREREG §10 schema. It holds the mean squared
-# seasonal-naive error in-sample, which RMSSE needs and `mase_scale` cannot give.
+KEY_COLS = ["dataset", "origin", "model", "W_est", "point"]
+POINTS = ("median", "mean")
+# Two columns were added to the PREREG §10 schema (Deviations log):
+#   rmsse_scale  mean squared seasonal-naive error in-sample, needed for RMSSE
+#   point        which point forecast `yhat` is, and was reconciled: median or mean
 COLUMNS = [
-    "dataset", "origin", "model", "W_est", "level", "series_id", "horizon",
+    "dataset", "origin", "model", "W_est", "point", "level", "series_id", "horizon",
     "y", "yhat", *QUANTILE_COLS, "mase_scale", "rmsse_scale",
 ]
 
 
-def build_results(dataset, origin, model, forecasts, actuals, tags, scales, w_est,
+def build_results(dataset, origin, model, forecasts, actuals, tags, scales, w_est, point,
                   quantiles=None):
     """Put one origin's forecasts into the results-table format.
 
@@ -27,11 +29,14 @@ def build_results(dataset, origin, model, forecasts, actuals, tags, scales, w_es
     tags: dict mapping level name -> array of series ids.
     scales: frame with unique_id, mase_scale, rmsse_scale (training data only).
     w_est: dict mapping forecast column -> W_est label.
+    point: "median" or "mean", what the forecasts in `forecasts` are.
     quantiles: optional long frame with unique_id, ds, W_est (the label) and
         q10..q90. Rows of the table without a match keep NaN quantiles.
 
     `origin` is the last training timestamp. `horizon` counts from 1.
     """
+    if point not in POINTS:
+        raise ValueError(f"point must be one of {POINTS}, got {point!r}.")
     missing = [c for c in w_est if c not in forecasts.columns]
     if missing:
         raise ValueError(f"Forecast columns not found: {missing}")
@@ -71,6 +76,7 @@ def build_results(dataset, origin, model, forecasts, actuals, tags, scales, w_es
     long["dataset"] = dataset
     long["origin"] = pd.Timestamp(origin)
     long["model"] = model
+    long["point"] = point
     if quantiles is None:
         for q in QUANTILE_COLS:
             long[q] = np.nan
@@ -91,14 +97,19 @@ def build_results(dataset, origin, model, forecasts, actuals, tags, scales, w_es
 def append_results(path, new):
     """Append rows to the results table at `path` and return the full table.
 
-    Existing rows with the same (dataset, origin, model, W_est) as any new row
-    are replaced, so re-running a script does not duplicate rows.
+    Existing rows with the same (dataset, origin, model, W_est, point) as any
+    new row are replaced, so re-running a script does not duplicate rows.
     """
     if list(new.columns) != COLUMNS:
         raise ValueError(f"Columns must be exactly {COLUMNS}")
     path = Path(path)
     if path.exists():
         old = pd.read_parquet(path)
+        if list(old.columns) != COLUMNS:
+            raise ValueError(
+                f"{path} has an older schema. It is rebuilt from the cached forecasts: "
+                "delete it and re-run the notebooks that write to it."
+            )
         new_keys = new[KEY_COLS].drop_duplicates()
         flagged = old.merge(new_keys, on=KEY_COLS, how="left", indicator=True)
         old = old[(flagged["_merge"] == "left_only").to_numpy()]

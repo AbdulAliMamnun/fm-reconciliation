@@ -35,12 +35,12 @@ def _forecasts():
     return f.sample(frac=1, random_state=0).reset_index(drop=True)
 
 
-def _build(origin=ORIGIN, forecasts=None):
+def _build(origin=ORIGIN, forecasts=None, point="median"):
     return build_results(
         dataset="Toy", origin=origin, model="M",
         forecasts=_forecasts() if forecasts is None else forecasts,
         actuals=_long(Y, "y"), tags=TAGS, scales=SCALES,
-        w_est={"M": "base", "M/BottomUp": "bottomup"},
+        w_est={"M": "base", "M/BottomUp": "bottomup"}, point=point,
     )
 
 
@@ -51,6 +51,7 @@ def test_build_results_schema_and_shape():
     assert res[QUANTILE_COLS].isna().all().all()
     assert set(res["W_est"]) == {"base", "bottomup"}
     assert (res["origin"] == ORIGIN).all()
+    assert (res["point"] == "median").all()
 
 
 def test_build_results_values_are_aligned():
@@ -86,7 +87,7 @@ def test_append_results_is_idempotent_and_keeps_other_keys(tmp_path):
     append_results(path, other)
     full = append_results(path, first)  # same keys again: replaced, not duplicated
     assert len(full) == len(first) + len(other)
-    assert not full.duplicated(["dataset", "origin", "model", "W_est", "series_id", "horizon"]).any()
+    assert not full.duplicated(["dataset", "origin", "model", "W_est", "point", "series_id", "horizon"]).any()
     assert set(full["origin"]) == {ORIGIN, pd.Timestamp("2015-11-01")}
     pd.testing.assert_frame_equal(pd.read_parquet(path), full)
 
@@ -151,7 +152,8 @@ def test_build_results_with_quantiles_for_base_only():
     q = q.sample(frac=1, random_state=1)
     res = build_results(
         dataset="Toy", origin=ORIGIN, model="M", forecasts=_forecasts(), actuals=_long(Y, "y"),
-        tags=TAGS, scales=SCALES, w_est={"M": "base", "M/BottomUp": "bottomup"}, quantiles=q,
+        tags=TAGS, scales=SCALES, w_est={"M": "base", "M/BottomUp": "bottomup"},
+        point="median", quantiles=q,
     )
     assert list(res.columns) == COLUMNS
     assert len(res) == 12
@@ -171,5 +173,35 @@ def test_build_results_rejects_unknown_quantile_label():
     with pytest.raises(ValueError):
         build_results(
             dataset="Toy", origin=ORIGIN, model="M", forecasts=_forecasts(), actuals=_long(Y, "y"),
-            tags=TAGS, scales=SCALES, w_est={"M": "base", "M/BottomUp": "bottomup"}, quantiles=q,
+            tags=TAGS, scales=SCALES, w_est={"M": "base", "M/BottomUp": "bottomup"},
+            point="median", quantiles=q,
         )
+
+
+def test_build_results_rejects_unknown_point():
+    with pytest.raises(ValueError, match="point"):
+        _build(point="mode")
+
+
+def test_median_and_mean_arms_are_separate_keys(tmp_path):
+    path = tmp_path / "results.parquet"
+    median = _build(point="median")
+    mean = _build(point="mean")
+    mean["yhat"] = mean["yhat"] + 1.0
+    append_results(path, median)
+    full = append_results(path, mean)
+    assert len(full) == len(median) + len(mean)
+    # re-appending one arm replaces only that arm
+    full = append_results(path, mean)
+    assert len(full) == len(median) + len(mean)
+    assert (full.loc[full.point == "median", "yhat"].to_numpy() == median["yhat"].to_numpy()).all()
+    sm = series_metrics(full).set_index(["point", "W_est", "series_id"])
+    assert sm.loc[("median", "base", "T"), "bias"] == pytest.approx(-0.5)
+    assert sm.loc[("mean", "base", "T"), "bias"] == pytest.approx(0.5)
+
+
+def test_append_results_refuses_an_old_schema(tmp_path):
+    path = tmp_path / "results.parquet"
+    _build().drop(columns="point").to_parquet(path, index=False)
+    with pytest.raises(ValueError, match="older schema"):
+        append_results(path, _build())
