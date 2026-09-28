@@ -1,0 +1,226 @@
+"""MinT reconciliation in numpy: one code path for every W-estimator (PREREG §5).
+
+    G = (S' W^-1 S)^-1 S' W^-1,    y_tilde = S G y_hat
+
+The W builders follow the conventions of hierarchicalforecast 1.5.3 so that the
+correctness gate (PREREG §8.2) can compare the two to 1e-8. Source references:
+
+    methods.py         hierarchicalforecast/methods.py, installed 1.5.3
+    reconciliation.cpp src/reconciliation.cpp in the 1.5.3 sdist (compiled into
+                       hierarchicalforecast/_lib)
+
+Differences from the library that do not change the result beyond rounding:
+  - The library never forms W^-1. It uses the equivalent representation
+    P = J - (U'WU)^-1-solve form (methods.py:1341-1345, 1405-1412), where
+    U' = [I, -S_agg] and J = [0, I]. We use the G formula above.
+  - Before solving, the library sets entries of its two matrices with absolute
+    value < 1e-10 to zero (methods.py:1408, 1410). We do not.
+"""
+import numpy as np
+from scipy.linalg import cho_factor, cho_solve
+
+EPS = 2e-8  # hard-coded in the library: methods.py:1376, reconciliation.cpp:112 and :201
+
+
+def _solve_spd(A, B):
+    """Solve A X = B for symmetric positive definite A, without inverting A."""
+    try:
+        return cho_solve(cho_factor(A, lower=True, check_finite=False), B, check_finite=False)
+    except np.linalg.LinAlgError:
+        return np.linalg.solve(A, B)
+
+
+def _check(S, W):
+    S = np.asarray(S, dtype=np.float64)
+    W = np.asarray(W, dtype=np.float64)
+    if S.ndim != 2:
+        raise ValueError(f"S must be 2-D, got shape {S.shape}.")
+    n = S.shape[0]
+    if W.shape != (n, n):
+        raise ValueError(f"W must have shape {(n, n)}, got {W.shape}.")
+    if not np.isfinite(W).all():
+        raise ValueError("W contains NaN or inf.")
+    return S, W
+
+
+def projection_matrix(S, W):
+    """G = (S' W^-1 S)^-1 S' W^-1, shape (n_bottom, n_series)."""
+    S, W = _check(S, W)
+    WinvS = _solve_spd(W, S)             # W^-1 S
+    return _solve_spd(S.T @ WinvS, WinvS.T)
+
+
+def reconcile(y_hat, S, W):
+    """Reconcile base forecasts: y_tilde = S G y_hat.
+
+    y_hat: (n_series, h), or (n_series,), in S row order.
+    S: (n_series, n_bottom) summing matrix.
+    W: (n_series, n_series) symmetric positive definite.
+    """
+    y_hat = np.asarray(y_hat, dtype=np.float64)
+    S, W = _check(S, W)
+    if y_hat.shape[0] != S.shape[0]:
+        raise ValueError(f"y_hat has {y_hat.shape[0]} rows, S has {S.shape[0]}.")
+    if not np.isfinite(y_hat).all():
+        raise ValueError("y_hat contains NaN or inf.")
+    return S @ (projection_matrix(S, W) @ y_hat)
+
+
+# ---------------------------------------------------------------- W builders
+
+def W_ols(n):
+    """W = I (methods.py:1346-1348)."""
+    return np.eye(n)
+
+
+def W_struct(S):
+    """W = diag(S 1): the number of bottom series under each series
+    (methods.py:1349-1352)."""
+    return np.diag(np.sum(np.asarray(S, dtype=np.float64), axis=1))
+
+
+def W_var(resid):
+    """W = diag(mean squared residual + 2e-8).  resid: (n_series, T).
+
+    Conventions of hierarchicalforecast `wls_var` (methods.py:1371-1378):
+      - Centering: none. It is the mean of squared residuals, not a variance.
+      - Denominator: T, the full number of time points (methods.py:1374).
+      - NaN: skipped in the sum (np.nansum, methods.py:1373), but T still
+        counts them, so a NaN acts like a zero residual.
+      - Jitter: 2e-8 is added to every diagonal entry (methods.py:1376).
+    """
+    resid = np.asarray(resid, dtype=np.float64)
+    T = resid.shape[1]
+    return np.diag(np.nansum(resid ** 2, axis=1) / T + EPS)
+
+
+def W_shrink(resid, ridge=EPS, return_lambda=False):
+    """Schafer-Strimmer shrinkage of the residual covariance toward its diagonal.
+
+        W = lambda * D + (1 - lambda) * Sigma_hat,   D = diag(Sigma_hat)
+
+    resid: (n_series, T). With return_lambda=True, returns (W, lambda).
+
+    `lambda` is the weight on the diagonal target, as in PREREG §5. The library
+    variable `shrinkage` (reconciliation.cpp:166) is 1 - lambda.
+
+    Conventions of hierarchicalforecast `mint_shrink` when there are no NaNs
+    (reconciliation.cpp:104-181, called from methods.py:1388-1401):
+      - Centering: each series has its mean over T subtracted
+        (reconciliation.cpp:119-123, 144).
+      - Sigma_hat: denominator T-1 (reconciliation.cpp:113, 149).
+      - Standardising for the correlations: population standard deviation,
+        denominator T, plus 2e-8 (reconciliation.cpp:130).
+      - lambda, with w_k = xs_ik * xs_jk the product of standardised residuals
+        and wbar its mean over T:
+            lambda = clip( [sum_{i>j} sum_k (w_k - wbar)^2 / (T (T-1))]
+                           / [sum_{i>j} wbar^2 + 2e-8], 0, 1 )
+        (reconciliation.cpp:114-115, 153-160, 166-169). The sums run over the
+        lower triangle only, and 2e-8 is added to the denominator.
+      - Clipping: lambda is clipped to [0, 1] (std::clamp, reconciliation.cpp:167).
+      - Diagonal: not shrunk. It is floored at `ridge` (default 2e-8, the
+        library's mint_shr_ridge): W_ii = max(Sigma_hat_ii, ridge)
+        (reconciliation.cpp:178). This is a floor, not an added jitter.
+
+    With any NaN the library switches to a pairwise-complete version
+    (methods.py:1390-1395, reconciliation.cpp:189-312), reproduced in
+    `_W_shrink_nan`. It is not the same formula with NaNs dropped: see there.
+    """
+    resid = np.asarray(resid, dtype=np.float64)
+    if resid.ndim != 2 or resid.shape[1] < 2:
+        raise ValueError(f"resid must have shape (n_series, T) with T >= 2, got {resid.shape}.")
+    if np.isnan(resid).any():
+        W, lam = _W_shrink_nan(resid, ridge)
+        return (W, lam) if return_lambda else W
+
+    n, T = resid.shape
+    X = resid - resid.mean(axis=1, keepdims=True)
+    cross = X @ X.T                                   # sum_k c_k, with c_k = x_ik x_jk
+    cross_sq = (X ** 2) @ (X ** 2).T                  # sum_k c_k^2
+    inv_std = 1.0 / (np.sqrt(np.einsum("ik,ik->i", X, X) / T) + EPS)
+    s = np.outer(inv_std, inv_std)
+
+    cbar = cross / T
+    var_w = s ** 2 * (cross_sq - T * cbar ** 2)       # sum_k (w_k - wbar)^2
+    sq_corr = (s * cbar) ** 2                         # wbar^2
+    low = np.tril_indices(n, k=-1)
+    lam = (var_w[low].sum() / (T * (T - 1))) / (sq_corr[low].sum() + EPS)
+    lam = float(np.clip(lam, 0.0, 1.0))
+
+    cov = cross / (T - 1)
+    W = (1.0 - lam) * cov
+    W[np.diag_indices(n)] = np.maximum(np.diag(cov), ridge)
+    return (W, lam) if return_lambda else W
+
+
+def _W_shrink_nan(resid, ridge):
+    """Pairwise-complete shrinkage, as in reconciliation.cpp:189-312.
+
+    For each pair (i, j) only the time points where both series are observed
+    are used, with count n_ij:
+      - Means and centering are per pair (reconciliation.cpp:218-242).
+      - Sigma_hat_ij has denominator n_ij - 1 (reconciliation.cpp:243-244).
+        Pairs with n_ij <= 1 are left at 0 (reconciliation.cpp:217).
+      - The standardising divisor is the population standard deviation plus
+        2e-8, plus another 2e-8: the library adds it twice
+        (reconciliation.cpp:259-260, then 266-267).
+      - Numerator term: n_ij / (n_ij - 1)^3 * sum_k (w_k - wbar)^2
+        (reconciliation.cpp:248-250, 288). Denominator term:
+        (n_ij / (n_ij - 1) * wbar)^2 (reconciliation.cpp:290-291).
+      - lambda = clip(numerator / (denominator + 2e-8), 0, 1)
+        (reconciliation.cpp:298-300); the diagonal is floored at `ridge`
+        (reconciliation.cpp:309).
+    """
+    n, _ = resid.shape
+    mask = ~np.isnan(resid)
+    R = np.where(mask, resid, 0.0)
+    W = np.zeros((n, n))
+    num = den = 0.0
+
+    for i in range(n):
+        m = mask[: i + 1] & mask[i]                   # joint mask with every j <= i
+        count = m.sum(axis=1).astype(np.float64)
+        ok = count > 1
+        if not ok.any():
+            continue
+        m, count, J = m[ok], count[ok][:, None], np.flatnonzero(ok)
+
+        ri = np.where(m, R[i], 0.0)
+        rj = np.where(m, R[J], 0.0)
+        xi = np.where(m, ri - ri.sum(axis=1, keepdims=True) / count, 0.0)
+        xj = np.where(m, rj - rj.sum(axis=1, keepdims=True) / count, 0.0)
+        W[i, J] = W[J, i] = (xi * xj).sum(axis=1) / (count[:, 0] - 1)
+
+        off = J != i
+        if not off.any():
+            continue
+        m, count, xi, xj = m[off], count[off], xi[off], xj[off]
+        std_i = np.sqrt((xi ** 2).sum(axis=1, keepdims=True) / count) + EPS
+        std_j = np.sqrt((xj ** 2).sum(axis=1, keepdims=True) / count) + EPS
+        xs_i = xi / (std_i + EPS)
+        xs_j = xj / (std_j + EPS)
+        xs_i = np.where(m, xs_i - xs_i.sum(axis=1, keepdims=True) / count, 0.0)
+        xs_j = np.where(m, xs_j - xs_j.sum(axis=1, keepdims=True) / count, 0.0)
+        w = xs_i * xs_j
+        wbar = w.sum(axis=1, keepdims=True) / count
+        var_w = np.where(m, (w - wbar) ** 2, 0.0).sum(axis=1)
+        c = count[:, 0]
+        num += float((c / (c - 1) ** 3 * var_w).sum())
+        den += float(((c / (c - 1) * wbar[:, 0]) ** 2).sum())
+
+    lam = float(np.clip(num / (den + EPS), 0.0, 1.0))
+    diag = np.diag(W).copy()
+    W *= 1.0 - lam
+    W[np.diag_indices(n)] = np.maximum(diag, ridge)
+    return W, lam
+
+
+def W_pv(quantiles):
+    """W = diag(predictive variance at horizon h) (PREREG §5, WLS-pv)."""
+    raise NotImplementedError("W_pv is not implemented yet.")
+
+
+def W_hybrid(quantiles, resid):
+    """Diagonal from predictive variance, off-diagonal from shrunk backtest
+    correlations (PREREG §5, Hybrid)."""
+    raise NotImplementedError("W_hybrid is not implemented yet.")
