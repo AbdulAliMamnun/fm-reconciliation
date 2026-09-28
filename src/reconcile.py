@@ -271,7 +271,73 @@ def W_pv(quantiles):
     return np.diag(v)
 
 
-def W_hybrid(quantiles, resid):
-    """Diagonal from predictive variance, off-diagonal from shrunk backtest
-    correlations (PREREG §5, Hybrid)."""
-    raise NotImplementedError("W_hybrid is not implemented yet.")
+def _per_horizon(resid):
+    """Backtest residuals (n_series, n_inner, h) as a list of h arrays (n_series, n_inner)."""
+    resid = np.asarray(resid, dtype=np.float64)
+    if resid.ndim != 3:
+        raise ValueError(f"resid must have shape (n_series, n_inner, h), got {resid.shape}.")
+    return [resid[:, :, t] for t in range(resid.shape[2])]
+
+
+def W_var_bt(resid):
+    """WLS-var_bt: one W_var per horizon, from that horizon's backtest residuals
+    (PREREG §5 and Deviations log). It is the uncentered mean squared h-step
+    error, so a biased series gets a larger variance.
+
+    resid: (n_series, n_inner, h). Returns a list of h diagonal matrices.
+    """
+    return [W_var(r) for r in _per_horizon(resid)]
+
+
+def W_shrink_bt(resid, ridge=EPS, return_lambda=False):
+    """MinT-shrink_bt: one W_shrink per horizon, from that horizon's backtest
+    residuals. Centered, denominator T-1, lambda clipped to [0, 1], as in W_shrink.
+
+    resid: (n_series, n_inner, h). Returns a list of h matrices, and with
+    return_lambda=True also the list of h shrinkage intensities.
+    """
+    out = [W_shrink(r, ridge=ridge, return_lambda=True) for r in _per_horizon(resid)]
+    Ws, lams = [w for w, _ in out], [lam for _, lam in out]
+    return (Ws, lams) if return_lambda else Ws
+
+
+def W_hybrid(quantiles, resid, return_lambda=False):
+    """Hybrid (PREREG §5): variances from the model's predictive distribution,
+    correlations from the backtest residuals, shrunk toward no correlation.
+
+        W = D_pv^1/2 R_shr D_pv^1/2
+        D_pv  = diag(v_hat), v_hat as in `predictive_variance`
+        R_shr = lambda I + (1 - lambda) R_hat
+
+    R_hat is the correlation matrix of the backtest residuals and lambda is the
+    shrinkage intensity that `W_shrink` computes from the same residuals. R_shr
+    is therefore the correlation matrix of the W_shrink covariance, which is how
+    it is computed here. A series whose residuals do not vary has correlation 0
+    with every other series.
+
+    One horizon: quantiles (n_series, 9), resid (n_series, T).
+    Every horizon: quantiles (n_series, h, 9), resid (n_series, n_inner, h);
+    returns a list of h matrices.
+
+    W is positive definite when lambda > 0. With lambda = 0 and fewer residuals
+    than series, R_hat is singular and so is W.
+    """
+    quantiles = np.asarray(quantiles, dtype=np.float64)
+    resid = np.asarray(resid, dtype=np.float64)
+    if quantiles.ndim == 3:
+        rs = _per_horizon(resid)
+        if quantiles.shape[1] != len(rs):
+            raise ValueError("quantiles and resid have a different number of horizons.")
+        out = [W_hybrid(quantiles[:, t, :], rs[t], return_lambda=True) for t in range(len(rs))]
+        Ws, lams = [w for w, _ in out], [lam for _, lam in out]
+        return (Ws, lams) if return_lambda else Ws
+
+    d_pv = np.sqrt(np.diag(W_pv(quantiles)))           # also checks q90 > q10
+    if resid.ndim != 2 or resid.shape[0] != d_pv.shape[0]:
+        raise ValueError(f"resid must have shape ({d_pv.shape[0]}, T), got {resid.shape}.")
+    W_s, lam = W_shrink(resid, return_lambda=True)
+    d_s = np.sqrt(np.diag(W_s))
+    R = W_s / np.outer(d_s, d_s)
+    R[np.diag_indices_from(R)] = 1.0
+    W = d_pv[:, None] * R * d_pv[None, :]
+    return (W, lam) if return_lambda else W

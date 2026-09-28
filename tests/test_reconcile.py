@@ -16,8 +16,8 @@ from hierarchicalforecast.utils import (
 
 from src.data import load_hierarchy
 from src.reconcile import (
-    W_hybrid, W_ols, W_pv, W_shrink, W_struct, W_var, predictive_variance, projection_matrix,
-    reconcile, reconcile_by_horizon,
+    W_hybrid, W_ols, W_pv, W_shrink, W_shrink_bt, W_struct, W_var, W_var_bt, predictive_variance,
+    projection_matrix, reconcile, reconcile_by_horizon,
 )
 
 TOL = 1e-8
@@ -289,9 +289,6 @@ def test_W_shrink_matches_library_function_with_nans():
     np.testing.assert_allclose(W, expected, rtol=1e-12, atol=1e-14)
 
 
-def test_stubs_raise():
-    with pytest.raises(NotImplementedError):
-        W_hybrid(None, None)
 
 
 # ------------------------------------------------------------- W_pv (WLS-pv)
@@ -385,3 +382,154 @@ def test_reconcile_by_horizon_with_one_W_equals_reconcile(ets, ours):
 def test_reconcile_by_horizon_needs_one_W_per_horizon():
     with pytest.raises(ValueError):
         reconcile_by_horizon(np.column_stack([Y3, Y3]), S3, [np.eye(3)])
+
+
+# ------------------------------------------ backtest W builders and the Hybrid
+
+def _resid3(n=6, n_inner=24, h=3, seed=0):
+    """(n_series, n_inner, h) with correlated series and a scale that grows with h."""
+    rng = np.random.default_rng(seed)
+    common = rng.normal(size=(1, n_inner, h))
+    r = rng.normal(size=(n, n_inner, h)) + 1.5 * common
+    return r * rng.uniform(0.5, 20, size=(n, 1, 1)) * np.arange(1, h + 1)
+
+
+def test_W_var_bt_is_W_var_per_horizon():
+    r = _resid3()
+    Ws = W_var_bt(r)
+    assert len(Ws) == 3
+    for t, W in enumerate(Ws):
+        np.testing.assert_array_equal(W, W_var(r[:, :, t]))
+    # uncentered: adding a bias raises the variance by bias^2
+    biased = W_var_bt(r + 10.0)
+    assert (np.diag(biased[0]) > np.diag(Ws[0])).all()
+
+
+def test_W_var_bt_hand_computed():
+    # 1 series, 2 inner origins, 2 horizons. h=1 residuals (1, -1), h=2 residuals (3, 5).
+    r = np.array([[[1.0, 3.0], [-1.0, 5.0]]])
+    Ws = W_var_bt(r)
+    np.testing.assert_allclose(Ws[0], [[1.0 + 2e-8]])
+    np.testing.assert_allclose(Ws[1], [[17.0 + 2e-8]])     # (9 + 25) / 2, not the variance 1
+
+
+def test_W_shrink_bt_is_W_shrink_per_horizon():
+    r = _resid3()
+    Ws, lams = W_shrink_bt(r, return_lambda=True)
+    assert len(Ws) == len(lams) == 3
+    for t in range(3):
+        W, lam = W_shrink(r[:, :, t], return_lambda=True)
+        np.testing.assert_array_equal(Ws[t], W)
+        assert lams[t] == lam
+    assert len(W_shrink_bt(r)) == 3
+
+
+def test_backtest_builders_need_three_dimensions():
+    with pytest.raises(ValueError):
+        W_var_bt(np.ones((4, 24)))
+    with pytest.raises(ValueError):
+        W_shrink_bt(np.ones((4, 24)))
+
+
+def _q_with_variance(v):
+    s = np.sqrt(np.asarray(v, dtype=float))
+    return _quantiles(-1.2816 * s, 1.2816 * s)
+
+
+def test_W_hybrid_is_symmetric_positive_definite():
+    r = _resid3(n=8, n_inner=24, h=1)[:, :, 0]
+    q = _q_with_variance(np.linspace(1.0, 50.0, 8))
+    W, lam = W_hybrid(q, r, return_lambda=True)
+    assert 0.0 < lam < 1.0
+    np.testing.assert_allclose(W, W.T, rtol=0, atol=1e-12)
+    assert np.linalg.eigvalsh(W).min() > 0
+    np.linalg.cholesky(W)
+
+
+def test_W_hybrid_is_positive_definite_with_fewer_residuals_than_series():
+    rng = np.random.default_rng(5)
+    r = rng.normal(size=(40, 24)) + rng.normal(size=(1, 24))   # 40 series, 24 residuals
+    W, lam = W_hybrid(_q_with_variance(rng.uniform(1, 9, size=40)), r, return_lambda=True)
+    assert lam > 0
+    assert np.linalg.matrix_rank(np.corrcoef(r)) < 40           # the raw correlation is singular
+    assert np.linalg.eigvalsh(W).min() > 0
+
+
+def test_W_hybrid_diagonal_is_the_predictive_variance():
+    r = _resid3(n=5, h=1)[:, :, 0]
+    v = np.array([1.0, 4.0, 9.0, 16.0, 25.0])
+    W = W_hybrid(_q_with_variance(v), r)
+    np.testing.assert_allclose(np.diag(W), v, rtol=1e-12)
+    # and it does not depend on the scale of the residuals
+    np.testing.assert_allclose(W_hybrid(_q_with_variance(v), r * np.array([[1], [10], [100], [3], [7]])),
+                               W, rtol=1e-6)
+
+
+def test_W_hybrid_correlations_are_the_shrunk_residual_correlations():
+    r = _resid3(n=5, h=1)[:, :, 0]
+    v = np.array([1.0, 4.0, 9.0, 16.0, 25.0])
+    W, lam = W_hybrid(_q_with_variance(v), r, return_lambda=True)
+    assert lam == W_shrink(r, return_lambda=True)[1]
+    expected = (1 - lam) * np.corrcoef(r)
+    expected[np.diag_indices(5)] = 1.0
+    d = np.sqrt(v)
+    np.testing.assert_allclose(W / np.outer(d, d), expected, rtol=1e-9, atol=1e-12)
+
+
+def test_W_hybrid_reduces_to_W_pv_when_lambda_is_one():
+    # Uncorrelated residuals: lambda clips to 1 (see test_W_shrink_uncorrelated_...).
+    r = np.array([[1.0, -1.0, 1.0, -1.0], [1.0, 1.0, -1.0, -1.0]])
+    q = _q_with_variance([3.0, 7.0])
+    W, lam = W_hybrid(q, r, return_lambda=True)
+    assert lam == 1.0
+    np.testing.assert_allclose(W, W_pv(q), rtol=0, atol=1e-12)
+
+
+def test_W_hybrid_hand_computed():
+    # Residuals of test_W_shrink_hand_computed_lambda: lambda = 1/3, residual
+    # correlation = (2/3) / sqrt(4/3 * 2/3) = 1/sqrt(2). Shrunk: (2/3) / sqrt(2).
+    # With variances 4 and 9: W_12 = 2 * 3 * (2/3) / sqrt(2) = 4 / sqrt(2).
+    r = np.array([[1.0, -1.0, 1.0, -1.0], [1.0, -1.0, 0.0, 0.0]])
+    W, lam = W_hybrid(_q_with_variance([4.0, 9.0]), r, return_lambda=True)
+    assert lam == pytest.approx(1 / 3, abs=1e-6)
+    np.testing.assert_allclose(W, [[4.0, 4 / np.sqrt(2)], [4 / np.sqrt(2), 9.0]], atol=1e-5)
+
+
+def test_W_hybrid_series_with_constant_residuals_is_uncorrelated():
+    r = _resid3(n=4, h=1)[:, :, 0]
+    r[2] = 0.0
+    W = W_hybrid(_q_with_variance([1.0, 2.0, 3.0, 4.0]), r)
+    assert np.isfinite(W).all()
+    assert W[2, 2] == pytest.approx(3.0)
+    assert np.count_nonzero(np.delete(W[2], 2)) == 0
+    assert np.linalg.eigvalsh(W).min() > 0
+
+
+def test_W_hybrid_per_horizon():
+    r = _resid3(n=5, n_inner=24, h=3)
+    q = np.stack([_q_with_variance(np.full(5, float(t + 1))) for t in range(3)], axis=1)  # (5, 3, 9)
+    Ws, lams = W_hybrid(q, r, return_lambda=True)
+    assert len(Ws) == len(lams) == 3
+    for t in range(3):
+        np.testing.assert_array_equal(Ws[t], W_hybrid(q[:, t, :], r[:, :, t]))
+        np.testing.assert_allclose(np.diag(Ws[t]), t + 1.0, rtol=1e-12)
+    with pytest.raises(ValueError):
+        W_hybrid(q[:, :2, :], r)
+
+
+def test_W_hybrid_raises_on_zero_interval_width():
+    with pytest.raises(ValueError, match="q90 <= q10"):
+        W_hybrid(_quantiles([0.0, 1.0], [1.0, 1.0]), np.ones((2, 5)))
+
+
+@pytest.mark.parametrize("builder", ["var_bt", "shrink_bt", "hybrid"])
+def test_backtest_W_reconciles_coherently(builder):
+    rng = np.random.default_rng(7)
+    r = rng.normal(size=(3, 24, 2)) * np.array([3.0, 1.0, 2.0])[:, None, None]
+    q = np.stack([_q_with_variance([9.0, 1.0, 4.0])] * 2, axis=1)
+    Ws = {"var_bt": W_var_bt(r), "shrink_bt": W_shrink_bt(r), "hybrid": W_hybrid(q, r)}[builder]
+    out = reconcile_by_horizon(np.column_stack([Y3, Y3]), S3, Ws)
+    np.testing.assert_allclose(out[0], out[1] + out[2], atol=1e-10)
+    for W in Ws:
+        G = projection_matrix(S3, W)
+        np.testing.assert_allclose(S3 @ G @ S3, S3, atol=1e-10)
