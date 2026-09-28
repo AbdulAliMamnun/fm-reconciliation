@@ -1,0 +1,483 @@
+ours,source,public_id,category,overlap,from,to,public_from,public_to,corr_level,corr_diff,ratio_median,ratio_maxdev,exact_equal_share,pow10_dev,levels_strict,levels_loose,match,match_loose
+['Australian Capital Territory'],m4_monthly,T003311,Macro,202,1998-10,2015-07,1998-10,2015-07,0.999485,0.999611,10.000000,0.012325,0.000000,0.000000,True,True,True,True
+['Australian Capital Territory'],m4_monthly,T003568,Macro,372,1978-02,2009-01,1978-02,2009-01,0.995075,0.881632,10.514209,0.068624,0.000000,0.051421,False,True,False,False
+['Australian Capital Territory'],m4_monthly,T003631,Macro,242,1987-09,2007-10,1987-09,2007-10,0.996059,0.978120,9.937579,0.031492,0.000000,0.006242,False,True,False,False
+['Australian Capital Territory'],m4_monthly,T003708,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999931,0.999811,10.000000,0.012325,0.000000,0.000000,True,True,True,True
+['Australian Capital Territory'],m4_monthly,T003727,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997755,0.873419,10.531401,0.056207,0.000000,0.053140,False,True,False,False
+['Australian Capital Territory'],m4_monthly,T004844,Macro,372,1978-02,2009-01,1978-02,2009-01,0.998929,0.979999,9.887234,0.032282,0.000000,0.011277,False,True,False,False
+['Australian Capital Territory'],m4_monthly,T005526,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999125,0.999400,10.000000,0.028044,0.000000,0.000000,True,True,True,True
+['Australian Capital Territory'],m4_monthly,T005579,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995195,0.878208,47.891176,0.059988,0.000000,0.521088,False,True,False,False
+['Australian Capital Territory'],m4_monthly,T025170,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.998106,0.999235,10.000000,0.028044,0.000000,0.000000,False,True,False,True
+['Australian Capital Territory'],m4_monthly,T025282,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.995483,0.881457,10.357025,0.037135,0.000000,0.035703,False,True,False,False
+"['Employed full-time', 'Females', 'Australian Capital Territory']",m4_monthly,T004910,Macro,372,1978-02,2009-01,1978-02,2009-01,0.998182,0.978337,99.139615,0.054725,0.000000,0.008604,False,True,False,False
+"['Employed full-time', 'Females', 'New South Wales']",m4_monthly,T003270,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997286,0.913059,7.098750,0.035536,0.000000,0.290125,False,True,False,False
+"['Employed full-time', 'Females', 'New South Wales']",m4_monthly,T003488,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999998,0.999896,10.000000,0.001943,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Females', 'New South Wales']",m4_monthly,T004916,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999396,0.988037,10.003717,0.019615,0.000000,0.000372,True,True,True,True
+"['Employed full-time', 'Females', 'New South Wales']",m4_monthly,T005543,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999904,0.999958,10.000000,0.009376,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Females', 'Northern Territory']",m4_monthly,T005516,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999015,0.999767,100.000000,0.039209,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Females', 'Queensland']",m4_monthly,T003361,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999999,0.999968,10.000000,0.002168,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Females', 'Queensland']",m4_monthly,T003420,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995377,0.813063,5.156395,0.060281,0.000000,0.484360,False,True,False,False
+"['Employed full-time', 'Females', 'Queensland']",m4_monthly,T003669,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997715,0.837315,4.871276,0.075050,0.000000,0.512872,False,True,False,False
+"['Employed full-time', 'Females', 'Queensland']",m4_monthly,T003860,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995201,0.546962,4.023830,0.074255,0.000000,0.597617,False,True,False,False
+"['Employed full-time', 'Females', 'Queensland']",m4_monthly,T004029,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999978,0.999970,10.000000,0.007626,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Females', 'Queensland']",m4_monthly,T004904,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999657,0.985465,10.010572,0.028940,0.000000,0.001057,True,True,True,True
+"['Employed full-time', 'Females', 'South Australia']",m4_monthly,T003360,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999999,0.999975,10.000000,0.001067,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Females', 'Tasmania']",m4_monthly,T003492,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999916,0.999870,100.000000,0.009409,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Females', 'Tasmania']",m4_monthly,T004920,Macro,372,1978-02,2009-01,1978-02,2009-01,0.996830,0.973149,100.000000,0.041892,0.000000,0.000000,False,True,False,False
+"['Employed full-time', 'Females', 'Tasmania']",m4_monthly,T005478,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999545,0.999887,100.000000,0.013541,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Females', 'Victoria']",m4_monthly,T003416,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995243,0.837850,2.256139,0.073507,0.000000,1.256139,False,True,False,False
+"['Employed full-time', 'Females', 'Victoria']",m4_monthly,T004831,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997763,0.915709,7.855973,0.037243,0.000000,0.214403,False,True,False,False
+"['Employed full-time', 'Females', 'Victoria']",m4_monthly,T004907,Macro,372,1978-02,2009-01,1978-02,2009-01,0.997470,0.988298,10.005211,0.034509,0.000000,0.000521,False,True,False,True
+"['Employed full-time', 'Females', 'Victoria']",m4_monthly,T005555,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997740,0.930267,7.904714,0.030848,0.000000,0.209529,False,True,False,False
+"['Employed full-time', 'Females', 'Western Australia']",m4_monthly,T003421,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999743,0.999907,10.000000,0.021245,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Females', 'Western Australia']",m4_monthly,T003423,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996147,0.790383,23.903084,0.063625,0.000000,1.390308,False,True,False,False
+"['Employed full-time', 'Females', 'Western Australia']",m4_monthly,T003491,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998800,0.904536,7.825264,0.050596,0.000000,0.217474,False,True,False,False
+"['Employed full-time', 'Females', 'Western Australia']",m4_monthly,T003778,Macro,372,1978-02,2009-01,1978-02,2009-01,0.998971,0.982069,10.000000,0.032436,0.000000,0.000000,False,True,False,True
+"['Employed full-time', 'Females', 'Western Australia']",m4_monthly,T004835,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999723,0.999816,10.000000,0.036572,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Females', 'Western Australia']",m4_monthly,T005438,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996683,0.844060,31.348706,0.090435,0.000000,2.134871,False,True,False,False
+"['Employed full-time', 'Males', 'Australian Capital Territory']",m4_monthly,T003779,Macro,372,1978-02,2009-01,1978-02,2009-01,0.995898,0.978292,99.104983,0.046204,0.000000,0.008950,False,True,False,False
+"['Employed full-time', 'Males', 'Australian Capital Territory']",m4_monthly,T005529,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999530,0.999645,100.000000,0.018132,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Males', 'New South Wales']",m4_monthly,T003834,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999963,0.999944,1.000000,0.004531,0.204444,0.000000,True,True,True,True
+"['Employed full-time', 'Males', 'New South Wales']",m4_monthly,T003925,Macro,372,1978-02,2009-01,1978-02,2009-01,0.996453,0.987977,1.000748,0.030171,0.260753,0.000748,False,True,False,True
+"['Employed full-time', 'Males', 'New South Wales']",m4_monthly,T005542,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999919,0.999945,1.000000,0.005041,0.068404,0.000000,True,True,True,True
+"['Employed full-time', 'Males', 'Northern Territory']",m4_monthly,T003493,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999681,0.999602,100.000000,0.025003,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Males', 'Northern Territory']",m4_monthly,T005515,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999892,0.999278,100.000000,0.011098,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Males', 'Queensland']",m4_monthly,T003335,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999982,0.999916,10.000000,0.008054,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Males', 'Queensland']",m4_monthly,T003498,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997455,0.714422,5.928104,0.072645,0.000000,0.407190,False,True,False,False
+"['Employed full-time', 'Males', 'Queensland']",m4_monthly,T003499,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998208,0.829281,11.279325,0.075681,0.000000,0.127933,False,True,False,False
+"['Employed full-time', 'Males', 'Queensland']",m4_monthly,T003558,Macro,372,1978-02,2009-01,1978-02,2009-01,0.997497,0.872600,1.474092,0.090468,0.000000,0.474092,False,True,False,False
+"['Employed full-time', 'Males', 'Queensland']",m4_monthly,T003666,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999080,0.867916,1.486956,0.098337,0.000000,0.486956,False,True,False,False
+"['Employed full-time', 'Males', 'Queensland']",m4_monthly,T003805,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997204,0.763627,4.782204,0.073128,0.000000,0.521780,False,True,False,False
+"['Employed full-time', 'Males', 'Queensland']",m4_monthly,T004915,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999027,0.986942,10.059853,0.029268,0.000000,0.005985,True,True,True,True
+"['Employed full-time', 'Males', 'Queensland']",m4_monthly,T005337,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996074,0.812545,1.162653,0.057764,0.000000,0.162653,False,True,False,False
+"['Employed full-time', 'Males', 'Queensland']",m4_monthly,T005339,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998365,0.874117,1.518983,0.056725,0.000000,0.518983,False,True,False,False
+"['Employed full-time', 'Males', 'Queensland']",m4_monthly,T005370,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996395,0.853161,5.162645,0.047487,0.000000,0.483735,False,True,False,False
+"['Employed full-time', 'Males', 'Queensland']",m4_monthly,T005561,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996766,0.798316,4.837355,0.052285,0.000000,0.516265,False,True,False,False
+"['Employed full-time', 'Males', 'South Australia']",m4_monthly,T003670,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999835,0.999974,10.000000,0.005689,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Males', 'South Australia']",m4_monthly,T005391,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999872,0.999957,10.000000,0.003716,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Males', 'Tasmania']",m4_monthly,T003489,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999955,0.999941,10.000000,0.003400,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Males', 'Tasmania']",m4_monthly,T004035,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999804,0.999901,100.000000,0.004814,0.000000,0.000000,True,True,True,True
+"['Employed full-time', 'Males', 'Tasmania']",m4_monthly,T004918,Macro,372,1978-02,2009-01,1978-02,2009-01,0.995760,0.980009,10.000000,0.021134,0.000000,0.000000,False,True,False,True
+"['Employed full-time', 'Males', 'Victoria']",m4_monthly,T003416,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995777,0.864587,1.162507,0.053949,0.000000,0.162507,False,True,False,False
+"['Employed full-time', 'Males', 'Victoria']",m4_monthly,T005294,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995191,0.810609,1.175879,0.068031,0.000000,0.175879,False,True,False,False
+"['Employed full-time', 'Males', 'Victoria']",m4_monthly,T005295,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999185,0.999855,1.000000,0.019481,0.162866,0.000000,True,True,True,True
+"['Employed full-time', 'Males', 'Victoria']",m4_monthly,T005311,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997953,0.939502,7.538718,0.032550,0.000000,0.246128,False,True,False,False
+"['Employed full-time', 'Males', 'Western Australia']",m4_monthly,T003353,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998176,0.864840,14.471405,0.099294,0.000000,0.447140,False,True,False,False
+"['Employed full-time', 'Males', 'Western Australia']",m4_monthly,T003423,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996398,0.777343,11.130871,0.096715,0.000000,0.113087,False,True,False,False
+"['Employed full-time', 'Males', 'Western Australia']",m4_monthly,T003674,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998589,0.998886,10.000000,0.058068,0.000000,0.000000,False,True,False,True
+"['Employed full-time', 'Males', 'Western Australia']",m4_monthly,T004919,Macro,372,1978-02,2009-01,1978-02,2009-01,0.998128,0.984123,10.002637,0.025646,0.000000,0.000264,False,True,False,True
+"['Employed full-time', 'Males', 'Western Australia']",m4_monthly,T005438,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996896,0.846056,14.685985,0.072291,0.000000,0.468599,False,True,False,False
+"['Employed full-time', 'Males', 'Western Australia']",m4_monthly,T005439,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998019,0.999273,10.000000,0.044477,0.000000,0.000000,False,True,False,True
+"['Employed full-time', 'Males', 'Western Australia']",m4_monthly,T005571,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997514,0.891271,7.472587,0.075892,0.000000,0.252741,False,True,False,False
+"['Employed part-time', 'Females', 'Australian Capital Territory']",m4_monthly,T005530,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997849,0.999786,100.000000,0.043847,0.000000,0.000000,False,True,False,True
+"['Employed part-time', 'Females', 'New South Wales']",m4_monthly,T003562,Macro,372,1978-02,2009-01,1978-02,2009-01,0.997734,0.888158,3.219941,0.088531,0.000000,0.678006,False,True,False,False
+"['Employed part-time', 'Females', 'New South Wales']",m4_monthly,T003678,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998410,0.915999,13.634937,0.099127,0.000000,0.363494,False,True,False,False
+"['Employed part-time', 'Females', 'New South Wales']",m4_monthly,T003679,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999999,0.999985,10.000000,0.002630,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Females', 'New South Wales']",m4_monthly,T004923,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999715,0.991096,10.079097,0.030247,0.000000,0.007910,True,True,True,True
+"['Employed part-time', 'Females', 'New South Wales']",m4_monthly,T005229,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996119,0.843341,3.233963,0.057010,0.000000,0.676604,False,True,False,False
+"['Employed part-time', 'Females', 'New South Wales']",m4_monthly,T005244,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997939,0.892706,14.083270,0.084740,0.000000,0.408327,False,True,False,False
+"['Employed part-time', 'Females', 'New South Wales']",m4_monthly,T005245,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999996,0.999957,10.000000,0.002378,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Females', 'New South Wales']",m4_monthly,T024686,Demographic,449,1978-02,2015-06,1978-02,2015-06,0.998328,0.868225,3.235428,0.092894,0.000000,0.676457,False,True,False,False
+"['Employed part-time', 'Females', 'New South Wales']",m4_monthly,T024797,Demographic,468,1978-02,2017-01,1978-02,2017-01,0.998333,0.864134,3.144503,0.082669,0.000000,2.144503,False,True,False,False
+"['Employed part-time', 'Females', 'New South Wales']",m4_monthly,T024926,Demographic,313,1991-01,2017-01,1991-01,2017-01,0.995629,0.783270,4.479186,0.096899,0.000000,0.552081,False,True,False,False
+"['Employed part-time', 'Females', 'New South Wales']",m4_monthly,T024927,Demographic,313,1991-01,2017-01,1991-01,2017-01,0.996254,0.845684,3.232225,0.057578,0.000000,0.676777,False,True,False,False
+"['Employed part-time', 'Females', 'Queensland']",m4_monthly,T003623,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999683,0.991042,10.087305,0.031594,0.000000,0.008731,True,True,True,True
+"['Employed part-time', 'Females', 'Queensland']",m4_monthly,T004805,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999999,0.999985,10.000000,0.002807,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Females', 'Queensland']",m4_monthly,T005340,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998276,0.909193,13.812694,0.063606,0.000000,0.381269,False,True,False,False
+"['Employed part-time', 'Females', 'Queensland']",m4_monthly,T005342,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999990,0.999971,10.000000,0.006043,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Females', 'South Australia']",m4_monthly,T003387,Macro,372,1978-02,2009-01,1978-02,2009-01,0.998704,0.980275,10.025018,0.044210,0.000000,0.002502,False,True,False,True
+"['Employed part-time', 'Females', 'South Australia']",m4_monthly,T003687,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999998,0.999985,10.000000,0.003220,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Females', 'South Australia']",m4_monthly,T004786,Macro,372,1978-02,2009-01,1978-02,2009-01,0.995630,0.882160,13.283004,0.098500,0.000000,0.328300,False,True,False,False
+"['Employed part-time', 'Females', 'South Australia']",m4_monthly,T005408,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995365,0.906580,7.675032,0.078593,0.000000,0.232497,False,True,False,False
+"['Employed part-time', 'Females', 'Tasmania']",m4_monthly,T003378,Macro,372,1978-02,2009-01,1978-02,2009-01,0.998884,0.978267,100.000000,0.064329,0.000000,0.000000,False,True,False,False
+"['Employed part-time', 'Females', 'Tasmania']",m4_monthly,T003692,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999998,0.999932,100.000000,0.003481,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Females', 'Tasmania']",m4_monthly,T005574,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999989,0.999900,100.000000,0.004874,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Females', 'Victoria']",m4_monthly,T003303,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998958,0.927955,7.136745,0.070653,0.000000,0.286325,False,True,False,False
+"['Employed part-time', 'Females', 'Victoria']",m4_monthly,T003393,Macro,372,1978-02,2009-01,1978-02,2009-01,0.997492,0.908418,13.419002,0.085839,0.000000,0.341900,False,True,False,False
+"['Employed part-time', 'Females', 'Victoria']",m4_monthly,T003404,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999613,0.988260,10.085289,0.030773,0.000000,0.008529,True,True,True,True
+"['Employed part-time', 'Females', 'Victoria']",m4_monthly,T003417,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998075,0.921898,7.243763,0.050853,0.000000,0.275624,False,True,False,False
+"['Employed part-time', 'Females', 'Victoria']",m4_monthly,T003562,Macro,372,1978-02,2009-01,1978-02,2009-01,0.997254,0.843014,3.923266,0.085173,0.000000,0.607673,False,True,False,False
+"['Employed part-time', 'Females', 'Victoria']",m4_monthly,T005551,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998028,0.885094,14.024857,0.082870,0.000000,0.402486,False,True,False,False
+"['Employed part-time', 'Females', 'Victoria']",m4_monthly,T005552,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999775,0.999919,10.000000,0.019142,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Females', 'Victoria']",m4_monthly,T024686,Demographic,449,1978-02,2015-06,1978-02,2015-06,0.996213,0.788700,3.906193,0.081174,0.000000,0.609381,False,True,False,False
+"['Employed part-time', 'Females', 'Western Australia']",m4_monthly,T004790,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999796,0.999888,10.000000,0.032268,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Females', 'Western Australia']",m4_monthly,T005440,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996724,0.874921,13.661282,0.097875,0.000000,0.366128,False,True,False,False
+"['Employed part-time', 'Females', 'Western Australia']",m4_monthly,T005569,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999730,0.999907,10.000000,0.020638,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Females', 'Western Australia']",m4_monthly,T025696,Demographic,369,1984-11,2015-07,1984-11,2015-07,0.996342,0.707068,7.986418,0.085537,0.000000,0.201358,False,True,False,False
+"['Employed part-time', 'Males', 'New South Wales']",m4_monthly,T003385,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999494,0.983160,10.091185,0.058433,0.000000,0.009119,False,True,False,True
+"['Employed part-time', 'Males', 'New South Wales']",m4_monthly,T003490,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999994,0.999941,10.000000,0.008191,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Males', 'New South Wales']",m4_monthly,T005544,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999990,0.999919,10.000000,0.005686,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Males', 'Queensland']",m4_monthly,T003560,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999392,0.978979,101.485525,0.062427,0.000000,0.014855,False,True,False,False
+"['Employed part-time', 'Males', 'Queensland']",m4_monthly,T003683,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999994,0.999972,10.000000,0.007798,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Males', 'Queensland']",m4_monthly,T005341,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999996,0.999949,10.000000,0.003206,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Males', 'South Australia']",m4_monthly,T003561,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999292,0.980064,100.372888,0.083303,0.000000,0.003729,False,True,False,True
+"['Employed part-time', 'Males', 'South Australia']",m4_monthly,T003688,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999998,0.999966,100.000000,0.006027,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Males', 'South Australia']",m4_monthly,T005393,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999994,0.999921,100.000000,0.004155,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Males', 'Victoria']",m4_monthly,T003294,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999955,0.999929,10.000000,0.016332,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Males', 'Western Australia']",m4_monthly,T003690,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999744,0.999854,100.000000,0.037611,0.000000,0.000000,True,True,True,True
+"['Employed part-time', 'Males', 'Western Australia']",m4_monthly,T004909,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999052,0.980012,100.139979,0.060688,0.000000,0.001400,False,True,False,True
+"['Employed part-time', 'Males', 'Western Australia']",m4_monthly,T005441,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999532,0.999722,100.000000,0.037436,0.000000,0.000000,True,True,True,True
+"['Females', 'Australian Capital Territory']",m4_monthly,T003313,Macro,202,1998-10,2015-07,1998-10,2015-07,0.998959,0.999780,100.000000,0.018183,0.000000,0.000000,False,True,False,True
+"['Females', 'Australian Capital Territory']",m4_monthly,T003397,Macro,372,1978-02,2009-01,1978-02,2009-01,0.998649,0.979394,99.061920,0.046547,0.000000,0.009381,False,True,False,False
+"['Females', 'Australian Capital Territory']",m4_monthly,T003707,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999890,0.999901,100.000000,0.018183,0.000000,0.000000,True,True,True,True
+"['Females', 'Australian Capital Territory']",m4_monthly,T003732,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998419,0.880814,105.239975,0.067071,0.000000,0.052400,False,True,False,False
+"['Females', 'Australian Capital Territory']",m4_monthly,T005526,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995026,0.880531,20.795299,0.068183,0.000000,1.079530,False,True,False,False
+"['Females', 'Australian Capital Territory']",m4_monthly,T005533,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996345,0.861318,103.793347,0.072563,0.000000,0.037933,False,True,False,False
+"['Females', 'Australian Capital Territory']",m4_monthly,T005579,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998897,0.999487,100.000000,0.033759,0.000000,0.000000,False,True,False,True
+"['Females', 'Australian Capital Territory']",m4_monthly,T024892,Demographic,468,1978-02,2017-01,1978-02,2017-01,0.998337,0.880557,105.093598,0.068557,0.000000,0.050936,False,True,False,False
+"['Females', 'Australian Capital Territory']",m4_monthly,T025172,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.995159,0.877184,103.261711,0.042227,0.000000,0.032617,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T003501,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998861,0.948615,6.685642,0.064083,0.000000,0.331436,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T003559,Macro,372,1978-02,2009-01,1978-02,2009-01,0.995507,0.620585,7.612509,0.072384,0.000000,0.238749,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T003724,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997868,0.887600,7.122895,0.096925,0.000000,0.287711,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T003927,Macro,450,1978-02,2015-07,1978-02,2015-07,1.000000,0.999907,1.000000,0.002255,0.557778,0.000000,True,True,True,True
+"['Females', 'New South Wales']",m4_monthly,T004922,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999809,0.992107,1.003515,0.015263,0.185484,0.003515,True,True,True,True
+"['Females', 'New South Wales']",m4_monthly,T005225,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995705,0.909469,3.046760,0.059857,0.000000,2.046760,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T005242,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998799,0.940727,2.241008,0.084696,0.000000,1.241008,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T005257,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998297,0.940060,6.645069,0.023183,0.000000,0.335493,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T005269,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995397,0.872065,7.037352,0.055459,0.000000,0.296265,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T023734,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.995200,0.945204,6.651052,0.023485,0.000000,0.334895,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T023998,Demographic,369,1984-11,2015-07,1984-11,2015-07,0.995873,0.885533,2.696330,0.099525,0.000000,1.696330,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T024549,Demographic,450,1978-02,2015-07,1978-02,2015-07,0.997966,0.917404,3.004761,0.074671,0.000000,2.004761,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T024564,Demographic,450,1978-02,2015-07,1978-02,2015-07,0.997338,0.874371,3.253207,0.071383,0.000000,0.674679,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T024695,Demographic,449,1978-02,2015-06,1978-02,2015-06,0.998036,0.869944,3.267570,0.075465,0.000000,0.673243,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T024904,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.995012,0.940325,2.339134,0.080420,0.000000,1.339134,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T024960,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.996420,0.934480,6.650283,0.022381,0.000000,0.334972,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T025193,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.995007,0.886842,2.337452,0.074803,0.000000,1.337452,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T025701,Demographic,372,1978-02,2009-01,1978-02,2009-01,0.997801,0.933286,1.080061,0.059305,0.000000,0.080061,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T025712,Demographic,372,1978-02,2009-01,1978-02,2009-01,0.997860,0.878555,3.254646,0.071793,0.000000,0.674535,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T025726,Demographic,372,1978-02,2009-01,1978-02,2009-01,0.995406,0.737365,8.379990,0.064358,0.000000,0.162001,False,True,False,False
+"['Females', 'New South Wales']",m4_monthly,T026149,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.997621,0.926842,1.058363,0.021462,0.000000,0.058363,False,True,False,False
+"['Females', 'Northern Territory']",m4_monthly,T004927,Macro,372,1978-02,2009-01,1978-02,2009-01,0.998099,0.972689,100.000000,0.080697,0.000000,0.000000,False,True,False,False
+"['Females', 'Northern Territory']",m4_monthly,T005513,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999058,0.999798,100.000000,0.034724,0.000000,0.000000,True,True,True,True
+"['Females', 'Northern Territory']",m4_monthly,T005522,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996703,0.895488,104.579010,0.070280,0.000000,0.045790,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T003321,Macro,372,1978-02,2009-01,1978-02,2009-01,0.997918,0.922088,11.016973,0.064207,0.000000,0.101697,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T003504,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999250,0.882379,5.034135,0.066006,0.000000,0.496586,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T003696,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999221,0.868392,4.966133,0.066964,0.000000,0.503387,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T003725,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999187,0.919633,10.864417,0.050260,0.000000,0.086442,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T003728,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998533,0.828679,5.484379,0.085888,0.000000,0.451562,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T003860,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998973,0.933913,2.224446,0.089262,0.000000,1.224446,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T003931,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999999,0.999977,10.000000,0.002004,0.000000,0.000000,True,True,True,True
+"['Females', 'Queensland']",m4_monthly,T004842,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998372,0.789757,5.349091,0.067575,0.000000,0.465091,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T004926,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999780,0.989989,10.051393,0.019996,0.000000,0.005139,True,True,True,True
+"['Females', 'Queensland']",m4_monthly,T005338,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999984,0.999957,10.000000,0.006882,0.000000,0.000000,True,True,True,True
+"['Females', 'Queensland']",m4_monthly,T005351,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998763,0.915267,10.700521,0.057068,0.000000,0.070052,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T005356,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998473,0.818101,10.894057,0.095741,0.000000,0.089406,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T005358,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998941,0.872940,4.978662,0.027532,0.000000,0.502134,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T005381,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998020,0.813569,5.405377,0.049558,0.000000,0.459462,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T023684,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.998200,0.876916,5.036708,0.023195,0.000000,0.496329,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T024040,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.997981,0.860783,4.963292,0.023538,0.000000,0.503671,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T025045,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.997729,0.936183,2.194420,0.055944,0.000000,1.194420,False,True,False,False
+"['Females', 'Queensland']",m4_monthly,T025344,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.999963,0.999946,10.000000,0.006882,0.000000,0.000000,True,True,True,True
+"['Females', 'South Australia']",m4_monthly,T003502,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999999,0.999986,10.000000,0.001618,0.000000,0.000000,True,True,True,True
+"['Females', 'South Australia']",m4_monthly,T003777,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999152,0.983893,10.021417,0.022525,0.000000,0.002142,True,True,True,True
+"['Females', 'South Australia']",m4_monthly,T004825,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997311,0.908205,10.861318,0.045063,0.000000,0.086132,False,True,False,False
+"['Females', 'South Australia']",m4_monthly,T005387,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995972,0.909555,22.233441,0.069451,0.000000,1.223344,False,True,False,False
+"['Females', 'South Australia']",m4_monthly,T005389,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999971,0.999975,10.000000,0.005234,0.000000,0.000000,True,True,True,True
+"['Females', 'South Australia']",m4_monthly,T005405,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997096,0.944629,7.826169,0.030542,0.000000,0.217383,False,True,False,False
+"['Females', 'South Australia']",m4_monthly,T023704,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.999992,0.999973,10.000000,0.001618,0.000000,0.000000,True,True,True,True
+"['Females', 'South Australia']",m4_monthly,T024760,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.998953,0.977024,10.079045,0.016679,0.000000,0.007904,False,True,False,False
+"['Females', 'Tasmania']",m4_monthly,T003565,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999309,0.970605,100.000000,0.030302,0.000000,0.000000,True,True,False,False
+"['Females', 'Tasmania']",m4_monthly,T003702,Macro,450,1978-02,2015-07,1978-02,2015-07,0.995579,0.817938,55.269052,0.051928,0.000000,0.447309,False,True,False,False
+"['Females', 'Tasmania']",m4_monthly,T003929,Macro,450,1978-02,2015-07,1978-02,2015-07,0.996456,0.858502,108.854638,0.071664,0.000000,0.088546,False,True,False,False
+"['Females', 'Tasmania']",m4_monthly,T005477,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999907,0.999885,100.000000,0.007952,0.000000,0.000000,True,True,True,True
+"['Females', 'Tasmania']",m4_monthly,T025147,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.999806,0.999839,10.000000,0.007952,0.000000,0.000000,True,True,True,True
+"['Females', 'Victoria']",m4_monthly,T003352,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999310,0.947342,7.561133,0.035053,0.000000,0.243887,True,True,False,False
+"['Females', 'Victoria']",m4_monthly,T003721,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997966,0.923819,1.073575,0.068201,0.000000,0.073575,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T004026,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996221,0.874410,8.130283,0.060636,0.000000,0.186972,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T004806,Macro,450,1978-02,2015-07,1978-02,2015-07,0.996907,0.880962,8.115916,0.062514,0.000000,0.188408,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T004924,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999263,0.988925,10.039887,0.029139,0.000000,0.003989,True,True,True,True
+"['Females', 'Victoria']",m4_monthly,T005223,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995891,0.848741,8.982555,0.086251,0.000000,0.101744,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T005225,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996372,0.880303,3.997252,0.057809,0.000000,0.600275,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T005237,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997520,0.836971,4.257087,0.065467,0.000000,0.574291,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T005293,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998679,0.923073,2.233206,0.073873,0.000000,1.233206,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T005304,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997690,0.913758,1.062282,0.079558,0.000000,0.062282,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T005308,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998464,0.887754,1.695747,0.048523,0.000000,0.695747,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T005310,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999228,0.949848,7.602225,0.022149,0.000000,0.239777,True,True,False,False
+"['Females', 'Victoria']",m4_monthly,T023653,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.998550,0.945084,7.624353,0.020009,0.000000,0.237565,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T024932,Demographic,313,1991-01,2017-01,1991-01,2017-01,0.995802,0.849137,8.991806,0.087191,0.000000,0.100819,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T025009,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.997249,0.837557,2.336139,0.071040,0.000000,1.336139,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T025010,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.998524,0.909542,1.057926,0.030001,0.000000,0.057926,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T025176,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.995408,0.785667,0.938185,0.072934,0.000000,0.061815,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T025297,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.996998,0.875498,1.687588,0.037444,0.000000,0.687588,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T025301,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.997086,0.865016,8.086735,0.028921,0.000000,0.191326,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T025676,Demographic,369,1984-11,2015-07,1984-11,2015-07,0.997231,0.865089,9.042106,0.097842,0.000000,0.095789,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T025726,Demographic,372,1978-02,2009-01,1978-02,2009-01,0.995585,0.926436,10.858248,0.055308,0.000000,0.085825,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T026112,Demographic,313,1991-01,2017-01,1991-01,2017-01,0.996406,0.788858,7.262801,0.064082,0.000000,0.273720,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T026201,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.997421,0.920875,2.217765,0.046271,0.000000,1.217765,False,True,False,False
+"['Females', 'Victoria']",m4_monthly,T031937,Industry,238,1996-01,2015-10,1996-01,2015-10,0.995216,0.303599,8.233871,0.081273,0.000000,0.176613,False,True,False,False
+"['Females', 'Western Australia']",m4_monthly,T003370,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999065,0.910050,7.700566,0.067150,0.000000,0.229943,False,True,False,False
+"['Females', 'Western Australia']",m4_monthly,T004033,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997243,0.822443,17.734384,0.044705,0.000000,0.773438,False,True,False,False
+"['Females', 'Western Australia']",m4_monthly,T005225,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995338,0.717691,9.763557,0.094001,0.000000,0.023644,False,True,False,False
+"['Females', 'Western Australia']",m4_monthly,T005437,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999733,0.999892,10.000000,0.020940,0.000000,0.000000,True,True,True,True
+"['Females', 'Western Australia']",m4_monthly,T005447,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996631,0.894284,10.619430,0.068270,0.000000,0.061943,False,True,False,False
+"['Females', 'Western Australia']",m4_monthly,T005452,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998668,0.914746,7.795018,0.061975,0.000000,0.220498,False,True,False,False
+"['Females', 'Western Australia']",m4_monthly,T024222,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.999638,0.985620,10.024402,0.015090,0.000000,0.002440,True,True,True,True
+"['Females', 'Western Australia']",m4_monthly,T025120,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.999511,0.999879,10.000000,0.020940,0.000000,0.000000,True,True,True,True
+"['Females', 'Western Australia']",m4_monthly,T025122,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.998661,0.918132,7.864550,0.052586,0.000000,0.213545,False,True,False,False
+"['Males', 'Australian Capital Territory']",m4_monthly,T003663,Macro,202,1998-10,2015-07,1998-10,2015-07,0.999719,0.999350,100.000000,0.007506,0.000000,0.000000,True,True,True,True
+"['Males', 'Australian Capital Territory']",m4_monthly,T003733,Macro,450,1978-02,2015-07,1978-02,2015-07,0.995880,0.789359,105.329200,0.061699,0.000000,0.053292,False,True,False,False
+"['Males', 'Australian Capital Territory']",m4_monthly,T003781,Macro,372,1978-02,2009-01,1978-02,2009-01,0.997906,0.975110,99.315483,0.039698,0.000000,0.006845,False,True,False,False
+"['Males', 'Australian Capital Territory']",m4_monthly,T004792,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999955,0.999658,100.000000,0.007506,0.000000,0.000000,True,True,True,True
+"['Males', 'Australian Capital Territory']",m4_monthly,T005527,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999348,0.999362,100.000000,0.022925,0.000000,0.000000,True,True,True,True
+"['Males', 'Australian Capital Territory']",m4_monthly,T025171,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.998666,0.999221,100.000000,0.022925,0.000000,0.000000,False,True,False,True
+"['Males', 'New South Wales']",m4_monthly,T003282,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999025,0.989275,1.002121,0.024205,0.223118,0.002121,True,True,True,True
+"['Males', 'New South Wales']",m4_monthly,T003293,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999981,0.999896,1.000000,0.004886,0.075556,0.000000,True,True,True,True
+"['Males', 'New South Wales']",m4_monthly,T004023,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998473,0.932554,0.658528,0.032243,0.000000,0.341472,False,True,False,False
+"['Males', 'New South Wales']",m4_monthly,T004832,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998548,0.930285,0.651703,0.047665,0.000000,0.348297,False,True,False,False
+"['Males', 'New South Wales']",m4_monthly,T005242,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998302,0.923688,1.805796,0.059194,0.000000,0.805796,False,True,False,False
+"['Males', 'New South Wales']",m4_monthly,T005243,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999980,0.999942,1.000000,0.003890,0.065147,0.000000,True,True,True,True
+"['Males', 'New South Wales']",m4_monthly,T023716,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.999896,0.999824,1.000000,0.004886,0.074257,0.000000,True,True,True,True
+"['Males', 'New South Wales']",m4_monthly,T023994,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.995440,0.926336,0.660669,0.033448,0.000000,0.339331,False,True,False,False
+"['Males', 'New South Wales']",m4_monthly,T024688,Demographic,449,1978-02,2015-06,1978-02,2015-06,0.996829,0.912810,3.006039,0.071290,0.000000,2.006039,False,True,False,False
+"['Males', 'New South Wales']",m4_monthly,T024832,Demographic,468,1978-02,2017-01,1978-02,2017-01,0.995204,0.915349,2.973733,0.080450,0.000000,1.973733,False,True,False,False
+"['Males', 'New South Wales']",m4_monthly,T024959,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.996895,0.926487,0.661847,0.027066,0.000000,0.338153,False,True,False,False
+"['Males', 'New South Wales']",m4_monthly,T025470,Demographic,468,1978-02,2017-01,1978-02,2017-01,0.995338,0.907377,2.919479,0.059097,0.000000,1.919479,False,True,False,False
+"['Males', 'Northern Territory']",m4_monthly,T003706,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999654,0.999429,100.000000,0.028787,0.000000,0.000000,True,True,True,True
+"['Males', 'Northern Territory']",m4_monthly,T003816,Macro,450,1978-02,2015-07,1978-02,2015-07,0.995620,0.863026,105.953661,0.088924,0.000000,0.059537,False,True,False,False
+"['Males', 'Northern Territory']",m4_monthly,T004928,Macro,372,1978-02,2009-01,1978-02,2009-01,0.995215,0.962094,100.000000,0.085732,0.000000,0.000000,False,True,False,False
+"['Males', 'Northern Territory']",m4_monthly,T005512,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996007,0.864824,18.206382,0.051073,0.000000,0.820638,False,True,False,False
+"['Males', 'Northern Territory']",m4_monthly,T005521,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995897,0.865842,105.434805,0.075321,0.000000,0.054348,False,True,False,False
+"['Males', 'Northern Territory']",m4_monthly,T024889,Demographic,468,1978-02,2017-01,1978-02,2017-01,0.996644,0.341725,99.923352,0.068967,0.000000,0.000766,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T003335,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998356,0.828965,8.865779,0.080141,0.000000,0.113422,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T003498,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998044,0.856725,5.205592,0.066816,0.000000,0.479441,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T003499,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999986,0.999892,10.000000,0.007976,0.000000,0.000000,True,True,True,True
+"['Males', 'Queensland']",m4_monthly,T003510,Macro,450,1978-02,2015-07,1978-02,2015-07,0.996094,0.829667,10.774991,0.059290,0.000000,0.077499,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T003558,Macro,372,1978-02,2009-01,1978-02,2009-01,0.998614,0.751905,1.318910,0.040632,0.000000,0.318910,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T003666,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998901,0.735195,1.311355,0.040976,0.000000,0.311355,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T003699,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998428,0.794808,4.794408,0.072546,0.000000,0.520559,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T003805,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997531,0.615119,4.197350,0.077535,0.000000,0.580265,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T003860,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998842,0.906574,1.816696,0.062728,0.000000,0.816696,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T004915,Macro,372,1978-02,2009-01,1978-02,2009-01,0.998302,0.839300,9.042764,0.059679,0.000000,0.095724,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T005337,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999995,0.999908,1.000000,0.002239,0.433225,0.000000,True,True,True,True
+"['Males', 'Queensland']",m4_monthly,T005339,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997535,0.732112,1.315722,0.037521,0.000000,0.315722,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T005350,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995083,0.809589,1.940712,0.047169,0.000000,0.940712,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T005356,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997639,0.820302,8.891575,0.076358,0.000000,0.110843,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T005357,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998514,0.816016,4.851167,0.040985,0.000000,0.514883,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T005359,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995682,0.626028,6.502943,0.057600,0.000000,0.349706,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T005380,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995102,0.717288,0.994120,0.047275,0.000000,0.005880,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T005561,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995578,0.632912,4.166525,0.060680,0.000000,0.583348,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T021475,Demographic,444,1978-02,2015-01,1978-01,2015-01,0.995187,-0.551194,9.578082,0.096784,0.000000,0.042192,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T023658,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.997868,0.862460,5.132121,0.028744,0.000000,0.486788,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T023757,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.998267,0.815522,4.870092,0.030745,0.000000,0.512991,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T024134,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.995790,0.804594,9.544884,0.088320,0.000000,0.045512,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T024195,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.999624,0.985549,10.166624,0.016164,0.000000,0.016662,True,True,False,False
+"['Males', 'Queensland']",m4_monthly,T024196,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.996965,0.894473,1.801069,0.097747,0.000000,0.801069,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T024421,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.999912,0.999831,1.000000,0.007976,0.450495,0.000000,True,True,True,True
+"['Males', 'Queensland']",m4_monthly,T025045,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.997583,0.912776,1.836948,0.042328,0.000000,0.836948,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T025372,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.997209,0.809774,0.933107,0.031165,0.000000,0.066893,False,True,False,False
+"['Males', 'Queensland']",m4_monthly,T025676,Demographic,369,1984-11,2015-07,1984-11,2015-07,0.995006,0.810029,9.609540,0.082613,0.000000,0.039046,False,True,False,False
+"['Males', 'South Australia']",m4_monthly,T003830,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999958,0.999960,10.000000,0.005679,0.000000,0.000000,True,True,True,True
+"['Males', 'South Australia']",m4_monthly,T005388,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999959,0.999944,10.000000,0.003338,0.000000,0.000000,True,True,True,True
+"['Males', 'South Australia']",m4_monthly,T024051,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.999856,0.999931,10.000000,0.005679,0.000000,0.000000,True,True,True,True
+"['Males', 'South Australia']",m4_monthly,T024215,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.995682,0.981680,10.069535,0.012186,0.000000,0.006953,False,True,False,True
+"['Males', 'Tasmania']",m4_monthly,T003866,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999819,0.999771,10.000000,0.006104,0.000000,0.000000,True,True,True,True
+"['Males', 'Tasmania']",m4_monthly,T003932,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999908,0.999893,10.000000,0.005425,0.000000,0.000000,True,True,True,True
+"['Males', 'Tasmania']",m4_monthly,T025258,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.999738,0.999677,10.000000,0.006104,0.000000,0.000000,True,True,True,True
+"['Males', 'Victoria']",m4_monthly,T003371,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997187,0.939947,7.445222,0.047045,0.000000,0.255478,False,True,False,False
+"['Males', 'Victoria']",m4_monthly,T003503,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999900,0.999942,1.000000,0.008226,0.111111,0.000000,True,True,True,True
+"['Males', 'Victoria']",m4_monthly,T005235,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995824,0.797142,0.770709,0.034460,0.000000,0.229291,False,True,False,False
+"['Males', 'Victoria']",m4_monthly,T005237,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995325,0.734647,3.441968,0.092772,0.000000,0.655803,False,True,False,False
+"['Males', 'Victoria']",m4_monthly,T005293,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998133,0.910104,1.809504,0.052107,0.000000,0.809504,False,True,False,False
+"['Males', 'Victoria']",m4_monthly,T005294,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999480,0.999831,1.000000,0.019746,0.117264,0.000000,True,True,True,True
+"['Males', 'Victoria']",m4_monthly,T005302,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995526,0.826833,1.928961,0.041190,0.000000,0.928961,False,True,False,False
+"['Males', 'Victoria']",m4_monthly,T005308,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997911,0.865774,1.368010,0.071236,0.000000,0.368010,False,True,False,False
+"['Males', 'Victoria']",m4_monthly,T005309,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998946,0.936505,0.753063,0.033084,0.000000,0.246937,False,True,False,False
+"['Males', 'Victoria']",m4_monthly,T023575,Demographic,172,2001-04,2015-07,2001-04,2015-07,0.995085,0.878525,4.010876,0.020802,0.000000,0.598912,False,True,False,False
+"['Males', 'Victoria']",m4_monthly,T025009,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.995687,0.844663,1.923406,0.030167,0.000000,0.923406,False,True,False,False
+"['Males', 'Victoria']",m4_monthly,T025297,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.997132,0.877423,1.384415,0.039939,0.000000,0.384415,False,True,False,False
+"['Males', 'Victoria']",m4_monthly,T025298,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.996893,0.876662,1.055323,0.031320,0.000000,0.055323,False,True,False,False
+"['Males', 'Victoria']",m4_monthly,T025300,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.998304,0.935406,0.758849,0.022164,0.000000,0.241151,False,True,False,False
+"['Males', 'Victoria']",m4_monthly,T026201,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.997541,0.916855,1.819264,0.029182,0.000000,0.819264,False,True,False,False
+"['Males', 'Western Australia']",m4_monthly,T003318,Macro,372,1978-02,2009-01,1978-02,2009-01,0.998534,0.980861,10.007207,0.025709,0.000000,0.000721,False,True,False,True
+"['Males', 'Western Australia']",m4_monthly,T003353,Macro,450,1978-02,2015-07,1978-02,2015-07,0.996819,0.688629,12.857072,0.048170,0.000000,0.285707,False,True,False,False
+"['Males', 'Western Australia']",m4_monthly,T003423,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995277,0.626851,9.672426,0.084396,0.000000,0.032757,False,True,False,False
+"['Males', 'Western Australia']",m4_monthly,T003701,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998936,0.998581,10.000000,0.054677,0.000000,0.000000,False,True,False,True
+"['Males', 'Western Australia']",m4_monthly,T004830,Macro,450,1978-02,2015-07,1978-02,2015-07,0.995167,0.723124,7.959935,0.097954,0.000000,0.204007,False,True,False,False
+"['Males', 'Western Australia']",m4_monthly,T004919,Macro,372,1978-02,2009-01,1978-02,2009-01,0.996968,0.812801,9.025469,0.064808,0.000000,0.097453,False,True,False,False
+"['Males', 'Western Australia']",m4_monthly,T005436,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998459,0.999121,10.000000,0.043151,0.000000,0.000000,False,True,False,True
+"['Males', 'Western Australia']",m4_monthly,T005438,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995895,0.663942,12.805895,0.044367,0.000000,0.280590,False,True,False,False
+"['Males', 'Western Australia']",m4_monthly,T005439,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995511,0.726354,8.680919,0.051737,0.000000,0.131908,False,True,False,False
+"['Males', 'Western Australia']",m4_monthly,T005571,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995594,0.658294,6.509481,0.052405,0.000000,0.349052,False,True,False,False
+"['Males', 'Western Australia']",m4_monthly,T024223,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.998528,0.876829,7.196646,0.038113,0.000000,0.280335,False,True,False,False
+"['Males', 'Western Australia']",m4_monthly,T024429,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.996875,0.911781,7.639562,0.065198,0.000000,0.236044,False,True,False,False
+['New South Wales'],m4_monthly,T003319,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999689,0.992973,1.003229,0.016842,0.206989,0.003229,True,True,True,True
+['New South Wales'],m4_monthly,T003354,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999996,0.999898,1.000000,0.003385,0.077778,0.000000,True,True,True,True
+['New South Wales'],m4_monthly,T003694,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999072,0.958342,0.659299,0.027991,0.000000,0.340701,True,True,False,False
+['New South Wales'],m4_monthly,T004023,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997456,0.869917,0.366180,0.031600,0.000000,0.633820,False,True,False,False
+['New South Wales'],m4_monthly,T004908,Macro,372,1978-02,2009-01,1978-02,2009-01,0.998124,0.941419,2.993809,0.062980,0.000000,1.993809,False,True,False,False
+['New South Wales'],m4_monthly,T005225,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996075,0.905704,1.355620,0.090740,0.000000,0.355620,False,True,False,False
+['New South Wales'],m4_monthly,T005242,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999980,0.999946,1.000000,0.004676,0.058632,0.000000,True,True,True,True
+['New South Wales'],m4_monthly,T005243,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998192,0.923537,0.553772,0.062919,0.000000,0.446228,False,True,False,False
+['New South Wales'],m4_monthly,T005252,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995088,0.926307,1.060882,0.076042,0.000000,0.060882,False,True,False,False
+['New South Wales'],m4_monthly,T005257,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996941,0.883347,2.958147,0.077508,0.000000,1.958147,False,True,False,False
+['New South Wales'],m4_monthly,T021475,Demographic,444,1978-02,2015-01,1978-01,2015-01,0.995973,-0.537315,2.952769,0.076123,0.000000,1.952769,False,True,False,False
+['New South Wales'],m4_monthly,T023716,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.996101,0.927752,0.550045,0.040009,0.000000,0.449955,False,True,False,False
+['New South Wales'],m4_monthly,T024018,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.996472,0.954485,0.662558,0.022936,0.000000,0.337442,False,True,False,False
+['New South Wales'],m4_monthly,T024157,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.996103,0.951514,0.663068,0.026092,0.000000,0.336932,False,True,False,False
+['New South Wales'],m4_monthly,T024904,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.999714,0.993873,1.006947,0.009306,0.000000,0.006947,True,True,True,True
+['New South Wales'],m4_monthly,T025193,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.997014,0.931023,1.057032,0.020674,0.000000,0.057032,False,True,False,False
+['New South Wales'],m4_monthly,T025676,Demographic,369,1984-11,2015-07,1984-11,2015-07,0.995984,0.940525,2.996365,0.073853,0.000000,1.996365,False,True,False,False
+['New South Wales'],m4_monthly,T026149,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.996356,0.869764,0.476005,0.046755,0.000000,0.523995,False,True,False,False
+['Northern Territory'],m4_monthly,T003704,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999941,0.999731,100.000000,0.012141,0.000000,0.000000,True,True,True,True
+['Northern Territory'],m4_monthly,T003825,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997922,0.895655,105.929618,0.081846,0.000000,0.059296,False,True,False,False
+['Northern Territory'],m4_monthly,T004913,Macro,372,1978-02,2009-01,1978-02,2009-01,0.997679,0.968302,100.000000,0.063039,0.000000,0.000000,False,True,False,False
+['Northern Territory'],m4_monthly,T005512,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999823,0.999652,10.000000,0.016394,0.000000,0.000000,True,True,True,True
+['Northern Territory'],m4_monthly,T005520,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997539,0.901926,10.501069,0.062301,0.000000,0.050107,False,True,False,False
+['Northern Territory'],m4_monthly,T023662,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.999624,0.999448,10.000000,0.012141,0.000000,0.000000,True,True,True,True
+['Northern Territory'],m4_monthly,T024888,Demographic,468,1978-02,2017-01,1978-02,2017-01,0.997589,0.335249,99.841171,0.075810,0.000000,0.001588,False,True,False,False
+['Northern Territory'],m4_monthly,T025445,Demographic,468,1978-02,2017-01,1978-02,2017-01,0.999917,0.999763,100.000000,0.016394,0.000000,0.000000,True,True,True,True
+['Queensland'],m4_monthly,T003388,Macro,372,1978-02,2009-01,1978-02,2009-01,0.995718,0.719826,5.659462,0.084122,0.000000,0.434054,False,True,False,False
+['Queensland'],m4_monthly,T003563,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999633,0.990990,1.007152,0.023630,0.233871,0.007152,True,True,True,True
+['Queensland'],m4_monthly,T003695,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999995,0.999954,1.000000,0.005067,0.353333,0.000000,True,True,True,True
+['Queensland'],m4_monthly,T003697,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999068,0.872513,4.875876,0.067064,0.000000,0.512412,False,True,False,False
+['Queensland'],m4_monthly,T003700,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998993,0.902347,5.123554,0.063933,0.000000,0.487645,False,True,False,False
+['Queensland'],m4_monthly,T003782,Macro,372,1978-02,2009-01,1978-02,2009-01,0.995480,0.898147,1.100733,0.059497,0.000000,0.100733,False,True,False,False
+['Queensland'],m4_monthly,T003821,Macro,450,1978-02,2015-07,1978-02,2015-07,0.998151,0.896336,1.079802,0.048904,0.000000,0.079802,False,True,False,False
+['Queensland'],m4_monthly,T003860,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999996,0.999955,1.000000,0.003445,0.312704,0.000000,True,True,True,True
+['Queensland'],m4_monthly,T004029,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995163,0.546734,2.485184,0.080216,0.000000,1.485184,False,True,False,False
+['Queensland'],m4_monthly,T005337,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998865,0.906767,0.550450,0.066926,0.000000,0.449550,False,True,False,False
+['Queensland'],m4_monthly,T005338,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999117,0.934166,4.495502,0.081948,0.000000,0.550450,False,True,False,False
+['Queensland'],m4_monthly,T005339,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995548,0.731689,0.723550,0.087509,0.000000,0.276450,False,True,False,False
+['Queensland'],m4_monthly,T005350,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997617,0.894271,1.071240,0.057288,0.000000,0.071240,False,True,False,False
+['Queensland'],m4_monthly,T005351,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997108,0.863474,4.789270,0.058724,0.000000,0.521073,False,True,False,False
+['Queensland'],m4_monthly,T005356,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999160,0.888962,4.910903,0.025753,0.000000,0.508910,True,True,False,False
+['Queensland'],m4_monthly,T005357,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997766,0.717744,2.670231,0.070457,0.000000,1.670231,False,True,False,False
+['Queensland'],m4_monthly,T005358,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997659,0.828594,2.230376,0.080743,0.000000,1.230376,False,True,False,False
+['Queensland'],m4_monthly,T005365,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996253,0.807259,5.255000,0.058448,0.000000,0.474500,False,True,False,False
+['Queensland'],m4_monthly,T005380,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997392,0.806668,0.544248,0.064266,0.000000,0.455752,False,True,False,False
+['Queensland'],m4_monthly,T005381,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996776,0.748572,2.411689,0.072904,0.000000,1.411689,False,True,False,False
+['Queensland'],m4_monthly,T023658,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.995980,0.806160,2.802184,0.063818,0.000000,1.802184,False,True,False,False
+['Queensland'],m4_monthly,T023684,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.996239,0.803487,2.285200,0.046626,0.000000,1.285200,False,True,False,False
+['Queensland'],m4_monthly,T023757,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.997202,0.716351,2.660006,0.028171,0.000000,1.660006,False,True,False,False
+['Queensland'],m4_monthly,T023998,Demographic,369,1984-11,2015-07,1984-11,2015-07,0.996722,0.834893,2.106139,0.060630,0.000000,1.106139,False,True,False,False
+['Queensland'],m4_monthly,T024040,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.996240,0.820500,2.254289,0.056476,0.000000,1.254289,False,True,False,False
+['Queensland'],m4_monthly,T024134,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.998291,0.900410,5.373122,0.025950,0.000000,0.462688,False,True,False,False
+['Queensland'],m4_monthly,T024195,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.998020,0.877642,5.764104,0.071792,0.000000,0.423590,False,True,False,False
+['Queensland'],m4_monthly,T024196,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.999840,0.990610,1.017163,0.015689,0.000000,0.017163,True,True,False,False
+['Queensland'],m4_monthly,T024421,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.998455,0.908992,0.546720,0.039731,0.000000,0.453280,False,True,False,False
+['Queensland'],m4_monthly,T024549,Demographic,450,1978-02,2015-07,1978-02,2015-07,0.996816,0.871747,2.379085,0.072455,0.000000,1.379085,False,True,False,False
+['Queensland'],m4_monthly,T025045,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.999991,0.999944,1.000000,0.003445,0.045455,0.000000,True,True,True,True
+['Queensland'],m4_monthly,T025344,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.998121,0.936485,4.556915,0.052960,0.000000,0.544309,False,True,False,False
+['Queensland'],m4_monthly,T025372,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.998244,0.905381,0.508259,0.028653,0.000000,0.491741,False,True,False,False
+['Queensland'],m4_monthly,T025511,Demographic,468,1978-02,2017-01,1978-02,2017-01,0.995350,0.785523,1.417436,0.081001,0.000000,0.417436,False,True,False,False
+['South Australia'],m4_monthly,T003946,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999997,0.999980,10.000000,0.002687,0.000000,0.000000,True,True,True,True
+['South Australia'],m4_monthly,T004843,Macro,450,1978-02,2015-07,1978-02,2015-07,0.996270,0.932254,7.579018,0.060359,0.000000,0.242098,False,True,False,False
+['South Australia'],m4_monthly,T004846,Macro,372,1978-02,2009-01,1978-02,2009-01,0.998977,0.988380,10.019994,0.016335,0.000000,0.001999,False,True,False,True
+['South Australia'],m4_monthly,T005387,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999998,0.999981,10.000000,0.000916,0.000000,0.000000,True,True,True,True
+['South Australia'],m4_monthly,T005389,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996308,0.909799,4.497729,0.064941,0.000000,0.550227,False,True,False,False
+['South Australia'],m4_monthly,T005403,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997508,0.947081,7.729296,0.030662,0.000000,0.227070,False,True,False,False
+['South Australia'],m4_monthly,T005405,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995121,0.867906,3.518933,0.077699,0.000000,0.648107,False,True,False,False
+['Tasmania'],m4_monthly,T003345,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999998,0.999959,10.000000,0.001469,0.000000,0.000000,True,True,True,True
+['Tasmania'],m4_monthly,T004929,Macro,372,1978-02,2009-01,1978-02,2009-01,0.998959,0.977437,10.000000,0.016141,0.000000,0.000000,False,True,False,False
+['Tasmania'],m4_monthly,T005476,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999988,0.999879,10.000000,0.002976,0.000000,0.000000,True,True,True,True
+['Tasmania'],m4_monthly,T024232,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.996967,0.974286,10.002791,0.015858,0.000000,0.000279,False,True,False,False
+['Tasmania'],m4_monthly,T025146,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.999979,0.999828,10.000000,0.002976,0.000000,0.000000,True,True,True,True
+['Total'],m4_monthly,T003318,Macro,372,1978-02,2009-01,1978-02,2009-01,0.995811,0.677482,0.581728,0.056979,0.000000,0.418272,False,True,False,False
+['Total'],m4_monthly,T003319,Macro,372,1978-02,2009-01,1978-02,2009-01,0.995492,0.938188,0.338064,0.070568,0.000000,0.661936,False,True,False,False
+['Total'],m4_monthly,T003354,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997291,0.941565,0.335113,0.072595,0.000000,0.664887,False,True,False,False
+['Total'],m4_monthly,T003498,Macro,450,1978-02,2015-07,1978-02,2015-07,0.995747,0.667705,0.540808,0.077130,0.000000,0.459192,False,True,False,False
+['Total'],m4_monthly,T003499,Macro,450,1978-02,2015-07,1978-02,2015-07,0.996513,0.807102,1.031961,0.080958,0.000000,0.031961,False,True,False,False
+['Total'],m4_monthly,T003500,Macro,450,1978-02,2015-07,1978-02,2015-07,0.995410,0.924929,0.250690,0.096873,0.000000,1.506901,False,True,False,False
+['Total'],m4_monthly,T003694,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997036,0.902009,0.220544,0.067218,0.000000,1.205443,False,True,False,False
+['Total'],m4_monthly,T004797,Macro,450,1978-02,2015-07,1978-02,2015-07,0.995130,0.586857,0.587989,0.081215,0.000000,0.412011,False,True,False,False
+['Total'],m4_monthly,T004908,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999469,0.995913,1.003134,0.017575,0.112903,0.003134,True,True,True,True
+['Total'],m4_monthly,T005223,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999985,0.999965,1.000000,0.004789,0.026059,0.000000,True,True,True,True
+['Total'],m4_monthly,T005224,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999369,0.959462,0.552434,0.055168,0.000000,0.447566,False,True,False,False
+['Total'],m4_monthly,T005225,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999580,0.969762,0.447566,0.068095,0.000000,0.552434,False,True,False,False
+['Total'],m4_monthly,T005226,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995491,0.804699,0.717998,0.093969,0.000000,0.282002,False,True,False,False
+['Total'],m4_monthly,T005235,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996457,0.933032,0.106345,0.070112,0.000000,0.063447,False,True,False,False
+['Total'],m4_monthly,T005237,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998143,0.921859,0.474025,0.041208,0.000000,0.525975,False,True,False,False
+['Total'],m4_monthly,T005242,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995207,0.938243,0.329649,0.057224,0.000000,0.670351,False,True,False,False
+['Total'],m4_monthly,T005293,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997888,0.918915,0.249634,0.035663,0.000000,1.496344,False,True,False,False
+['Total'],m4_monthly,T005294,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995799,0.834282,0.137640,0.078461,0.000000,0.376401,False,True,False,False
+['Total'],m4_monthly,T005308,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997218,0.895687,0.188647,0.054950,0.000000,0.886472,False,True,False,False
+['Total'],m4_monthly,T005309,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995317,0.809597,0.104572,0.039910,0.000000,0.045718,False,True,False,False
+['Total'],m4_monthly,T005310,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996656,0.808745,0.844478,0.084716,0.000000,0.155522,False,True,False,False
+['Total'],m4_monthly,T005350,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997062,0.840162,0.204774,0.084367,0.000000,1.047742,False,True,False,False
+['Total'],m4_monthly,T005365,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997364,0.780711,1.004608,0.082501,0.000000,0.004608,False,True,False,False
+['Total'],m4_monthly,T005380,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995121,0.735603,0.104806,0.092302,0.000000,0.048063,False,True,False,False
+['Total'],m4_monthly,T021475,Demographic,444,1978-02,2015-01,1978-01,2015-01,0.998208,-0.550522,0.984973,0.037911,0.000000,0.015027,False,True,False,False
+['Total'],m4_monthly,T023575,Demographic,172,2001-04,2015-07,2001-04,2015-07,0.999155,0.964746,0.547504,0.021475,0.000000,0.452496,True,True,False,False
+['Total'],m4_monthly,T023653,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.995729,0.814186,0.851313,0.054113,0.000000,0.148687,False,True,False,False
+['Total'],m4_monthly,T023822,Demographic,172,2001-04,2015-07,2001-04,2015-07,0.999011,0.969137,0.452496,0.025984,0.000000,0.547504,True,True,False,False
+['Total'],m4_monthly,T024238,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.995542,0.944448,0.571908,0.060058,0.000000,0.428092,False,True,False,False
+['Total'],m4_monthly,T024410,Demographic,172,2001-04,2015-07,2001-04,2015-07,0.997397,0.877605,0.365750,0.021056,0.000000,0.634250,False,True,False,False
+['Total'],m4_monthly,T024472,Demographic,450,1978-02,2015-07,1978-02,2015-07,0.998353,0.836786,0.634499,0.048762,0.000000,0.365501,False,True,False,False
+['Total'],m4_monthly,T024542,Demographic,450,1978-02,2015-07,1978-02,2015-07,0.997330,0.669678,0.246033,0.065741,0.000000,1.460329,False,True,False,False
+['Total'],m4_monthly,T024565,Demographic,450,1978-02,2015-07,1978-02,2015-07,0.996779,0.932315,1.070160,0.063400,0.000000,0.070160,False,True,False,False
+['Total'],m4_monthly,T024890,Demographic,313,1991-01,2017-01,1991-01,2017-01,0.999322,0.958798,0.552700,0.064172,0.000000,0.447300,False,True,False,False
+['Total'],m4_monthly,T024915,Demographic,369,1984-11,2015-07,1984-11,2015-07,0.996776,0.673631,0.247100,0.043263,0.000000,1.471000,False,True,False,False
+['Total'],m4_monthly,T024928,Demographic,190,2001-04,2017-01,2001-04,2017-01,0.999954,0.999947,0.100000,0.004789,0.000000,0.000000,True,True,True,True
+['Total'],m4_monthly,T024929,Demographic,190,2001-04,2017-01,2001-04,2017-01,0.999908,0.997688,0.099700,0.004836,0.000000,0.002997,True,True,True,True
+['Total'],m4_monthly,T024932,Demographic,313,1991-01,2017-01,1991-01,2017-01,0.999986,0.999965,1.000000,0.004789,0.025559,0.000000,True,True,True,True
+['Total'],m4_monthly,T025174,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.998817,0.965870,0.548050,0.037389,0.000000,0.451950,False,True,False,False
+['Total'],m4_monthly,T025176,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.997075,0.938192,0.105888,0.025604,0.000000,0.058879,False,True,False,False
+['Total'],m4_monthly,T025297,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.996396,0.893024,0.189129,0.052263,0.000000,0.891290,False,True,False,False
+['Total'],m4_monthly,T025472,Demographic,468,1978-02,2017-01,1978-02,2017-01,0.996348,0.923728,1.053772,0.069372,0.000000,0.053772,False,True,False,False
+['Total'],m4_monthly,T025610,Demographic,190,2001-04,2017-01,2001-04,2017-01,0.998234,0.970222,0.545728,0.026866,0.000000,0.454272,False,True,False,False
+['Total'],m4_monthly,T025676,Demographic,369,1984-11,2015-07,1984-11,2015-07,0.999990,0.999956,1.000000,0.004255,0.037940,0.000000,True,True,True,True
+['Total'],m4_monthly,T025953,Demographic,468,1978-02,2017-01,1978-02,2017-01,0.997371,0.762555,0.646988,0.065680,0.000000,0.353012,False,True,False,False
+['Total'],m4_monthly,T026112,Demographic,313,1991-01,2017-01,1991-01,2017-01,0.998945,0.934933,0.804611,0.038758,0.000000,0.195389,False,True,False,False
+['Total'],m4_monthly,T026124,Demographic,190,2001-04,2017-01,2001-04,2017-01,0.998366,0.966033,0.546998,0.026663,0.000000,0.453002,False,True,False,False
+['Total'],m4_monthly,T026125,Demographic,190,2001-04,2017-01,2001-04,2017-01,0.999118,0.963275,0.451878,0.029202,0.000000,0.548122,True,True,False,False
+['Total'],m4_monthly,T026201,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.997265,0.914516,0.249139,0.032704,0.000000,1.491395,False,True,False,False
+['Total'],m4_monthly,T041548,Finance,190,2001-04,2017-01,2001-04,2017-01,0.998097,0.838860,0.140907,0.037199,0.000000,0.409066,False,True,False,False
+['Total'],m4_monthly,T041554,Finance,190,2001-04,2017-01,2001-04,2017-01,0.996421,0.884234,0.365002,0.032165,0.000000,0.634998,False,True,False,False
+['Victoria'],m4_monthly,T003500,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999909,0.999933,1.000000,0.011014,0.122222,0.000000,True,True,True,True
+['Victoria'],m4_monthly,T004026,Macro,307,1991-07,2017-01,1991-07,2017-01,0.996103,0.822362,3.608866,0.063377,0.000000,0.639113,False,True,False,False
+['Victoria'],m4_monthly,T004785,Macro,372,1978-02,2009-01,1978-02,2009-01,0.997653,0.987580,1.002620,0.031549,0.204301,0.002620,False,True,False,True
+['Victoria'],m4_monthly,T004847,Macro,372,1978-02,2009-01,1978-02,2009-01,0.995788,0.745008,3.019314,0.064197,0.000000,2.019314,False,True,False,False
+['Victoria'],m4_monthly,T005223,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995954,0.917159,4.002134,0.051279,0.000000,0.599787,False,True,False,False
+['Victoria'],m4_monthly,T005224,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995114,0.884401,2.219634,0.084115,0.000000,1.219634,False,True,False,False
+['Victoria'],m4_monthly,T005225,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995753,0.885662,1.790755,0.097958,0.000000,0.790755,False,True,False,False
+['Victoria'],m4_monthly,T005235,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997233,0.862966,0.426749,0.064149,0.000000,0.573251,False,True,False,False
+['Victoria'],m4_monthly,T005237,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997594,0.858990,1.902902,0.064307,0.000000,0.902902,False,True,False,False
+['Victoria'],m4_monthly,T005252,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995839,0.766173,1.403077,0.096521,0.000000,0.403077,False,True,False,False
+['Victoria'],m4_monthly,T005267,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995070,0.744229,0.917600,0.078920,0.000000,0.082400,False,True,False,False
+['Victoria'],m4_monthly,T005293,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999545,0.999828,1.000000,0.020750,0.123779,0.000000,True,True,True,True
+['Victoria'],m4_monthly,T005294,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998356,0.910342,0.552213,0.055783,0.000000,0.447787,False,True,False,False
+['Victoria'],m4_monthly,T005302,Macro,307,1991-07,2017-01,1991-07,2017-01,0.995686,0.911760,1.061420,0.085041,0.000000,0.061420,False,True,False,False
+['Victoria'],m4_monthly,T005304,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997453,0.867328,0.476392,0.040842,0.000000,0.523608,False,True,False,False
+['Victoria'],m4_monthly,T005308,Macro,307,1991-07,2017-01,1991-07,2017-01,0.999327,0.956578,0.756431,0.023725,0.000000,0.243569,True,True,False,False
+['Victoria'],m4_monthly,T005309,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998124,0.858119,0.418440,0.029002,0.000000,0.581560,False,True,False,False
+['Victoria'],m4_monthly,T005310,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998076,0.869974,3.397070,0.080200,0.000000,0.660293,False,True,False,False
+['Victoria'],m4_monthly,T023573,Demographic,369,1984-11,2015-07,1984-11,2015-07,0.995252,0.682700,2.565758,0.055909,0.000000,1.565758,False,True,False,False
+['Victoria'],m4_monthly,T023575,Demographic,172,2001-04,2015-07,2001-04,2015-07,0.995485,0.886787,2.207054,0.039338,0.000000,1.207054,False,True,False,False
+['Victoria'],m4_monthly,T023653,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.997254,0.870185,3.430445,0.044791,0.000000,0.656955,False,True,False,False
+['Victoria'],m4_monthly,T023822,Demographic,172,2001-04,2015-07,2001-04,2015-07,0.995716,0.870826,1.814154,0.027216,0.000000,0.814154,False,True,False,False
+['Victoria'],m4_monthly,T024185,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.999237,0.989661,1.009248,0.012184,0.000000,0.009248,True,True,True,True
+['Victoria'],m4_monthly,T024393,Demographic,369,1984-11,2015-07,1984-11,2015-07,0.997113,0.732689,1.885476,0.043457,0.000000,0.885476,False,True,False,False
+['Victoria'],m4_monthly,T024472,Demographic,450,1978-02,2015-07,1978-02,2015-07,0.995771,0.781659,2.506792,0.068179,0.000000,1.506792,False,True,False,False
+['Victoria'],m4_monthly,T024548,Demographic,450,1978-02,2015-07,1978-02,2015-07,0.997961,0.882270,2.248692,0.072182,0.000000,1.248692,False,True,False,False
+['Victoria'],m4_monthly,T024685,Demographic,449,1978-02,2015-06,1978-02,2015-06,0.996032,0.728910,3.000130,0.095588,0.000000,2.000130,False,True,False,False
+['Victoria'],m4_monthly,T024688,Demographic,449,1978-02,2015-06,1978-02,2015-06,0.996527,0.872681,2.271355,0.066534,0.000000,1.271355,False,True,False,False
+['Victoria'],m4_monthly,T024740,Demographic,450,1978-02,2015-07,1978-02,2015-07,0.996672,0.686485,1.911229,0.074458,0.000000,0.911229,False,True,False,False
+['Victoria'],m4_monthly,T024832,Demographic,468,1978-02,2017-01,1978-02,2017-01,0.996718,0.881501,2.241776,0.093161,0.000000,1.241776,False,True,False,False
+['Victoria'],m4_monthly,T024890,Demographic,313,1991-01,2017-01,1991-01,2017-01,0.995143,0.883804,2.221550,0.084905,0.000000,1.221550,False,True,False,False
+['Victoria'],m4_monthly,T024932,Demographic,313,1991-01,2017-01,1991-01,2017-01,0.995709,0.915358,4.001281,0.051076,0.000000,0.599872,False,True,False,False
+['Victoria'],m4_monthly,T025009,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.998208,0.915112,1.056223,0.030973,0.000000,0.056223,False,True,False,False
+['Victoria'],m4_monthly,T025010,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.996728,0.861544,0.476972,0.039577,0.000000,0.523028,False,True,False,False
+['Victoria'],m4_monthly,T025176,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.995593,0.865587,0.423397,0.052312,0.000000,0.576603,False,True,False,False
+['Victoria'],m4_monthly,T025297,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.998786,0.953607,0.760545,0.018187,0.000000,0.239455,False,True,False,False
+['Victoria'],m4_monthly,T025298,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.996292,0.802722,0.577631,0.064183,0.000000,0.422369,False,True,False,False
+['Victoria'],m4_monthly,T025300,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.996501,0.854994,0.416564,0.025552,0.000000,0.583436,False,True,False,False
+['Victoria'],m4_monthly,T025301,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.995297,0.813115,3.622661,0.059328,0.000000,0.637734,False,True,False,False
+['Victoria'],m4_monthly,T026112,Demographic,313,1991-01,2017-01,1991-01,2017-01,0.996640,0.857685,3.229373,0.052301,0.000000,0.677063,False,True,False,False
+['Victoria'],m4_monthly,T026201,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.999203,0.999783,1.000000,0.020750,0.063636,0.000000,True,True,True,True
+['Western Australia'],m4_monthly,T003352,Macro,450,1978-02,2015-07,1978-02,2015-07,0.996099,0.612180,8.135061,0.097688,0.000000,0.186494,False,True,False,False
+['Western Australia'],m4_monthly,T003388,Macro,372,1978-02,2009-01,1978-02,2009-01,0.999289,0.987103,10.018533,0.023085,0.000000,0.001853,True,True,True,True
+['Western Australia'],m4_monthly,T003563,Macro,372,1978-02,2009-01,1978-02,2009-01,0.997071,0.734439,1.804603,0.096839,0.000000,0.804603,False,True,False,False
+['Western Australia'],m4_monthly,T003698,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999413,0.999087,10.000000,0.045735,0.000000,0.000000,True,True,True,True
+['Western Australia'],m4_monthly,T003823,Macro,450,1978-02,2015-07,1978-02,2015-07,0.995073,0.632612,5.576363,0.082940,0.000000,0.442364,False,True,False,False
+['Western Australia'],m4_monthly,T003831,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997172,0.871807,10.724297,0.063781,0.000000,0.072430,False,True,False,False
+['Western Australia'],m4_monthly,T004033,Macro,307,1991-07,2017-01,1991-07,2017-01,0.998918,0.931239,7.631888,0.069250,0.000000,0.236811,False,True,False,False
+['Western Australia'],m4_monthly,T004789,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997145,0.775149,4.273681,0.067736,0.000000,0.572632,False,True,False,False
+['Western Australia'],m4_monthly,T004820,Macro,450,1978-02,2015-07,1978-02,2015-07,0.999188,0.921833,7.537555,0.085732,0.000000,0.246244,False,True,False,False
+['Western Australia'],m4_monthly,T004827,Macro,450,1978-02,2015-07,1978-02,2015-07,0.997210,0.796116,8.065904,0.081452,0.000000,0.193410,False,True,False,False
+['Western Australia'],m4_monthly,T004830,Macro,450,1978-02,2015-07,1978-02,2015-07,0.995340,0.608625,4.595967,0.077644,0.000000,0.540403,False,True,False,False
+['Western Australia'],m4_monthly,T005436,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997969,0.847279,5.660005,0.042096,0.000000,0.433999,False,True,False,False
+['Western Australia'],m4_monthly,T005437,Macro,307,1991-07,2017-01,1991-07,2017-01,0.997462,0.897518,4.372538,0.070668,0.000000,0.562746,False,True,False,False
+['Western Australia'],m4_monthly,T024222,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.995762,0.885232,4.284304,0.090437,0.000000,0.571570,False,True,False,False
+['Western Australia'],m4_monthly,T024223,Demographic,242,1987-09,2007-10,1987-09,2007-10,0.995060,0.792323,4.125913,0.039469,0.000000,0.587409,False,True,False,False
+['Western Australia'],m4_monthly,T024429,Demographic,202,1998-10,2015-07,1998-10,2015-07,0.996710,0.790814,4.290629,0.060056,0.000000,0.570937,False,True,False,False
+['Western Australia'],m4_monthly,T025122,Demographic,220,1998-10,2017-01,1998-10,2017-01,0.995333,0.856479,3.464320,0.081845,0.000000,0.653568,False,True,False,False

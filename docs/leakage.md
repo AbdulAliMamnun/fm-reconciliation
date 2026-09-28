@@ -1,6 +1,6 @@
 # Leakage check: do the foundation models' pretraining corpora contain our evaluation data?
 
-Checked 2026-09-27, before any foundation-model forecast was scored.
+Checked 2026-09-27. The check was started before any foundation-model forecast was produced and finished after the Chronos-Bolt forecasts on TourismLarge had been scored. No forecast had been produced on Labour, Wiki2 or M5.
 
 **Question.** For each zero-shot model in PREREG §4, does its documented pretraining corpus include any of our evaluation datasets (PREREG §3)?
 
@@ -16,13 +16,44 @@ Checked 2026-09-27, before any foundation-model forecast was scored.
 
 ## 1. Summary
 
-| Model | TourismLarge | TourismSmall | Labour | Wiki2 | M5 |
-|---|---|---|---|---|---|
-| Chronos-T5 | no | no | **yes, partial** (inside M4 Monthly) | unclear | no |
-| Chronos-Bolt | unclear | no | unclear | unclear | no |
-| Chronos-2 | no | no | **yes, partial** (inside M4 Monthly) | unclear | no |
-| TiRex (`NX-AI/TiRex`) | no | no | **yes, partial** (inside M4 Monthly) | **yes** at weekly frequency; daily unclear | no |
-| Moirai-2 | no for the public parts; internal data undisclosed | same | **yes, partial** (inside M4 Monthly) | unclear, likely yes | unclear, likely yes |
+This table is the single source for the leakage status. `src/leakage.py` reads it: `status(dataset, model)` returns the Status column and `test_windows(dataset, model)` the Test windows column. Keep the markers and the column order.
+
+| Column | Question | Values |
+|---|---|---|
+| Status | Is any of the dataset in the model's documented pretraining corpus? | yes, unclear, no |
+| Test windows | Are the dataset's registered test windows (PREREG §3) in that corpus? | yes, partial, unclear, no |
+
+<!-- status-table:start -->
+| Dataset | Model | Status | Test windows | Basis |
+|---|---|---|---|---|
+| TourismLarge | Chronos-Bolt | unclear | unclear | No dataset list is published. |
+| TourismLarge | Chronos-T5 | no | no | Full list published, absent. No match in M4 or Monash Tourism. |
+| TourismLarge | Chronos-2 | no | no | Full list published, absent. No match in M4. |
+| TourismLarge | TiRex | no | no | Both lists published, absent. No match in M4. |
+| TourismLarge | Moirai-2 | no | no | Absent from every public component. Internal data is described as CloudOps telemetry. |
+| TourismSmall | Chronos-Bolt | no | no | Identical to a fev-bench task that the model's authors flag as not trained on. |
+| TourismSmall | Chronos-T5 | no | no | Full list published, absent. |
+| TourismSmall | Chronos-2 | no | no | Full list published, absent. fev-bench flag: not trained on. |
+| TourismSmall | TiRex | no | no | Both lists published, absent. fev-bench flag: not trained on. |
+| TourismSmall | Moirai-2 | no | no | Absent from every public component. fev-bench flag: not trained on. |
+| Labour | Chronos-Bolt | unclear | unclear | No dataset list is published. |
+| Labour | Chronos-T5 | yes | partial | 48 of 57 series are inside M4 Monthly. Last 18 observations held out, so values to 2015-07. |
+| Labour | Chronos-2 | yes | unclear | 48 of 57 series are inside M4 Monthly. Size of the excluded test portion is not stated. |
+| Labour | TiRex | yes | unclear | 48 of 57 series are inside M4 Monthly. Whether any observations were held out is not stated. |
+| Labour | Moirai-2 | yes | unclear | 48 of 57 series are inside M4 Monthly, which is in the GIFT-Eval train split. Split point not checked. |
+| Wiki2 | Chronos-Bolt | unclear | unclear | No dataset list is published. |
+| Wiki2 | Chronos-T5 | unclear | unclear | Wiki Daily (100k) is in the corpus: same source, 1 or 2 of 150 bottom series found. |
+| Wiki2 | Chronos-2 | unclear | unclear | Wiki Daily (100k) is in the corpus: same source, 1 or 2 of 150 bottom series found. |
+| Wiki2 | TiRex | yes | yes | Kaggle Web Traffic Weekly is in the corpus and holds the weekly sums of all 150 bottom series for 2016. |
+| Wiki2 | Moirai-2 | unclear | unclear | Extended Web Traffic holds all 150 bottom series for 2016. Whether it is in the training subset is not documented. |
+| M5 | Chronos-Bolt | no | no | Documented as not seen in training. fev-bench flag: not trained on. |
+| M5 | Chronos-T5 | no | no | Zero-shot benchmark dataset. |
+| M5 | Chronos-2 | no | no | Full list published, absent. Zero-shot benchmark excluded. |
+| M5 | TiRex | no | no | Both lists published, absent. Holds for the original checkpoint only. |
+| M5 | Moirai-2 | unclear | unclear | M5 is in GIFT-Eval Pretrain. The training subset is not listed. fev-bench flags it as trained on. |
+<!-- status-table:end -->
+
+The PREREG leakage rule excludes a cell when the corpus is "confirmed to contain that dataset's test windows". That is the Test windows column. Status "yes" with Test windows "unclear" or "partial" means the model has seen the history that it is given as context, and may or may not have seen the values it is scored on.
 
 Three points that the table cannot carry:
 
@@ -122,19 +153,23 @@ GIFT-Eval Pretrain [P] (GIFT-Eval paper, arXiv 2410.10393, and the dataset repos
 
 ## 3. Empirical checks
 
-These compare our local files in `data/hierarchical/` with public copies of the training datasets. The check scripts are not in this repository.
+These compare our files in `data/hierarchical/` with public copies of the training datasets.
 
-| # | Check | Result | Re-run independently |
-|---|---|---|---|
-| 1 | TourismSmall vs fev-bench `australian_tourism` | 89 of 89 series identical, 1998 Q1 to 2006 Q4 | yes |
-| 2 | Labour vs M4 Monthly (48,000 series) | 48 of 57 series matched (strict), 53 of 57 (loose) | yes |
-| 3 | Wiki2 vs Kaggle Web Traffic Weekly | 150 of 150 bottom series: weekly sums equal on all 51 full weeks of 2016 | yes |
-| 4 | Wiki2 vs Extended Web Traffic (daily) | 150 of 150 bottom series equal on all 366 days of 2016 | no; check 3 uses the same series ids and agrees |
-| 5 | Wiki2 vs Wiki Daily (100k) | 1 near-identical series, 1 probable, 148 without a counterpart | no |
-| 6 | Wiki2 vs Wiki-Rolling | no match found | no |
-| 7 | TourismLarge and TourismSmall vs Monash Tourism (monthly, quarterly) and M4 (monthly, quarterly) | no match found | no |
+- **Script:** `scripts/leakage/run_checks.py`. It downloads the public copies at pinned revisions (about 2.4 GB, not committed) and runs in about one minute.
+- **Results:** `scripts/leakage/output/summary.md`, with the same numbers in `summary.json`. Every figure in this section comes from that file, including the date ranges and the SHA-256 hash of every file compared.
+- **Per-series matches:** `labour_m4_matches.csv`, `wiki2_matches.csv` and `tourism_best.csv` in the same folder.
 
-A null result in checks 6 and 7 is evidence, not proof: a revised vintage of the same series would correlate below the thresholds used.
+| # | Check | Result |
+|---|---|---|
+| 1 | TourismSmall vs fev-bench `australian_tourism` | 89 of 89 series identical, 1998 Q1 to 2006 Q4 |
+| 2 | Labour vs M4 Monthly (48,000 series) | 48 of 57 series matched, in 115 pairs; 52 of 57 with loose thresholds |
+| 3 | Wiki2 vs Extended Web Traffic (daily) | 150 of 150 bottom series equal on all 366 days of 2016 |
+| 4 | Wiki2 vs Kaggle Web Traffic Weekly | 150 of 150 bottom series: weekly sums equal on all 51 full weeks of 2016 |
+| 5 | Wiki2 vs Wiki Daily (100k) | 1 near-identical series, 1 probable, 148 without a counterpart |
+| 6 | Wiki2 vs Wiki-Rolling | 0 exact 7-day runs found, out of 38,953 searched |
+| 7 | TourismLarge and TourismSmall vs Monash Tourism and M4 (monthly, quarterly) | 0 matches; best level correlation 0.944 with dates aligned, 0.977 at any shift |
+
+A null result in checks 6 and 7 is evidence, not proof: a revised vintage of the same series could fall below the thresholds.
 
 ### 3.1 TourismSmall is a public benchmark task
 
@@ -142,24 +177,53 @@ fev-bench (arXiv 2509.26468) has a task "Australian Tourism": quarterly, 89 seri
 
 ### 3.2 Labour inside M4 Monthly
 
-- **Match criterion (strict):** correlation of levels above 0.999 and ratio deviation below 5% over the whole overlap. 112 M4 series match 48 of our 57 series.
-- **Same series, different vintage.** Ratios are 1, 10 or 100 (unit differences) with deviations of 0.2% to a few percent. They are not byte-identical.
-- **Overlap length:** 190 to 450 months per pair.
-- **M4 series end** at 2009-01 (16 pairs), 2015-07 (47) or 2017-01 (49).
-- **Not matched under the strict criterion:** 9 series, all at the state by sex by employment-status level or state by sex.
+**Match criterion.** A pair counts as the same series when, on the date-aligned overlap of at least 120 months, all four hold:
 
-**Overlap with our test windows.** Our loader ends Labour at 2019-12, so the five test windows are the calendar years 2015 to 2019.
+| Condition | Threshold |
+|---|---|
+| Correlation of levels | above 0.999 |
+| Every ratio M4 / Labour within this distance of the median ratio | 5% |
+| Correlation of monthly changes | above 0.98 |
+| Median ratio within this distance of a power of ten | 1% |
 
-| Model trained on | Latest Labour value seen | Test windows touched |
-|---|---|---|
-| M4 Monthly with the last 18 observations held out (Chronos-T5) | 2015-07 | 2015, January to July |
-| Full M4 Monthly series | 2017-01 | 2015, 2016 and January 2017 |
+The first two conditions alone are not enough. 11 pairs pass them and are not counted: 10 have a ratio that is not a power of ten and are different series that move together (for example Queensland against a series 4.9 times its size), and 1 has a power-of-ten ratio but a change correlation of 0.971.
+
+**Result.**
+
+- **Matched:** 48 of 57 series, in 115 pairs. No M4 series matches more than one Labour series.
+- **Same series, different vintage.** Ratios are 1, 10 or 100. 27 of the 115 pairs have some exactly equal values; none is identical throughout.
+- **Overlap length:** 190 to 468 months per pair.
+- **M4 series end** at 2007-10 (3 pairs), 2009-01 (15), 2015-07 (47) or 2017-01 (50).
+- **Not matched:** 9 series, all at the state by sex or state by sex by employment-status level.
+
+**Overlap with our test windows.** Labour runs from 1978-02 to 2020-11 in the raw file. Our loader drops 2020 onwards, so it ends at 2019-12 and the five registered test windows are the calendar years 2015 to 2019.
+
+| Model trained on | Latest Labour month in corpus | Series with test months in corpus | Test windows touched |
+|---|---|---|---|
+| M4 Monthly with the last 18 observations held out (Chronos-T5) | 2015-07 | 39 of 57 | 2015 (January to July) |
+| Full M4 Monthly series | 2017-01 | 47 of 57 | 2015, 2016 and January 2017 |
 
 In both cases the history before 2015, which is the context the model is given, is in the training data.
+
+**Do 5 yearly origins with h = 12 fit entirely after 2017-01?** No.
+
+| Item | Value |
+|---|---|
+| Months needed | 60 |
+| Months after 2017-01, as loaded (to 2019-12) | 35 |
+| Months after 2017-01, raw file (to 2020-11) | 46 |
+| Non-overlapping 12-month windows that fit, as loaded | 2: the years 2018 and 2019 |
+| Largest spacing at which 5 windows fit, as loaded | 5 months, so the windows would overlap |
+| Context at the first window after 2017-01 | 468 months, against 120 required |
+
+The context requirement is met with room to spare. The limit is the number of months after the cutoff.
 
 ### 3.3 Wiki2 inside the Kaggle web-traffic data
 
 Wiki2 was built from the Kaggle "Web Traffic Time Series Forecasting" data: Rangapuram et al. 2021 [P], "Wiki includes daily views for 145,000 Wikipedia articles starting from Jul. 2015 to Dec. 2016. We follow the procedure described by Ben Taieb & Koo (2019) to filter the dataset to 150 bottom series (199 total)." The Monash archive and GIFT-Eval Pretrain redistribute that same data as Kaggle Web Traffic Weekly and Extended Web Traffic.
+
+- **Daily copy:** each of our 150 bottom series equals one item on every day of 2016.
+- **Weekly copy:** the weekly sums of the same 150 items match exactly. The file states a week start of Monday 2015-06-29; the sums match only for weeks starting Wednesday 2015-07-01, the first day of the daily data.
 
 Our five test windows are the last 35 days of 2016. They lie inside both copies. For a model trained on either, Wiki2 is not a zero-shot test.
 
@@ -177,12 +241,13 @@ Our five test windows are the last 35 days of 2016. They lie inside both copies.
 
 1. The Chronos-Bolt training corpus. No primary source lists it.
 2. Which part of GIFT-Eval Pretrain, and which Chronos datasets, Moirai-2 used.
-3. Who supplied the fev-bench flags for TiRex and Moirai-2.0. The files are maintained by the fev-bench team, not by those models' authors.
-4. Whether the M5 copies in the corpora equal the Kaggle M5 data. Not compared.
-5. The Kaggle competition files themselves (login required). The Wiki2 link rests on the redistributed copies.
-6. The M4 Monthly copy inside GIFT-Eval. The check used the copy in `autogluon/chronos_datasets`.
-7. Tourism checks did not cover M1 or M3 quarterly, any yearly data, or FRED-MD.
-8. The published journal version of Athanasopoulos et al. 2011. The author's working paper was read.
+3. How many observations of M4 Monthly were held out by Chronos-2, TiRex and Moirai-2. This decides their Test windows entry for Labour.
+4. Who supplied the fev-bench flags for TiRex and Moirai-2.0. The files are maintained by the fev-bench team, not by those models' authors.
+5. Whether the M5 copies in the corpora equal the Kaggle M5 data. Not compared.
+6. The Kaggle competition files themselves (login required). The Wiki2 link rests on the redistributed copies.
+7. The M4 Monthly copy inside GIFT-Eval. The check used the copy in `autogluon/chronos_datasets`.
+8. Tourism checks did not cover M1 or M3, any yearly data, or FRED-MD. Tourism series with more than half zeros were not compared (51 of 555 in TourismLarge).
+9. The published journal version of Athanasopoulos et al. 2011. The author's working paper was read.
 
 ## 6. Sources
 

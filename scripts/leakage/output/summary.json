@@ -1,0 +1,561 @@
+{
+  "generated": "2026-09-27",
+  "revisions": {
+    "autogluon/fev_datasets": "f71c0fff4cf81283a2c43e7f3a73aa4f9826aef8",
+    "autogluon/chronos_datasets": "eeecad0b82a8c237e212ce6f8d1abecb513e2cec",
+    "Salesforce/GiftEvalPretrain": "6830b624de7ed2b3d3e5b85bb6959d81dcc5d874"
+  },
+  "tourism_small_vs_fev": {
+    "ours": "TourismSmall",
+    "public": "fev australian_tourism",
+    "our_series": 89,
+    "public_series": 89,
+    "public_series_with_identical_ours": 89,
+    "our_series_with_identical_public": 89,
+    "same_dates": true,
+    "our_range": [
+      "1998-03-31",
+      "2006-12-31",
+      36
+    ],
+    "public_range": [
+      "1998-03-31",
+      "2006-12-31",
+      36
+    ]
+  },
+  "labour_vs_m4": {
+    "ours": "Labour",
+    "public": "M4 Monthly (autogluon/chronos_datasets)",
+    "our_series": 57,
+    "public_series": 48000,
+    "criteria": {
+      "strict": {
+        "corr": 0.999,
+        "maxdev": 0.05
+      },
+      "loose": {
+        "corr": 0.995,
+        "maxdev": 0.1
+      },
+      "match": {
+        "corr_diff": 0.98,
+        "pow10_dev": 0.01
+      },
+      "min_overlap_months": 120
+    },
+    "pairs_strict": 115,
+    "pairs_loose": 137,
+    "our_series_matched_strict": 48,
+    "our_series_matched_loose": 52,
+    "pairs_passing_levels_only": 126,
+    "pairs_rejected": 11,
+    "pairs_rejected_ratio_not_power_of_ten": 10,
+    "pairs_rejected_changes_disagree": 1,
+    "rejected_ratio_examples": [
+      [
+        "['Queensland']",
+        "T005356",
+        4.911,
+        0.889
+      ],
+      [
+        "['Females', 'Victoria']",
+        "T003352",
+        7.561,
+        0.947
+      ],
+      [
+        "['Females', 'Victoria']",
+        "T005310",
+        7.602,
+        0.95
+      ],
+      [
+        "['Victoria']",
+        "T005308",
+        0.756,
+        0.957
+      ]
+    ],
+    "rejected_changes_examples": [
+      [
+        "['Females', 'Tasmania']",
+        "T003565",
+        100.0,
+        0.971
+      ]
+    ],
+    "public_ids_matched_to_more_than_one_of_ours": 0,
+    "pairs_with_some_exactly_equal_values": 27,
+    "unmatched_strict": [
+      "['Employed full-time', 'Females', 'Australian Capital Territory']",
+      "['Employed full-time', 'Females', 'Victoria']",
+      "['Employed full-time', 'Males', 'Western Australia']",
+      "['Employed part-time', 'Females', 'Australian Capital Territory']",
+      "['Employed part-time', 'Females', 'Northern Territory']",
+      "['Employed part-time', 'Males', 'Australian Capital Territory']",
+      "['Employed part-time', 'Males', 'Northern Territory']",
+      "['Employed part-time', 'Males', 'Tasmania']",
+      "['Males', 'Western Australia']"
+    ],
+    "overlap_months_strict": [
+      190,
+      468
+    ],
+    "min_corr_of_monthly_changes_strict": 0.9838934167119914,
+    "ratio_medians_strict": {
+      "10.0": 52,
+      "1.0": 26,
+      "100.0": 22,
+      "10.02": 3,
+      "1.01": 3
+    },
+    "public_series_end_strict": {
+      "2017-01": 50,
+      "2015-07": 47,
+      "2009-01": 15,
+      "2007-10": 3
+    },
+    "public_categories_strict": {
+      "Macro": 95,
+      "Demographic": 20
+    },
+    "raw_file_range": [
+      "1978-02-01",
+      "2020-11-01",
+      514
+    ],
+    "loaded_range": [
+      "1978-02-01",
+      "2019-12-01",
+      503
+    ],
+    "registered_test_windows": [
+      "2015-01-01 to 2015-12-01",
+      "2016-01-01 to 2016-12-01",
+      "2017-01-01 to 2017-12-01",
+      "2018-01-01 to 2018-12-01",
+      "2019-01-01 to 2019-12-01"
+    ],
+    "exposure_of_test_windows": {
+      "last 18 observations held out": {
+        "latest_value_in_corpus": "2015-07",
+        "our_series_with_test_months_in_corpus": 39,
+        "max_test_months_in_corpus_per_series": 7,
+        "test_windows_touched": [
+          "2015-01-01 to 2015-12-01"
+        ]
+      },
+      "full series": {
+        "latest_value_in_corpus": "2017-01",
+        "our_series_with_test_months_in_corpus": 47,
+        "max_test_months_in_corpus_per_series": 25,
+        "test_windows_touched": [
+          "2015-01-01 to 2015-12-01",
+          "2016-01-01 to 2016-12-01",
+          "2017-01-01 to 2017-12-01"
+        ]
+      }
+    },
+    "five_origins_after_cutoff": {
+      "cutoff": "2017-01",
+      "months_after_cutoff_as_loaded": 35,
+      "months_after_cutoff_raw_file": 46,
+      "months_needed_for_5_origins_h12_spaced_12": 60,
+      "fits_as_loaded": false,
+      "fits_raw_file": false,
+      "non_overlapping_windows_that_fit_as_loaded": 2,
+      "windows_that_fit": [
+        "2018-01-01 to 2018-12-01",
+        "2019-01-01 to 2019-12-01"
+      ],
+      "largest_spacing_that_fits_5_windows_as_loaded": 5,
+      "context_months_at_first_registered_origin": 443,
+      "context_months_at_first_origin_after_cutoff": 468,
+      "min_context_required": 120
+    }
+  },
+  "wiki2": {
+    "ours": "Wiki2",
+    "our_range": [
+      "2016-01-01",
+      "2016-12-31",
+      366
+    ],
+    "bottom_series": 150,
+    "registered_test_windows_h7": [
+      "2016-11-27 to 2016-12-03",
+      "2016-12-04 to 2016-12-10",
+      "2016-12-11 to 2016-12-17",
+      "2016-12-18 to 2016-12-24",
+      "2016-12-25 to 2016-12-31"
+    ],
+    "extended_web_traffic": {
+      "public": "Extended Web Traffic (Salesforce/GiftEvalPretrain)",
+      "public_start": "2015-07-01",
+      "public_length_days": 2557,
+      "distinct_2016_windows_in_public": 144275,
+      "days_compared": 366,
+      "bottom_series_equal_on_all_days": 150,
+      "distinct_public_items_matched": 150
+    },
+    "kaggle_web_traffic_weekly": {
+      "public": "Kaggle Web Traffic Weekly (Salesforce/GiftEvalPretrain)",
+      "public_series": 145063,
+      "week_start_that_matches": "2015-07-01 (Wednesday)",
+      "stated_start_in_file": "2015-06-29 (Monday)",
+      "matches_by_week_start": {
+        "2015-06-29 (Monday)": 0,
+        "2015-06-30 (Tuesday)": 0,
+        "2015-07-01 (Wednesday)": 150,
+        "2015-07-02 (Thursday)": 0,
+        "2015-07-03 (Friday)": 0,
+        "2015-07-04 (Saturday)": 0,
+        "2015-07-05 (Sunday)": 0
+      },
+      "full_weeks_of_2016_compared": 51,
+      "first_week_compared": "2016-01-06",
+      "bottom_series_with_equal_weekly_sums": 150,
+      "same_item_id_as_daily_match": 150
+    },
+    "wiki_daily_100k": {
+      "public": "Wiki Daily (100k) (autogluon/chronos_datasets)",
+      "public_series_covering_2016": 100000,
+      "criterion_near_identical": "log-count correlation > 0.999 and median ratio in [0.9, 1.1]",
+      "criterion_probable": "log-count correlation > 0.98",
+      "bottom_series_near_identical": 1,
+      "bottom_series_probable": 1,
+      "bottom_series_equal_on_all_days": 0,
+      "near_identical": [
+        [
+          "en_AAC_AAG_119",
+          "Shawn_Mendes",
+          0.99974,
+          0.9902
+        ]
+      ],
+      "probable": [
+        [
+          "en_DES_AAG_102",
+          "Alejandro_Gonz\u00e1lez_I\u00f1\u00e1rritu",
+          0.98456,
+          1.8195
+        ]
+      ],
+      "median_best_log_corr": 0.6617466807365417
+    },
+    "wiki_rolling": {
+      "public": "Wiki-Rolling (Salesforce/GiftEvalPretrain)",
+      "public_series": 47675,
+      "public_length_days": [
+        792,
+        912
+      ],
+      "method": "exact equality of any run of 7 consecutive days; runs with a maximum below 100 or fewer than 5 distinct values are not used",
+      "our_runs_searched": 38953,
+      "exact_runs_found": 0,
+      "bottom_series_with_a_run_found": 0
+    }
+  },
+  "tourism": [
+    {
+      "ours": "TourismLarge",
+      "public": "monash_tourism_monthly",
+      "our_series_compared": 504,
+      "our_series_skipped_mostly_zero": 51,
+      "public_series": 366,
+      "public_series_with_enough_date_overlap": 352,
+      "min_overlap": 60,
+      "pairs_strict": 0,
+      "pairs_loose": 0,
+      "pairs_passing_levels_only": 0,
+      "best_corr_level": 0.7611941810411402,
+      "best_pair": [
+        "BCCAll",
+        "T000244"
+      ],
+      "our_series_with_corr_above_0.99": 0,
+      "ignoring_dates": {
+        "public_series_compared": 366,
+        "matches": 0,
+        "best_corr_level": 0.9511231076347714
+      }
+    },
+    {
+      "ours": "TourismLarge",
+      "public": "m4_monthly",
+      "our_series_compared": 504,
+      "our_series_skipped_mostly_zero": 51,
+      "public_series": 48000,
+      "public_series_with_enough_date_overlap": 47059,
+      "min_overlap": 60,
+      "pairs_strict": 0,
+      "pairs_loose": 0,
+      "pairs_passing_levels_only": 0,
+      "best_corr_level": 0.9331298176983772,
+      "best_pair": [
+        "BACOth",
+        "T045547"
+      ],
+      "our_series_with_corr_above_0.99": 0,
+      "ignoring_dates": null
+    },
+    {
+      "ours": "TourismSmall",
+      "public": "monash_tourism_quarterly",
+      "our_series_compared": 89,
+      "our_series_skipped_mostly_zero": 0,
+      "public_series": 427,
+      "public_series_with_enough_date_overlap": 413,
+      "min_overlap": 20,
+      "pairs_strict": 0,
+      "pairs_loose": 0,
+      "pairs_passing_levels_only": 0,
+      "best_corr_level": 0.8905735223487675,
+      "best_pair": [
+        "nt-hol",
+        "T000032"
+      ],
+      "our_series_with_corr_above_0.99": 0,
+      "ignoring_dates": {
+        "public_series_compared": 427,
+        "matches": 0,
+        "best_corr_level": 0.9632028343408753
+      }
+    },
+    {
+      "ours": "TourismLarge, quarterly sums",
+      "public": "monash_tourism_quarterly",
+      "our_series_compared": 542,
+      "our_series_skipped_mostly_zero": 13,
+      "public_series": 427,
+      "public_series_with_enough_date_overlap": 413,
+      "min_overlap": 20,
+      "pairs_strict": 0,
+      "pairs_loose": 0,
+      "pairs_passing_levels_only": 0,
+      "best_corr_level": 0.8977491226049665,
+      "best_pair": [
+        "GHol",
+        "T000032"
+      ],
+      "our_series_with_corr_above_0.99": 0,
+      "ignoring_dates": {
+        "public_series_compared": 427,
+        "matches": 0,
+        "best_corr_level": 0.9772571335420712
+      }
+    },
+    {
+      "ours": "TourismSmall",
+      "public": "m4_quarterly",
+      "our_series_compared": 89,
+      "our_series_skipped_mostly_zero": 0,
+      "public_series": 24000,
+      "public_series_with_enough_date_overlap": 20432,
+      "min_overlap": 20,
+      "pairs_strict": 0,
+      "pairs_loose": 0,
+      "pairs_passing_levels_only": 0,
+      "best_corr_level": 0.9085368117299135,
+      "best_pair": [
+        "nt-hol",
+        "T004197"
+      ],
+      "our_series_with_corr_above_0.99": 0,
+      "ignoring_dates": null
+    },
+    {
+      "ours": "TourismLarge, quarterly sums",
+      "public": "m4_quarterly",
+      "our_series_compared": 542,
+      "our_series_skipped_mostly_zero": 13,
+      "public_series": 24000,
+      "public_series_with_enough_date_overlap": 23378,
+      "min_overlap": 20,
+      "pairs_strict": 0,
+      "pairs_loose": 0,
+      "pairs_passing_levels_only": 0,
+      "best_corr_level": 0.9444202603902248,
+      "best_pair": [
+        "EAll",
+        "T006969"
+      ],
+      "our_series_with_corr_above_0.99": 0,
+      "ignoring_dates": null
+    }
+  ],
+  "public_files": [
+    {
+      "source": "fev_australian_tourism",
+      "repo": "autogluon/fev_datasets",
+      "revision": "f71c0fff4cf81283a2c43e7f3a73aa4f9826aef8",
+      "file": "australian_tourism/train-00000-of-00001.parquet",
+      "bytes": 16231,
+      "sha256": "80b6ed9d7b727c84dbfa1c1ac73a1c7b80c46df5b2ba5e1209cae46dc2db194d"
+    },
+    {
+      "source": "m4_monthly",
+      "repo": "autogluon/chronos_datasets",
+      "revision": "eeecad0b82a8c237e212ce6f8d1abecb513e2cec",
+      "file": "m4_monthly/train-00000-of-00001.parquet",
+      "bytes": 52772258,
+      "sha256": "15576f826405d4a35fe7d264b2a377ef2407d7f3370783d274542b29792c0ee8"
+    },
+    {
+      "source": "m4_quarterly",
+      "repo": "autogluon/chronos_datasets",
+      "revision": "eeecad0b82a8c237e212ce6f8d1abecb513e2cec",
+      "file": "m4_quarterly/train-00000-of-00001.parquet",
+      "bytes": 13269789,
+      "sha256": "00758d4b6caa06d34845f438b203a9b955eadb6453f9d9b5e952ff39043e6ed4"
+    },
+    {
+      "source": "monash_tourism_monthly",
+      "repo": "autogluon/chronos_datasets",
+      "revision": "eeecad0b82a8c237e212ce6f8d1abecb513e2cec",
+      "file": "monash_tourism_monthly/train-00000-of-00001.parquet",
+      "bytes": 334951,
+      "sha256": "ac8d1c6a87cbdea71c1327828c58d9628f0be3dd322da545e17425b427c898ee"
+    },
+    {
+      "source": "monash_tourism_quarterly",
+      "repo": "autogluon/chronos_datasets",
+      "revision": "eeecad0b82a8c237e212ce6f8d1abecb513e2cec",
+      "file": "monash_tourism_quarterly/train-00000-of-00001.parquet",
+      "bytes": 177407,
+      "sha256": "07069411c08f6781e15e6d42e93c6811e072e972003d42fe00a1e332b46d1051"
+    },
+    {
+      "source": "kaggle_web_traffic_weekly",
+      "repo": "Salesforce/GiftEvalPretrain",
+      "revision": "6830b624de7ed2b3d3e5b85bb6959d81dcc5d874",
+      "file": "kaggle_web_traffic_weekly/data-00000-of-00001.arrow",
+      "bytes": 70737520,
+      "sha256": "7ae24fc5412ea1d249daeab6c39e2e7976281c2d3abfa9c85b712bf822227884"
+    },
+    {
+      "source": "wiki_rolling",
+      "repo": "Salesforce/GiftEvalPretrain",
+      "revision": "6830b624de7ed2b3d3e5b85bb6959d81dcc5d874",
+      "file": "wiki-rolling_nips/data-00000-of-00001.arrow",
+      "bytes": 163724288,
+      "sha256": "642ac3c0b7722d480fa1cdb5d3e16a36d2133f457e2a716d4ca13103ddc7dbfa"
+    },
+    {
+      "source": "wiki_daily_100k",
+      "repo": "autogluon/chronos_datasets",
+      "revision": "eeecad0b82a8c237e212ce6f8d1abecb513e2cec",
+      "file": "wiki_daily_100k/train-00000-of-00005.parquet",
+      "bytes": 116082250,
+      "sha256": "5cd40fe0ba518bb7594dbcd5a6c45e013b522b1dd8b6a6a92401ffbb4779b86e"
+    },
+    {
+      "source": "wiki_daily_100k",
+      "repo": "autogluon/chronos_datasets",
+      "revision": "eeecad0b82a8c237e212ce6f8d1abecb513e2cec",
+      "file": "wiki_daily_100k/train-00001-of-00005.parquet",
+      "bytes": 118924994,
+      "sha256": "9cd7f57acca43f3d12f9b6034a1a860f07088f0eca0bff0e41b6afcc01046296"
+    },
+    {
+      "source": "wiki_daily_100k",
+      "repo": "autogluon/chronos_datasets",
+      "revision": "eeecad0b82a8c237e212ce6f8d1abecb513e2cec",
+      "file": "wiki_daily_100k/train-00002-of-00005.parquet",
+      "bytes": 119863715,
+      "sha256": "cae93a3bbba47047fe344974fc04c06ed0da122c7b8e7be2ee4d017d86be327e"
+    },
+    {
+      "source": "wiki_daily_100k",
+      "repo": "autogluon/chronos_datasets",
+      "revision": "eeecad0b82a8c237e212ce6f8d1abecb513e2cec",
+      "file": "wiki_daily_100k/train-00003-of-00005.parquet",
+      "bytes": 118411976,
+      "sha256": "3086d37c3cc727d8c462d92942b3748b15f07293e1f4999380b1e804f5a7066c"
+    },
+    {
+      "source": "wiki_daily_100k",
+      "repo": "autogluon/chronos_datasets",
+      "revision": "eeecad0b82a8c237e212ce6f8d1abecb513e2cec",
+      "file": "wiki_daily_100k/train-00004-of-00005.parquet",
+      "bytes": 119271098,
+      "sha256": "f553f865a1366abfbea48cc6a9a8a4bc6e06d19814e5ffdc4f60a947b13c2ea9"
+    },
+    {
+      "source": "extended_web_traffic",
+      "repo": "Salesforce/GiftEvalPretrain",
+      "revision": "6830b624de7ed2b3d3e5b85bb6959d81dcc5d874",
+      "file": "extended_web_traffic_with_missing/data-00000-of-00003.arrow",
+      "bytes": 495889336,
+      "sha256": "57d98ccb6a0e0a46117a8aaa90cc729d9e86ac3cc648f5a31227529f38d21b76"
+    },
+    {
+      "source": "extended_web_traffic",
+      "repo": "Salesforce/GiftEvalPretrain",
+      "revision": "6830b624de7ed2b3d3e5b85bb6959d81dcc5d874",
+      "file": "extended_web_traffic_with_missing/data-00001-of-00003.arrow",
+      "bytes": 495890192,
+      "sha256": "cba41395ad194f94a195aa3f151b31a6ce515877b015f8ccb47fb0cefe00ade8"
+    },
+    {
+      "source": "extended_web_traffic",
+      "repo": "Salesforce/GiftEvalPretrain",
+      "revision": "6830b624de7ed2b3d3e5b85bb6959d81dcc5d874",
+      "file": "extended_web_traffic_with_missing/data-00002-of-00003.arrow",
+      "bytes": 495935184,
+      "sha256": "ba43f6e4a76ae788654bc78173895d2aaf430540f8fd971092c5585c6a497f4d"
+    }
+  ],
+  "our_files": [
+    {
+      "dataset": "TourismSmall",
+      "file": "data/hierarchical/TourismSmall/data.csv",
+      "bytes": 15744,
+      "sha256": "5492570ed99b64df9d530d025f4ced913f54cdc43e489544b8878c6502b23845"
+    },
+    {
+      "dataset": "TourismSmall",
+      "file": "data/hierarchical/TourismSmall/agg_mat.csv",
+      "bytes": 21747,
+      "sha256": "c05bffef110d550133a11459fb64b8d4bc390d43409c6e799468de32fdbc77c1"
+    },
+    {
+      "dataset": "TourismLarge",
+      "file": "data/hierarchical/TourismLarge/data.csv",
+      "bytes": 1444983,
+      "sha256": "2c38bd1625889f4414079296507c54762122b0b4c86c0ecc0fe6f84f6f6ead0e"
+    },
+    {
+      "dataset": "TourismLarge",
+      "file": "data/hierarchical/TourismLarge/agg_mat.csv",
+      "bytes": 680699,
+      "sha256": "7f8a911922fb9d19a470b7c89769ec30bba686685f2899d62db413be86ad586f"
+    },
+    {
+      "dataset": "Labour",
+      "file": "data/hierarchical/Labour/data.csv",
+      "bytes": 375121,
+      "sha256": "f53a66d035cc95d2d5ab16932d12d8b45799705e0a9332ae3fa0f9fdf166e18e"
+    },
+    {
+      "dataset": "Labour",
+      "file": "data/hierarchical/Labour/agg_mat.csv",
+      "bytes": 11424,
+      "sha256": "49dc6f228c6b9eaa3b16d82586e8d15363744b1a6b4e16d3b0eea699824a01f3"
+    },
+    {
+      "dataset": "Wiki2",
+      "file": "data/hierarchical/Wiki2/data.csv",
+      "bytes": 303029,
+      "sha256": "157f97d1f9041c99266a5deff3a2f2789e80f8b157fd947cfa7782c4b990c393"
+    },
+    {
+      "dataset": "Wiki2",
+      "file": "data/hierarchical/Wiki2/agg_mat.csv",
+      "bytes": 65315,
+      "sha256": "41174075d1feb6bb4aec8dd477b926f7c86d0956ab24738011ee11f2e4a1b257"
+    }
+  ]
+}

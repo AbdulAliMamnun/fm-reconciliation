@@ -1,0 +1,2271 @@
+ours_dataset,ours,source,best_corr_level,public_id
+TourismLarge,TotalAll,monash_tourism_monthly,0.691737,T000244
+TourismLarge,AAll,monash_tourism_monthly,0.679713,T000244
+TourismLarge,BAll,monash_tourism_monthly,0.755642,T000244
+TourismLarge,CAll,monash_tourism_monthly,0.480664,T000098
+TourismLarge,DAll,monash_tourism_monthly,0.661868,T000244
+TourismLarge,EAll,monash_tourism_monthly,0.463029,T000098
+TourismLarge,FAll,monash_tourism_monthly,0.682019,T000244
+TourismLarge,GAll,monash_tourism_monthly,0.526653,T000130
+TourismLarge,AAAll,monash_tourism_monthly,0.579143,T000244
+TourismLarge,ABAll,monash_tourism_monthly,0.693090,T000244
+TourismLarge,ACAll,monash_tourism_monthly,0.741264,T000244
+TourismLarge,ADAll,monash_tourism_monthly,0.371444,T000244
+TourismLarge,AEAll,monash_tourism_monthly,0.334214,T000244
+TourismLarge,AFAll,monash_tourism_monthly,0.409455,T000180
+TourismLarge,BAAll,monash_tourism_monthly,0.734168,T000244
+TourismLarge,BBAll,monash_tourism_monthly,0.744455,T000244
+TourismLarge,BCAll,monash_tourism_monthly,0.736196,T000244
+TourismLarge,BDAll,monash_tourism_monthly,0.606530,T000244
+TourismLarge,BEAll,monash_tourism_monthly,0.497826,T000244
+TourismLarge,CAAll,monash_tourism_monthly,0.631453,T000244
+TourismLarge,CBAll,monash_tourism_monthly,0.381681,T000036
+TourismLarge,CCAll,monash_tourism_monthly,0.484766,T000036
+TourismLarge,CDAll,monash_tourism_monthly,0.287522,T000012
+TourismLarge,DAAll,monash_tourism_monthly,0.576309,T000244
+TourismLarge,DBAll,monash_tourism_monthly,0.724785,T000244
+TourismLarge,DCAll,monash_tourism_monthly,0.284623,T000244
+TourismLarge,DDAll,monash_tourism_monthly,0.541144,T000244
+TourismLarge,EAAll,monash_tourism_monthly,0.574755,T000244
+TourismLarge,EBAll,monash_tourism_monthly,0.468166,T000036
+TourismLarge,ECAll,monash_tourism_monthly,0.297124,T000113
+TourismLarge,FAAll,monash_tourism_monthly,0.634838,T000244
+TourismLarge,FBAll,monash_tourism_monthly,0.689619,T000244
+TourismLarge,FCAll,monash_tourism_monthly,0.603608,T000196
+TourismLarge,GAAll,monash_tourism_monthly,0.506638,T000130
+TourismLarge,GBAll,monash_tourism_monthly,0.384120,T000130
+TourismLarge,AAAAll,monash_tourism_monthly,0.592918,T000180
+TourismLarge,AABAll,monash_tourism_monthly,0.650058,T000244
+TourismLarge,ABAAll,monash_tourism_monthly,0.607728,T000244
+TourismLarge,ABBAll,monash_tourism_monthly,0.690081,T000244
+TourismLarge,ACAAll,monash_tourism_monthly,0.741264,T000244
+TourismLarge,ADAAll,monash_tourism_monthly,0.450914,T000146
+TourismLarge,ADBAll,monash_tourism_monthly,0.405053,T000251
+TourismLarge,ADCAll,monash_tourism_monthly,0.596116,T000244
+TourismLarge,ADDAll,monash_tourism_monthly,0.271724,T000252
+TourismLarge,AEAAll,monash_tourism_monthly,0.328745,T000244
+TourismLarge,AEBAll,monash_tourism_monthly,0.398974,T000244
+TourismLarge,AECAll,monash_tourism_monthly,0.239736,T000146
+TourismLarge,AEDAll,monash_tourism_monthly,0.420038,T000180
+TourismLarge,AFAAll,monash_tourism_monthly,0.409455,T000180
+TourismLarge,BAAAll,monash_tourism_monthly,0.616140,T000244
+TourismLarge,BABAll,monash_tourism_monthly,0.720937,T000244
+TourismLarge,BACAll,monash_tourism_monthly,0.703555,T000244
+TourismLarge,BBAAll,monash_tourism_monthly,0.744455,T000244
+TourismLarge,BCAAll,monash_tourism_monthly,0.619750,T000244
+TourismLarge,BCBAll,monash_tourism_monthly,0.599475,T000244
+TourismLarge,BCCAll,monash_tourism_monthly,0.761194,T000244
+TourismLarge,BDAAll,monash_tourism_monthly,0.540992,T000244
+TourismLarge,BDBAll,monash_tourism_monthly,0.345183,T000201
+TourismLarge,BDCAll,monash_tourism_monthly,0.389088,T000244
+TourismLarge,BDDAll,monash_tourism_monthly,0.283799,T000045
+TourismLarge,BDEAll,monash_tourism_monthly,0.467043,T000244
+TourismLarge,BDFAll,monash_tourism_monthly,0.286235,T000102
+TourismLarge,BEAAll,monash_tourism_monthly,0.328722,T000227
+TourismLarge,BEBAll,monash_tourism_monthly,0.358888,T000244
+TourismLarge,BECAll,monash_tourism_monthly,0.277416,T000043
+TourismLarge,BEDAll,monash_tourism_monthly,0.397412,T000244
+TourismLarge,BEEAll,monash_tourism_monthly,0.389277,T000102
+TourismLarge,BEFAll,monash_tourism_monthly,0.281684,T000201
+TourismLarge,BEGAll,monash_tourism_monthly,0.307416,T000098
+TourismLarge,BEHAll,monash_tourism_monthly,0.618086,T000332
+TourismLarge,CAAAll,monash_tourism_monthly,0.562467,T000244
+TourismLarge,CABAll,monash_tourism_monthly,0.564560,T000244
+TourismLarge,CACAll,monash_tourism_monthly,0.594458,T000244
+TourismLarge,CBAAll,monash_tourism_monthly,0.397883,T000036
+TourismLarge,CBBAll,monash_tourism_monthly,0.253189,T000244
+TourismLarge,CBCAll,monash_tourism_monthly,0.333958,T000244
+TourismLarge,CBDAll,monash_tourism_monthly,0.376890,T000220
+TourismLarge,CCAAll,monash_tourism_monthly,0.372401,T000186
+TourismLarge,CCBAll,monash_tourism_monthly,0.321819,T000114
+TourismLarge,CCCAll,monash_tourism_monthly,0.442615,T000036
+TourismLarge,CDAAll,monash_tourism_monthly,0.282670,T000103
+TourismLarge,CDBAll,monash_tourism_monthly,0.218986,T000106
+TourismLarge,DAAAll,monash_tourism_monthly,0.575775,T000244
+TourismLarge,DABAll,monash_tourism_monthly,0.279978,T000317
+TourismLarge,DACAll,monash_tourism_monthly,0.293932,T000227
+TourismLarge,DBAAll,monash_tourism_monthly,0.628085,T000244
+TourismLarge,DBBAll,monash_tourism_monthly,0.691864,T000244
+TourismLarge,DBCAll,monash_tourism_monthly,0.507910,T000244
+TourismLarge,DCAAll,monash_tourism_monthly,0.508574,T000244
+TourismLarge,DCBAll,monash_tourism_monthly,0.444352,T000244
+TourismLarge,DCCAll,monash_tourism_monthly,0.371657,T000244
+TourismLarge,DCDAll,monash_tourism_monthly,0.298427,T000146
+TourismLarge,DDAAll,monash_tourism_monthly,0.327971,T000305
+TourismLarge,DDBAll,monash_tourism_monthly,0.596265,T000244
+TourismLarge,EAAAll,monash_tourism_monthly,0.286764,T000036
+TourismLarge,EABAll,monash_tourism_monthly,0.544809,T000244
+TourismLarge,EACAll,monash_tourism_monthly,0.622859,T000244
+TourismLarge,EBAAll,monash_tourism_monthly,0.468166,T000036
+TourismLarge,ECAAll,monash_tourism_monthly,0.297124,T000113
+TourismLarge,FAAAll,monash_tourism_monthly,0.634838,T000244
+TourismLarge,FBAAll,monash_tourism_monthly,0.671064,T000244
+TourismLarge,FBBAll,monash_tourism_monthly,0.609116,T000244
+TourismLarge,FCAAll,monash_tourism_monthly,0.588269,T000196
+TourismLarge,FCBAll,monash_tourism_monthly,0.393232,T000196
+TourismLarge,GAAAll,monash_tourism_monthly,0.499596,T000036
+TourismLarge,GABAll,monash_tourism_monthly,0.260569,T000130
+TourismLarge,GACAll,monash_tourism_monthly,0.357257,T000130
+TourismLarge,GBAAll,monash_tourism_monthly,0.195861,T000079
+TourismLarge,GBBAll,monash_tourism_monthly,0.460944,T000130
+TourismLarge,GBCAll,monash_tourism_monthly,0.340042,T000036
+TourismLarge,GBDAll,monash_tourism_monthly,0.286764,T000101
+TourismLarge,TotalHol,monash_tourism_monthly,0.690742,T000244
+TourismLarge,TotalVis,monash_tourism_monthly,0.658938,T000244
+TourismLarge,TotalBus,monash_tourism_monthly,0.365649,T000077
+TourismLarge,TotalOth,monash_tourism_monthly,0.265714,T000312
+TourismLarge,AHol,monash_tourism_monthly,0.693143,T000244
+TourismLarge,AVis,monash_tourism_monthly,0.612690,T000244
+TourismLarge,ABus,monash_tourism_monthly,0.398232,T000145
+TourismLarge,AOth,monash_tourism_monthly,0.293235,T000257
+TourismLarge,BHol,monash_tourism_monthly,0.755395,T000244
+TourismLarge,BVis,monash_tourism_monthly,0.663600,T000244
+TourismLarge,BBus,monash_tourism_monthly,0.283675,T000332
+TourismLarge,BOth,monash_tourism_monthly,0.315075,T000091
+TourismLarge,CHol,monash_tourism_monthly,0.465035,T000244
+TourismLarge,CVis,monash_tourism_monthly,0.565743,T000098
+TourismLarge,CBus,monash_tourism_monthly,0.290300,T000072
+TourismLarge,COth,monash_tourism_monthly,0.324633,T000312
+TourismLarge,DHol,monash_tourism_monthly,0.639958,T000244
+TourismLarge,DVis,monash_tourism_monthly,0.650273,T000244
+TourismLarge,DBus,monash_tourism_monthly,0.222773,T000139
+TourismLarge,DOth,monash_tourism_monthly,0.200668,T000259
+TourismLarge,EHol,monash_tourism_monthly,0.456449,T000244
+TourismLarge,EVis,monash_tourism_monthly,0.575623,T000098
+TourismLarge,EBus,monash_tourism_monthly,0.357865,T000133
+TourismLarge,EOth,monash_tourism_monthly,0.319784,T000150
+TourismLarge,FHol,monash_tourism_monthly,0.667815,T000244
+TourismLarge,FVis,monash_tourism_monthly,0.559151,T000244
+TourismLarge,FBus,monash_tourism_monthly,0.298326,T000101
+TourismLarge,FOth,monash_tourism_monthly,0.194155,T000192
+TourismLarge,GHol,monash_tourism_monthly,0.603376,T000130
+TourismLarge,GVis,monash_tourism_monthly,0.320651,T000036
+TourismLarge,GBus,monash_tourism_monthly,0.280677,T000145
+TourismLarge,GOth,monash_tourism_monthly,0.326298,T000194
+TourismLarge,AAHol,monash_tourism_monthly,0.616369,T000244
+TourismLarge,AAVis,monash_tourism_monthly,0.566050,T000201
+TourismLarge,AABus,monash_tourism_monthly,0.316614,T000145
+TourismLarge,AAOth,monash_tourism_monthly,0.258624,T000108
+TourismLarge,ABHol,monash_tourism_monthly,0.694825,T000244
+TourismLarge,ABVis,monash_tourism_monthly,0.555669,T000244
+TourismLarge,ABBus,monash_tourism_monthly,0.244915,T000074
+TourismLarge,ABOth,monash_tourism_monthly,0.257857,T000106
+TourismLarge,ACHol,monash_tourism_monthly,0.734026,T000244
+TourismLarge,ACVis,monash_tourism_monthly,0.609377,T000244
+TourismLarge,ACBus,monash_tourism_monthly,0.168117,T000342
+TourismLarge,ACOth,monash_tourism_monthly,0.222893,T000036
+TourismLarge,ADHol,monash_tourism_monthly,0.341006,T000106
+TourismLarge,ADVis,monash_tourism_monthly,0.539801,T000344
+TourismLarge,ADBus,monash_tourism_monthly,0.385394,T000145
+TourismLarge,ADOth,monash_tourism_monthly,0.314550,T000252
+TourismLarge,AEHol,monash_tourism_monthly,0.257838,T000244
+TourismLarge,AEVis,monash_tourism_monthly,0.426261,T000201
+TourismLarge,AEBus,monash_tourism_monthly,0.215688,T000091
+TourismLarge,AEOth,monash_tourism_monthly,0.313201,T000148
+TourismLarge,AFHol,monash_tourism_monthly,0.472857,T000180
+TourismLarge,AFVis,monash_tourism_monthly,0.364398,T000201
+TourismLarge,AFBus,monash_tourism_monthly,0.289814,T000028
+TourismLarge,AFOth,monash_tourism_monthly,0.267147,T000080
+TourismLarge,BAHol,monash_tourism_monthly,0.757898,T000244
+TourismLarge,BAVis,monash_tourism_monthly,0.629940,T000244
+TourismLarge,BABus,monash_tourism_monthly,0.231450,T000145
+TourismLarge,BAOth,monash_tourism_monthly,0.200315,T000170
+TourismLarge,BBHol,monash_tourism_monthly,0.748629,T000244
+TourismLarge,BBVis,monash_tourism_monthly,0.607008,T000201
+TourismLarge,BBBus,monash_tourism_monthly,0.240247,T000059
+TourismLarge,BBOth,monash_tourism_monthly,0.162558,T000091
+TourismLarge,BCHol,monash_tourism_monthly,0.746618,T000244
+TourismLarge,BCVis,monash_tourism_monthly,0.499270,T000244
+TourismLarge,BCBus,monash_tourism_monthly,0.228313,T000312
+TourismLarge,BCOth,monash_tourism_monthly,0.164608,T000097
+TourismLarge,BDHol,monash_tourism_monthly,0.550717,T000244
+TourismLarge,BDVis,monash_tourism_monthly,0.456268,T000244
+TourismLarge,BDBus,monash_tourism_monthly,0.301875,T000233
+TourismLarge,BDOth,monash_tourism_monthly,0.309149,T000316
+TourismLarge,BEHol,monash_tourism_monthly,0.382988,T000244
+TourismLarge,BEVis,monash_tourism_monthly,0.518333,T000244
+TourismLarge,BEBus,monash_tourism_monthly,0.576965,T000332
+TourismLarge,BEOth,monash_tourism_monthly,0.321074,T000104
+TourismLarge,CAHol,monash_tourism_monthly,0.635224,T000244
+TourismLarge,CAVis,monash_tourism_monthly,0.539620,T000244
+TourismLarge,CABus,monash_tourism_monthly,0.299512,T000084
+TourismLarge,CAOth,monash_tourism_monthly,0.312998,T000162
+TourismLarge,CBHol,monash_tourism_monthly,0.298125,T000036
+TourismLarge,CBVis,monash_tourism_monthly,0.380962,T000220
+TourismLarge,CBBus,monash_tourism_monthly,0.305663,T000088
+TourismLarge,CBOth,monash_tourism_monthly,0.189577,T000146
+TourismLarge,CCHol,monash_tourism_monthly,0.518897,T000036
+TourismLarge,CCVis,monash_tourism_monthly,0.373675,T000104
+TourismLarge,CCBus,monash_tourism_monthly,0.258964,T000159
+TourismLarge,CCOth,monash_tourism_monthly,0.325204,T000105
+TourismLarge,CDHol,monash_tourism_monthly,0.325910,T000146
+TourismLarge,CDVis,monash_tourism_monthly,0.368752,T000227
+TourismLarge,CDBus,monash_tourism_monthly,0.264674,T000091
+TourismLarge,CDOth,monash_tourism_monthly,0.464243,T000045
+TourismLarge,DAHol,monash_tourism_monthly,0.577892,T000201
+TourismLarge,DAVis,monash_tourism_monthly,0.594535,T000244
+TourismLarge,DABus,monash_tourism_monthly,0.237281,T000139
+TourismLarge,DAOth,monash_tourism_monthly,0.233305,T000021
+TourismLarge,DBHol,monash_tourism_monthly,0.687894,T000244
+TourismLarge,DBVis,monash_tourism_monthly,0.653942,T000244
+TourismLarge,DBBus,monash_tourism_monthly,0.320274,T000287
+TourismLarge,DBOth,monash_tourism_monthly,0.232694,T000281
+TourismLarge,DCHol,monash_tourism_monthly,0.257288,T000251
+TourismLarge,DCVis,monash_tourism_monthly,0.453132,T000244
+TourismLarge,DCBus,monash_tourism_monthly,0.213232,T000316
+TourismLarge,DCOth,monash_tourism_monthly,0.283772,T000097
+TourismLarge,DDHol,monash_tourism_monthly,0.565375,T000244
+TourismLarge,DDVis,monash_tourism_monthly,0.398271,T000244
+TourismLarge,DDBus,monash_tourism_monthly,0.228250,T000113
+TourismLarge,DDOth,monash_tourism_monthly,0.293199,T000193
+TourismLarge,EAHol,monash_tourism_monthly,0.539042,T000244
+TourismLarge,EAVis,monash_tourism_monthly,0.571005,T000244
+TourismLarge,EABus,monash_tourism_monthly,0.357744,T000133
+TourismLarge,EAOth,monash_tourism_monthly,0.268068,T000189
+TourismLarge,EBHol,monash_tourism_monthly,0.519292,T000036
+TourismLarge,EBVis,monash_tourism_monthly,0.244545,T000063
+TourismLarge,EBBus,monash_tourism_monthly,0.247175,T000124
+TourismLarge,ECHol,monash_tourism_monthly,0.271669,T000105
+TourismLarge,ECVis,monash_tourism_monthly,0.444810,T000103
+TourismLarge,ECBus,monash_tourism_monthly,0.312940,T000183
+TourismLarge,ECOth,monash_tourism_monthly,0.352827,T000299
+TourismLarge,FAHol,monash_tourism_monthly,0.652903,T000244
+TourismLarge,FAVis,monash_tourism_monthly,0.527766,T000244
+TourismLarge,FABus,monash_tourism_monthly,0.354064,T000101
+TourismLarge,FAOth,monash_tourism_monthly,0.267822,T000335
+TourismLarge,FBHol,monash_tourism_monthly,0.660438,T000201
+TourismLarge,FBVis,monash_tourism_monthly,0.463570,T000244
+TourismLarge,FBBus,monash_tourism_monthly,0.204524,T000266
+TourismLarge,FBOth,monash_tourism_monthly,0.183215,T000215
+TourismLarge,FCHol,monash_tourism_monthly,0.529795,T000196
+TourismLarge,FCVis,monash_tourism_monthly,0.410078,T000284
+TourismLarge,FCBus,monash_tourism_monthly,0.311066,T000347
+TourismLarge,FCOth,monash_tourism_monthly,0.323859,T000224
+TourismLarge,GAHol,monash_tourism_monthly,0.611973,T000130
+TourismLarge,GAVis,monash_tourism_monthly,0.367865,T000036
+TourismLarge,GABus,monash_tourism_monthly,0.212526,T000019
+TourismLarge,GAOth,monash_tourism_monthly,0.345927,T000194
+TourismLarge,GBHol,monash_tourism_monthly,0.482983,T000036
+TourismLarge,GBVis,monash_tourism_monthly,0.301097,T000099
+TourismLarge,GBBus,monash_tourism_monthly,0.280827,T000178
+TourismLarge,GBOth,monash_tourism_monthly,0.228469,T000131
+TourismLarge,AAAHol,monash_tourism_monthly,0.595414,T000180
+TourismLarge,AAAVis,monash_tourism_monthly,0.553454,T000201
+TourismLarge,AAABus,monash_tourism_monthly,0.309239,T000145
+TourismLarge,AAAOth,monash_tourism_monthly,0.264298,T000039
+TourismLarge,AABHol,monash_tourism_monthly,0.663122,T000244
+TourismLarge,AABVis,monash_tourism_monthly,0.420918,T000303
+TourismLarge,AABBus,monash_tourism_monthly,0.385447,T000275
+TourismLarge,AABOth,monash_tourism_monthly,0.387097,T000201
+TourismLarge,ABAHol,monash_tourism_monthly,0.569775,T000244
+TourismLarge,ABAVis,monash_tourism_monthly,0.455249,T000244
+TourismLarge,ABABus,monash_tourism_monthly,0.363337,T000331
+TourismLarge,ABAOth,monash_tourism_monthly,0.316307,T000106
+TourismLarge,ABBHol,monash_tourism_monthly,0.703123,T000244
+TourismLarge,ABBVis,monash_tourism_monthly,0.519732,T000098
+TourismLarge,ABBBus,monash_tourism_monthly,0.239654,T000074
+TourismLarge,ABBOth,monash_tourism_monthly,0.318346,T000146
+TourismLarge,ACAHol,monash_tourism_monthly,0.734026,T000244
+TourismLarge,ACAVis,monash_tourism_monthly,0.609377,T000244
+TourismLarge,ACABus,monash_tourism_monthly,0.168117,T000342
+TourismLarge,ACAOth,monash_tourism_monthly,0.222893,T000036
+TourismLarge,ADAHol,monash_tourism_monthly,0.454260,T000146
+TourismLarge,ADAVis,monash_tourism_monthly,0.394552,T000227
+TourismLarge,ADABus,monash_tourism_monthly,0.219955,T000224
+TourismLarge,ADBHol,monash_tourism_monthly,0.360372,T000251
+TourismLarge,ADBVis,monash_tourism_monthly,0.237876,T000011
+TourismLarge,ADBBus,monash_tourism_monthly,0.352384,T000145
+TourismLarge,ADBOth,monash_tourism_monthly,0.365893,T000219
+TourismLarge,ADCHol,monash_tourism_monthly,0.598389,T000244
+TourismLarge,ADCVis,monash_tourism_monthly,0.517632,T000227
+TourismLarge,ADCBus,monash_tourism_monthly,0.184040,T000246
+TourismLarge,ADCOth,monash_tourism_monthly,0.226197,T000079
+TourismLarge,ADDHol,monash_tourism_monthly,0.273368,T000180
+TourismLarge,ADDVis,monash_tourism_monthly,0.378373,T000344
+TourismLarge,ADDBus,monash_tourism_monthly,0.335403,T000145
+TourismLarge,ADDOth,monash_tourism_monthly,0.350235,T000249
+TourismLarge,AEAHol,monash_tourism_monthly,0.268116,T000006
+TourismLarge,AEAVis,monash_tourism_monthly,0.434823,T000062
+TourismLarge,AEABus,monash_tourism_monthly,0.294726,T000091
+TourismLarge,AEAOth,monash_tourism_monthly,0.202628,T000166
+TourismLarge,AEBHol,monash_tourism_monthly,0.502132,T000244
+TourismLarge,AEBVis,monash_tourism_monthly,0.312619,T000201
+TourismLarge,AEBBus,monash_tourism_monthly,0.201824,T000224
+TourismLarge,AEBOth,monash_tourism_monthly,0.333058,T000122
+TourismLarge,AECHol,monash_tourism_monthly,0.313683,T000136
+TourismLarge,AECVis,monash_tourism_monthly,0.243690,T000025
+TourismLarge,AECBus,monash_tourism_monthly,0.281905,T000078
+TourismLarge,AEDHol,monash_tourism_monthly,0.327695,T000024
+TourismLarge,AEDVis,monash_tourism_monthly,0.292755,T000180
+TourismLarge,AEDBus,monash_tourism_monthly,0.432011,T000180
+TourismLarge,AFAHol,monash_tourism_monthly,0.472857,T000180
+TourismLarge,AFAVis,monash_tourism_monthly,0.364398,T000201
+TourismLarge,AFABus,monash_tourism_monthly,0.289814,T000028
+TourismLarge,AFAOth,monash_tourism_monthly,0.267147,T000080
+TourismLarge,BAAHol,monash_tourism_monthly,0.668516,T000244
+TourismLarge,BAAVis,monash_tourism_monthly,0.581305,T000244
+TourismLarge,BAABus,monash_tourism_monthly,0.242449,T000224
+TourismLarge,BAAOth,monash_tourism_monthly,0.209600,T000329
+TourismLarge,BABHol,monash_tourism_monthly,0.696665,T000244
+TourismLarge,BABVis,monash_tourism_monthly,0.594685,T000298
+TourismLarge,BABBus,monash_tourism_monthly,0.264373,T000167
+TourismLarge,BACHol,monash_tourism_monthly,0.736420,T000244
+TourismLarge,BACVis,monash_tourism_monthly,0.550904,T000201
+TourismLarge,BACBus,monash_tourism_monthly,0.200805,T000307
+TourismLarge,BACOth,monash_tourism_monthly,0.214529,T000316
+TourismLarge,BBAHol,monash_tourism_monthly,0.748629,T000244
+TourismLarge,BBAVis,monash_tourism_monthly,0.607008,T000201
+TourismLarge,BBABus,monash_tourism_monthly,0.240247,T000059
+TourismLarge,BBAOth,monash_tourism_monthly,0.162558,T000091
+TourismLarge,BCAHol,monash_tourism_monthly,0.610365,T000244
+TourismLarge,BCAVis,monash_tourism_monthly,0.520667,T000180
+TourismLarge,BCABus,monash_tourism_monthly,0.251899,T000059
+TourismLarge,BCBHol,monash_tourism_monthly,0.672397,T000244
+TourismLarge,BCBVis,monash_tourism_monthly,0.321921,T000102
+TourismLarge,BCBBus,monash_tourism_monthly,0.287902,T000312
+TourismLarge,BCBOth,monash_tourism_monthly,0.165496,T000057
+TourismLarge,BCCHol,monash_tourism_monthly,0.760170,T000244
+TourismLarge,BCCVis,monash_tourism_monthly,0.466241,T000244
+TourismLarge,BCCBus,monash_tourism_monthly,0.229135,T000122
+TourismLarge,BDAHol,monash_tourism_monthly,0.529531,T000244
+TourismLarge,BDAVis,monash_tourism_monthly,0.407642,T000098
+TourismLarge,BDABus,monash_tourism_monthly,0.183172,T000078
+TourismLarge,BDBHol,monash_tourism_monthly,0.342550,T000180
+TourismLarge,BDBVis,monash_tourism_monthly,0.302418,T000201
+TourismLarge,BDBBus,monash_tourism_monthly,0.354439,T000233
+TourismLarge,BDCHol,monash_tourism_monthly,0.370959,T000220
+TourismLarge,BDCVis,monash_tourism_monthly,0.289008,T000199
+TourismLarge,BDCBus,monash_tourism_monthly,0.303181,T000016
+TourismLarge,BDCOth,monash_tourism_monthly,0.315030,T000316
+TourismLarge,BDDHol,monash_tourism_monthly,0.205559,T000337
+TourismLarge,BDDVis,monash_tourism_monthly,0.315563,T000045
+TourismLarge,BDDBus,monash_tourism_monthly,0.185350,T000331
+TourismLarge,BDEHol,monash_tourism_monthly,0.463217,T000244
+TourismLarge,BDEVis,monash_tourism_monthly,0.482416,T000098
+TourismLarge,BDFHol,monash_tourism_monthly,0.168023,T000037
+TourismLarge,BDFVis,monash_tourism_monthly,0.358261,T000191
+TourismLarge,BEAHol,monash_tourism_monthly,0.223897,T000042
+TourismLarge,BEAVis,monash_tourism_monthly,0.372880,T000227
+TourismLarge,BEBHol,monash_tourism_monthly,0.240765,T000251
+TourismLarge,BEBVis,monash_tourism_monthly,0.424022,T000201
+TourismLarge,BEBBus,monash_tourism_monthly,0.176775,T000104
+TourismLarge,BEBOth,monash_tourism_monthly,0.247075,T000087
+TourismLarge,BECHol,monash_tourism_monthly,0.273722,T000043
+TourismLarge,BECVis,monash_tourism_monthly,0.302509,T000219
+TourismLarge,BECBus,monash_tourism_monthly,0.340348,T000317
+TourismLarge,BEDHol,monash_tourism_monthly,0.383755,T000244
+TourismLarge,BEDVis,monash_tourism_monthly,0.336354,T000244
+TourismLarge,BEDBus,monash_tourism_monthly,0.250263,T000220
+TourismLarge,BEDOth,monash_tourism_monthly,0.317611,T000331
+TourismLarge,BEEHol,monash_tourism_monthly,0.227092,T000098
+TourismLarge,BEEVis,monash_tourism_monthly,0.382162,T000102
+TourismLarge,BEFHol,monash_tourism_monthly,0.287451,T000220
+TourismLarge,BEFVis,monash_tourism_monthly,0.446652,T000180
+TourismLarge,BEGHol,monash_tourism_monthly,0.326564,T000254
+TourismLarge,BEGVis,monash_tourism_monthly,0.329682,T000258
+TourismLarge,BEGBus,monash_tourism_monthly,0.234817,T000164
+TourismLarge,BEHHol,monash_tourism_monthly,0.332499,T000180
+TourismLarge,BEHVis,monash_tourism_monthly,0.328019,T000244
+TourismLarge,BEHBus,monash_tourism_monthly,0.691850,T000332
+TourismLarge,CAAHol,monash_tourism_monthly,0.562228,T000244
+TourismLarge,CAAVis,monash_tourism_monthly,0.334428,T000156
+TourismLarge,CAABus,monash_tourism_monthly,0.280750,T000307
+TourismLarge,CAAOth,monash_tourism_monthly,0.252479,T000078
+TourismLarge,CABHol,monash_tourism_monthly,0.618617,T000244
+TourismLarge,CABVis,monash_tourism_monthly,0.505371,T000244
+TourismLarge,CABBus,monash_tourism_monthly,0.230571,T000083
+TourismLarge,CABOth,monash_tourism_monthly,0.298056,T000162
+TourismLarge,CACHol,monash_tourism_monthly,0.567393,T000244
+TourismLarge,CACVis,monash_tourism_monthly,0.456667,T000098
+TourismLarge,CACBus,monash_tourism_monthly,0.410472,T000214
+TourismLarge,CACOth,monash_tourism_monthly,0.200766,T000352
+TourismLarge,CBAHol,monash_tourism_monthly,0.311665,T000114
+TourismLarge,CBAVis,monash_tourism_monthly,0.306451,T000156
+TourismLarge,CBABus,monash_tourism_monthly,0.302575,T000043
+TourismLarge,CBAOth,monash_tourism_monthly,0.221358,T000132
+TourismLarge,CBBHol,monash_tourism_monthly,0.241193,T000036
+TourismLarge,CBBVis,monash_tourism_monthly,0.230005,T000244
+TourismLarge,CBBBus,monash_tourism_monthly,0.239521,T000178
+TourismLarge,CBCHol,monash_tourism_monthly,0.241628,T000244
+TourismLarge,CBCVis,monash_tourism_monthly,0.279245,T000137
+TourismLarge,CBCBus,monash_tourism_monthly,0.221828,T000244
+TourismLarge,CBDHol,monash_tourism_monthly,0.332558,T000146
+TourismLarge,CBDVis,monash_tourism_monthly,0.388061,T000220
+TourismLarge,CBDBus,monash_tourism_monthly,0.301053,T000088
+TourismLarge,CCAHol,monash_tourism_monthly,0.276868,T000189
+TourismLarge,CCAVis,monash_tourism_monthly,0.381181,T000239
+TourismLarge,CCABus,monash_tourism_monthly,0.440709,T000202
+TourismLarge,CCBHol,monash_tourism_monthly,0.303312,T000114
+TourismLarge,CCBVis,monash_tourism_monthly,0.347192,T000185
+TourismLarge,CCBBus,monash_tourism_monthly,0.263211,T000114
+TourismLarge,CCBOth,monash_tourism_monthly,0.267878,T000077
+TourismLarge,CCCHol,monash_tourism_monthly,0.516642,T000036
+TourismLarge,CCCVis,monash_tourism_monthly,0.333362,T000104
+TourismLarge,CCCBus,monash_tourism_monthly,0.226751,T000246
+TourismLarge,CCCOth,monash_tourism_monthly,0.495476,T000105
+TourismLarge,CDAHol,monash_tourism_monthly,0.212712,T000255
+TourismLarge,CDAVis,monash_tourism_monthly,0.379988,T000227
+TourismLarge,CDABus,monash_tourism_monthly,0.226266,T000158
+TourismLarge,CDAOth,monash_tourism_monthly,0.312877,T000103
+TourismLarge,CDBHol,monash_tourism_monthly,0.367495,T000146
+TourismLarge,CDBVis,monash_tourism_monthly,0.308312,T000098
+TourismLarge,CDBBus,monash_tourism_monthly,0.294018,T000091
+TourismLarge,DAAHol,monash_tourism_monthly,0.617135,T000201
+TourismLarge,DAAVis,monash_tourism_monthly,0.605535,T000244
+TourismLarge,DAABus,monash_tourism_monthly,0.232881,T000139
+TourismLarge,DAAOth,monash_tourism_monthly,0.259050,T000021
+TourismLarge,DABHol,monash_tourism_monthly,0.230499,T000244
+TourismLarge,DABVis,monash_tourism_monthly,0.251039,T000317
+TourismLarge,DABBus,monash_tourism_monthly,0.327262,T000255
+TourismLarge,DACHol,monash_tourism_monthly,0.208258,T000105
+TourismLarge,DACVis,monash_tourism_monthly,0.431361,T000227
+TourismLarge,DBAHol,monash_tourism_monthly,0.590951,T000201
+TourismLarge,DBAVis,monash_tourism_monthly,0.567161,T000244
+TourismLarge,DBABus,monash_tourism_monthly,0.271839,T000287
+TourismLarge,DBAOth,monash_tourism_monthly,0.270239,T000045
+TourismLarge,DBBHol,monash_tourism_monthly,0.669146,T000244
+TourismLarge,DBBVis,monash_tourism_monthly,0.528461,T000244
+TourismLarge,DBBBus,monash_tourism_monthly,0.292485,T000104
+TourismLarge,DBCHol,monash_tourism_monthly,0.499687,T000201
+TourismLarge,DCAHol,monash_tourism_monthly,0.446645,T000244
+TourismLarge,DCAVis,monash_tourism_monthly,0.295051,T000227
+TourismLarge,DCABus,monash_tourism_monthly,0.222211,T000316
+TourismLarge,DCBHol,monash_tourism_monthly,0.417636,T000244
+TourismLarge,DCBVis,monash_tourism_monthly,0.367622,T000227
+TourismLarge,DCBBus,monash_tourism_monthly,0.220502,T000084
+TourismLarge,DCCHol,monash_tourism_monthly,0.289298,T000244
+TourismLarge,DCCVis,monash_tourism_monthly,0.256221,T000316
+TourismLarge,DCCBus,monash_tourism_monthly,0.242539,T000244
+TourismLarge,DCDHol,monash_tourism_monthly,0.338402,T000036
+TourismLarge,DCDVis,monash_tourism_monthly,0.368533,T000106
+TourismLarge,DCDBus,monash_tourism_monthly,0.186906,T000124
+TourismLarge,DCDOth,monash_tourism_monthly,0.226889,T000261
+TourismLarge,DDAHol,monash_tourism_monthly,0.293205,T000196
+TourismLarge,DDAVis,monash_tourism_monthly,0.299892,T000244
+TourismLarge,DDABus,monash_tourism_monthly,0.237515,T000113
+TourismLarge,DDAOth,monash_tourism_monthly,0.255631,T000193
+TourismLarge,DDBHol,monash_tourism_monthly,0.598607,T000244
+TourismLarge,DDBVis,monash_tourism_monthly,0.352271,T000244
+TourismLarge,DDBBus,monash_tourism_monthly,0.204865,T000249
+TourismLarge,EAAHol,monash_tourism_monthly,0.349131,T000189
+TourismLarge,EAAVis,monash_tourism_monthly,0.390227,T000227
+TourismLarge,EAABus,monash_tourism_monthly,0.225505,T000228
+TourismLarge,EAAOth,monash_tourism_monthly,0.282267,T000090
+TourismLarge,EABHol,monash_tourism_monthly,0.467675,T000180
+TourismLarge,EABVis,monash_tourism_monthly,0.538479,T000244
+TourismLarge,EABBus,monash_tourism_monthly,0.310660,T000178
+TourismLarge,EABOth,monash_tourism_monthly,0.256595,T000167
+TourismLarge,EACHol,monash_tourism_monthly,0.636640,T000244
+TourismLarge,EACVis,monash_tourism_monthly,0.546578,T000098
+TourismLarge,EACBus,monash_tourism_monthly,0.360162,T000133
+TourismLarge,EACOth,monash_tourism_monthly,0.285169,T000170
+TourismLarge,EBAHol,monash_tourism_monthly,0.519292,T000036
+TourismLarge,EBAVis,monash_tourism_monthly,0.244545,T000063
+TourismLarge,EBABus,monash_tourism_monthly,0.247175,T000124
+TourismLarge,ECAHol,monash_tourism_monthly,0.271669,T000105
+TourismLarge,ECAVis,monash_tourism_monthly,0.444810,T000103
+TourismLarge,ECABus,monash_tourism_monthly,0.312940,T000183
+TourismLarge,ECAOth,monash_tourism_monthly,0.352827,T000299
+TourismLarge,FAAHol,monash_tourism_monthly,0.652903,T000244
+TourismLarge,FAAVis,monash_tourism_monthly,0.527766,T000244
+TourismLarge,FAABus,monash_tourism_monthly,0.354064,T000101
+TourismLarge,FAAOth,monash_tourism_monthly,0.267822,T000335
+TourismLarge,FBAHol,monash_tourism_monthly,0.653241,T000244
+TourismLarge,FBAVis,monash_tourism_monthly,0.486302,T000244
+TourismLarge,FBABus,monash_tourism_monthly,0.265109,T000108
+TourismLarge,FBBHol,monash_tourism_monthly,0.602809,T000201
+TourismLarge,FBBVis,monash_tourism_monthly,0.421827,T000308
+TourismLarge,FBBBus,monash_tourism_monthly,0.234901,T000133
+TourismLarge,FBBOth,monash_tourism_monthly,0.201136,T000249
+TourismLarge,FCAHol,monash_tourism_monthly,0.507648,T000196
+TourismLarge,FCAVis,monash_tourism_monthly,0.409268,T000303
+TourismLarge,FCABus,monash_tourism_monthly,0.301257,T000236
+TourismLarge,FCAOth,monash_tourism_monthly,0.281806,T000224
+TourismLarge,FCBHol,monash_tourism_monthly,0.397284,T000196
+TourismLarge,FCBVis,monash_tourism_monthly,0.244668,T000284
+TourismLarge,FCBBus,monash_tourism_monthly,0.290950,T000180
+TourismLarge,GAAHol,monash_tourism_monthly,0.560526,T000136
+TourismLarge,GAAVis,monash_tourism_monthly,0.366846,T000036
+TourismLarge,GAABus,monash_tourism_monthly,0.309944,T000299
+TourismLarge,GAAOth,monash_tourism_monthly,0.301370,T000194
+TourismLarge,GABHol,monash_tourism_monthly,0.506483,T000130
+TourismLarge,GABVis,monash_tourism_monthly,0.283876,T000008
+TourismLarge,GABBus,monash_tourism_monthly,0.164221,T000019
+TourismLarge,GACHol,monash_tourism_monthly,0.364688,T000111
+TourismLarge,GACVis,monash_tourism_monthly,0.264866,T000042
+TourismLarge,GACBus,monash_tourism_monthly,0.290757,T000093
+TourismLarge,GBAHol,monash_tourism_monthly,0.318832,T000146
+TourismLarge,GBABus,monash_tourism_monthly,0.273616,T000079
+TourismLarge,GBBHol,monash_tourism_monthly,0.483094,T000130
+TourismLarge,GBBBus,monash_tourism_monthly,0.207505,T000124
+TourismLarge,GBCHol,monash_tourism_monthly,0.406689,T000036
+TourismLarge,GBCVis,monash_tourism_monthly,0.306054,T000099
+TourismLarge,GBCBus,monash_tourism_monthly,0.380606,T000178
+TourismLarge,GBDHol,monash_tourism_monthly,0.391729,T000036
+TourismLarge,GBDBus,monash_tourism_monthly,0.176021,T000342
+TourismLarge,TotalAll,m4_monthly,0.875781,T024943
+TourismLarge,AAll,m4_monthly,0.855729,T024943
+TourismLarge,BAll,m4_monthly,0.879803,T024943
+TourismLarge,CAll,m4_monthly,0.679554,T024395
+TourismLarge,DAll,m4_monthly,0.803722,T024943
+TourismLarge,EAll,m4_monthly,0.707392,T045260
+TourismLarge,FAll,m4_monthly,0.736733,T032701
+TourismLarge,GAll,m4_monthly,0.780252,T038350
+TourismLarge,AAAll,m4_monthly,0.732666,T024943
+TourismLarge,ABAll,m4_monthly,0.850598,T024943
+TourismLarge,ACAll,m4_monthly,0.860330,T024943
+TourismLarge,ADAll,m4_monthly,0.534373,T024395
+TourismLarge,AEAll,m4_monthly,0.570206,T024395
+TourismLarge,AFAll,m4_monthly,0.434894,T018507
+TourismLarge,BAAll,m4_monthly,0.860119,T024943
+TourismLarge,BBAll,m4_monthly,0.824394,T024943
+TourismLarge,BCAll,m4_monthly,0.831069,T024943
+TourismLarge,BDAll,m4_monthly,0.774189,T024943
+TourismLarge,BEAll,m4_monthly,0.549405,T024943
+TourismLarge,CAAll,m4_monthly,0.771656,T024943
+TourismLarge,CBAll,m4_monthly,0.450045,T014940
+TourismLarge,CCAll,m4_monthly,0.749634,T014940
+TourismLarge,CDAll,m4_monthly,0.512445,T018442
+TourismLarge,DAAll,m4_monthly,0.592537,T024943
+TourismLarge,DBAll,m4_monthly,0.855297,T024943
+TourismLarge,DCAll,m4_monthly,0.482641,T024395
+TourismLarge,DDAll,m4_monthly,0.685262,T024943
+TourismLarge,EAAll,m4_monthly,0.733127,T024395
+TourismLarge,EBAll,m4_monthly,0.781842,T030224
+TourismLarge,ECAll,m4_monthly,0.724352,T039730
+TourismLarge,FAAll,m4_monthly,0.644632,T024943
+TourismLarge,FBAll,m4_monthly,0.700608,T032701
+TourismLarge,FCAll,m4_monthly,0.650237,T032643
+TourismLarge,GAAll,m4_monthly,0.757705,T038350
+TourismLarge,GBAll,m4_monthly,0.635340,T034098
+TourismLarge,AAAAll,m4_monthly,0.642916,T024943
+TourismLarge,AABAll,m4_monthly,0.768655,T024943
+TourismLarge,ABAAll,m4_monthly,0.716379,T024943
+TourismLarge,ABBAll,m4_monthly,0.853084,T024943
+TourismLarge,ACAAll,m4_monthly,0.860330,T024943
+TourismLarge,ADAAll,m4_monthly,0.733962,T014998
+TourismLarge,ADBAll,m4_monthly,0.579530,T044687
+TourismLarge,ADCAll,m4_monthly,0.522293,T024385
+TourismLarge,ADDAll,m4_monthly,0.505015,T046898
+TourismLarge,AEAAll,m4_monthly,0.526806,T024395
+TourismLarge,AEBAll,m4_monthly,0.582064,T024395
+TourismLarge,AECAll,m4_monthly,0.494465,T047109
+TourismLarge,AEDAll,m4_monthly,0.442994,T013390
+TourismLarge,AFAAll,m4_monthly,0.434894,T018507
+TourismLarge,BAAAll,m4_monthly,0.700463,T024395
+TourismLarge,BABAll,m4_monthly,0.840290,T024943
+TourismLarge,BACAll,m4_monthly,0.829414,T024943
+TourismLarge,BBAAll,m4_monthly,0.824394,T024943
+TourismLarge,BCAAll,m4_monthly,0.762704,T024943
+TourismLarge,BCBAll,m4_monthly,0.690487,T024943
+TourismLarge,BCCAll,m4_monthly,0.794582,T024943
+TourismLarge,BDAAll,m4_monthly,0.632072,T024943
+TourismLarge,BDBAll,m4_monthly,0.373360,T044116
+TourismLarge,BDCAll,m4_monthly,0.618375,T024943
+TourismLarge,BDDAll,m4_monthly,0.497905,T031255
+TourismLarge,BDEAll,m4_monthly,0.541064,T007038
+TourismLarge,BDFAll,m4_monthly,0.437999,T046909
+TourismLarge,BEAAll,m4_monthly,0.493560,T018479
+TourismLarge,BEBAll,m4_monthly,0.497693,T024943
+TourismLarge,BECAll,m4_monthly,0.728647,T045358
+TourismLarge,BEDAll,m4_monthly,0.444837,T033413
+TourismLarge,BEEAll,m4_monthly,0.511241,T047141
+TourismLarge,BEFAll,m4_monthly,0.426065,T039881
+TourismLarge,BEGAll,m4_monthly,0.413099,T027445
+TourismLarge,BEHAll,m4_monthly,0.572039,T032091
+TourismLarge,CAAAll,m4_monthly,0.648005,T024943
+TourismLarge,CABAll,m4_monthly,0.716003,T024395
+TourismLarge,CACAll,m4_monthly,0.707802,T024943
+TourismLarge,CBAAll,m4_monthly,0.425457,T038060
+TourismLarge,CBBAll,m4_monthly,0.377699,T047249
+TourismLarge,CBCAll,m4_monthly,0.453170,T008632
+TourismLarge,CBDAll,m4_monthly,0.676832,T046313
+TourismLarge,CCAAll,m4_monthly,0.430892,T004862
+TourismLarge,CCBAll,m4_monthly,0.624539,T033844
+TourismLarge,CCCAll,m4_monthly,0.722673,T014940
+TourismLarge,CDAAll,m4_monthly,0.515613,T044344
+TourismLarge,CDBAll,m4_monthly,0.548873,T033023
+TourismLarge,DAAAll,m4_monthly,0.572136,T024943
+TourismLarge,DABAll,m4_monthly,0.450550,T047052
+TourismLarge,DACAll,m4_monthly,0.457750,T046807
+TourismLarge,DBAAll,m4_monthly,0.706838,T024943
+TourismLarge,DBBAll,m4_monthly,0.853202,T024943
+TourismLarge,DBCAll,m4_monthly,0.533931,T024943
+TourismLarge,DCAAll,m4_monthly,0.525192,T024943
+TourismLarge,DCBAll,m4_monthly,0.525011,T024395
+TourismLarge,DCCAll,m4_monthly,0.557994,T047507
+TourismLarge,DCDAll,m4_monthly,0.494209,T003573
+TourismLarge,DDAAll,m4_monthly,0.405186,T042522
+TourismLarge,DDBAll,m4_monthly,0.751736,T024943
+TourismLarge,EAAAll,m4_monthly,0.477962,T033211
+TourismLarge,EABAll,m4_monthly,0.649565,T024943
+TourismLarge,EACAll,m4_monthly,0.721400,T024943
+TourismLarge,EBAAll,m4_monthly,0.781842,T030224
+TourismLarge,ECAAll,m4_monthly,0.724352,T039730
+TourismLarge,FAAAll,m4_monthly,0.644632,T024943
+TourismLarge,FBAAll,m4_monthly,0.686197,T024943
+TourismLarge,FBBAll,m4_monthly,0.609347,T032701
+TourismLarge,FCAAll,m4_monthly,0.624401,T032643
+TourismLarge,FCBAll,m4_monthly,0.643131,T047532
+TourismLarge,GAAAll,m4_monthly,0.724770,T038350
+TourismLarge,GABAll,m4_monthly,0.561594,T033195
+TourismLarge,GACAll,m4_monthly,0.600003,T034858
+TourismLarge,GBAAll,m4_monthly,0.503976,T032486
+TourismLarge,GBBAll,m4_monthly,0.531892,T006343
+TourismLarge,GBCAll,m4_monthly,0.503507,T045547
+TourismLarge,GBDAll,m4_monthly,0.560814,T046274
+TourismLarge,TotalHol,m4_monthly,0.890788,T024943
+TourismLarge,TotalVis,m4_monthly,0.810872,T024943
+TourismLarge,TotalBus,m4_monthly,0.820473,T019417
+TourismLarge,TotalOth,m4_monthly,0.563911,T014696
+TourismLarge,AHol,m4_monthly,0.884519,T024943
+TourismLarge,AVis,m4_monthly,0.749875,T024943
+TourismLarge,ABus,m4_monthly,0.597757,T032885
+TourismLarge,AOth,m4_monthly,0.546726,T014663
+TourismLarge,BHol,m4_monthly,0.892168,T024943
+TourismLarge,BVis,m4_monthly,0.731824,T024943
+TourismLarge,BBus,m4_monthly,0.551719,T014720
+TourismLarge,BOth,m4_monthly,0.554408,T017355
+TourismLarge,CHol,m4_monthly,0.629074,T024395
+TourismLarge,CVis,m4_monthly,0.742011,T024395
+TourismLarge,CBus,m4_monthly,0.709245,T017355
+TourismLarge,COth,m4_monthly,0.486455,T046823
+TourismLarge,DHol,m4_monthly,0.832560,T024943
+TourismLarge,DVis,m4_monthly,0.729463,T024943
+TourismLarge,DBus,m4_monthly,0.511652,T003160
+TourismLarge,DOth,m4_monthly,0.708032,T045824
+TourismLarge,EHol,m4_monthly,0.708033,T024943
+TourismLarge,EVis,m4_monthly,0.663043,T024943
+TourismLarge,EBus,m4_monthly,0.853943,T030224
+TourismLarge,EOth,m4_monthly,0.526543,T047596
+TourismLarge,FHol,m4_monthly,0.728588,T032701
+TourismLarge,FVis,m4_monthly,0.638098,T024943
+TourismLarge,FBus,m4_monthly,0.497177,T046849
+TourismLarge,FOth,m4_monthly,0.451841,T031359
+TourismLarge,GHol,m4_monthly,0.793924,T001685
+TourismLarge,GVis,m4_monthly,0.572478,T033194
+TourismLarge,GBus,m4_monthly,0.587279,T007095
+TourismLarge,GOth,m4_monthly,0.604770,T008342
+TourismLarge,AAHol,m4_monthly,0.808228,T024943
+TourismLarge,AAVis,m4_monthly,0.646655,T024943
+TourismLarge,AABus,m4_monthly,0.553973,T041979
+TourismLarge,AAOth,m4_monthly,0.411060,T033857
+TourismLarge,ABHol,m4_monthly,0.847977,T024943
+TourismLarge,ABVis,m4_monthly,0.725378,T024943
+TourismLarge,ABBus,m4_monthly,0.461857,T038751
+TourismLarge,ABOth,m4_monthly,0.606606,T045824
+TourismLarge,ACHol,m4_monthly,0.865699,T024943
+TourismLarge,ACVis,m4_monthly,0.665806,T024943
+TourismLarge,ACBus,m4_monthly,0.356032,T016567
+TourismLarge,ACOth,m4_monthly,0.454966,T042945
+TourismLarge,ADHol,m4_monthly,0.551429,T024395
+TourismLarge,ADVis,m4_monthly,0.636079,T024385
+TourismLarge,ADBus,m4_monthly,0.531300,T045186
+TourismLarge,ADOth,m4_monthly,0.705514,T045358
+TourismLarge,AEHol,m4_monthly,0.575068,T024395
+TourismLarge,AEVis,m4_monthly,0.609109,T024395
+TourismLarge,AEBus,m4_monthly,0.550069,T045139
+TourismLarge,AEOth,m4_monthly,0.521157,T034625
+TourismLarge,AFHol,m4_monthly,0.519645,T024395
+TourismLarge,AFVis,m4_monthly,0.467035,T044701
+TourismLarge,AFBus,m4_monthly,0.472825,T032091
+TourismLarge,AFOth,m4_monthly,0.752522,T047507
+TourismLarge,BAHol,m4_monthly,0.892537,T024943
+TourismLarge,BAVis,m4_monthly,0.683403,T024943
+TourismLarge,BABus,m4_monthly,0.565508,T007007
+TourismLarge,BAOth,m4_monthly,0.632503,T045547
+TourismLarge,BBHol,m4_monthly,0.832933,T024943
+TourismLarge,BBVis,m4_monthly,0.646869,T024943
+TourismLarge,BBBus,m4_monthly,0.700203,T046767
+TourismLarge,BBOth,m4_monthly,0.638999,T040247
+TourismLarge,BCHol,m4_monthly,0.845887,T024943
+TourismLarge,BCVis,m4_monthly,0.512438,T024943
+TourismLarge,BCBus,m4_monthly,0.796906,T047367
+TourismLarge,BCOth,m4_monthly,0.444086,T047485
+TourismLarge,BDHol,m4_monthly,0.755715,T024943
+TourismLarge,BDVis,m4_monthly,0.616712,T024943
+TourismLarge,BDBus,m4_monthly,0.465045,T044116
+TourismLarge,BDOth,m4_monthly,0.450738,T045114
+TourismLarge,BEHol,m4_monthly,0.550532,T024943
+TourismLarge,BEVis,m4_monthly,0.604696,T024385
+TourismLarge,BEBus,m4_monthly,0.599447,T016706
+TourismLarge,BEOth,m4_monthly,0.579342,T045541
+TourismLarge,CAHol,m4_monthly,0.738163,T024943
+TourismLarge,CAVis,m4_monthly,0.726439,T024395
+TourismLarge,CABus,m4_monthly,0.472649,T046814
+TourismLarge,CAOth,m4_monthly,0.701893,T045547
+TourismLarge,CBHol,m4_monthly,0.449825,T033198
+TourismLarge,CBVis,m4_monthly,0.688889,T046313
+TourismLarge,CBBus,m4_monthly,0.662837,T003011
+TourismLarge,CBOth,m4_monthly,0.736151,T018574
+TourismLarge,CCHol,m4_monthly,0.726032,T014940
+TourismLarge,CCVis,m4_monthly,0.457658,T044361
+TourismLarge,CCBus,m4_monthly,0.569915,T017355
+TourismLarge,CCOth,m4_monthly,0.674538,T044931
+TourismLarge,CDHol,m4_monthly,0.612133,T033194
+TourismLarge,CDVis,m4_monthly,0.535283,T046933
+TourismLarge,CDBus,m4_monthly,0.630109,T043259
+TourismLarge,CDOth,m4_monthly,0.472964,T046478
+TourismLarge,DAHol,m4_monthly,0.669864,T024943
+TourismLarge,DAVis,m4_monthly,0.651391,T024943
+TourismLarge,DABus,m4_monthly,0.440625,T003160
+TourismLarge,DAOth,m4_monthly,0.688356,T045824
+TourismLarge,DBHol,m4_monthly,0.848547,T024943
+TourismLarge,DBVis,m4_monthly,0.695753,T024943
+TourismLarge,DBBus,m4_monthly,0.447651,T045608
+TourismLarge,DBOth,m4_monthly,0.525821,T046799
+TourismLarge,DCHol,m4_monthly,0.436828,T024395
+TourismLarge,DCVis,m4_monthly,0.468585,T024943
+TourismLarge,DCBus,m4_monthly,0.496637,T043961
+TourismLarge,DCOth,m4_monthly,0.541778,T043974
+TourismLarge,DDHol,m4_monthly,0.715484,T024943
+TourismLarge,DDVis,m4_monthly,0.483708,T047574
+TourismLarge,DDBus,m4_monthly,0.503690,T047551
+TourismLarge,DDOth,m4_monthly,0.773279,T047498
+TourismLarge,EAHol,m4_monthly,0.743594,T024943
+TourismLarge,EAVis,m4_monthly,0.683020,T024943
+TourismLarge,EABus,m4_monthly,0.570673,T016706
+TourismLarge,EAOth,m4_monthly,0.533753,T047596
+TourismLarge,EBHol,m4_monthly,0.765922,T014940
+TourismLarge,EBVis,m4_monthly,0.563433,T018552
+TourismLarge,EBBus,m4_monthly,0.846351,T000202
+TourismLarge,ECHol,m4_monthly,0.476496,T047166
+TourismLarge,ECVis,m4_monthly,0.500026,T046635
+TourismLarge,ECBus,m4_monthly,0.733731,T045975
+TourismLarge,ECOth,m4_monthly,0.598047,T041501
+TourismLarge,FAHol,m4_monthly,0.641274,T032701
+TourismLarge,FAVis,m4_monthly,0.573412,T024943
+TourismLarge,FABus,m4_monthly,0.505632,T046849
+TourismLarge,FAOth,m4_monthly,0.515335,T043947
+TourismLarge,FBHol,m4_monthly,0.728133,T032701
+TourismLarge,FBVis,m4_monthly,0.499610,T044687
+TourismLarge,FBBus,m4_monthly,0.487949,T047439
+TourismLarge,FBOth,m4_monthly,0.540990,T013960
+TourismLarge,FCHol,m4_monthly,0.620604,T032701
+TourismLarge,FCVis,m4_monthly,0.570984,T047400
+TourismLarge,FCBus,m4_monthly,0.702793,T040322
+TourismLarge,FCOth,m4_monthly,0.497668,T047489
+TourismLarge,GAHol,m4_monthly,0.752943,T001685
+TourismLarge,GAVis,m4_monthly,0.607448,T038350
+TourismLarge,GABus,m4_monthly,0.604406,T045281
+TourismLarge,GAOth,m4_monthly,0.699031,T044137
+TourismLarge,GBHol,m4_monthly,0.696354,T034098
+TourismLarge,GBVis,m4_monthly,0.382135,T031364
+TourismLarge,GBBus,m4_monthly,0.466428,T047507
+TourismLarge,GBOth,m4_monthly,0.743333,T047596
+TourismLarge,AAAHol,m4_monthly,0.727360,T024943
+TourismLarge,AAAVis,m4_monthly,0.636053,T024943
+TourismLarge,AAABus,m4_monthly,0.566069,T041979
+TourismLarge,AAAOth,m4_monthly,0.404110,T014663
+TourismLarge,AABHol,m4_monthly,0.812917,T024943
+TourismLarge,AABVis,m4_monthly,0.457467,T024153
+TourismLarge,AABBus,m4_monthly,0.726200,T047705
+TourismLarge,AABOth,m4_monthly,0.537775,T033731
+TourismLarge,ABAHol,m4_monthly,0.701823,T024943
+TourismLarge,ABAVis,m4_monthly,0.517624,T024943
+TourismLarge,ABABus,m4_monthly,0.470963,T047703
+TourismLarge,ABAOth,m4_monthly,0.423862,T013768
+TourismLarge,ABBHol,m4_monthly,0.855878,T024943
+TourismLarge,ABBVis,m4_monthly,0.719062,T024943
+TourismLarge,ABBBus,m4_monthly,0.519937,T045054
+TourismLarge,ABBOth,m4_monthly,0.655836,T045824
+TourismLarge,ACAHol,m4_monthly,0.865699,T024943
+TourismLarge,ACAVis,m4_monthly,0.665806,T024943
+TourismLarge,ACABus,m4_monthly,0.356032,T016567
+TourismLarge,ACAOth,m4_monthly,0.454966,T042945
+TourismLarge,ADAHol,m4_monthly,0.741958,T014998
+TourismLarge,ADAVis,m4_monthly,0.413090,T024385
+TourismLarge,ADABus,m4_monthly,0.661955,T045824
+TourismLarge,ADBHol,m4_monthly,0.561760,T024395
+TourismLarge,ADBVis,m4_monthly,0.470407,T046892
+TourismLarge,ADBBus,m4_monthly,0.515538,T047507
+TourismLarge,ADBOth,m4_monthly,0.681340,T045358
+TourismLarge,ADCHol,m4_monthly,0.483814,T024943
+TourismLarge,ADCVis,m4_monthly,0.576897,T024153
+TourismLarge,ADCBus,m4_monthly,0.473177,T018591
+TourismLarge,ADCOth,m4_monthly,0.495672,T032056
+TourismLarge,ADDHol,m4_monthly,0.721384,T045008
+TourismLarge,ADDVis,m4_monthly,0.428798,T024001
+TourismLarge,ADDBus,m4_monthly,0.555987,T046949
+TourismLarge,ADDOth,m4_monthly,0.461524,T042372
+TourismLarge,AEAHol,m4_monthly,0.499902,T024395
+TourismLarge,AEAVis,m4_monthly,0.558972,T024395
+TourismLarge,AEABus,m4_monthly,0.760804,T047311
+TourismLarge,AEAOth,m4_monthly,0.506459,T033436
+TourismLarge,AEBHol,m4_monthly,0.663311,T024395
+TourismLarge,AEBVis,m4_monthly,0.509084,T024395
+TourismLarge,AEBBus,m4_monthly,0.811773,T047707
+TourismLarge,AEBOth,m4_monthly,0.557685,T046948
+TourismLarge,AECHol,m4_monthly,0.586437,T042759
+TourismLarge,AECVis,m4_monthly,0.805155,T047507
+TourismLarge,AECBus,m4_monthly,0.713837,T047174
+TourismLarge,AEDHol,m4_monthly,0.538777,T046881
+TourismLarge,AEDVis,m4_monthly,0.357089,T037076
+TourismLarge,AEDBus,m4_monthly,0.416439,T047689
+TourismLarge,AFAHol,m4_monthly,0.519645,T024395
+TourismLarge,AFAVis,m4_monthly,0.467035,T044701
+TourismLarge,AFABus,m4_monthly,0.472825,T032091
+TourismLarge,AFAOth,m4_monthly,0.752522,T047507
+TourismLarge,BAAHol,m4_monthly,0.805793,T024943
+TourismLarge,BAAVis,m4_monthly,0.595222,T024943
+TourismLarge,BAABus,m4_monthly,0.593490,T007007
+TourismLarge,BAAOth,m4_monthly,0.509684,T033211
+TourismLarge,BABHol,m4_monthly,0.813650,T024943
+TourismLarge,BABVis,m4_monthly,0.609326,T024943
+TourismLarge,BABBus,m4_monthly,0.598996,T047340
+TourismLarge,BACHol,m4_monthly,0.862726,T024943
+TourismLarge,BACVis,m4_monthly,0.522158,T024943
+TourismLarge,BACBus,m4_monthly,0.600744,T044032
+TourismLarge,BACOth,m4_monthly,0.933130,T045547
+TourismLarge,BBAHol,m4_monthly,0.832933,T024943
+TourismLarge,BBAVis,m4_monthly,0.646869,T024943
+TourismLarge,BBABus,m4_monthly,0.700203,T046767
+TourismLarge,BBAOth,m4_monthly,0.638999,T040247
+TourismLarge,BCAHol,m4_monthly,0.761288,T024943
+TourismLarge,BCAVis,m4_monthly,0.473582,T018448
+TourismLarge,BCABus,m4_monthly,0.680665,T047321
+TourismLarge,BCBHol,m4_monthly,0.770472,T024943
+TourismLarge,BCBVis,m4_monthly,0.408666,T032047
+TourismLarge,BCBBus,m4_monthly,0.626948,T047707
+TourismLarge,BCBOth,m4_monthly,0.512590,T047247
+TourismLarge,BCCHol,m4_monthly,0.815593,T024943
+TourismLarge,BCCVis,m4_monthly,0.454714,T024943
+TourismLarge,BCCBus,m4_monthly,0.830996,T047367
+TourismLarge,BDAHol,m4_monthly,0.627319,T024943
+TourismLarge,BDAVis,m4_monthly,0.404761,T047400
+TourismLarge,BDABus,m4_monthly,0.540422,T031389
+TourismLarge,BDBHol,m4_monthly,0.432090,T046949
+TourismLarge,BDBVis,m4_monthly,0.445809,T033259
+TourismLarge,BDBBus,m4_monthly,0.460342,T044116
+TourismLarge,BDCHol,m4_monthly,0.600831,T024943
+TourismLarge,BDCVis,m4_monthly,0.464850,T024943
+TourismLarge,BDCBus,m4_monthly,0.410231,T008348
+TourismLarge,BDCOth,m4_monthly,0.478561,T046892
+TourismLarge,BDDHol,m4_monthly,0.406990,T034653
+TourismLarge,BDDVis,m4_monthly,0.595906,T033355
+TourismLarge,BDDBus,m4_monthly,0.398557,T046915
+TourismLarge,BDEHol,m4_monthly,0.554627,T024943
+TourismLarge,BDEVis,m4_monthly,0.398005,T033151
+TourismLarge,BDFHol,m4_monthly,0.494845,T033725
+TourismLarge,BDFVis,m4_monthly,0.409187,T047346
+TourismLarge,BEAHol,m4_monthly,0.356467,T047235
+TourismLarge,BEAVis,m4_monthly,0.371568,T042799
+TourismLarge,BEBHol,m4_monthly,0.422703,T032398
+TourismLarge,BEBVis,m4_monthly,0.457979,T024385
+TourismLarge,BEBBus,m4_monthly,0.376368,T047430
+TourismLarge,BEBOth,m4_monthly,0.594271,T045369
+TourismLarge,BECHol,m4_monthly,0.556174,T039941
+TourismLarge,BECVis,m4_monthly,0.819885,T045358
+TourismLarge,BECBus,m4_monthly,0.504160,T045076
+TourismLarge,BEDHol,m4_monthly,0.549259,T024395
+TourismLarge,BEDVis,m4_monthly,0.456100,T047095
+TourismLarge,BEDBus,m4_monthly,0.440407,T013218
+TourismLarge,BEDOth,m4_monthly,0.617582,T047448
+TourismLarge,BEEHol,m4_monthly,0.570182,T032056
+TourismLarge,BEEVis,m4_monthly,0.518161,T044688
+TourismLarge,BEFHol,m4_monthly,0.486018,T016629
+TourismLarge,BEFVis,m4_monthly,0.465185,T032495
+TourismLarge,BEGHol,m4_monthly,0.452714,T016722
+TourismLarge,BEGVis,m4_monthly,0.464940,T047448
+TourismLarge,BEGBus,m4_monthly,0.658085,T035043
+TourismLarge,BEHHol,m4_monthly,0.445827,T047846
+TourismLarge,BEHVis,m4_monthly,0.576538,T043038
+TourismLarge,BEHBus,m4_monthly,0.666317,T032091
+TourismLarge,CAAHol,m4_monthly,0.601927,T024943
+TourismLarge,CAAVis,m4_monthly,0.526535,T044687
+TourismLarge,CAABus,m4_monthly,0.493634,T045021
+TourismLarge,CAAOth,m4_monthly,0.425074,T047075
+TourismLarge,CABHol,m4_monthly,0.708025,T024943
+TourismLarge,CABVis,m4_monthly,0.661097,T024395
+TourismLarge,CABBus,m4_monthly,0.436250,T020879
+TourismLarge,CABOth,m4_monthly,0.770489,T045547
+TourismLarge,CACHol,m4_monthly,0.709768,T024943
+TourismLarge,CACVis,m4_monthly,0.526243,T045535
+TourismLarge,CACBus,m4_monthly,0.597539,T014428
+TourismLarge,CACOth,m4_monthly,0.713739,T041477
+TourismLarge,CBAHol,m4_monthly,0.513875,T047515
+TourismLarge,CBAVis,m4_monthly,0.482070,T045380
+TourismLarge,CBABus,m4_monthly,0.572661,T021398
+TourismLarge,CBAOth,m4_monthly,0.843630,T045369
+TourismLarge,CBBHol,m4_monthly,0.512428,T047591
+TourismLarge,CBBVis,m4_monthly,0.401114,T040245
+TourismLarge,CBBBus,m4_monthly,0.609646,T047249
+TourismLarge,CBCHol,m4_monthly,0.382725,T034553
+TourismLarge,CBCVis,m4_monthly,0.429722,T040322
+TourismLarge,CBCBus,m4_monthly,0.837930,T047174
+TourismLarge,CBDHol,m4_monthly,0.611784,T034708
+TourismLarge,CBDVis,m4_monthly,0.898360,T046313
+TourismLarge,CBDBus,m4_monthly,0.622571,T015033
+TourismLarge,CCAHol,m4_monthly,0.418078,T008323
+TourismLarge,CCAVis,m4_monthly,0.412643,T045704
+TourismLarge,CCABus,m4_monthly,0.738250,T035043
+TourismLarge,CCBHol,m4_monthly,0.627500,T033844
+TourismLarge,CCBVis,m4_monthly,0.402644,T047354
+TourismLarge,CCBBus,m4_monthly,0.474585,T038350
+TourismLarge,CCBOth,m4_monthly,0.690605,T044931
+TourismLarge,CCCHol,m4_monthly,0.710103,T014940
+TourismLarge,CCCVis,m4_monthly,0.425465,T046922
+TourismLarge,CCCBus,m4_monthly,0.579470,T047430
+TourismLarge,CCCOth,m4_monthly,0.567080,T033350
+TourismLarge,CDAHol,m4_monthly,0.425064,T040263
+TourismLarge,CDAVis,m4_monthly,0.577399,T046933
+TourismLarge,CDABus,m4_monthly,0.606116,T043259
+TourismLarge,CDAOth,m4_monthly,0.464931,T047308
+TourismLarge,CDBHol,m4_monthly,0.682371,T033194
+TourismLarge,CDBVis,m4_monthly,0.478158,T033731
+TourismLarge,CDBBus,m4_monthly,0.508628,T036206
+TourismLarge,DAAHol,m4_monthly,0.657535,T024943
+TourismLarge,DAAVis,m4_monthly,0.639157,T024943
+TourismLarge,DAABus,m4_monthly,0.466259,T046931
+TourismLarge,DAAOth,m4_monthly,0.690668,T045824
+TourismLarge,DABHol,m4_monthly,0.398510,T047711
+TourismLarge,DABVis,m4_monthly,0.399470,T047249
+TourismLarge,DABBus,m4_monthly,0.662971,T047052
+TourismLarge,DACHol,m4_monthly,0.477155,T033355
+TourismLarge,DACVis,m4_monthly,0.459898,T046649
+TourismLarge,DBAHol,m4_monthly,0.707215,T024943
+TourismLarge,DBAVis,m4_monthly,0.579701,T024943
+TourismLarge,DBABus,m4_monthly,0.464604,T045048
+TourismLarge,DBAOth,m4_monthly,0.697155,T044134
+TourismLarge,DBBHol,m4_monthly,0.850266,T024943
+TourismLarge,DBBVis,m4_monthly,0.576841,T024943
+TourismLarge,DBBBus,m4_monthly,0.520057,T032341
+TourismLarge,DBCHol,m4_monthly,0.519675,T024395
+TourismLarge,DCAHol,m4_monthly,0.524990,T024943
+TourismLarge,DCAVis,m4_monthly,0.476001,T047498
+TourismLarge,DCABus,m4_monthly,0.455391,T043947
+TourismLarge,DCBHol,m4_monthly,0.601399,T047400
+TourismLarge,DCBVis,m4_monthly,0.611832,T046994
+TourismLarge,DCBBus,m4_monthly,0.553892,T016841
+TourismLarge,DCCHol,m4_monthly,0.811662,T047507
+TourismLarge,DCCVis,m4_monthly,0.449040,T032550
+TourismLarge,DCCBus,m4_monthly,0.696695,T047705
+TourismLarge,DCDHol,m4_monthly,0.579100,T000021
+TourismLarge,DCDVis,m4_monthly,0.470610,T047498
+TourismLarge,DCDBus,m4_monthly,0.473986,T047503
+TourismLarge,DCDOth,m4_monthly,0.545231,T043974
+TourismLarge,DDAHol,m4_monthly,0.422262,T002631
+TourismLarge,DDAVis,m4_monthly,0.576373,T018591
+TourismLarge,DDABus,m4_monthly,0.458176,T009103
+TourismLarge,DDAOth,m4_monthly,0.796426,T047498
+TourismLarge,DDBHol,m4_monthly,0.762174,T024943
+TourismLarge,DDBVis,m4_monthly,0.578144,T047400
+TourismLarge,DDBBus,m4_monthly,0.474671,T045030
+TourismLarge,EAAHol,m4_monthly,0.545358,T034098
+TourismLarge,EAAVis,m4_monthly,0.507497,T044687
+TourismLarge,EAABus,m4_monthly,0.460052,T015645
+TourismLarge,EAAOth,m4_monthly,0.392887,T046799
+TourismLarge,EABHol,m4_monthly,0.582921,T024943
+TourismLarge,EABVis,m4_monthly,0.626726,T024943
+TourismLarge,EABBus,m4_monthly,0.547105,T018519
+TourismLarge,EABOth,m4_monthly,0.532066,T047596
+TourismLarge,EACHol,m4_monthly,0.761785,T024943
+TourismLarge,EACVis,m4_monthly,0.534094,T024943
+TourismLarge,EACBus,m4_monthly,0.754849,T046892
+TourismLarge,EACOth,m4_monthly,0.485349,T036352
+TourismLarge,EBAHol,m4_monthly,0.765922,T014940
+TourismLarge,EBAVis,m4_monthly,0.563433,T018552
+TourismLarge,EBABus,m4_monthly,0.846351,T000202
+TourismLarge,ECAHol,m4_monthly,0.476496,T047166
+TourismLarge,ECAVis,m4_monthly,0.500026,T046635
+TourismLarge,ECABus,m4_monthly,0.733731,T045975
+TourismLarge,ECAOth,m4_monthly,0.598047,T041501
+TourismLarge,FAAHol,m4_monthly,0.641274,T032701
+TourismLarge,FAAVis,m4_monthly,0.573412,T024943
+TourismLarge,FAABus,m4_monthly,0.505632,T046849
+TourismLarge,FAAOth,m4_monthly,0.515335,T043947
+TourismLarge,FBAHol,m4_monthly,0.714230,T024943
+TourismLarge,FBAVis,m4_monthly,0.812492,T040322
+TourismLarge,FBABus,m4_monthly,0.587247,T047052
+TourismLarge,FBBHol,m4_monthly,0.629360,T032701
+TourismLarge,FBBVis,m4_monthly,0.458005,T047718
+TourismLarge,FBBBus,m4_monthly,0.514305,T047439
+TourismLarge,FBBOth,m4_monthly,0.573188,T013960
+TourismLarge,FCAHol,m4_monthly,0.593546,T032701
+TourismLarge,FCAVis,m4_monthly,0.593955,T047400
+TourismLarge,FCABus,m4_monthly,0.772507,T040322
+TourismLarge,FCAOth,m4_monthly,0.446854,T047489
+TourismLarge,FCBHol,m4_monthly,0.545505,T047879
+TourismLarge,FCBVis,m4_monthly,0.753193,T047321
+TourismLarge,FCBBus,m4_monthly,0.442804,T015149
+TourismLarge,GAAHol,m4_monthly,0.694753,T022504
+TourismLarge,GAAVis,m4_monthly,0.581490,T038350
+TourismLarge,GAABus,m4_monthly,0.571242,T007456
+TourismLarge,GAAOth,m4_monthly,0.718183,T044137
+TourismLarge,GABHol,m4_monthly,0.655190,T033023
+TourismLarge,GABVis,m4_monthly,0.627957,T018545
+TourismLarge,GABBus,m4_monthly,0.550503,T045860
+TourismLarge,GACHol,m4_monthly,0.621191,T038350
+TourismLarge,GACVis,m4_monthly,0.550755,T036351
+TourismLarge,GACBus,m4_monthly,0.637239,T047377
+TourismLarge,GBAHol,m4_monthly,0.525218,T034129
+TourismLarge,GBABus,m4_monthly,0.556079,T032486
+TourismLarge,GBBHol,m4_monthly,0.586920,T001435
+TourismLarge,GBBBus,m4_monthly,0.736819,T004811
+TourismLarge,GBCHol,m4_monthly,0.667077,T045547
+TourismLarge,GBCVis,m4_monthly,0.439553,T031364
+TourismLarge,GBCBus,m4_monthly,0.558000,T047052
+TourismLarge,GBDHol,m4_monthly,0.531338,T018518
+TourismLarge,GBDBus,m4_monthly,0.760133,T046274
+TourismSmall,total,monash_tourism_quarterly,0.813390,T000142
+TourismSmall,hol,monash_tourism_quarterly,0.791067,T000142
+TourismSmall,vfr,monash_tourism_quarterly,0.751900,T000335
+TourismSmall,bus,monash_tourism_quarterly,0.576126,T000034
+TourismSmall,oth,monash_tourism_quarterly,0.570721,T000033
+TourismSmall,nsw-hol,monash_tourism_quarterly,0.749612,T000298
+TourismSmall,vic-hol,monash_tourism_quarterly,0.779709,T000298
+TourismSmall,qld-hol,monash_tourism_quarterly,0.665132,T000152
+TourismSmall,sa-hol,monash_tourism_quarterly,0.724151,T000298
+TourismSmall,wa-hol,monash_tourism_quarterly,0.586222,T000271
+TourismSmall,tas-hol,monash_tourism_quarterly,0.780053,T000298
+TourismSmall,nt-hol,monash_tourism_quarterly,0.890574,T000032
+TourismSmall,nsw-vfr,monash_tourism_quarterly,0.767509,T000240
+TourismSmall,vic-vfr,monash_tourism_quarterly,0.771648,T000240
+TourismSmall,qld-vfr,monash_tourism_quarterly,0.648442,T000268
+TourismSmall,sa-vfr,monash_tourism_quarterly,0.666951,T000298
+TourismSmall,wa-vfr,monash_tourism_quarterly,0.666543,T000335
+TourismSmall,tas-vfr,monash_tourism_quarterly,0.610009,T000248
+TourismSmall,nt-vfr,monash_tourism_quarterly,0.607290,T000037
+TourismSmall,nsw-bus,monash_tourism_quarterly,0.683733,T000193
+TourismSmall,vic-bus,monash_tourism_quarterly,0.479738,T000193
+TourismSmall,qld-bus,monash_tourism_quarterly,0.471205,T000034
+TourismSmall,sa-bus,monash_tourism_quarterly,0.438550,T000043
+TourismSmall,wa-bus,monash_tourism_quarterly,0.517078,T000033
+TourismSmall,tas-bus,monash_tourism_quarterly,0.461467,T000150
+TourismSmall,nt-bus,monash_tourism_quarterly,0.528150,T000193
+TourismSmall,nsw-oth,monash_tourism_quarterly,0.556581,T000295
+TourismSmall,vic-oth,monash_tourism_quarterly,0.734144,T000052
+TourismSmall,qld-oth,monash_tourism_quarterly,0.552203,T000038
+TourismSmall,sa-oth,monash_tourism_quarterly,0.439965,T000311
+TourismSmall,wa-oth,monash_tourism_quarterly,0.585540,T000311
+TourismSmall,tas-oth,monash_tourism_quarterly,0.443041,T000052
+TourismSmall,nt-oth,monash_tourism_quarterly,0.600043,T000034
+TourismSmall,nsw-hol-city,monash_tourism_quarterly,0.723217,T000270
+TourismSmall,nsw-hol-noncity,monash_tourism_quarterly,0.767150,T000298
+TourismSmall,vic-hol-city,monash_tourism_quarterly,0.823916,T000298
+TourismSmall,vic-hol-noncity,monash_tourism_quarterly,0.735353,T000298
+TourismSmall,qld-hol-city,monash_tourism_quarterly,0.794466,T000141
+TourismSmall,qld-hol-noncity,monash_tourism_quarterly,0.693730,T000034
+TourismSmall,sa-hol-city,monash_tourism_quarterly,0.777944,T000061
+TourismSmall,sa-hol-noncity,monash_tourism_quarterly,0.680121,T000240
+TourismSmall,wa-hol-city,monash_tourism_quarterly,0.632627,T000229
+TourismSmall,wa-hol-noncity,monash_tourism_quarterly,0.539640,T000268
+TourismSmall,tas-hol-city,monash_tourism_quarterly,0.744494,T000240
+TourismSmall,tas-hol-noncity,monash_tourism_quarterly,0.775265,T000298
+TourismSmall,nt-hol-city,monash_tourism_quarterly,0.867983,T000025
+TourismSmall,nt-hol-noncity,monash_tourism_quarterly,0.837367,T000034
+TourismSmall,nsw-vfr-city,monash_tourism_quarterly,0.691075,T000400
+TourismSmall,nsw-vfr-noncity,monash_tourism_quarterly,0.717929,T000245
+TourismSmall,vic-vfr-city,monash_tourism_quarterly,0.685622,T000260
+TourismSmall,vic-vfr-noncity,monash_tourism_quarterly,0.757938,T000240
+TourismSmall,qld-vfr-city,monash_tourism_quarterly,0.563666,T000268
+TourismSmall,qld-vfr-noncity,monash_tourism_quarterly,0.551852,T000235
+TourismSmall,sa-vfr-city,monash_tourism_quarterly,0.664356,T000142
+TourismSmall,sa-vfr-noncity,monash_tourism_quarterly,0.630252,T000240
+TourismSmall,wa-vfr-city,monash_tourism_quarterly,0.681217,T000335
+TourismSmall,wa-vfr-noncity,monash_tourism_quarterly,0.606570,T000291
+TourismSmall,tas-vfr-city,monash_tourism_quarterly,0.635534,T000248
+TourismSmall,tas-vfr-noncity,monash_tourism_quarterly,0.571595,T000335
+TourismSmall,nt-vfr-city,monash_tourism_quarterly,0.628013,T000037
+TourismSmall,nt-vfr-noncity,monash_tourism_quarterly,0.320258,T000059
+TourismSmall,nsw-bus-city,monash_tourism_quarterly,0.588187,T000018
+TourismSmall,nsw-bus-noncity,monash_tourism_quarterly,0.491544,T000193
+TourismSmall,vic-bus-city,monash_tourism_quarterly,0.582230,T000193
+TourismSmall,vic-bus-noncity,monash_tourism_quarterly,0.300138,T000292
+TourismSmall,qld-bus-city,monash_tourism_quarterly,0.413512,T000050
+TourismSmall,qld-bus-noncity,monash_tourism_quarterly,0.431918,T000024
+TourismSmall,sa-bus-city,monash_tourism_quarterly,0.435027,T000043
+TourismSmall,sa-bus-noncity,monash_tourism_quarterly,0.369436,T000160
+TourismSmall,wa-bus-city,monash_tourism_quarterly,0.442953,T000227
+TourismSmall,wa-bus-noncity,monash_tourism_quarterly,0.481511,T000033
+TourismSmall,tas-bus-city,monash_tourism_quarterly,0.508242,T000137
+TourismSmall,tas-bus-noncity,monash_tourism_quarterly,0.387891,T000084
+TourismSmall,nt-bus-city,monash_tourism_quarterly,0.409828,T000310
+TourismSmall,nt-bus-noncity,monash_tourism_quarterly,0.496126,T000193
+TourismSmall,nsw-oth-city,monash_tourism_quarterly,0.445529,T000232
+TourismSmall,nsw-oth-noncity,monash_tourism_quarterly,0.514825,T000155
+TourismSmall,vic-oth-city,monash_tourism_quarterly,0.452468,T000052
+TourismSmall,vic-oth-noncity,monash_tourism_quarterly,0.632702,T000052
+TourismSmall,qld-oth-city,monash_tourism_quarterly,0.458176,T000276
+TourismSmall,qld-oth-noncity,monash_tourism_quarterly,0.569414,T000038
+TourismSmall,sa-oth-city,monash_tourism_quarterly,0.328719,T000377
+TourismSmall,sa-oth-noncity,monash_tourism_quarterly,0.459640,T000212
+TourismSmall,wa-oth-city,monash_tourism_quarterly,0.410129,T000277
+TourismSmall,wa-oth-noncity,monash_tourism_quarterly,0.584099,T000311
+TourismSmall,tas-oth-city,monash_tourism_quarterly,0.342992,T000160
+TourismSmall,tas-oth-noncity,monash_tourism_quarterly,0.449377,T000023
+TourismSmall,nt-oth-city,monash_tourism_quarterly,0.551976,T000034
+TourismSmall,nt-oth-noncity,monash_tourism_quarterly,0.571700,T000034
+"TourismLarge, quarterly sums",TotalAll,monash_tourism_quarterly,0.775245,T000142
+"TourismLarge, quarterly sums",AAll,monash_tourism_quarterly,0.761889,T000240
+"TourismLarge, quarterly sums",BAll,monash_tourism_quarterly,0.797892,T000260
+"TourismLarge, quarterly sums",CAll,monash_tourism_quarterly,0.640621,T000152
+"TourismLarge, quarterly sums",DAll,monash_tourism_quarterly,0.730159,T000240
+"TourismLarge, quarterly sums",EAll,monash_tourism_quarterly,0.556944,T000357
+"TourismLarge, quarterly sums",FAll,monash_tourism_quarterly,0.795631,T000298
+"TourismLarge, quarterly sums",GAll,monash_tourism_quarterly,0.838240,T000034
+"TourismLarge, quarterly sums",AAAll,monash_tourism_quarterly,0.707275,T000270
+"TourismLarge, quarterly sums",ABAll,monash_tourism_quarterly,0.797855,T000260
+"TourismLarge, quarterly sums",ACAll,monash_tourism_quarterly,0.778718,T000240
+"TourismLarge, quarterly sums",ADAll,monash_tourism_quarterly,0.577686,T000063
+"TourismLarge, quarterly sums",AEAll,monash_tourism_quarterly,0.372017,T000194
+"TourismLarge, quarterly sums",AFAll,monash_tourism_quarterly,0.425822,T000232
+"TourismLarge, quarterly sums",BAAll,monash_tourism_quarterly,0.791912,T000260
+"TourismLarge, quarterly sums",BBAll,monash_tourism_quarterly,0.792142,T000298
+"TourismLarge, quarterly sums",BCAll,monash_tourism_quarterly,0.788437,T000260
+"TourismLarge, quarterly sums",BDAll,monash_tourism_quarterly,0.616468,T000023
+"TourismLarge, quarterly sums",BEAll,monash_tourism_quarterly,0.554198,T000240
+"TourismLarge, quarterly sums",CAAll,monash_tourism_quarterly,0.805350,T000141
+"TourismLarge, quarterly sums",CBAll,monash_tourism_quarterly,0.647034,T000034
+"TourismLarge, quarterly sums",CCAll,monash_tourism_quarterly,0.740927,T000034
+"TourismLarge, quarterly sums",CDAll,monash_tourism_quarterly,0.639991,T000032
+"TourismLarge, quarterly sums",DAAll,monash_tourism_quarterly,0.638222,T000142
+"TourismLarge, quarterly sums",DBAll,monash_tourism_quarterly,0.822239,T000298
+"TourismLarge, quarterly sums",DCAll,monash_tourism_quarterly,0.356665,T000187
+"TourismLarge, quarterly sums",DDAll,monash_tourism_quarterly,0.704882,T000240
+"TourismLarge, quarterly sums",EAAll,monash_tourism_quarterly,0.676822,T000298
+"TourismLarge, quarterly sums",EBAll,monash_tourism_quarterly,0.823033,T000034
+"TourismLarge, quarterly sums",ECAll,monash_tourism_quarterly,0.514207,T000408
+"TourismLarge, quarterly sums",FAAll,monash_tourism_quarterly,0.793615,T000298
+"TourismLarge, quarterly sums",FBAll,monash_tourism_quarterly,0.808016,T000298
+"TourismLarge, quarterly sums",FCAll,monash_tourism_quarterly,0.751833,T000240
+"TourismLarge, quarterly sums",GAAll,monash_tourism_quarterly,0.821876,T000025
+"TourismLarge, quarterly sums",GBAll,monash_tourism_quarterly,0.756694,T000032
+"TourismLarge, quarterly sums",AAAAll,monash_tourism_quarterly,0.739259,T000390
+"TourismLarge, quarterly sums",AABAll,monash_tourism_quarterly,0.791398,T000260
+"TourismLarge, quarterly sums",ABAAll,monash_tourism_quarterly,0.731936,T000298
+"TourismLarge, quarterly sums",ABBAll,monash_tourism_quarterly,0.782172,T000260
+"TourismLarge, quarterly sums",ACAAll,monash_tourism_quarterly,0.778718,T000240
+"TourismLarge, quarterly sums",ADAAll,monash_tourism_quarterly,0.772974,T000059
+"TourismLarge, quarterly sums",ADBAll,monash_tourism_quarterly,0.517132,T000377
+"TourismLarge, quarterly sums",ADCAll,monash_tourism_quarterly,0.617057,T000240
+"TourismLarge, quarterly sums",ADDAll,monash_tourism_quarterly,0.263993,T000310
+"TourismLarge, quarterly sums",AEAAll,monash_tourism_quarterly,0.427570,T000378
+"TourismLarge, quarterly sums",AEBAll,monash_tourism_quarterly,0.616353,T000061
+"TourismLarge, quarterly sums",AECAll,monash_tourism_quarterly,0.461504,T000042
+"TourismLarge, quarterly sums",AEDAll,monash_tourism_quarterly,0.759725,T000050
+"TourismLarge, quarterly sums",AFAAll,monash_tourism_quarterly,0.425822,T000232
+"TourismLarge, quarterly sums",BAAAll,monash_tourism_quarterly,0.616431,T000260
+"TourismLarge, quarterly sums",BABAll,monash_tourism_quarterly,0.768123,T000260
+"TourismLarge, quarterly sums",BACAll,monash_tourism_quarterly,0.787970,T000245
+"TourismLarge, quarterly sums",BBAAll,monash_tourism_quarterly,0.792142,T000298
+"TourismLarge, quarterly sums",BCAAll,monash_tourism_quarterly,0.690145,T000248
+"TourismLarge, quarterly sums",BCBAll,monash_tourism_quarterly,0.642594,T000240
+"TourismLarge, quarterly sums",BCCAll,monash_tourism_quarterly,0.825661,T000298
+"TourismLarge, quarterly sums",BDAAll,monash_tourism_quarterly,0.615731,T000248
+"TourismLarge, quarterly sums",BDBAll,monash_tourism_quarterly,0.384595,T000312
+"TourismLarge, quarterly sums",BDCAll,monash_tourism_quarterly,0.754127,T000059
+"TourismLarge, quarterly sums",BDDAll,monash_tourism_quarterly,0.477964,T000362
+"TourismLarge, quarterly sums",BDEAll,monash_tourism_quarterly,0.611877,T000298
+"TourismLarge, quarterly sums",BDFAll,monash_tourism_quarterly,0.534734,T000242
+"TourismLarge, quarterly sums",BEAAll,monash_tourism_quarterly,0.268219,T000267
+"TourismLarge, quarterly sums",BEBAll,monash_tourism_quarterly,0.360834,T000390
+"TourismLarge, quarterly sums",BECAll,monash_tourism_quarterly,0.348638,T000377
+"TourismLarge, quarterly sums",BEDAll,monash_tourism_quarterly,0.441616,T000240
+"TourismLarge, quarterly sums",BEEAll,monash_tourism_quarterly,0.639852,T000362
+"TourismLarge, quarterly sums",BEFAll,monash_tourism_quarterly,0.286569,T000023
+"TourismLarge, quarterly sums",BEGAll,monash_tourism_quarterly,0.447146,T000140
+"TourismLarge, quarterly sums",BEHAll,monash_tourism_quarterly,0.753927,T000393
+"TourismLarge, quarterly sums",CAAAll,monash_tourism_quarterly,0.745742,T000141
+"TourismLarge, quarterly sums",CABAll,monash_tourism_quarterly,0.557054,T000142
+"TourismLarge, quarterly sums",CACAll,monash_tourism_quarterly,0.706149,T000141
+"TourismLarge, quarterly sums",CBAAll,monash_tourism_quarterly,0.661150,T000032
+"TourismLarge, quarterly sums",CBBAll,monash_tourism_quarterly,0.436902,T000059
+"TourismLarge, quarterly sums",CBCAll,monash_tourism_quarterly,0.391277,T000053
+"TourismLarge, quarterly sums",CBDAll,monash_tourism_quarterly,0.519448,T000037
+"TourismLarge, quarterly sums",CCAAll,monash_tourism_quarterly,0.577538,T000251
+"TourismLarge, quarterly sums",CCBAll,monash_tourism_quarterly,0.627078,T000025
+"TourismLarge, quarterly sums",CCCAll,monash_tourism_quarterly,0.755998,T000034
+"TourismLarge, quarterly sums",CDAAll,monash_tourism_quarterly,0.482236,T000052
+"TourismLarge, quarterly sums",CDBAll,monash_tourism_quarterly,0.709681,T000032
+"TourismLarge, quarterly sums",DAAAll,monash_tourism_quarterly,0.679390,T000142
+"TourismLarge, quarterly sums",DABAll,monash_tourism_quarterly,0.497148,T000104
+"TourismLarge, quarterly sums",DACAll,monash_tourism_quarterly,0.392592,T000312
+"TourismLarge, quarterly sums",DBAAll,monash_tourism_quarterly,0.764611,T000298
+"TourismLarge, quarterly sums",DBBAll,monash_tourism_quarterly,0.794061,T000245
+"TourismLarge, quarterly sums",DBCAll,monash_tourism_quarterly,0.609161,T000335
+"TourismLarge, quarterly sums",DCAAll,monash_tourism_quarterly,0.574034,T000298
+"TourismLarge, quarterly sums",DCBAll,monash_tourism_quarterly,0.325895,T000248
+"TourismLarge, quarterly sums",DCCAll,monash_tourism_quarterly,0.478671,T000322
+"TourismLarge, quarterly sums",DCDAll,monash_tourism_quarterly,0.549281,T000024
+"TourismLarge, quarterly sums",DDAAll,monash_tourism_quarterly,0.476651,T000240
+"TourismLarge, quarterly sums",DDBAll,monash_tourism_quarterly,0.739171,T000240
+"TourismLarge, quarterly sums",EAAAll,monash_tourism_quarterly,0.669414,T000032
+"TourismLarge, quarterly sums",EABAll,monash_tourism_quarterly,0.622541,T000250
+"TourismLarge, quarterly sums",EACAll,monash_tourism_quarterly,0.751651,T000240
+"TourismLarge, quarterly sums",EBAAll,monash_tourism_quarterly,0.823033,T000034
+"TourismLarge, quarterly sums",ECAAll,monash_tourism_quarterly,0.514207,T000408
+"TourismLarge, quarterly sums",FAAAll,monash_tourism_quarterly,0.793615,T000298
+"TourismLarge, quarterly sums",FBAAll,monash_tourism_quarterly,0.779947,T000240
+"TourismLarge, quarterly sums",FBBAll,monash_tourism_quarterly,0.801372,T000298
+"TourismLarge, quarterly sums",FCAAll,monash_tourism_quarterly,0.737076,T000245
+"TourismLarge, quarterly sums",FCBAll,monash_tourism_quarterly,0.647565,T000240
+"TourismLarge, quarterly sums",GAAAll,monash_tourism_quarterly,0.789409,T000034
+"TourismLarge, quarterly sums",GABAll,monash_tourism_quarterly,0.577717,T000025
+"TourismLarge, quarterly sums",GACAll,monash_tourism_quarterly,0.570981,T000032
+"TourismLarge, quarterly sums",GBAAll,monash_tourism_quarterly,0.528887,T000193
+"TourismLarge, quarterly sums",GBBAll,monash_tourism_quarterly,0.767548,T000024
+"TourismLarge, quarterly sums",GBCAll,monash_tourism_quarterly,0.666250,T000034
+"TourismLarge, quarterly sums",GBDAll,monash_tourism_quarterly,0.388889,T000194
+"TourismLarge, quarterly sums",TotalHol,monash_tourism_quarterly,0.767137,T000061
+"TourismLarge, quarterly sums",TotalVis,monash_tourism_quarterly,0.761811,T000335
+"TourismLarge, quarterly sums",TotalBus,monash_tourism_quarterly,0.586047,T000034
+"TourismLarge, quarterly sums",TotalOth,monash_tourism_quarterly,0.610319,T000052
+"TourismLarge, quarterly sums",AHol,monash_tourism_quarterly,0.738816,T000248
+"TourismLarge, quarterly sums",AVis,monash_tourism_quarterly,0.769108,T000240
+"TourismLarge, quarterly sums",ABus,monash_tourism_quarterly,0.663190,T000193
+"TourismLarge, quarterly sums",AOth,monash_tourism_quarterly,0.437566,T000377
+"TourismLarge, quarterly sums",BHol,monash_tourism_quarterly,0.772567,T000298
+"TourismLarge, quarterly sums",BVis,monash_tourism_quarterly,0.789675,T000240
+"TourismLarge, quarterly sums",BBus,monash_tourism_quarterly,0.407906,T000193
+"TourismLarge, quarterly sums",BOth,monash_tourism_quarterly,0.715618,T000047
+"TourismLarge, quarterly sums",CHol,monash_tourism_quarterly,0.655876,T000152
+"TourismLarge, quarterly sums",CVis,monash_tourism_quarterly,0.634162,T000268
+"TourismLarge, quarterly sums",CBus,monash_tourism_quarterly,0.454954,T000034
+"TourismLarge, quarterly sums",COth,monash_tourism_quarterly,0.418450,T000282
+"TourismLarge, quarterly sums",DHol,monash_tourism_quarterly,0.736471,T000240
+"TourismLarge, quarterly sums",DVis,monash_tourism_quarterly,0.652950,T000240
+"TourismLarge, quarterly sums",DBus,monash_tourism_quarterly,0.442792,T000043
+"TourismLarge, quarterly sums",DOth,monash_tourism_quarterly,0.369934,T000042
+"TourismLarge, quarterly sums",EHol,monash_tourism_quarterly,0.589008,T000142
+"TourismLarge, quarterly sums",EVis,monash_tourism_quarterly,0.680220,T000335
+"TourismLarge, quarterly sums",EBus,monash_tourism_quarterly,0.540295,T000223
+"TourismLarge, quarterly sums",EOth,monash_tourism_quarterly,0.504079,T000318
+"TourismLarge, quarterly sums",FHol,monash_tourism_quarterly,0.791974,T000260
+"TourismLarge, quarterly sums",FVis,monash_tourism_quarterly,0.631958,T000248
+"TourismLarge, quarterly sums",FBus,monash_tourism_quarterly,0.422660,T000052
+"TourismLarge, quarterly sums",FOth,monash_tourism_quarterly,0.545742,T000052
+"TourismLarge, quarterly sums",GHol,monash_tourism_quarterly,0.897749,T000032
+"TourismLarge, quarterly sums",GVis,monash_tourism_quarterly,0.607866,T000037
+"TourismLarge, quarterly sums",GBus,monash_tourism_quarterly,0.445347,T000193
+"TourismLarge, quarterly sums",GOth,monash_tourism_quarterly,0.599188,T000032
+"TourismLarge, quarterly sums",AAHol,monash_tourism_quarterly,0.697353,T000270
+"TourismLarge, quarterly sums",AAVis,monash_tourism_quarterly,0.717047,T000265
+"TourismLarge, quarterly sums",AABus,monash_tourism_quarterly,0.565745,T000193
+"TourismLarge, quarterly sums",AAOth,monash_tourism_quarterly,0.403897,T000232
+"TourismLarge, quarterly sums",ABHol,monash_tourism_quarterly,0.779902,T000260
+"TourismLarge, quarterly sums",ABVis,monash_tourism_quarterly,0.631131,T000141
+"TourismLarge, quarterly sums",ABBus,monash_tourism_quarterly,0.438230,T000048
+"TourismLarge, quarterly sums",ABOth,monash_tourism_quarterly,0.408542,T000138
+"TourismLarge, quarterly sums",ACHol,monash_tourism_quarterly,0.768824,T000240
+"TourismLarge, quarterly sums",ACVis,monash_tourism_quarterly,0.625596,T000240
+"TourismLarge, quarterly sums",ACBus,monash_tourism_quarterly,0.373077,T000061
+"TourismLarge, quarterly sums",ACOth,monash_tourism_quarterly,0.523786,T000039
+"TourismLarge, quarterly sums",ADHol,monash_tourism_quarterly,0.686597,T000063
+"TourismLarge, quarterly sums",ADVis,monash_tourism_quarterly,0.589926,T000340
+"TourismLarge, quarterly sums",ADBus,monash_tourism_quarterly,0.434448,T000193
+"TourismLarge, quarterly sums",ADOth,monash_tourism_quarterly,0.564261,T000181
+"TourismLarge, quarterly sums",AEHol,monash_tourism_quarterly,0.416865,T000057
+"TourismLarge, quarterly sums",AEVis,monash_tourism_quarterly,0.448378,T000340
+"TourismLarge, quarterly sums",AEBus,monash_tourism_quarterly,0.515739,T000143
+"TourismLarge, quarterly sums",AEOth,monash_tourism_quarterly,0.460448,T000033
+"TourismLarge, quarterly sums",AFHol,monash_tourism_quarterly,0.586773,T000232
+"TourismLarge, quarterly sums",AFVis,monash_tourism_quarterly,0.414637,T000276
+"TourismLarge, quarterly sums",AFBus,monash_tourism_quarterly,0.472777,T000050
+"TourismLarge, quarterly sums",AFOth,monash_tourism_quarterly,0.359852,T000362
+"TourismLarge, quarterly sums",BAHol,monash_tourism_quarterly,0.756295,T000298
+"TourismLarge, quarterly sums",BAVis,monash_tourism_quarterly,0.765515,T000260
+"TourismLarge, quarterly sums",BABus,monash_tourism_quarterly,0.573085,T000193
+"TourismLarge, quarterly sums",BAOth,monash_tourism_quarterly,0.576489,T000052
+"TourismLarge, quarterly sums",BBHol,monash_tourism_quarterly,0.782114,T000298
+"TourismLarge, quarterly sums",BBVis,monash_tourism_quarterly,0.716258,T000245
+"TourismLarge, quarterly sums",BBBus,monash_tourism_quarterly,0.322106,T000270
+"TourismLarge, quarterly sums",BBOth,monash_tourism_quarterly,0.418420,T000271
+"TourismLarge, quarterly sums",BCHol,monash_tourism_quarterly,0.793668,T000260
+"TourismLarge, quarterly sums",BCVis,monash_tourism_quarterly,0.529404,T000265
+"TourismLarge, quarterly sums",BCBus,monash_tourism_quarterly,0.312661,T000302
+"TourismLarge, quarterly sums",BCOth,monash_tourism_quarterly,0.418163,T000362
+"TourismLarge, quarterly sums",BDHol,monash_tourism_quarterly,0.624716,T000271
+"TourismLarge, quarterly sums",BDVis,monash_tourism_quarterly,0.613904,T000248
+"TourismLarge, quarterly sums",BDBus,monash_tourism_quarterly,0.503160,T000287
+"TourismLarge, quarterly sums",BDOth,monash_tourism_quarterly,0.348357,T000171
+"TourismLarge, quarterly sums",BEHol,monash_tourism_quarterly,0.323911,T000270
+"TourismLarge, quarterly sums",BEVis,monash_tourism_quarterly,0.523092,T000240
+"TourismLarge, quarterly sums",BEBus,monash_tourism_quarterly,0.636973,T000393
+"TourismLarge, quarterly sums",BEOth,monash_tourism_quarterly,0.586627,T000293
+"TourismLarge, quarterly sums",CAHol,monash_tourism_quarterly,0.791041,T000141
+"TourismLarge, quarterly sums",CAVis,monash_tourism_quarterly,0.548244,T000023
+"TourismLarge, quarterly sums",CABus,monash_tourism_quarterly,0.344577,T000050
+"TourismLarge, quarterly sums",CAOth,monash_tourism_quarterly,0.447944,T000211
+"TourismLarge, quarterly sums",CBHol,monash_tourism_quarterly,0.636727,T000032
+"TourismLarge, quarterly sums",CBVis,monash_tourism_quarterly,0.482436,T000055
+"TourismLarge, quarterly sums",CBBus,monash_tourism_quarterly,0.520898,T000201
+"TourismLarge, quarterly sums",CBOth,monash_tourism_quarterly,0.444557,T000158
+"TourismLarge, quarterly sums",CCHol,monash_tourism_quarterly,0.833265,T000034
+"TourismLarge, quarterly sums",CCVis,monash_tourism_quarterly,0.497298,T000038
+"TourismLarge, quarterly sums",CCBus,monash_tourism_quarterly,0.471396,T000033
+"TourismLarge, quarterly sums",CCOth,monash_tourism_quarterly,0.428949,T000050
+"TourismLarge, quarterly sums",CDHol,monash_tourism_quarterly,0.658039,T000025
+"TourismLarge, quarterly sums",CDVis,monash_tourism_quarterly,0.415996,T000038
+"TourismLarge, quarterly sums",CDBus,monash_tourism_quarterly,0.513250,T000018
+"TourismLarge, quarterly sums",CDOth,monash_tourism_quarterly,0.735793,T000393
+"TourismLarge, quarterly sums",DAHol,monash_tourism_quarterly,0.701989,T000248
+"TourismLarge, quarterly sums",DAVis,monash_tourism_quarterly,0.647798,T000141
+"TourismLarge, quarterly sums",DABus,monash_tourism_quarterly,0.436855,T000043
+"TourismLarge, quarterly sums",DAOth,monash_tourism_quarterly,0.449767,T000377
+"TourismLarge, quarterly sums",DBHol,monash_tourism_quarterly,0.808448,T000298
+"TourismLarge, quarterly sums",DBVis,monash_tourism_quarterly,0.674409,T000240
+"TourismLarge, quarterly sums",DBBus,monash_tourism_quarterly,0.425648,T000290
+"TourismLarge, quarterly sums",DBOth,monash_tourism_quarterly,0.410537,T000362
+"TourismLarge, quarterly sums",DCHol,monash_tourism_quarterly,0.393164,T000158
+"TourismLarge, quarterly sums",DCVis,monash_tourism_quarterly,0.402312,T000276
+"TourismLarge, quarterly sums",DCBus,monash_tourism_quarterly,0.344981,T000106
+"TourismLarge, quarterly sums",DCOth,monash_tourism_quarterly,0.405123,T000357
+"TourismLarge, quarterly sums",DDHol,monash_tourism_quarterly,0.741861,T000240
+"TourismLarge, quarterly sums",DDVis,monash_tourism_quarterly,0.566637,T000044
+"TourismLarge, quarterly sums",DDBus,monash_tourism_quarterly,0.381421,T000288
+"TourismLarge, quarterly sums",DDOth,monash_tourism_quarterly,0.444171,T000266
+"TourismLarge, quarterly sums",EAHol,monash_tourism_quarterly,0.595604,T000250
+"TourismLarge, quarterly sums",EAVis,monash_tourism_quarterly,0.747681,T000335
+"TourismLarge, quarterly sums",EABus,monash_tourism_quarterly,0.525399,T000033
+"TourismLarge, quarterly sums",EAOth,monash_tourism_quarterly,0.472140,T000318
+"TourismLarge, quarterly sums",EBHol,monash_tourism_quarterly,0.792874,T000025
+"TourismLarge, quarterly sums",EBVis,monash_tourism_quarterly,0.540178,T000032
+"TourismLarge, quarterly sums",EBBus,monash_tourism_quarterly,0.470085,T000035
+"TourismLarge, quarterly sums",EBOth,monash_tourism_quarterly,0.341051,T000052
+"TourismLarge, quarterly sums",ECHol,monash_tourism_quarterly,0.451719,T000291
+"TourismLarge, quarterly sums",ECVis,monash_tourism_quarterly,0.663149,T000047
+"TourismLarge, quarterly sums",ECBus,monash_tourism_quarterly,0.459717,T000068
+"TourismLarge, quarterly sums",ECOth,monash_tourism_quarterly,0.516899,T000357
+"TourismLarge, quarterly sums",FAHol,monash_tourism_quarterly,0.776144,T000298
+"TourismLarge, quarterly sums",FAVis,monash_tourism_quarterly,0.659694,T000248
+"TourismLarge, quarterly sums",FABus,monash_tourism_quarterly,0.446135,T000137
+"TourismLarge, quarterly sums",FAOth,monash_tourism_quarterly,0.392006,T000379
+"TourismLarge, quarterly sums",FBHol,monash_tourism_quarterly,0.778360,T000298
+"TourismLarge, quarterly sums",FBVis,monash_tourism_quarterly,0.564631,T000248
+"TourismLarge, quarterly sums",FBBus,monash_tourism_quarterly,0.429711,T000042
+"TourismLarge, quarterly sums",FBOth,monash_tourism_quarterly,0.415243,T000139
+"TourismLarge, quarterly sums",FCHol,monash_tourism_quarterly,0.741321,T000240
+"TourismLarge, quarterly sums",FCVis,monash_tourism_quarterly,0.486073,T000335
+"TourismLarge, quarterly sums",FCBus,monash_tourism_quarterly,0.581854,T000290
+"TourismLarge, quarterly sums",FCOth,monash_tourism_quarterly,0.513856,T000047
+"TourismLarge, quarterly sums",GAHol,monash_tourism_quarterly,0.897081,T000032
+"TourismLarge, quarterly sums",GAVis,monash_tourism_quarterly,0.624730,T000037
+"TourismLarge, quarterly sums",GABus,monash_tourism_quarterly,0.446745,T000046
+"TourismLarge, quarterly sums",GAOth,monash_tourism_quarterly,0.495013,T000032
+"TourismLarge, quarterly sums",GBHol,monash_tourism_quarterly,0.825358,T000034
+"TourismLarge, quarterly sums",GBVis,monash_tourism_quarterly,0.455739,T000243
+"TourismLarge, quarterly sums",GBBus,monash_tourism_quarterly,0.499981,T000090
+"TourismLarge, quarterly sums",GBOth,monash_tourism_quarterly,0.531117,T000026
+"TourismLarge, quarterly sums",AAAHol,monash_tourism_quarterly,0.703997,T000270
+"TourismLarge, quarterly sums",AAAVis,monash_tourism_quarterly,0.694184,T000275
+"TourismLarge, quarterly sums",AAABus,monash_tourism_quarterly,0.583113,T000018
+"TourismLarge, quarterly sums",AAAOth,monash_tourism_quarterly,0.371302,T000232
+"TourismLarge, quarterly sums",AABHol,monash_tourism_quarterly,0.761642,T000245
+"TourismLarge, quarterly sums",AABVis,monash_tourism_quarterly,0.488216,T000269
+"TourismLarge, quarterly sums",AABBus,monash_tourism_quarterly,0.412513,T000252
+"TourismLarge, quarterly sums",AABOth,monash_tourism_quarterly,0.655284,T000393
+"TourismLarge, quarterly sums",ABAHol,monash_tourism_quarterly,0.646728,T000298
+"TourismLarge, quarterly sums",ABAVis,monash_tourism_quarterly,0.480220,T000298
+"TourismLarge, quarterly sums",ABABus,monash_tourism_quarterly,0.416392,T000392
+"TourismLarge, quarterly sums",ABAOth,monash_tourism_quarterly,0.391666,T000140
+"TourismLarge, quarterly sums",ABBHol,monash_tourism_quarterly,0.782252,T000260
+"TourismLarge, quarterly sums",ABBVis,monash_tourism_quarterly,0.618490,T000141
+"TourismLarge, quarterly sums",ABBBus,monash_tourism_quarterly,0.425269,T000314
+"TourismLarge, quarterly sums",ABBOth,monash_tourism_quarterly,0.463490,T000194
+"TourismLarge, quarterly sums",ACAHol,monash_tourism_quarterly,0.768824,T000240
+"TourismLarge, quarterly sums",ACAVis,monash_tourism_quarterly,0.625596,T000240
+"TourismLarge, quarterly sums",ACABus,monash_tourism_quarterly,0.373077,T000061
+"TourismLarge, quarterly sums",ACAOth,monash_tourism_quarterly,0.523786,T000039
+"TourismLarge, quarterly sums",ADAHol,monash_tourism_quarterly,0.767161,T000059
+"TourismLarge, quarterly sums",ADAVis,monash_tourism_quarterly,0.448717,T000294
+"TourismLarge, quarterly sums",ADABus,monash_tourism_quarterly,0.362121,T000032
+"TourismLarge, quarterly sums",ADAOth,monash_tourism_quarterly,0.412157,T000126
+"TourismLarge, quarterly sums",ADBHol,monash_tourism_quarterly,0.629037,T000044
+"TourismLarge, quarterly sums",ADBVis,monash_tourism_quarterly,0.445601,T000303
+"TourismLarge, quarterly sums",ADBBus,monash_tourism_quarterly,0.584985,T000042
+"TourismLarge, quarterly sums",ADBOth,monash_tourism_quarterly,0.488135,T000272
+"TourismLarge, quarterly sums",ADCHol,monash_tourism_quarterly,0.607786,T000298
+"TourismLarge, quarterly sums",ADCVis,monash_tourism_quarterly,0.631695,T000269
+"TourismLarge, quarterly sums",ADCBus,monash_tourism_quarterly,0.464908,T000046
+"TourismLarge, quarterly sums",ADCOth,monash_tourism_quarterly,0.315977,T000055
+"TourismLarge, quarterly sums",ADDHol,monash_tourism_quarterly,0.281657,T000172
+"TourismLarge, quarterly sums",ADDVis,monash_tourism_quarterly,0.442264,T000247
+"TourismLarge, quarterly sums",ADDBus,monash_tourism_quarterly,0.382538,T000193
+"TourismLarge, quarterly sums",ADDOth,monash_tourism_quarterly,0.696417,T000181
+"TourismLarge, quarterly sums",AEAHol,monash_tourism_quarterly,0.414204,T000378
+"TourismLarge, quarterly sums",AEAVis,monash_tourism_quarterly,0.511723,T000267
+"TourismLarge, quarterly sums",AEABus,monash_tourism_quarterly,0.463190,T000138
+"TourismLarge, quarterly sums",AEAOth,monash_tourism_quarterly,0.329431,T000194
+"TourismLarge, quarterly sums",AEBHol,monash_tourism_quarterly,0.593748,T000250
+"TourismLarge, quarterly sums",AEBVis,monash_tourism_quarterly,0.290617,T000248
+"TourismLarge, quarterly sums",AEBBus,monash_tourism_quarterly,0.519506,T000258
+"TourismLarge, quarterly sums",AEBOth,monash_tourism_quarterly,0.509681,T000035
+"TourismLarge, quarterly sums",AECHol,monash_tourism_quarterly,0.676015,T000032
+"TourismLarge, quarterly sums",AECVis,monash_tourism_quarterly,0.440907,T000042
+"TourismLarge, quarterly sums",AECBus,monash_tourism_quarterly,0.548197,T000125
+"TourismLarge, quarterly sums",AECOth,monash_tourism_quarterly,0.523836,T000042
+"TourismLarge, quarterly sums",AEDHol,monash_tourism_quarterly,0.609053,T000050
+"TourismLarge, quarterly sums",AEDVis,monash_tourism_quarterly,0.487690,T000050
+"TourismLarge, quarterly sums",AEDBus,monash_tourism_quarterly,0.686785,T000050
+"TourismLarge, quarterly sums",AEDOth,monash_tourism_quarterly,0.343867,T000272
+"TourismLarge, quarterly sums",AFAHol,monash_tourism_quarterly,0.586773,T000232
+"TourismLarge, quarterly sums",AFAVis,monash_tourism_quarterly,0.414637,T000276
+"TourismLarge, quarterly sums",AFABus,monash_tourism_quarterly,0.472777,T000050
+"TourismLarge, quarterly sums",AFAOth,monash_tourism_quarterly,0.359852,T000362
+"TourismLarge, quarterly sums",BAAHol,monash_tourism_quarterly,0.624905,T000023
+"TourismLarge, quarterly sums",BAAVis,monash_tourism_quarterly,0.658676,T000240
+"TourismLarge, quarterly sums",BAABus,monash_tourism_quarterly,0.569503,T000193
+"TourismLarge, quarterly sums",BAAOth,monash_tourism_quarterly,0.498729,T000049
+"TourismLarge, quarterly sums",BABHol,monash_tourism_quarterly,0.734433,T000248
+"TourismLarge, quarterly sums",BABVis,monash_tourism_quarterly,0.790141,T000335
+"TourismLarge, quarterly sums",BABBus,monash_tourism_quarterly,0.499733,T000342
+"TourismLarge, quarterly sums",BABOth,monash_tourism_quarterly,0.455907,T000229
+"TourismLarge, quarterly sums",BACHol,monash_tourism_quarterly,0.797548,T000245
+"TourismLarge, quarterly sums",BACVis,monash_tourism_quarterly,0.655263,T000352
+"TourismLarge, quarterly sums",BACBus,monash_tourism_quarterly,0.418592,T000049
+"TourismLarge, quarterly sums",BACOth,monash_tourism_quarterly,0.442830,T000052
+"TourismLarge, quarterly sums",BBAHol,monash_tourism_quarterly,0.782114,T000298
+"TourismLarge, quarterly sums",BBAVis,monash_tourism_quarterly,0.716258,T000245
+"TourismLarge, quarterly sums",BBABus,monash_tourism_quarterly,0.322106,T000270
+"TourismLarge, quarterly sums",BBAOth,monash_tourism_quarterly,0.418420,T000271
+"TourismLarge, quarterly sums",BCAHol,monash_tourism_quarterly,0.677121,T000248
+"TourismLarge, quarterly sums",BCAVis,monash_tourism_quarterly,0.652444,T000229
+"TourismLarge, quarterly sums",BCABus,monash_tourism_quarterly,0.346211,T000106
+"TourismLarge, quarterly sums",BCAOth,monash_tourism_quarterly,0.479613,T000142
+"TourismLarge, quarterly sums",BCBHol,monash_tourism_quarterly,0.717059,T000240
+"TourismLarge, quarterly sums",BCBVis,monash_tourism_quarterly,0.380955,T000308
+"TourismLarge, quarterly sums",BCBBus,monash_tourism_quarterly,0.407214,T000302
+"TourismLarge, quarterly sums",BCBOth,monash_tourism_quarterly,0.353748,T000362
+"TourismLarge, quarterly sums",BCCHol,monash_tourism_quarterly,0.819121,T000298
+"TourismLarge, quarterly sums",BCCVis,monash_tourism_quarterly,0.471629,T000269
+"TourismLarge, quarterly sums",BCCBus,monash_tourism_quarterly,0.394137,T000363
+"TourismLarge, quarterly sums",BCCOth,monash_tourism_quarterly,0.332572,T000145
+"TourismLarge, quarterly sums",BDAHol,monash_tourism_quarterly,0.633894,T000240
+"TourismLarge, quarterly sums",BDAVis,monash_tourism_quarterly,0.412636,T000258
+"TourismLarge, quarterly sums",BDABus,monash_tourism_quarterly,0.369396,T000071
+"TourismLarge, quarterly sums",BDAOth,monash_tourism_quarterly,0.387709,T000048
+"TourismLarge, quarterly sums",BDBHol,monash_tourism_quarterly,0.459807,T000064
+"TourismLarge, quarterly sums",BDBVis,monash_tourism_quarterly,0.391581,T000368
+"TourismLarge, quarterly sums",BDBBus,monash_tourism_quarterly,0.535950,T000287
+"TourismLarge, quarterly sums",BDBOth,monash_tourism_quarterly,0.412979,T000347
+"TourismLarge, quarterly sums",BDCHol,monash_tourism_quarterly,0.803443,T000059
+"TourismLarge, quarterly sums",BDCVis,monash_tourism_quarterly,0.522726,T000248
+"TourismLarge, quarterly sums",BDCBus,monash_tourism_quarterly,0.522060,T000010
+"TourismLarge, quarterly sums",BDCOth,monash_tourism_quarterly,0.338326,T000167
+"TourismLarge, quarterly sums",BDDHol,monash_tourism_quarterly,0.486198,T000211
+"TourismLarge, quarterly sums",BDDVis,monash_tourism_quarterly,0.430691,T000252
+"TourismLarge, quarterly sums",BDDBus,monash_tourism_quarterly,0.345604,T000392
+"TourismLarge, quarterly sums",BDDOth,monash_tourism_quarterly,0.409096,T000024
+"TourismLarge, quarterly sums",BDEHol,monash_tourism_quarterly,0.606296,T000298
+"TourismLarge, quarterly sums",BDEVis,monash_tourism_quarterly,0.530914,T000149
+"TourismLarge, quarterly sums",BDEBus,monash_tourism_quarterly,0.396445,T000089
+"TourismLarge, quarterly sums",BDFHol,monash_tourism_quarterly,0.434924,T000050
+"TourismLarge, quarterly sums",BDFVis,monash_tourism_quarterly,0.631759,T000362
+"TourismLarge, quarterly sums",BDFBus,monash_tourism_quarterly,0.601809,T000288
+"TourismLarge, quarterly sums",BEAHol,monash_tourism_quarterly,0.485703,T000050
+"TourismLarge, quarterly sums",BEAVis,monash_tourism_quarterly,0.423171,T000245
+"TourismLarge, quarterly sums",BEABus,monash_tourism_quarterly,0.434882,T000052
+"TourismLarge, quarterly sums",BEBHol,monash_tourism_quarterly,0.355548,T000018
+"TourismLarge, quarterly sums",BEBVis,monash_tourism_quarterly,0.354265,T000387
+"TourismLarge, quarterly sums",BEBBus,monash_tourism_quarterly,0.422641,T000143
+"TourismLarge, quarterly sums",BEBOth,monash_tourism_quarterly,0.453919,T000390
+"TourismLarge, quarterly sums",BECHol,monash_tourism_quarterly,0.317483,T000042
+"TourismLarge, quarterly sums",BECVis,monash_tourism_quarterly,0.320976,T000272
+"TourismLarge, quarterly sums",BECBus,monash_tourism_quarterly,0.429118,T000041
+"TourismLarge, quarterly sums",BECOth,monash_tourism_quarterly,0.392510,T000150
+"TourismLarge, quarterly sums",BEDHol,monash_tourism_quarterly,0.483859,T000250
+"TourismLarge, quarterly sums",BEDVis,monash_tourism_quarterly,0.399279,T000403
+"TourismLarge, quarterly sums",BEDBus,monash_tourism_quarterly,0.379556,T000028
+"TourismLarge, quarterly sums",BEDOth,monash_tourism_quarterly,0.568043,T000392
+"TourismLarge, quarterly sums",BEEHol,monash_tourism_quarterly,0.362045,T000039
+"TourismLarge, quarterly sums",BEEVis,monash_tourism_quarterly,0.589061,T000149
+"TourismLarge, quarterly sums",BEEBus,monash_tourism_quarterly,0.324180,T000186
+"TourismLarge, quarterly sums",BEFHol,monash_tourism_quarterly,0.400102,T000020
+"TourismLarge, quarterly sums",BEFVis,monash_tourism_quarterly,0.443374,T000270
+"TourismLarge, quarterly sums",BEFBus,monash_tourism_quarterly,0.313240,T000267
+"TourismLarge, quarterly sums",BEGHol,monash_tourism_quarterly,0.471441,T000308
+"TourismLarge, quarterly sums",BEGVis,monash_tourism_quarterly,0.424422,T000360
+"TourismLarge, quarterly sums",BEGBus,monash_tourism_quarterly,0.316671,T000055
+"TourismLarge, quarterly sums",BEGOth,monash_tourism_quarterly,0.348386,T000107
+"TourismLarge, quarterly sums",BEHHol,monash_tourism_quarterly,0.503448,T000042
+"TourismLarge, quarterly sums",BEHVis,monash_tourism_quarterly,0.403298,T000392
+"TourismLarge, quarterly sums",BEHBus,monash_tourism_quarterly,0.811485,T000393
+"TourismLarge, quarterly sums",BEHOth,monash_tourism_quarterly,0.522361,T000052
+"TourismLarge, quarterly sums",CAAHol,monash_tourism_quarterly,0.746523,T000149
+"TourismLarge, quarterly sums",CAAVis,monash_tourism_quarterly,0.452136,T000020
+"TourismLarge, quarterly sums",CAABus,monash_tourism_quarterly,0.431487,T000322
+"TourismLarge, quarterly sums",CAAOth,monash_tourism_quarterly,0.343651,T000006
+"TourismLarge, quarterly sums",CABHol,monash_tourism_quarterly,0.593760,T000343
+"TourismLarge, quarterly sums",CABVis,monash_tourism_quarterly,0.499269,T000023
+"TourismLarge, quarterly sums",CABBus,monash_tourism_quarterly,0.350506,T000050
+"TourismLarge, quarterly sums",CABOth,monash_tourism_quarterly,0.451889,T000052
+"TourismLarge, quarterly sums",CACHol,monash_tourism_quarterly,0.723023,T000142
+"TourismLarge, quarterly sums",CACVis,monash_tourism_quarterly,0.524269,T000267
+"TourismLarge, quarterly sums",CACBus,monash_tourism_quarterly,0.484476,T000267
+"TourismLarge, quarterly sums",CACOth,monash_tourism_quarterly,0.391695,T000216
+"TourismLarge, quarterly sums",CBAHol,monash_tourism_quarterly,0.632392,T000032
+"TourismLarge, quarterly sums",CBAVis,monash_tourism_quarterly,0.451739,T000055
+"TourismLarge, quarterly sums",CBABus,monash_tourism_quarterly,0.573558,T000039
+"TourismLarge, quarterly sums",CBAOth,monash_tourism_quarterly,0.400112,T000138
+"TourismLarge, quarterly sums",CBBHol,monash_tourism_quarterly,0.576778,T000055
+"TourismLarge, quarterly sums",CBBVis,monash_tourism_quarterly,0.414131,T000046
+"TourismLarge, quarterly sums",CBBBus,monash_tourism_quarterly,0.392123,T000063
+"TourismLarge, quarterly sums",CBBOth,monash_tourism_quarterly,0.406068,T000292
+"TourismLarge, quarterly sums",CBCHol,monash_tourism_quarterly,0.446128,T000302
+"TourismLarge, quarterly sums",CBCVis,monash_tourism_quarterly,0.288981,T000256
+"TourismLarge, quarterly sums",CBCBus,monash_tourism_quarterly,0.432415,T000061
+"TourismLarge, quarterly sums",CBCOth,monash_tourism_quarterly,0.367069,T000052
+"TourismLarge, quarterly sums",CBDHol,monash_tourism_quarterly,0.514093,T000032
+"TourismLarge, quarterly sums",CBDVis,monash_tourism_quarterly,0.481182,T000055
+"TourismLarge, quarterly sums",CBDBus,monash_tourism_quarterly,0.501917,T000186
+"TourismLarge, quarterly sums",CBDOth,monash_tourism_quarterly,0.404207,T000227
+"TourismLarge, quarterly sums",CCAHol,monash_tourism_quarterly,0.523396,T000277
+"TourismLarge, quarterly sums",CCAVis,monash_tourism_quarterly,0.630555,T000139
+"TourismLarge, quarterly sums",CCABus,monash_tourism_quarterly,0.578652,T000211
+"TourismLarge, quarterly sums",CCBHol,monash_tourism_quarterly,0.693401,T000024
+"TourismLarge, quarterly sums",CCBVis,monash_tourism_quarterly,0.588932,T000045
+"TourismLarge, quarterly sums",CCBBus,monash_tourism_quarterly,0.449898,T000031
+"TourismLarge, quarterly sums",CCBOth,monash_tourism_quarterly,0.416744,T000050
+"TourismLarge, quarterly sums",CCCHol,monash_tourism_quarterly,0.842843,T000034
+"TourismLarge, quarterly sums",CCCVis,monash_tourism_quarterly,0.543632,T000055
+"TourismLarge, quarterly sums",CCCBus,monash_tourism_quarterly,0.506075,T000295
+"TourismLarge, quarterly sums",CCCOth,monash_tourism_quarterly,0.578630,T000153
+"TourismLarge, quarterly sums",CDAHol,monash_tourism_quarterly,0.341502,T000143
+"TourismLarge, quarterly sums",CDAVis,monash_tourism_quarterly,0.448490,T000047
+"TourismLarge, quarterly sums",CDABus,monash_tourism_quarterly,0.380355,T000032
+"TourismLarge, quarterly sums",CDAOth,monash_tourism_quarterly,0.602767,T000255
+"TourismLarge, quarterly sums",CDBHol,monash_tourism_quarterly,0.720916,T000032
+"TourismLarge, quarterly sums",CDBVis,monash_tourism_quarterly,0.444922,T000393
+"TourismLarge, quarterly sums",CDBBus,monash_tourism_quarterly,0.442502,T000018
+"TourismLarge, quarterly sums",CDBOth,monash_tourism_quarterly,0.761488,T000393
+"TourismLarge, quarterly sums",DAAHol,monash_tourism_quarterly,0.763737,T000061
+"TourismLarge, quarterly sums",DAAVis,monash_tourism_quarterly,0.654269,T000142
+"TourismLarge, quarterly sums",DAABus,monash_tourism_quarterly,0.428202,T000043
+"TourismLarge, quarterly sums",DAAOth,monash_tourism_quarterly,0.415321,T000377
+"TourismLarge, quarterly sums",DABHol,monash_tourism_quarterly,0.399514,T000377
+"TourismLarge, quarterly sums",DABVis,monash_tourism_quarterly,0.432276,T000210
+"TourismLarge, quarterly sums",DABBus,monash_tourism_quarterly,0.474260,T000309
+"TourismLarge, quarterly sums",DACHol,monash_tourism_quarterly,0.542570,T000043
+"TourismLarge, quarterly sums",DACVis,monash_tourism_quarterly,0.572571,T000331
+"TourismLarge, quarterly sums",DACBus,monash_tourism_quarterly,0.477721,T000021
+"TourismLarge, quarterly sums",DACOth,monash_tourism_quarterly,0.358460,T000125
+"TourismLarge, quarterly sums",DBAHol,monash_tourism_quarterly,0.708012,T000298
+"TourismLarge, quarterly sums",DBAVis,monash_tourism_quarterly,0.547650,T000298
+"TourismLarge, quarterly sums",DBABus,monash_tourism_quarterly,0.503288,T000270
+"TourismLarge, quarterly sums",DBAOth,monash_tourism_quarterly,0.423624,T000313
+"TourismLarge, quarterly sums",DBBHol,monash_tourism_quarterly,0.790794,T000298
+"TourismLarge, quarterly sums",DBBVis,monash_tourism_quarterly,0.611774,T000240
+"TourismLarge, quarterly sums",DBBBus,monash_tourism_quarterly,0.495406,T000055
+"TourismLarge, quarterly sums",DBBOth,monash_tourism_quarterly,0.355002,T000298
+"TourismLarge, quarterly sums",DBCHol,monash_tourism_quarterly,0.580077,T000352
+"TourismLarge, quarterly sums",DBCVis,monash_tourism_quarterly,0.507499,T000023
+"TourismLarge, quarterly sums",DBCBus,monash_tourism_quarterly,0.552839,T000280
+"TourismLarge, quarterly sums",DCAHol,monash_tourism_quarterly,0.596713,T000298
+"TourismLarge, quarterly sums",DCAVis,monash_tourism_quarterly,0.451609,T000150
+"TourismLarge, quarterly sums",DCABus,monash_tourism_quarterly,0.460144,T000088
+"TourismLarge, quarterly sums",DCAOth,monash_tourism_quarterly,0.429799,T000045
+"TourismLarge, quarterly sums",DCBHol,monash_tourism_quarterly,0.388653,T000042
+"TourismLarge, quarterly sums",DCBVis,monash_tourism_quarterly,0.432273,T000054
+"TourismLarge, quarterly sums",DCBBus,monash_tourism_quarterly,0.338298,T000164
+"TourismLarge, quarterly sums",DCBOth,monash_tourism_quarterly,0.478050,T000120
+"TourismLarge, quarterly sums",DCCHol,monash_tourism_quarterly,0.461906,T000042
+"TourismLarge, quarterly sums",DCCVis,monash_tourism_quarterly,0.295714,T000020
+"TourismLarge, quarterly sums",DCCBus,monash_tourism_quarterly,0.466624,T000130
+"TourismLarge, quarterly sums",DCDHol,monash_tourism_quarterly,0.617426,T000158
+"TourismLarge, quarterly sums",DCDVis,monash_tourism_quarterly,0.369237,T000057
+"TourismLarge, quarterly sums",DCDBus,monash_tourism_quarterly,0.376905,T000106
+"TourismLarge, quarterly sums",DCDOth,monash_tourism_quarterly,0.503359,T000257
+"TourismLarge, quarterly sums",DDAHol,monash_tourism_quarterly,0.479050,T000312
+"TourismLarge, quarterly sums",DDAVis,monash_tourism_quarterly,0.357953,T000044
+"TourismLarge, quarterly sums",DDABus,monash_tourism_quarterly,0.376030,T000267
+"TourismLarge, quarterly sums",DDAOth,monash_tourism_quarterly,0.399439,T000268
+"TourismLarge, quarterly sums",DDBHol,monash_tourism_quarterly,0.727379,T000240
+"TourismLarge, quarterly sums",DDBVis,monash_tourism_quarterly,0.491717,T000042
+"TourismLarge, quarterly sums",DDBBus,monash_tourism_quarterly,0.381554,T000055
+"TourismLarge, quarterly sums",DDBOth,monash_tourism_quarterly,0.528777,T000367
+"TourismLarge, quarterly sums",EAAHol,monash_tourism_quarterly,0.721399,T000032
+"TourismLarge, quarterly sums",EAAVis,monash_tourism_quarterly,0.495708,T000038
+"TourismLarge, quarterly sums",EAABus,monash_tourism_quarterly,0.505445,T000052
+"TourismLarge, quarterly sums",EAAOth,monash_tourism_quarterly,0.546459,T000031
+"TourismLarge, quarterly sums",EABHol,monash_tourism_quarterly,0.609240,T000229
+"TourismLarge, quarterly sums",EABVis,monash_tourism_quarterly,0.692039,T000335
+"TourismLarge, quarterly sums",EABBus,monash_tourism_quarterly,0.426994,T000164
+"TourismLarge, quarterly sums",EABOth,monash_tourism_quarterly,0.559450,T000318
+"TourismLarge, quarterly sums",EACHol,monash_tourism_quarterly,0.741973,T000240
+"TourismLarge, quarterly sums",EACVis,monash_tourism_quarterly,0.643160,T000023
+"TourismLarge, quarterly sums",EACBus,monash_tourism_quarterly,0.626264,T000033
+"TourismLarge, quarterly sums",EACOth,monash_tourism_quarterly,0.529514,T000155
+"TourismLarge, quarterly sums",EBAHol,monash_tourism_quarterly,0.792874,T000025
+"TourismLarge, quarterly sums",EBAVis,monash_tourism_quarterly,0.540178,T000032
+"TourismLarge, quarterly sums",EBABus,monash_tourism_quarterly,0.470085,T000035
+"TourismLarge, quarterly sums",EBAOth,monash_tourism_quarterly,0.341051,T000052
+"TourismLarge, quarterly sums",ECAHol,monash_tourism_quarterly,0.451719,T000291
+"TourismLarge, quarterly sums",ECAVis,monash_tourism_quarterly,0.663149,T000047
+"TourismLarge, quarterly sums",ECABus,monash_tourism_quarterly,0.459717,T000068
+"TourismLarge, quarterly sums",ECAOth,monash_tourism_quarterly,0.516899,T000357
+"TourismLarge, quarterly sums",FAAHol,monash_tourism_quarterly,0.776144,T000298
+"TourismLarge, quarterly sums",FAAVis,monash_tourism_quarterly,0.659694,T000248
+"TourismLarge, quarterly sums",FAABus,monash_tourism_quarterly,0.446135,T000137
+"TourismLarge, quarterly sums",FAAOth,monash_tourism_quarterly,0.392006,T000379
+"TourismLarge, quarterly sums",FBAHol,monash_tourism_quarterly,0.771648,T000248
+"TourismLarge, quarterly sums",FBAVis,monash_tourism_quarterly,0.599533,T000248
+"TourismLarge, quarterly sums",FBABus,monash_tourism_quarterly,0.387831,T000210
+"TourismLarge, quarterly sums",FBAOth,monash_tourism_quarterly,0.517835,T000229
+"TourismLarge, quarterly sums",FBBHol,monash_tourism_quarterly,0.753707,T000298
+"TourismLarge, quarterly sums",FBBVis,monash_tourism_quarterly,0.520482,T000368
+"TourismLarge, quarterly sums",FBBBus,monash_tourism_quarterly,0.440061,T000041
+"TourismLarge, quarterly sums",FBBOth,monash_tourism_quarterly,0.406896,T000139
+"TourismLarge, quarterly sums",FCAHol,monash_tourism_quarterly,0.719462,T000240
+"TourismLarge, quarterly sums",FCAVis,monash_tourism_quarterly,0.468945,T000335
+"TourismLarge, quarterly sums",FCABus,monash_tourism_quarterly,0.555692,T000290
+"TourismLarge, quarterly sums",FCAOth,monash_tourism_quarterly,0.510371,T000047
+"TourismLarge, quarterly sums",FCBHol,monash_tourism_quarterly,0.660223,T000240
+"TourismLarge, quarterly sums",FCBVis,monash_tourism_quarterly,0.426586,T000258
+"TourismLarge, quarterly sums",FCBBus,monash_tourism_quarterly,0.476753,T000043
+"TourismLarge, quarterly sums",GAAHol,monash_tourism_quarterly,0.876632,T000025
+"TourismLarge, quarterly sums",GAAVis,monash_tourism_quarterly,0.598006,T000037
+"TourismLarge, quarterly sums",GAABus,monash_tourism_quarterly,0.357503,T000290
+"TourismLarge, quarterly sums",GAAOth,monash_tourism_quarterly,0.476250,T000233
+"TourismLarge, quarterly sums",GABHol,monash_tourism_quarterly,0.671165,T000170
+"TourismLarge, quarterly sums",GABVis,monash_tourism_quarterly,0.482772,T000047
+"TourismLarge, quarterly sums",GABBus,monash_tourism_quarterly,0.448940,T000031
+"TourismLarge, quarterly sums",GABOth,monash_tourism_quarterly,0.471415,T000138
+"TourismLarge, quarterly sums",GACHol,monash_tourism_quarterly,0.699627,T000032
+"TourismLarge, quarterly sums",GACVis,monash_tourism_quarterly,0.498878,T000089
+"TourismLarge, quarterly sums",GACBus,monash_tourism_quarterly,0.485723,T000308
+"TourismLarge, quarterly sums",GACOth,monash_tourism_quarterly,0.418759,T000037
+"TourismLarge, quarterly sums",GBAHol,monash_tourism_quarterly,0.584637,T000031
+"TourismLarge, quarterly sums",GBAVis,monash_tourism_quarterly,0.503441,T000193
+"TourismLarge, quarterly sums",GBABus,monash_tourism_quarterly,0.469682,T000052
+"TourismLarge, quarterly sums",GBBHol,monash_tourism_quarterly,0.833571,T000034
+"TourismLarge, quarterly sums",GBBVis,monash_tourism_quarterly,0.414569,T000162
+"TourismLarge, quarterly sums",GBBBus,monash_tourism_quarterly,0.468429,T000305
+"TourismLarge, quarterly sums",GBCHol,monash_tourism_quarterly,0.729076,T000034
+"TourismLarge, quarterly sums",GBCVis,monash_tourism_quarterly,0.459336,T000243
+"TourismLarge, quarterly sums",GBCBus,monash_tourism_quarterly,0.542772,T000227
+"TourismLarge, quarterly sums",GBCOth,monash_tourism_quarterly,0.438649,T000026
+"TourismLarge, quarterly sums",GBDHol,monash_tourism_quarterly,0.589630,T000032
+"TourismLarge, quarterly sums",GBDVis,monash_tourism_quarterly,0.467472,T000138
+"TourismLarge, quarterly sums",GBDBus,monash_tourism_quarterly,0.426292,T000408
+TourismSmall,total,m4_quarterly,0.829007,T013358
+TourismSmall,hol,m4_quarterly,0.884688,T004868
+TourismSmall,vfr,m4_quarterly,0.804450,T004185
+TourismSmall,bus,m4_quarterly,0.729378,T019203
+TourismSmall,oth,m4_quarterly,0.855828,T019341
+TourismSmall,nsw-hol,m4_quarterly,0.861261,T013376
+TourismSmall,vic-hol,m4_quarterly,0.906887,T004868
+TourismSmall,qld-hol,m4_quarterly,0.734279,T016802
+TourismSmall,sa-hol,m4_quarterly,0.841139,T013376
+TourismSmall,wa-hol,m4_quarterly,0.631971,T005920
+TourismSmall,tas-hol,m4_quarterly,0.879051,T010499
+TourismSmall,nt-hol,m4_quarterly,0.908537,T004197
+TourismSmall,nsw-vfr,m4_quarterly,0.795272,T003751
+TourismSmall,vic-vfr,m4_quarterly,0.838724,T013376
+TourismSmall,qld-vfr,m4_quarterly,0.746626,T017530
+TourismSmall,sa-vfr,m4_quarterly,0.730272,T003751
+TourismSmall,wa-vfr,m4_quarterly,0.705894,T009427
+TourismSmall,tas-vfr,m4_quarterly,0.723589,T004185
+TourismSmall,nt-vfr,m4_quarterly,0.720583,T012648
+TourismSmall,nsw-bus,m4_quarterly,0.726453,T018803
+TourismSmall,vic-bus,m4_quarterly,0.635729,T020761
+TourismSmall,qld-bus,m4_quarterly,0.706374,T000311
+TourismSmall,sa-bus,m4_quarterly,0.733087,T001719
+TourismSmall,wa-bus,m4_quarterly,0.711697,T019438
+TourismSmall,tas-bus,m4_quarterly,0.742110,T018803
+TourismSmall,nt-bus,m4_quarterly,0.652267,T020754
+TourismSmall,nsw-oth,m4_quarterly,0.630181,T019335
+TourismSmall,vic-oth,m4_quarterly,0.742931,T004681
+TourismSmall,qld-oth,m4_quarterly,0.768495,T015039
+TourismSmall,sa-oth,m4_quarterly,0.556013,T019364
+TourismSmall,wa-oth,m4_quarterly,0.772265,T019702
+TourismSmall,tas-oth,m4_quarterly,0.603382,T020761
+TourismSmall,nt-oth,m4_quarterly,0.733517,T013378
+TourismSmall,nsw-hol-city,m4_quarterly,0.823644,T010433
+TourismSmall,nsw-hol-noncity,m4_quarterly,0.871908,T013376
+TourismSmall,vic-hol-city,m4_quarterly,0.871844,T010499
+TourismSmall,vic-hol-noncity,m4_quarterly,0.894248,T020524
+TourismSmall,qld-hol-city,m4_quarterly,0.682842,T013358
+TourismSmall,qld-hol-noncity,m4_quarterly,0.865701,T013378
+TourismSmall,sa-hol-city,m4_quarterly,0.716806,T004868
+TourismSmall,sa-hol-noncity,m4_quarterly,0.809093,T013376
+TourismSmall,wa-hol-city,m4_quarterly,0.726132,T017129
+TourismSmall,wa-hol-noncity,m4_quarterly,0.595526,T012888
+TourismSmall,tas-hol-city,m4_quarterly,0.836740,T010499
+TourismSmall,tas-hol-noncity,m4_quarterly,0.883703,T010499
+TourismSmall,nt-hol-city,m4_quarterly,0.875248,T011602
+TourismSmall,nt-hol-noncity,m4_quarterly,0.887135,T004468
+TourismSmall,nsw-vfr-city,m4_quarterly,0.753829,T017781
+TourismSmall,nsw-vfr-noncity,m4_quarterly,0.770600,T004185
+TourismSmall,vic-vfr-city,m4_quarterly,0.738776,T013376
+TourismSmall,vic-vfr-noncity,m4_quarterly,0.850786,T003751
+TourismSmall,qld-vfr-city,m4_quarterly,0.625058,T017530
+TourismSmall,qld-vfr-noncity,m4_quarterly,0.660463,T009775
+TourismSmall,sa-vfr-city,m4_quarterly,0.620859,T015734
+TourismSmall,sa-vfr-noncity,m4_quarterly,0.741852,T004185
+TourismSmall,wa-vfr-city,m4_quarterly,0.707321,T022785
+TourismSmall,wa-vfr-noncity,m4_quarterly,0.626262,T019285
+TourismSmall,tas-vfr-city,m4_quarterly,0.729651,T010499
+TourismSmall,tas-vfr-noncity,m4_quarterly,0.710339,T021560
+TourismSmall,nt-vfr-city,m4_quarterly,0.704176,T003445
+TourismSmall,nt-vfr-noncity,m4_quarterly,0.538523,T010674
+TourismSmall,nsw-bus-city,m4_quarterly,0.717723,T019561
+TourismSmall,nsw-bus-noncity,m4_quarterly,0.700885,T018803
+TourismSmall,vic-bus-city,m4_quarterly,0.665869,T020761
+TourismSmall,vic-bus-noncity,m4_quarterly,0.668996,T020764
+TourismSmall,qld-bus-city,m4_quarterly,0.674340,T010418
+TourismSmall,qld-bus-noncity,m4_quarterly,0.663002,T008784
+TourismSmall,sa-bus-city,m4_quarterly,0.674736,T022305
+TourismSmall,sa-bus-noncity,m4_quarterly,0.778143,T003035
+TourismSmall,wa-bus-city,m4_quarterly,0.646437,T015743
+TourismSmall,wa-bus-noncity,m4_quarterly,0.746109,T007262
+TourismSmall,tas-bus-city,m4_quarterly,0.759230,T002702
+TourismSmall,tas-bus-noncity,m4_quarterly,0.613067,T007792
+TourismSmall,nt-bus-city,m4_quarterly,0.591466,T020754
+TourismSmall,nt-bus-noncity,m4_quarterly,0.706236,T023331
+TourismSmall,nsw-oth-city,m4_quarterly,0.685699,T003437
+TourismSmall,nsw-oth-noncity,m4_quarterly,0.761171,T003319
+TourismSmall,vic-oth-city,m4_quarterly,0.595028,T004681
+TourismSmall,vic-oth-noncity,m4_quarterly,0.728314,T023329
+TourismSmall,qld-oth-city,m4_quarterly,0.643112,T008717
+TourismSmall,qld-oth-noncity,m4_quarterly,0.706352,T013378
+TourismSmall,sa-oth-city,m4_quarterly,0.577338,T014756
+TourismSmall,sa-oth-noncity,m4_quarterly,0.628911,T019364
+TourismSmall,wa-oth-city,m4_quarterly,0.656869,T015041
+TourismSmall,wa-oth-noncity,m4_quarterly,0.766074,T019341
+TourismSmall,tas-oth-city,m4_quarterly,0.622041,T019319
+TourismSmall,tas-oth-noncity,m4_quarterly,0.502954,T020761
+TourismSmall,nt-oth-city,m4_quarterly,0.677305,T019711
+TourismSmall,nt-oth-noncity,m4_quarterly,0.750032,T014122
+"TourismLarge, quarterly sums",TotalAll,m4_quarterly,0.834105,T005526
+"TourismLarge, quarterly sums",AAll,m4_quarterly,0.841525,T013376
+"TourismLarge, quarterly sums",BAll,m4_quarterly,0.879936,T013376
+"TourismLarge, quarterly sums",CAll,m4_quarterly,0.657055,T016884
+"TourismLarge, quarterly sums",DAll,m4_quarterly,0.828791,T013376
+"TourismLarge, quarterly sums",EAll,m4_quarterly,0.944420,T006969
+"TourismLarge, quarterly sums",FAll,m4_quarterly,0.859305,T013376
+"TourismLarge, quarterly sums",GAll,m4_quarterly,0.830878,T020069
+"TourismLarge, quarterly sums",AAAll,m4_quarterly,0.774086,T005526
+"TourismLarge, quarterly sums",ABAll,m4_quarterly,0.877323,T013376
+"TourismLarge, quarterly sums",ACAll,m4_quarterly,0.884297,T013376
+"TourismLarge, quarterly sums",ADAll,m4_quarterly,0.607507,T005532
+"TourismLarge, quarterly sums",AEAll,m4_quarterly,0.646505,T000158
+"TourismLarge, quarterly sums",AFAll,m4_quarterly,0.552173,T004945
+"TourismLarge, quarterly sums",BAAll,m4_quarterly,0.839740,T004464
+"TourismLarge, quarterly sums",BBAll,m4_quarterly,0.899137,T013376
+"TourismLarge, quarterly sums",BCAll,m4_quarterly,0.894924,T013376
+"TourismLarge, quarterly sums",BDAll,m4_quarterly,0.676050,T010499
+"TourismLarge, quarterly sums",BEAll,m4_quarterly,0.700380,T015934
+"TourismLarge, quarterly sums",CAAll,m4_quarterly,0.645305,T011592
+"TourismLarge, quarterly sums",CBAll,m4_quarterly,0.649850,T020033
+"TourismLarge, quarterly sums",CCAll,m4_quarterly,0.863938,T010419
+"TourismLarge, quarterly sums",CDAll,m4_quarterly,0.700517,T005532
+"TourismLarge, quarterly sums",DAAll,m4_quarterly,0.642567,T013376
+"TourismLarge, quarterly sums",DBAll,m4_quarterly,0.871778,T013376
+"TourismLarge, quarterly sums",DCAll,m4_quarterly,0.716166,T004946
+"TourismLarge, quarterly sums",DDAll,m4_quarterly,0.762675,T003751
+"TourismLarge, quarterly sums",EAAll,m4_quarterly,0.721271,T015934
+"TourismLarge, quarterly sums",EBAll,m4_quarterly,0.879388,T000311
+"TourismLarge, quarterly sums",ECAll,m4_quarterly,0.868505,T015704
+"TourismLarge, quarterly sums",FAAll,m4_quarterly,0.797355,T013376
+"TourismLarge, quarterly sums",FBAll,m4_quarterly,0.850381,T010490
+"TourismLarge, quarterly sums",FCAll,m4_quarterly,0.782042,T013376
+"TourismLarge, quarterly sums",GAAll,m4_quarterly,0.828441,T001724
+"TourismLarge, quarterly sums",GBAll,m4_quarterly,0.742076,T004175
+"TourismLarge, quarterly sums",AAAAll,m4_quarterly,0.725299,T005526
+"TourismLarge, quarterly sums",AABAll,m4_quarterly,0.878185,T013376
+"TourismLarge, quarterly sums",ABAAll,m4_quarterly,0.785362,T010499
+"TourismLarge, quarterly sums",ABBAll,m4_quarterly,0.860244,T013376
+"TourismLarge, quarterly sums",ACAAll,m4_quarterly,0.884297,T013376
+"TourismLarge, quarterly sums",ADAAll,m4_quarterly,0.824215,T015870
+"TourismLarge, quarterly sums",ADBAll,m4_quarterly,0.688853,T007437
+"TourismLarge, quarterly sums",ADCAll,m4_quarterly,0.570322,T023558
+"TourismLarge, quarterly sums",ADDAll,m4_quarterly,0.625449,T010592
+"TourismLarge, quarterly sums",AEAAll,m4_quarterly,0.584172,T000158
+"TourismLarge, quarterly sums",AEBAll,m4_quarterly,0.485142,T005903
+"TourismLarge, quarterly sums",AECAll,m4_quarterly,0.698283,T005532
+"TourismLarge, quarterly sums",AEDAll,m4_quarterly,0.697092,T010220
+"TourismLarge, quarterly sums",AFAAll,m4_quarterly,0.552173,T004945
+"TourismLarge, quarterly sums",BAAAll,m4_quarterly,0.866069,T015934
+"TourismLarge, quarterly sums",BABAll,m4_quarterly,0.895136,T013376
+"TourismLarge, quarterly sums",BACAll,m4_quarterly,0.868223,T010490
+"TourismLarge, quarterly sums",BBAAll,m4_quarterly,0.899137,T013376
+"TourismLarge, quarterly sums",BCAAll,m4_quarterly,0.826030,T013376
+"TourismLarge, quarterly sums",BCBAll,m4_quarterly,0.787009,T013376
+"TourismLarge, quarterly sums",BCCAll,m4_quarterly,0.845596,T010490
+"TourismLarge, quarterly sums",BDAAll,m4_quarterly,0.685120,T004868
+"TourismLarge, quarterly sums",BDBAll,m4_quarterly,0.505755,T015793
+"TourismLarge, quarterly sums",BDCAll,m4_quarterly,0.636756,T005309
+"TourismLarge, quarterly sums",BDDAll,m4_quarterly,0.734120,T004183
+"TourismLarge, quarterly sums",BDEAll,m4_quarterly,0.612706,T017129
+"TourismLarge, quarterly sums",BDFAll,m4_quarterly,0.510490,T015827
+"TourismLarge, quarterly sums",BEAAll,m4_quarterly,0.572424,T015732
+"TourismLarge, quarterly sums",BEBAll,m4_quarterly,0.616395,T014559
+"TourismLarge, quarterly sums",BECAll,m4_quarterly,0.518104,T007437
+"TourismLarge, quarterly sums",BEDAll,m4_quarterly,0.576982,T006029
+"TourismLarge, quarterly sums",BEEAll,m4_quarterly,0.637442,T016197
+"TourismLarge, quarterly sums",BEFAll,m4_quarterly,0.680410,T022668
+"TourismLarge, quarterly sums",BEGAll,m4_quarterly,0.577333,T005428
+"TourismLarge, quarterly sums",BEHAll,m4_quarterly,0.721607,T018308
+"TourismLarge, quarterly sums",CAAAll,m4_quarterly,0.665053,T008675
+"TourismLarge, quarterly sums",CABAll,m4_quarterly,0.544842,T005526
+"TourismLarge, quarterly sums",CACAll,m4_quarterly,0.662331,T011592
+"TourismLarge, quarterly sums",CBAAll,m4_quarterly,0.643697,T015208
+"TourismLarge, quarterly sums",CBBAll,m4_quarterly,0.431459,T015778
+"TourismLarge, quarterly sums",CBCAll,m4_quarterly,0.538584,T011645
+"TourismLarge, quarterly sums",CBDAll,m4_quarterly,0.562997,T015798
+"TourismLarge, quarterly sums",CCAAll,m4_quarterly,0.731569,T005531
+"TourismLarge, quarterly sums",CCBAll,m4_quarterly,0.729072,T015856
+"TourismLarge, quarterly sums",CCCAll,m4_quarterly,0.871310,T011656
+"TourismLarge, quarterly sums",CDAAll,m4_quarterly,0.740009,T011480
+"TourismLarge, quarterly sums",CDBAll,m4_quarterly,0.637573,T005531
+"TourismLarge, quarterly sums",DAAAll,m4_quarterly,0.623576,T013376
+"TourismLarge, quarterly sums",DABAll,m4_quarterly,0.415075,T002198
+"TourismLarge, quarterly sums",DACAll,m4_quarterly,0.581291,T005575
+"TourismLarge, quarterly sums",DBAAll,m4_quarterly,0.798032,T013376
+"TourismLarge, quarterly sums",DBBAll,m4_quarterly,0.870302,T010499
+"TourismLarge, quarterly sums",DBCAll,m4_quarterly,0.617180,T003751
+"TourismLarge, quarterly sums",DCAAll,m4_quarterly,0.582613,T011590
+"TourismLarge, quarterly sums",DCBAll,m4_quarterly,0.633464,T006994
+"TourismLarge, quarterly sums",DCCAll,m4_quarterly,0.531527,T014462
+"TourismLarge, quarterly sums",DCDAll,m4_quarterly,0.679742,T002212
+"TourismLarge, quarterly sums",DDAAll,m4_quarterly,0.512849,T015775
+"TourismLarge, quarterly sums",DDBAll,m4_quarterly,0.829249,T003751
+"TourismLarge, quarterly sums",EAAAll,m4_quarterly,0.758227,T005532
+"TourismLarge, quarterly sums",EABAll,m4_quarterly,0.711228,T015934
+"TourismLarge, quarterly sums",EACAll,m4_quarterly,0.769107,T004456
+"TourismLarge, quarterly sums",EBAAll,m4_quarterly,0.879388,T000311
+"TourismLarge, quarterly sums",ECAAll,m4_quarterly,0.868505,T015704
+"TourismLarge, quarterly sums",FAAAll,m4_quarterly,0.797355,T013376
+"TourismLarge, quarterly sums",FBAAll,m4_quarterly,0.852679,T010490
+"TourismLarge, quarterly sums",FBBAll,m4_quarterly,0.786656,T013376
+"TourismLarge, quarterly sums",FCAAll,m4_quarterly,0.757619,T010490
+"TourismLarge, quarterly sums",FCBAll,m4_quarterly,0.750196,T011590
+"TourismLarge, quarterly sums",GAAAll,m4_quarterly,0.824230,T010419
+"TourismLarge, quarterly sums",GABAll,m4_quarterly,0.705775,T011645
+"TourismLarge, quarterly sums",GACAll,m4_quarterly,0.619372,T005531
+"TourismLarge, quarterly sums",GBAAll,m4_quarterly,0.612623,T002702
+"TourismLarge, quarterly sums",GBBAll,m4_quarterly,0.652355,T010419
+"TourismLarge, quarterly sums",GBCAll,m4_quarterly,0.717808,T011645
+"TourismLarge, quarterly sums",GBDAll,m4_quarterly,0.446899,T013518
+"TourismLarge, quarterly sums",TotalHol,m4_quarterly,0.854965,T010490
+"TourismLarge, quarterly sums",TotalVis,m4_quarterly,0.741264,T015934
+"TourismLarge, quarterly sums",TotalBus,m4_quarterly,0.896363,T004946
+"TourismLarge, quarterly sums",TotalOth,m4_quarterly,0.719082,T005531
+"TourismLarge, quarterly sums",AHol,m4_quarterly,0.869136,T010490
+"TourismLarge, quarterly sums",AVis,m4_quarterly,0.757799,T013376
+"TourismLarge, quarterly sums",ABus,m4_quarterly,0.812110,T005531
+"TourismLarge, quarterly sums",AOth,m4_quarterly,0.781600,T010591
+"TourismLarge, quarterly sums",BHol,m4_quarterly,0.922756,T010490
+"TourismLarge, quarterly sums",BVis,m4_quarterly,0.773187,T004456
+"TourismLarge, quarterly sums",BBus,m4_quarterly,0.691663,T022161
+"TourismLarge, quarterly sums",BOth,m4_quarterly,0.693403,T017950
+"TourismLarge, quarterly sums",CHol,m4_quarterly,0.710322,T013378
+"TourismLarge, quarterly sums",CVis,m4_quarterly,0.635819,T002626
+"TourismLarge, quarterly sums",CBus,m4_quarterly,0.789191,T017950
+"TourismLarge, quarterly sums",COth,m4_quarterly,0.452227,T004946
+"TourismLarge, quarterly sums",DHol,m4_quarterly,0.846443,T010490
+"TourismLarge, quarterly sums",DVis,m4_quarterly,0.731028,T013376
+"TourismLarge, quarterly sums",DBus,m4_quarterly,0.659845,T004946
+"TourismLarge, quarterly sums",DOth,m4_quarterly,0.799214,T005282
+"TourismLarge, quarterly sums",EHol,m4_quarterly,0.661062,T007605
+"TourismLarge, quarterly sums",EVis,m4_quarterly,0.669597,T015071
+"TourismLarge, quarterly sums",EBus,m4_quarterly,0.943744,T006974
+"TourismLarge, quarterly sums",EOth,m4_quarterly,0.561832,T010592
+"TourismLarge, quarterly sums",FHol,m4_quarterly,0.881490,T010499
+"TourismLarge, quarterly sums",FVis,m4_quarterly,0.674025,T010499
+"TourismLarge, quarterly sums",FBus,m4_quarterly,0.620758,T002702
+"TourismLarge, quarterly sums",FOth,m4_quarterly,0.577811,T007380
+"TourismLarge, quarterly sums",GHol,m4_quarterly,0.865804,T004468
+"TourismLarge, quarterly sums",GVis,m4_quarterly,0.684076,T005532
+"TourismLarge, quarterly sums",GBus,m4_quarterly,0.821748,T023965
+"TourismLarge, quarterly sums",GOth,m4_quarterly,0.441097,T007065
+"TourismLarge, quarterly sums",AAHol,m4_quarterly,0.802486,T010490
+"TourismLarge, quarterly sums",AAVis,m4_quarterly,0.676596,T013376
+"TourismLarge, quarterly sums",AABus,m4_quarterly,0.746625,T016195
+"TourismLarge, quarterly sums",AAOth,m4_quarterly,0.649215,T010592
+"TourismLarge, quarterly sums",ABHol,m4_quarterly,0.870276,T013376
+"TourismLarge, quarterly sums",ABVis,m4_quarterly,0.686780,T013358
+"TourismLarge, quarterly sums",ABBus,m4_quarterly,0.710369,T013538
+"TourismLarge, quarterly sums",ABOth,m4_quarterly,0.677538,T003513
+"TourismLarge, quarterly sums",ACHol,m4_quarterly,0.871916,T013376
+"TourismLarge, quarterly sums",ACVis,m4_quarterly,0.707787,T013376
+"TourismLarge, quarterly sums",ACBus,m4_quarterly,0.494594,T022937
+"TourismLarge, quarterly sums",ACOth,m4_quarterly,0.622091,T002244
+"TourismLarge, quarterly sums",ADHol,m4_quarterly,0.695160,T015870
+"TourismLarge, quarterly sums",ADVis,m4_quarterly,0.622127,T018367
+"TourismLarge, quarterly sums",ADBus,m4_quarterly,0.659191,T010591
+"TourismLarge, quarterly sums",ADOth,m4_quarterly,0.674133,T023424
+"TourismLarge, quarterly sums",AEHol,m4_quarterly,0.573671,T006980
+"TourismLarge, quarterly sums",AEVis,m4_quarterly,0.527977,T011590
+"TourismLarge, quarterly sums",AEBus,m4_quarterly,0.502445,T000158
+"TourismLarge, quarterly sums",AEOth,m4_quarterly,0.688036,T007045
+"TourismLarge, quarterly sums",AFHol,m4_quarterly,0.612403,T002631
+"TourismLarge, quarterly sums",AFVis,m4_quarterly,0.624656,T006997
+"TourismLarge, quarterly sums",AFBus,m4_quarterly,0.660914,T016357
+"TourismLarge, quarterly sums",AFOth,m4_quarterly,0.604669,T019814
+"TourismLarge, quarterly sums",BAHol,m4_quarterly,0.899460,T010499
+"TourismLarge, quarterly sums",BAVis,m4_quarterly,0.768511,T015934
+"TourismLarge, quarterly sums",BABus,m4_quarterly,0.714266,T007476
+"TourismLarge, quarterly sums",BAOth,m4_quarterly,0.659640,T015730
+"TourismLarge, quarterly sums",BBHol,m4_quarterly,0.897205,T013376
+"TourismLarge, quarterly sums",BBVis,m4_quarterly,0.681893,T013376
+"TourismLarge, quarterly sums",BBBus,m4_quarterly,0.682852,T019815
+"TourismLarge, quarterly sums",BBOth,m4_quarterly,0.652011,T022551
+"TourismLarge, quarterly sums",BCHol,m4_quarterly,0.914131,T010490
+"TourismLarge, quarterly sums",BCVis,m4_quarterly,0.625894,T011693
+"TourismLarge, quarterly sums",BCBus,m4_quarterly,0.641709,T007205
+"TourismLarge, quarterly sums",BCOth,m4_quarterly,0.518925,T008136
+"TourismLarge, quarterly sums",BDHol,m4_quarterly,0.674807,T010490
+"TourismLarge, quarterly sums",BDVis,m4_quarterly,0.661283,T004464
+"TourismLarge, quarterly sums",BDBus,m4_quarterly,0.624351,T011642
+"TourismLarge, quarterly sums",BDOth,m4_quarterly,0.639100,T013969
+"TourismLarge, quarterly sums",BEHol,m4_quarterly,0.620870,T017129
+"TourismLarge, quarterly sums",BEVis,m4_quarterly,0.662281,T016195
+"TourismLarge, quarterly sums",BEBus,m4_quarterly,0.708781,T022161
+"TourismLarge, quarterly sums",BEOth,m4_quarterly,0.571292,T007477
+"TourismLarge, quarterly sums",CAHol,m4_quarterly,0.787563,T011592
+"TourismLarge, quarterly sums",CAVis,m4_quarterly,0.645927,T015934
+"TourismLarge, quarterly sums",CABus,m4_quarterly,0.571111,T005532
+"TourismLarge, quarterly sums",CAOth,m4_quarterly,0.488285,T004685
+"TourismLarge, quarterly sums",CBHol,m4_quarterly,0.691968,T013378
+"TourismLarge, quarterly sums",CBVis,m4_quarterly,0.613698,T018119
+"TourismLarge, quarterly sums",CBBus,m4_quarterly,0.845924,T022161
+"TourismLarge, quarterly sums",CBOth,m4_quarterly,0.779772,T003063
+"TourismLarge, quarterly sums",CCHol,m4_quarterly,0.886451,T010419
+"TourismLarge, quarterly sums",CCVis,m4_quarterly,0.661010,T011587
+"TourismLarge, quarterly sums",CCBus,m4_quarterly,0.737910,T011656
+"TourismLarge, quarterly sums",CCOth,m4_quarterly,0.542186,T013676
+"TourismLarge, quarterly sums",CDHol,m4_quarterly,0.772596,T020069
+"TourismLarge, quarterly sums",CDVis,m4_quarterly,0.425235,T002702
+"TourismLarge, quarterly sums",CDBus,m4_quarterly,0.776761,T022960
+"TourismLarge, quarterly sums",CDOth,m4_quarterly,0.617534,T014991
+"TourismLarge, quarterly sums",DAHol,m4_quarterly,0.733896,T010490
+"TourismLarge, quarterly sums",DAVis,m4_quarterly,0.622194,T015753
+"TourismLarge, quarterly sums",DABus,m4_quarterly,0.596706,T006322
+"TourismLarge, quarterly sums",DAOth,m4_quarterly,0.806902,T005282
+"TourismLarge, quarterly sums",DBHol,m4_quarterly,0.869437,T010490
+"TourismLarge, quarterly sums",DBVis,m4_quarterly,0.788737,T004456
+"TourismLarge, quarterly sums",DBBus,m4_quarterly,0.557678,T017926
+"TourismLarge, quarterly sums",DBOth,m4_quarterly,0.589909,T016195
+"TourismLarge, quarterly sums",DCHol,m4_quarterly,0.511898,T005532
+"TourismLarge, quarterly sums",DCVis,m4_quarterly,0.571311,T002626
+"TourismLarge, quarterly sums",DCBus,m4_quarterly,0.723071,T001218
+"TourismLarge, quarterly sums",DCOth,m4_quarterly,0.579955,T022286
+"TourismLarge, quarterly sums",DDHol,m4_quarterly,0.803047,T003751
+"TourismLarge, quarterly sums",DDVis,m4_quarterly,0.461845,T017941
+"TourismLarge, quarterly sums",DDBus,m4_quarterly,0.553965,T005532
+"TourismLarge, quarterly sums",DDOth,m4_quarterly,0.607956,T001629
+"TourismLarge, quarterly sums",EAHol,m4_quarterly,0.699008,T020524
+"TourismLarge, quarterly sums",EAVis,m4_quarterly,0.673578,T015059
+"TourismLarge, quarterly sums",EABus,m4_quarterly,0.731400,T006986
+"TourismLarge, quarterly sums",EAOth,m4_quarterly,0.570583,T023967
+"TourismLarge, quarterly sums",EBHol,m4_quarterly,0.877237,T010419
+"TourismLarge, quarterly sums",EBVis,m4_quarterly,0.790172,T005532
+"TourismLarge, quarterly sums",EBBus,m4_quarterly,0.942987,T006974
+"TourismLarge, quarterly sums",EBOth,m4_quarterly,0.667490,T013700
+"TourismLarge, quarterly sums",ECHol,m4_quarterly,0.543053,T007404
+"TourismLarge, quarterly sums",ECVis,m4_quarterly,0.671051,T002093
+"TourismLarge, quarterly sums",ECBus,m4_quarterly,0.849856,T019814
+"TourismLarge, quarterly sums",ECOth,m4_quarterly,0.482106,T002625
+"TourismLarge, quarterly sums",FAHol,m4_quarterly,0.852513,T013376
+"TourismLarge, quarterly sums",FAVis,m4_quarterly,0.647765,T010499
+"TourismLarge, quarterly sums",FABus,m4_quarterly,0.744278,T002702
+"TourismLarge, quarterly sums",FAOth,m4_quarterly,0.492766,T013198
+"TourismLarge, quarterly sums",FBHol,m4_quarterly,0.878808,T010499
+"TourismLarge, quarterly sums",FBVis,m4_quarterly,0.598477,T013376
+"TourismLarge, quarterly sums",FBBus,m4_quarterly,0.493768,T007792
+"TourismLarge, quarterly sums",FBOth,m4_quarterly,0.564466,T002702
+"TourismLarge, quarterly sums",FCHol,m4_quarterly,0.826292,T010490
+"TourismLarge, quarterly sums",FCVis,m4_quarterly,0.613492,T017925
+"TourismLarge, quarterly sums",FCBus,m4_quarterly,0.673271,T006991
+"TourismLarge, quarterly sums",FCOth,m4_quarterly,0.457690,T016195
+"TourismLarge, quarterly sums",GAHol,m4_quarterly,0.850583,T004197
+"TourismLarge, quarterly sums",GAVis,m4_quarterly,0.733391,T002600
+"TourismLarge, quarterly sums",GABus,m4_quarterly,0.806400,T004946
+"TourismLarge, quarterly sums",GAOth,m4_quarterly,0.624751,T023408
+"TourismLarge, quarterly sums",GBHol,m4_quarterly,0.804912,T004175
+"TourismLarge, quarterly sums",GBVis,m4_quarterly,0.544014,T022265
+"TourismLarge, quarterly sums",GBBus,m4_quarterly,0.503723,T017958
+"TourismLarge, quarterly sums",GBOth,m4_quarterly,0.568246,T017663
+"TourismLarge, quarterly sums",AAAHol,m4_quarterly,0.747608,T005525
+"TourismLarge, quarterly sums",AAAVis,m4_quarterly,0.655162,T013376
+"TourismLarge, quarterly sums",AAABus,m4_quarterly,0.708715,T020111
+"TourismLarge, quarterly sums",AAAOth,m4_quarterly,0.624571,T010592
+"TourismLarge, quarterly sums",AABHol,m4_quarterly,0.868656,T010490
+"TourismLarge, quarterly sums",AABVis,m4_quarterly,0.526509,T015710
+"TourismLarge, quarterly sums",AABBus,m4_quarterly,0.512653,T002630
+"TourismLarge, quarterly sums",AABOth,m4_quarterly,0.560206,T006322
+"TourismLarge, quarterly sums",ABAHol,m4_quarterly,0.816286,T010490
+"TourismLarge, quarterly sums",ABAVis,m4_quarterly,0.641394,T005526
+"TourismLarge, quarterly sums",ABABus,m4_quarterly,0.684979,T013836
+"TourismLarge, quarterly sums",ABAOth,m4_quarterly,0.526116,T019470
+"TourismLarge, quarterly sums",ABBHol,m4_quarterly,0.866546,T013376
+"TourismLarge, quarterly sums",ABBVis,m4_quarterly,0.637683,T013376
+"TourismLarge, quarterly sums",ABBBus,m4_quarterly,0.624188,T016359
+"TourismLarge, quarterly sums",ABBOth,m4_quarterly,0.612203,T003513
+"TourismLarge, quarterly sums",ACAHol,m4_quarterly,0.871916,T013376
+"TourismLarge, quarterly sums",ACAVis,m4_quarterly,0.707787,T013376
+"TourismLarge, quarterly sums",ACABus,m4_quarterly,0.494594,T022937
+"TourismLarge, quarterly sums",ACAOth,m4_quarterly,0.622091,T002244
+"TourismLarge, quarterly sums",ADAHol,m4_quarterly,0.818858,T001724
+"TourismLarge, quarterly sums",ADAVis,m4_quarterly,0.452968,T002600
+"TourismLarge, quarterly sums",ADABus,m4_quarterly,0.615723,T002702
+"TourismLarge, quarterly sums",ADAOth,m4_quarterly,0.545214,T022226
+"TourismLarge, quarterly sums",ADBHol,m4_quarterly,0.636984,T007462
+"TourismLarge, quarterly sums",ADBVis,m4_quarterly,0.558024,T018761
+"TourismLarge, quarterly sums",ADBBus,m4_quarterly,0.610174,T014181
+"TourismLarge, quarterly sums",ADBOth,m4_quarterly,0.735658,T002796
+"TourismLarge, quarterly sums",ADCHol,m4_quarterly,0.582665,T015753
+"TourismLarge, quarterly sums",ADCVis,m4_quarterly,0.576769,T015059
+"TourismLarge, quarterly sums",ADCBus,m4_quarterly,0.471722,T004607
+"TourismLarge, quarterly sums",ADCOth,m4_quarterly,0.567766,T015834
+"TourismLarge, quarterly sums",ADDHol,m4_quarterly,0.484458,T020292
+"TourismLarge, quarterly sums",ADDVis,m4_quarterly,0.549765,T019839
+"TourismLarge, quarterly sums",ADDBus,m4_quarterly,0.612742,T016355
+"TourismLarge, quarterly sums",ADDOth,m4_quarterly,0.693746,T017317
+"TourismLarge, quarterly sums",AEAHol,m4_quarterly,0.453996,T010673
+"TourismLarge, quarterly sums",AEAVis,m4_quarterly,0.585211,T011590
+"TourismLarge, quarterly sums",AEABus,m4_quarterly,0.543398,T001503
+"TourismLarge, quarterly sums",AEAOth,m4_quarterly,0.579358,T008473
+"TourismLarge, quarterly sums",AEBHol,m4_quarterly,0.519843,T011590
+"TourismLarge, quarterly sums",AEBVis,m4_quarterly,0.512816,T011590
+"TourismLarge, quarterly sums",AEBBus,m4_quarterly,0.508327,T005531
+"TourismLarge, quarterly sums",AEBOth,m4_quarterly,0.599569,T007300
+"TourismLarge, quarterly sums",AECHol,m4_quarterly,0.781441,T020069
+"TourismLarge, quarterly sums",AECVis,m4_quarterly,0.453167,T002619
+"TourismLarge, quarterly sums",AECBus,m4_quarterly,0.684667,T002546
+"TourismLarge, quarterly sums",AECOth,m4_quarterly,0.658273,T003568
+"TourismLarge, quarterly sums",AEDHol,m4_quarterly,0.722652,T002622
+"TourismLarge, quarterly sums",AEDVis,m4_quarterly,0.593738,T007499
+"TourismLarge, quarterly sums",AEDBus,m4_quarterly,0.593779,T013967
+"TourismLarge, quarterly sums",AEDOth,m4_quarterly,0.461922,T017922
+"TourismLarge, quarterly sums",AFAHol,m4_quarterly,0.612403,T002631
+"TourismLarge, quarterly sums",AFAVis,m4_quarterly,0.624656,T006997
+"TourismLarge, quarterly sums",AFABus,m4_quarterly,0.660914,T016357
+"TourismLarge, quarterly sums",AFAOth,m4_quarterly,0.604669,T019814
+"TourismLarge, quarterly sums",BAAHol,m4_quarterly,0.778852,T010496
+"TourismLarge, quarterly sums",BAAVis,m4_quarterly,0.803574,T015934
+"TourismLarge, quarterly sums",BAABus,m4_quarterly,0.719928,T011656
+"TourismLarge, quarterly sums",BAAOth,m4_quarterly,0.665319,T007647
+"TourismLarge, quarterly sums",BABHol,m4_quarterly,0.867178,T010490
+"TourismLarge, quarterly sums",BABVis,m4_quarterly,0.714080,T004456
+"TourismLarge, quarterly sums",BABBus,m4_quarterly,0.551341,T003583
+"TourismLarge, quarterly sums",BABOth,m4_quarterly,0.563714,T018237
+"TourismLarge, quarterly sums",BACHol,m4_quarterly,0.885335,T010490
+"TourismLarge, quarterly sums",BACVis,m4_quarterly,0.653278,T004464
+"TourismLarge, quarterly sums",BACBus,m4_quarterly,0.553742,T022721
+"TourismLarge, quarterly sums",BACOth,m4_quarterly,0.535428,T004685
+"TourismLarge, quarterly sums",BBAHol,m4_quarterly,0.897205,T013376
+"TourismLarge, quarterly sums",BBAVis,m4_quarterly,0.681893,T013376
+"TourismLarge, quarterly sums",BBABus,m4_quarterly,0.682852,T019815
+"TourismLarge, quarterly sums",BBAOth,m4_quarterly,0.652011,T022551
+"TourismLarge, quarterly sums",BCAHol,m4_quarterly,0.828530,T010490
+"TourismLarge, quarterly sums",BCAVis,m4_quarterly,0.589698,T007883
+"TourismLarge, quarterly sums",BCABus,m4_quarterly,0.584299,T022551
+"TourismLarge, quarterly sums",BCAOth,m4_quarterly,0.794197,T003492
+"TourismLarge, quarterly sums",BCBHol,m4_quarterly,0.818789,T010490
+"TourismLarge, quarterly sums",BCBVis,m4_quarterly,0.606212,T015753
+"TourismLarge, quarterly sums",BCBBus,m4_quarterly,0.508136,T005953
+"TourismLarge, quarterly sums",BCBOth,m4_quarterly,0.538385,T007042
+"TourismLarge, quarterly sums",BCCHol,m4_quarterly,0.885915,T010490
+"TourismLarge, quarterly sums",BCCVis,m4_quarterly,0.502177,T013376
+"TourismLarge, quarterly sums",BCCBus,m4_quarterly,0.731218,T007055
+"TourismLarge, quarterly sums",BCCOth,m4_quarterly,0.486151,T010834
+"TourismLarge, quarterly sums",BDAHol,m4_quarterly,0.688392,T004868
+"TourismLarge, quarterly sums",BDAVis,m4_quarterly,0.504808,T002871
+"TourismLarge, quarterly sums",BDABus,m4_quarterly,0.551699,T011271
+"TourismLarge, quarterly sums",BDAOth,m4_quarterly,0.461025,T010784
+"TourismLarge, quarterly sums",BDBHol,m4_quarterly,0.542245,T008503
+"TourismLarge, quarterly sums",BDBVis,m4_quarterly,0.626529,T022294
+"TourismLarge, quarterly sums",BDBBus,m4_quarterly,0.546983,T014567
+"TourismLarge, quarterly sums",BDBOth,m4_quarterly,0.486310,T007065
+"TourismLarge, quarterly sums",BDCHol,m4_quarterly,0.637823,T005309
+"TourismLarge, quarterly sums",BDCVis,m4_quarterly,0.528341,T006032
+"TourismLarge, quarterly sums",BDCBus,m4_quarterly,0.573384,T005618
+"TourismLarge, quarterly sums",BDCOth,m4_quarterly,0.655334,T013969
+"TourismLarge, quarterly sums",BDDHol,m4_quarterly,0.534839,T022668
+"TourismLarge, quarterly sums",BDDVis,m4_quarterly,0.736991,T006037
+"TourismLarge, quarterly sums",BDDBus,m4_quarterly,0.496503,T008787
+"TourismLarge, quarterly sums",BDDOth,m4_quarterly,0.580322,T002594
+"TourismLarge, quarterly sums",BDEHol,m4_quarterly,0.637310,T011590
+"TourismLarge, quarterly sums",BDEVis,m4_quarterly,0.596539,T019820
+"TourismLarge, quarterly sums",BDEBus,m4_quarterly,0.622226,T008370
+"TourismLarge, quarterly sums",BDFHol,m4_quarterly,0.534855,T018218
+"TourismLarge, quarterly sums",BDFVis,m4_quarterly,0.490631,T015704
+"TourismLarge, quarterly sums",BDFBus,m4_quarterly,0.857633,T009778
+"TourismLarge, quarterly sums",BEAHol,m4_quarterly,0.518454,T012746
+"TourismLarge, quarterly sums",BEAVis,m4_quarterly,0.486415,T011590
+"TourismLarge, quarterly sums",BEABus,m4_quarterly,0.558186,T004685
+"TourismLarge, quarterly sums",BEBHol,m4_quarterly,0.548044,T014006
+"TourismLarge, quarterly sums",BEBVis,m4_quarterly,0.488009,T022308
+"TourismLarge, quarterly sums",BEBBus,m4_quarterly,0.476392,T002702
+"TourismLarge, quarterly sums",BEBOth,m4_quarterly,0.612962,T003063
+"TourismLarge, quarterly sums",BECHol,m4_quarterly,0.566819,T007056
+"TourismLarge, quarterly sums",BECVis,m4_quarterly,0.700788,T005282
+"TourismLarge, quarterly sums",BECBus,m4_quarterly,0.672036,T022964
+"TourismLarge, quarterly sums",BECOth,m4_quarterly,0.838609,T007327
+"TourismLarge, quarterly sums",BEDHol,m4_quarterly,0.481211,T017129
+"TourismLarge, quarterly sums",BEDVis,m4_quarterly,0.660233,T000158
+"TourismLarge, quarterly sums",BEDBus,m4_quarterly,0.598473,T001421
+"TourismLarge, quarterly sums",BEDOth,m4_quarterly,0.595884,T017924
+"TourismLarge, quarterly sums",BEEHol,m4_quarterly,0.549404,T022233
+"TourismLarge, quarterly sums",BEEVis,m4_quarterly,0.645887,T010591
+"TourismLarge, quarterly sums",BEEBus,m4_quarterly,0.530861,T016197
+"TourismLarge, quarterly sums",BEFHol,m4_quarterly,0.702555,T007069
+"TourismLarge, quarterly sums",BEFVis,m4_quarterly,0.545398,T019280
+"TourismLarge, quarterly sums",BEFBus,m4_quarterly,0.607093,T017941
+"TourismLarge, quarterly sums",BEGHol,m4_quarterly,0.509544,T015760
+"TourismLarge, quarterly sums",BEGVis,m4_quarterly,0.556719,T018697
+"TourismLarge, quarterly sums",BEGBus,m4_quarterly,0.530827,T007605
+"TourismLarge, quarterly sums",BEGOth,m4_quarterly,0.699829,T022986
+"TourismLarge, quarterly sums",BEHHol,m4_quarterly,0.566488,T015753
+"TourismLarge, quarterly sums",BEHVis,m4_quarterly,0.531246,T023602
+"TourismLarge, quarterly sums",BEHBus,m4_quarterly,0.813517,T014991
+"TourismLarge, quarterly sums",BEHOth,m4_quarterly,0.562080,T004683
+"TourismLarge, quarterly sums",CAAHol,m4_quarterly,0.696559,T011592
+"TourismLarge, quarterly sums",CAAVis,m4_quarterly,0.636528,T002702
+"TourismLarge, quarterly sums",CAABus,m4_quarterly,0.551039,T022286
+"TourismLarge, quarterly sums",CAAOth,m4_quarterly,0.513318,T015933
+"TourismLarge, quarterly sums",CABHol,m4_quarterly,0.636321,T020524
+"TourismLarge, quarterly sums",CABVis,m4_quarterly,0.591855,T000876
+"TourismLarge, quarterly sums",CABBus,m4_quarterly,0.516047,T010419
+"TourismLarge, quarterly sums",CABOth,m4_quarterly,0.497761,T016336
+"TourismLarge, quarterly sums",CACHol,m4_quarterly,0.692317,T011592
+"TourismLarge, quarterly sums",CACVis,m4_quarterly,0.595787,T007749
+"TourismLarge, quarterly sums",CACBus,m4_quarterly,0.568370,T004819
+"TourismLarge, quarterly sums",CACOth,m4_quarterly,0.528309,T010479
+"TourismLarge, quarterly sums",CBAHol,m4_quarterly,0.578215,T001724
+"TourismLarge, quarterly sums",CBAVis,m4_quarterly,0.521474,T013664
+"TourismLarge, quarterly sums",CBABus,m4_quarterly,0.868065,T022161
+"TourismLarge, quarterly sums",CBAOth,m4_quarterly,0.796629,T003063
+"TourismLarge, quarterly sums",CBBHol,m4_quarterly,0.458722,T001736
+"TourismLarge, quarterly sums",CBBVis,m4_quarterly,0.409405,T007293
+"TourismLarge, quarterly sums",CBBBus,m4_quarterly,0.572155,T009419
+"TourismLarge, quarterly sums",CBBOth,m4_quarterly,0.584673,T004816
+"TourismLarge, quarterly sums",CBCHol,m4_quarterly,0.520481,T015916
+"TourismLarge, quarterly sums",CBCVis,m4_quarterly,0.672838,T015810
+"TourismLarge, quarterly sums",CBCBus,m4_quarterly,0.603279,T016355
+"TourismLarge, quarterly sums",CBCOth,m4_quarterly,0.749679,T002702
+"TourismLarge, quarterly sums",CBDHol,m4_quarterly,0.661125,T020164
+"TourismLarge, quarterly sums",CBDVis,m4_quarterly,0.667638,T018119
+"TourismLarge, quarterly sums",CBDBus,m4_quarterly,0.797249,T012936
+"TourismLarge, quarterly sums",CBDOth,m4_quarterly,0.503502,T018218
+"TourismLarge, quarterly sums",CCAHol,m4_quarterly,0.710527,T005531
+"TourismLarge, quarterly sums",CCAVis,m4_quarterly,0.596938,T002702
+"TourismLarge, quarterly sums",CCABus,m4_quarterly,0.710343,T014299
+"TourismLarge, quarterly sums",CCBHol,m4_quarterly,0.749224,T015856
+"TourismLarge, quarterly sums",CCBVis,m4_quarterly,0.540917,T015630
+"TourismLarge, quarterly sums",CCBBus,m4_quarterly,0.633928,T011656
+"TourismLarge, quarterly sums",CCBOth,m4_quarterly,0.505463,T022769
+"TourismLarge, quarterly sums",CCCHol,m4_quarterly,0.865617,T010419
+"TourismLarge, quarterly sums",CCCVis,m4_quarterly,0.599721,T019818
+"TourismLarge, quarterly sums",CCCBus,m4_quarterly,0.690070,T005532
+"TourismLarge, quarterly sums",CCCOth,m4_quarterly,0.541534,T013676
+"TourismLarge, quarterly sums",CDAHol,m4_quarterly,0.600726,T013972
+"TourismLarge, quarterly sums",CDAVis,m4_quarterly,0.451284,T016355
+"TourismLarge, quarterly sums",CDABus,m4_quarterly,0.779783,T022960
+"TourismLarge, quarterly sums",CDAOth,m4_quarterly,0.601248,T022269
+"TourismLarge, quarterly sums",CDBHol,m4_quarterly,0.784932,T020069
+"TourismLarge, quarterly sums",CDBVis,m4_quarterly,0.484551,T000647
+"TourismLarge, quarterly sums",CDBBus,m4_quarterly,0.574245,T006322
+"TourismLarge, quarterly sums",CDBOth,m4_quarterly,0.773222,T014991
+"TourismLarge, quarterly sums",DAAHol,m4_quarterly,0.743748,T010490
+"TourismLarge, quarterly sums",DAAVis,m4_quarterly,0.642978,T015753
+"TourismLarge, quarterly sums",DAABus,m4_quarterly,0.573429,T006322
+"TourismLarge, quarterly sums",DAAOth,m4_quarterly,0.802870,T005282
+"TourismLarge, quarterly sums",DABHol,m4_quarterly,0.475784,T002234
+"TourismLarge, quarterly sums",DABVis,m4_quarterly,0.511581,T023602
+"TourismLarge, quarterly sums",DABBus,m4_quarterly,0.713689,T017936
+"TourismLarge, quarterly sums",DACHol,m4_quarterly,0.649141,T019355
+"TourismLarge, quarterly sums",DACVis,m4_quarterly,0.672665,T004685
+"TourismLarge, quarterly sums",DACBus,m4_quarterly,0.594074,T007791
+"TourismLarge, quarterly sums",DACOth,m4_quarterly,0.696077,T002679
+"TourismLarge, quarterly sums",DBAHol,m4_quarterly,0.770699,T013376
+"TourismLarge, quarterly sums",DBAVis,m4_quarterly,0.650457,T004185
+"TourismLarge, quarterly sums",DBABus,m4_quarterly,0.515229,T013561
+"TourismLarge, quarterly sums",DBAOth,m4_quarterly,0.671353,T016195
+"TourismLarge, quarterly sums",DBBHol,m4_quarterly,0.887025,T010490
+"TourismLarge, quarterly sums",DBBVis,m4_quarterly,0.668598,T004465
+"TourismLarge, quarterly sums",DBBBus,m4_quarterly,0.653873,T007327
+"TourismLarge, quarterly sums",DBBOth,m4_quarterly,0.422938,T017955
+"TourismLarge, quarterly sums",DBCHol,m4_quarterly,0.585844,T003751
+"TourismLarge, quarterly sums",DBCVis,m4_quarterly,0.755952,T007326
+"TourismLarge, quarterly sums",DBCBus,m4_quarterly,0.640252,T015059
+"TourismLarge, quarterly sums",DCAHol,m4_quarterly,0.547421,T017129
+"TourismLarge, quarterly sums",DCAVis,m4_quarterly,0.730250,T002702
+"TourismLarge, quarterly sums",DCABus,m4_quarterly,0.489659,T014575
+"TourismLarge, quarterly sums",DCAOth,m4_quarterly,0.590280,T002702
+"TourismLarge, quarterly sums",DCBHol,m4_quarterly,0.544075,T017129
+"TourismLarge, quarterly sums",DCBVis,m4_quarterly,0.516758,T002625
+"TourismLarge, quarterly sums",DCBBus,m4_quarterly,0.526715,T022986
+"TourismLarge, quarterly sums",DCBOth,m4_quarterly,0.590612,T007327
+"TourismLarge, quarterly sums",DCCHol,m4_quarterly,0.528820,T012047
+"TourismLarge, quarterly sums",DCCVis,m4_quarterly,0.489309,T002710
+"TourismLarge, quarterly sums",DCCBus,m4_quarterly,0.570388,T007462
+"TourismLarge, quarterly sums",DCDHol,m4_quarterly,0.701780,T011656
+"TourismLarge, quarterly sums",DCDVis,m4_quarterly,0.720560,T004823
+"TourismLarge, quarterly sums",DCDBus,m4_quarterly,0.644233,T013676
+"TourismLarge, quarterly sums",DCDOth,m4_quarterly,0.572431,T022286
+"TourismLarge, quarterly sums",DDAHol,m4_quarterly,0.486605,T015775
+"TourismLarge, quarterly sums",DDAVis,m4_quarterly,0.482456,T017941
+"TourismLarge, quarterly sums",DDABus,m4_quarterly,0.489437,T006209
+"TourismLarge, quarterly sums",DDAOth,m4_quarterly,0.590462,T001629
+"TourismLarge, quarterly sums",DDBHol,m4_quarterly,0.809829,T003751
+"TourismLarge, quarterly sums",DDBVis,m4_quarterly,0.518691,T005921
+"TourismLarge, quarterly sums",DDBBus,m4_quarterly,0.490752,T022833
+"TourismLarge, quarterly sums",DDBOth,m4_quarterly,0.516606,T002639
+"TourismLarge, quarterly sums",EAAHol,m4_quarterly,0.777757,T005532
+"TourismLarge, quarterly sums",EAAVis,m4_quarterly,0.599352,T013198
+"TourismLarge, quarterly sums",EAABus,m4_quarterly,0.670495,T004685
+"TourismLarge, quarterly sums",EAAOth,m4_quarterly,0.494051,T014122
+"TourismLarge, quarterly sums",EABHol,m4_quarterly,0.709031,T011592
+"TourismLarge, quarterly sums",EABVis,m4_quarterly,0.663924,T014234
+"TourismLarge, quarterly sums",EABBus,m4_quarterly,0.614156,T017382
+"TourismLarge, quarterly sums",EABOth,m4_quarterly,0.597046,T023967
+"TourismLarge, quarterly sums",EACHol,m4_quarterly,0.805422,T013376
+"TourismLarge, quarterly sums",EACVis,m4_quarterly,0.609995,T004464
+"TourismLarge, quarterly sums",EACBus,m4_quarterly,0.580446,T002619
+"TourismLarge, quarterly sums",EACOth,m4_quarterly,0.607758,T000157
+"TourismLarge, quarterly sums",EBAHol,m4_quarterly,0.877237,T010419
+"TourismLarge, quarterly sums",EBAVis,m4_quarterly,0.790172,T005532
+"TourismLarge, quarterly sums",EBABus,m4_quarterly,0.942987,T006974
+"TourismLarge, quarterly sums",EBAOth,m4_quarterly,0.667490,T013700
+"TourismLarge, quarterly sums",ECAHol,m4_quarterly,0.543053,T007404
+"TourismLarge, quarterly sums",ECAVis,m4_quarterly,0.671051,T002093
+"TourismLarge, quarterly sums",ECABus,m4_quarterly,0.849856,T019814
+"TourismLarge, quarterly sums",ECAOth,m4_quarterly,0.482106,T002625
+"TourismLarge, quarterly sums",FAAHol,m4_quarterly,0.852513,T013376
+"TourismLarge, quarterly sums",FAAVis,m4_quarterly,0.647765,T010499
+"TourismLarge, quarterly sums",FAABus,m4_quarterly,0.744278,T002702
+"TourismLarge, quarterly sums",FAAOth,m4_quarterly,0.492766,T013198
+"TourismLarge, quarterly sums",FBAHol,m4_quarterly,0.875639,T010490
+"TourismLarge, quarterly sums",FBAVis,m4_quarterly,0.761072,T018146
+"TourismLarge, quarterly sums",FBABus,m4_quarterly,0.517839,T017925
+"TourismLarge, quarterly sums",FBAOth,m4_quarterly,0.659498,T012631
+"TourismLarge, quarterly sums",FBBHol,m4_quarterly,0.816383,T010499
+"TourismLarge, quarterly sums",FBBVis,m4_quarterly,0.589961,T015753
+"TourismLarge, quarterly sums",FBBBus,m4_quarterly,0.473916,T003563
+"TourismLarge, quarterly sums",FBBOth,m4_quarterly,0.604531,T002702
+"TourismLarge, quarterly sums",FCAHol,m4_quarterly,0.821409,T010499
+"TourismLarge, quarterly sums",FCAVis,m4_quarterly,0.657532,T017925
+"TourismLarge, quarterly sums",FCABus,m4_quarterly,0.635081,T006991
+"TourismLarge, quarterly sums",FCAOth,m4_quarterly,0.458979,T016195
+"TourismLarge, quarterly sums",FCBHol,m4_quarterly,0.776229,T011590
+"TourismLarge, quarterly sums",FCBVis,m4_quarterly,0.632610,T022288
+"TourismLarge, quarterly sums",FCBBus,m4_quarterly,0.581609,T000486
+"TourismLarge, quarterly sums",GAAHol,m4_quarterly,0.796840,T004197
+"TourismLarge, quarterly sums",GAAVis,m4_quarterly,0.671713,T010419
+"TourismLarge, quarterly sums",GAABus,m4_quarterly,0.788223,T015933
+"TourismLarge, quarterly sums",GAAOth,m4_quarterly,0.678496,T023408
+"TourismLarge, quarterly sums",GABHol,m4_quarterly,0.700269,T005532
+"TourismLarge, quarterly sums",GABVis,m4_quarterly,0.634228,T013198
+"TourismLarge, quarterly sums",GABBus,m4_quarterly,0.694060,T007067
+"TourismLarge, quarterly sums",GABOth,m4_quarterly,0.626937,T002594
+"TourismLarge, quarterly sums",GACHol,m4_quarterly,0.771132,T004175
+"TourismLarge, quarterly sums",GACVis,m4_quarterly,0.655682,T002679
+"TourismLarge, quarterly sums",GACBus,m4_quarterly,0.654902,T007056
+"TourismLarge, quarterly sums",GACOth,m4_quarterly,0.596911,T015760
+"TourismLarge, quarterly sums",GBAHol,m4_quarterly,0.655918,T020109
+"TourismLarge, quarterly sums",GBAVis,m4_quarterly,0.764022,T007326
+"TourismLarge, quarterly sums",GBABus,m4_quarterly,0.657939,T002702
+"TourismLarge, quarterly sums",GBBHol,m4_quarterly,0.722337,T007209
+"TourismLarge, quarterly sums",GBBVis,m4_quarterly,0.672136,T017957
+"TourismLarge, quarterly sums",GBBBus,m4_quarterly,0.752676,T013969
+"TourismLarge, quarterly sums",GBCHol,m4_quarterly,0.785509,T004468
+"TourismLarge, quarterly sums",GBCVis,m4_quarterly,0.542646,T022265
+"TourismLarge, quarterly sums",GBCBus,m4_quarterly,0.500659,T007791
+"TourismLarge, quarterly sums",GBCOth,m4_quarterly,0.645365,T017347
+"TourismLarge, quarterly sums",GBDHol,m4_quarterly,0.591177,T015806
+"TourismLarge, quarterly sums",GBDVis,m4_quarterly,0.664486,T002594
+"TourismLarge, quarterly sums",GBDBus,m4_quarterly,0.409807,T013518
