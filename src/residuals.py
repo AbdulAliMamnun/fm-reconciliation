@@ -12,14 +12,20 @@ after it. No observation after t_o is read, so the test window is never used.
 The result is n_inner h-step residuals per series and horizon.
 
 The inner forecasts (quantiles) are cached once per (dataset, origin, model).
-The residuals are cached per (dataset, origin, model, point).
+The residuals are cached per (dataset, origin, model, point). While the inner
+forecasts of an origin are being made, every finished call is checkpointed, so
+an interrupted run continues where it stopped.
 """
+import json
+import shutil
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-from src.forecasters import QUANTILE_COLS, RESULTS, forecast_cutoffs, point_forecast, with_mean
+from src.forecasters import (
+    MODELS, QUANTILE_COLS, RESULTS, current_env, forecast_cutoffs, point_forecast, with_mean,
+)
 
 INNER_COLUMNS = ["unique_id", "inner_origin", "ds", "horizon", "y", "yhat", "mean", *QUANTILE_COLS]
 RESIDUAL_COLUMNS = ["unique_id", "inner_origin", "ds", "horizon", "y", "yhat", "resid"]
@@ -30,6 +36,7 @@ def backtest_paths(dataset, origin, model, cache_dir=RESULTS):
     cache_dir = Path(cache_dir)
     return {
         "inner": cache_dir / f"backtest_{key}.parquet",
+        "parts": cache_dir / "partial" / f"backtest_{key}",
         "timing": cache_dir / f"backtest_timing_{key}.parquet",
         "residuals": lambda point: cache_dir / f"resid_{key}_{point}.parquet",
     }
@@ -68,16 +75,15 @@ def inner_forecasts(model, y_train, h, n_inner=24, *, freq=None, device="cpu", d
                 cached.insert(cached.columns.get_loc("q10"), "yhat", cached["q50"])
             return with_mean(cached)
 
-    # The model is loaded once. Each inner origin still gets only its own past.
-    out, info = forecast_cutoffs(model, y_train, inner_origins(dates, h, n_inner), h, freq=freq,
-                                 device=device)
+    cutoffs = inner_origins(dates, h, n_inner)
+    parts = paths["parts"] if dataset is not None else None
+    out, seconds, info = _inner_calls(model, y_train, cutoffs, h, freq, device, parts)
     out = out.rename(columns={"cutoff": "inner_origin"})
     out = out.merge(y_train[["unique_id", "ds", "y"]], on=["unique_id", "ds"], how="left",
                     validate="many_to_one")
     out["horizon"] = out.groupby(["inner_origin", "unique_id"], sort=False).cumcount() + 1
     extra = [c for c in out.columns if c not in INNER_COLUMNS]
     out = out[INNER_COLUMNS + extra]
-    seconds = info["seconds"]
 
     if out["y"].isna().any() or out["ds"].max() > outer:
         raise RuntimeError("An inner forecast target lies after the outer origin.")
@@ -91,7 +97,45 @@ def inner_forecasts(model, y_train, h, n_inner=24, *, freq=None, device="cpu", d
             "device": [device], "load_seconds": [info["load_seconds"]], "env": [info["env"]],
             "revision": [info["revision"]],
         }).to_parquet(paths["timing"], index=False)
+        if parts.exists():                       # the checkpoints are no longer needed
+            shutil.rmtree(parts)
     return out
+
+
+def _inner_calls(model, y_train, cutoffs, h, freq, device, parts):
+    """Forecast from every cutoff, keeping a checkpoint per finished call.
+
+    With `parts` given, each call is written to `parts` as soon as it finishes
+    and calls found there are not run again, so an interrupted run loses at most
+    the call that was in progress. A model that runs in another conda env gets
+    all its missing calls in one go, because each go loads the model anew.
+    """
+    done = {}
+    if parts is not None:
+        parts.mkdir(parents=True, exist_ok=True)
+        for c in cutoffs:
+            meta = parts / f"{c.date()}.json"
+            if meta.exists():                    # written last, so the frame is complete
+                done[c] = (pd.read_parquet(parts / f"{c.date()}.parquet"), json.loads(meta.read_text()))
+    todo = [c for c in cutoffs if c not in done]
+    in_process = MODELS[model].get("env") in (None, current_env())
+    groups = [[c] for c in todo] if in_process else ([todo] if todo else [])
+    for group in groups:
+        f, info = forecast_cutoffs(model, y_train, group, h, freq=freq, device=device)
+        for c, sec in zip(group, info["seconds"]):
+            frame = f[f["cutoff"] == c].reset_index(drop=True)
+            meta = {"seconds": sec, "load_seconds": info["load_seconds"], "env": info["env"],
+                    "revision": info["revision"]}
+            if parts is not None:
+                frame.to_parquet(parts / f"{c.date()}.parquet", index=False)
+                (parts / f"{c.date()}.json").write_text(json.dumps(meta))
+            done[c] = (frame, meta)
+    out = pd.concat([done[c][0] for c in cutoffs], ignore_index=True)
+    out["cutoff"] = pd.to_datetime(out["cutoff"]).astype("datetime64[ns]")
+    metas = [done[c][1] for c in cutoffs]
+    info = {"load_seconds": max(m["load_seconds"] for m in metas), "env": metas[0]["env"],
+            "revision": metas[0]["revision"]}
+    return out, [m["seconds"] for m in metas], info
 
 
 def backtest_residuals(model, y_train, h, n_inner=24, *, point="median", freq=None, device="cpu",

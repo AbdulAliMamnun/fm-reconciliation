@@ -187,3 +187,53 @@ def test_mean9_residuals(register_model):
     m = backtest_residuals("wide", _y(), H, N_INNER, point="mean")
     np.testing.assert_allclose(m9["resid"], m9["horizon"] - 2.0)
     np.testing.assert_allclose(m["resid"], m["horizon"] - 128 / 11)
+
+
+def test_an_interrupted_backtest_continues_where_it_stopped(register_model, tmp_path):
+    calls = []
+
+    def run(contexts, h):
+        if len(calls) == 9 and not calls_allowed[0]:
+            raise KeyboardInterrupt("stopped")
+        calls.append(len(contexts[0]))
+        last = np.array([c[-1] for c in contexts])
+        return last[:, None, None] + np.zeros((1, h, 1)) + (np.array(QUANTILE_LEVELS) - 0.5)
+
+    calls_allowed = [False]
+    register_model("flaky", quantiles=run)
+    y = _y()
+    with pytest.raises(KeyboardInterrupt):
+        inner_forecasts("flaky", y, H, N_INNER, dataset="Toy", cache_dir=tmp_path)
+    paths = backtest_paths("Toy", OUTER, "flaky", tmp_path)
+    assert not paths["inner"].exists()
+    assert len(list(paths["parts"].glob("*.json"))) == 9          # the finished calls are kept
+
+    calls_allowed[0] = True
+    resumed = inner_forecasts("flaky", y, H, N_INNER, dataset="Toy", cache_dir=tmp_path)
+    assert len(calls) == N_INNER                                  # 9 + 15, nothing was run twice
+    assert paths["inner"].exists() and not paths["parts"].exists()
+    timing = pd.read_parquet(paths["timing"]).iloc[0]
+    assert timing["forecast_calls"] == N_INNER
+
+    register_model("steady", quantiles=lambda contexts, h: (
+        np.array([c[-1] for c in contexts])[:, None, None] + np.zeros((1, h, 1))
+        + (np.array(QUANTILE_LEVELS) - 0.5)))
+    straight = inner_forecasts("steady", y, H, N_INNER)
+    pd.testing.assert_frame_equal(resumed, straight)
+
+
+def test_a_half_written_checkpoint_is_not_used(register_model, tmp_path):
+    seen = []
+
+    def run(contexts, h):
+        seen.append(len(contexts[0]))
+        last = np.array([c[-1] for c in contexts])
+        return last[:, None, None] + np.zeros((1, h, 1)) + (np.array(QUANTILE_LEVELS) - 0.5)
+
+    register_model("m", quantiles=run)
+    paths = backtest_paths("Toy", OUTER, "m", tmp_path)
+    paths["parts"].mkdir(parents=True)
+    first = inner_origins(DATES, H, N_INNER)[0]
+    (paths["parts"] / f"{first.date()}.parquet").write_bytes(b"not a parquet file")   # no .json next to it
+    inner_forecasts("m", _y(), H, N_INNER, dataset="Toy", cache_dir=tmp_path)
+    assert len(seen) == N_INNER

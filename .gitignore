@@ -4,3 +4,5 @@ results/*.parquet
 __pycache__/
 .DS_Store
 .vscode/
+results/partial/
+results/logs/
