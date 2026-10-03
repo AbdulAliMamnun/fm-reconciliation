@@ -38,7 +38,8 @@ def fake_model(register_model):
 def test_forecast_format(fake_model):
     ctx = _context()
     out = forecast("fake", ctx, 6)
-    assert list(out.columns) == COLUMNS
+    assert list(out.columns) == COLUMNS + ["context_length"]
+    assert (out["context_length"] == 48).all()
     assert len(out) == 3 * 6
     assert list(out["unique_id"].unique()) == ["b", "a", "c"]  # order of context_df is kept
     expected_ds = pd.date_range("2014-01-01", periods=6, freq="MS")
@@ -134,7 +135,7 @@ def test_frames_cached_before_the_mean_column_still_work(fake_model):
     old = forecast("fake", _context(), 4).drop(columns=["mean"])
     np.testing.assert_allclose(point_forecast(old, "mean"), old[QUANTILE_COLS].mean(axis=1))
     restored = forecasters.with_mean(old)
-    assert list(restored.columns) == COLUMNS
+    assert list(restored.columns) == COLUMNS + ["context_length"]
     np.testing.assert_allclose(restored["mean"], old[QUANTILE_COLS].mean(axis=1))
 
 
@@ -144,7 +145,7 @@ def test_quantile_model_with_more_native_levels(register_model):
     register_model("wide", levels=levels,
                    quantiles=lambda contexts, h: np.zeros((len(contexts), h, 1)) + 100 * np.array(levels) ** 2)
     out = forecast("wide", _context(), 3)
-    assert list(out.columns) == COLUMNS + ["q5", "q95"]
+    assert list(out.columns) == COLUMNS + ["q5", "q95", "context_length"]
     np.testing.assert_allclose(out["q5"], 0.25)
     np.testing.assert_allclose(out["q95"], 90.25)
     np.testing.assert_allclose(out["yhat"], 25.0)
@@ -167,7 +168,7 @@ def test_sample_model_median_mean_and_quantiles(register_model, tmp_path):
     register_model("sampler", samples=samples)
     ctx = _context()
     out = forecast("sampler", ctx, 3, dataset="Toy", cache_dir=tmp_path)
-    assert list(out.columns) == COLUMNS + ["sample_var"]
+    assert list(out.columns) == COLUMNS + ["sample_var", "context_length"]
     s = pd.read_parquet(forecasters.samples_path("Toy", "2013-12-01", "sampler", tmp_path))
     assert list(s.columns) == ["unique_id", "ds"] + [f"s{i}" for i in range(100)]
     assert len(s) == len(out) and list(s["unique_id"]) == list(out["unique_id"])
@@ -226,7 +227,7 @@ ctx = pd.concat([
     for k, uid in enumerate(["b", "a", "c"])
 ], ignore_index=True)
 out = forecast("chronos_bolt_small", ctx, 12, freq="MS")
-assert list(out.columns) == COLUMNS
+assert list(out.columns) == COLUMNS + ["context_length"]
 assert len(out) == 3 * 12
 assert list(out["ds"].iloc[:12]) == list(pd.date_range("2016-01-01", periods=12, freq="MS"))
 assert np.isfinite(out[["yhat", *QUANTILE_COLS]].to_numpy()).all()
@@ -256,3 +257,101 @@ def test_forecast_refuses_to_run_torch_next_to_hierarchicalforecast(monkeypatch)
     monkeypatch.setattr(runners, "_LOADED", {})
     with pytest.raises(RuntimeError, match="OpenMP"):
         forecast("chronos_bolt_small", _context(), 6)
+
+
+def _intermittent_context():
+    """Three series: 'late' starts selling at month 30, 'never' has no sale, 'full' always sells."""
+    ds = pd.date_range("2010-01-01", periods=48, freq="MS")
+    full = 10.0 + np.arange(48) % 7
+    late = np.where(np.arange(48) >= 30, 3.0 + np.arange(48) % 2, 0.0)
+    never = np.zeros(48)
+    return pd.concat([pd.DataFrame({"unique_id": u, "ds": ds, "y": y})
+                      for u, y in [("full", full), ("late", late), ("never", never)]], ignore_index=True)
+
+
+@pytest.fixture
+def recording_model(register_model):
+    """Quantiles = context length + level; records the contexts it was given."""
+    seen = []
+
+    def run(contexts, h):
+        seen.append([len(c) for c in contexts])
+        n = np.array([len(c) for c in contexts], dtype=float)
+        return n[:, None, None] + np.zeros((1, h, 1)) + np.array(forecasters.QUANTILE_LEVELS)
+
+    register_model("rec", quantiles=run)
+    return seen
+
+
+def test_trim_leading_zeros_function():
+    from src.runners import trim_leading_zeros
+    np.testing.assert_array_equal(trim_leading_zeros([0, 0, 3, 0, 5]), [3, 0, 5])
+    np.testing.assert_array_equal(trim_leading_zeros([2, 0, 0]), [2, 0, 0])
+    assert len(trim_leading_zeros([0, 0, 0])) == 0
+    assert len(trim_leading_zeros([])) == 0
+
+
+def test_m5_rule_trims_the_context_and_zero_forecasts_unsold_items(recording_model):
+    ctx = _intermittent_context()
+    out, info = forecasters.forecast_cutoffs("rec", ctx, [pd.Timestamp("2013-12-01")], 2, freq="MS",
+                                             trim_leading_zeros=True)
+    assert recording_model == [[48, 18]]                   # 'never' was not given to the model
+    assert info["zero_forecasts"] == [1] and info["trim_leading_zeros"] is True
+    g = out.set_index("unique_id")
+    assert (g.loc["full", "context_length"] == 48).all()
+    assert (g.loc["late", "context_length"] == 18).all()   # months 30..47
+    assert (g.loc["never", "context_length"] == 0).all()
+    assert (g.loc["late", "q50"] == 18.5).all()
+    assert (g.loc["never", ["yhat", "mean", *QUANTILE_COLS]] == 0).all().all()
+    assert list(out["unique_id"].unique()) == ["full", "late", "never"]   # order kept
+    assert len(out) == 3 * 2
+
+
+def test_m5_rule_applies_per_cutoff(recording_model):
+    ctx = _intermittent_context()
+    cutoffs = [pd.Timestamp("2012-01-01"), pd.Timestamp("2013-12-01")]   # before and after 'late' starts
+    out, info = forecasters.forecast_cutoffs("rec", ctx, cutoffs, 2, freq="MS", trim_leading_zeros=True)
+    assert info["zero_forecasts"] == [2, 1]
+    assert recording_model == [[25], [48, 18]]
+    first = out[out["cutoff"] == cutoffs[0]].set_index("unique_id")
+    assert (first.loc["late", "yhat"] == 0).all() and (first.loc["late", "context_length"] == 0).all()
+
+
+def test_without_the_rule_nothing_is_trimmed(recording_model):
+    out, info = forecasters.forecast_cutoffs("rec", _intermittent_context(), [pd.Timestamp("2013-12-01")], 2,
+                                             freq="MS")
+    assert recording_model == [[48, 48, 48]]
+    assert info["zero_forecasts"] == [0]
+    assert (out["context_length"] == 48).all()
+
+
+def test_zero_forecast_sample_model(register_model):
+    def samples(contexts, h, seed):
+        return np.ones((len(contexts), h, 100)) * np.array([len(c) for c in contexts])[:, None, None]
+
+    register_model("sampler", samples=samples)
+    out, _ = forecasters.forecast_cutoffs("sampler", _intermittent_context(), [pd.Timestamp("2013-12-01")], 2,
+                                          freq="MS", trim_leading_zeros=True, keep_samples=True)
+    g = out.set_index("unique_id")
+    assert (g.loc["never", "sample_var"] == 0).all() and (g.loc["never", "yhat"] == 0).all()
+    assert (g.loc["late", "yhat"] == 18).all()
+
+
+def test_forecast_takes_the_rule_from_the_dataset(recording_model, tmp_path, monkeypatch):
+    from src import data
+    monkeypatch.setitem(data.DATASETS, "ToyM5", {"freq": "MS", "h": 2, "m": 1, "trim_leading_zeros": True})
+    monkeypatch.setitem(data.DATASETS, "ToyPlain", {"freq": "MS", "h": 2, "m": 1})
+    ctx = _intermittent_context()
+    forecast("rec", ctx, 2, freq="MS", dataset="ToyM5", cache_dir=tmp_path)
+    forecast("rec", ctx, 2, freq="MS", dataset="ToyPlain", cache_dir=tmp_path)
+    assert recording_model == [[48, 18], [48, 48, 48]]
+    t = pd.read_parquet(cache_paths("ToyM5", "2013-12-01", "rec", tmp_path)[1]).iloc[0]
+    assert t["zero_forecasts"] == 1 and bool(t["trim_leading_zeros"]) is True
+
+
+def test_all_series_zero_raises(recording_model):
+    ctx = _intermittent_context()
+    ctx["y"] = 0.0
+    with pytest.raises(RuntimeError, match="non-zero"):
+        forecasters.forecast_cutoffs("rec", ctx, [pd.Timestamp("2013-12-01")], 2, freq="MS",
+                                     trim_leading_zeros=True)

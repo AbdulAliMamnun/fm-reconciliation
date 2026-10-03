@@ -32,6 +32,29 @@ def scale_rmsse(y_train, m):
     return np.mean(_seasonal_diffs(y_train, m) ** 2, axis=-1)
 
 
+def scales_after_first_nonzero(y_train, m):
+    """MASE and RMSSE scales from each series' first non-zero value on
+    (Deviations log, M5 rules). y_train: (n_series, T).
+
+    A series with fewer than m + 1 values from its first non-zero value on has
+    no scale: NaN, which `level_mean` excludes and counts. Returns
+    (mase_scale, rmsse_scale, start), where start is the index of the first
+    non-zero value, or T when there is none.
+    """
+    y_train = np.asarray(y_train, dtype=np.float64)
+    n, T = y_train.shape
+    mase_s, rmsse_s, start = np.full(n, np.nan), np.full(n, np.nan), np.full(n, T)
+    for i in range(n):
+        nz = np.flatnonzero(y_train[i] != 0)
+        if len(nz):
+            start[i] = nz[0]
+            tail = y_train[i, nz[0]:]
+            if len(tail) > m:
+                mase_s[i] = scale_mase(tail, m)
+                rmsse_s[i] = scale_rmsse(tail, m)
+    return mase_s, rmsse_s, start
+
+
 def mase(y, yhat, scale):
     """mean_h |y - yhat| / scale."""
     y, yhat = np.asarray(y, dtype=float), np.asarray(yhat, dtype=float)

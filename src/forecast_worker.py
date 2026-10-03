@@ -27,12 +27,14 @@ def main():
     p.add_argument("--freq", required=True)
     p.add_argument("--device", default="cpu")
     p.add_argument("--samples-dir", default=None)
+    p.add_argument("--trim-leading-zeros", action="store_true")
     a = p.parse_args()
 
     y_df = pd.read_parquet(a.input)
     cutoffs = [pd.Timestamp(c) for c in a.cutoffs.split(",")]
     forecasts, info = run_cutoffs(a.model, y_df, cutoffs, a.h, a.freq, device=a.device,
-                                  keep_samples=a.samples_dir is not None)
+                                  keep_samples=a.samples_dir is not None,
+                                  trim_leading_zeros_=a.trim_leading_zeros)
     forecasts.to_parquet(a.output, index=False)
     for cutoff, frame in info.pop("samples").items():
         frame.to_parquet(Path(a.samples_dir) / f"{cutoff.date()}.parquet", index=False)

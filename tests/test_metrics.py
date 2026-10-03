@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from src.metrics import level_mean, mase, rmsse, scale_mase, scale_rmsse
+from src.metrics import level_mean, mase, rmsse, scale_mase, scale_rmsse, scales_after_first_nonzero
 
 
 def test_scale_mase_hand_computed():
@@ -165,3 +165,27 @@ def test_level_mean_raises_on_duplicate_rows():
     )
     with pytest.raises(ValueError, match="duplicate"):
         level_mean(df, TAGS)
+
+
+def test_scales_after_first_nonzero_hand_computed():
+    Y = np.array([
+        [0.0, 0.0, 1.0, 4.0, 3.0, 2.0, 7.0, 1.0],    # starts at index 2; then the series of the first test
+        [1.0, 4.0, 3.0, 2.0, 7.0, 1.0, 0.0, 0.0],    # starts at 0; zeros at the end stay
+        [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],    # never sells
+        [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.0, 2.0],    # 2 values after the first sale, m = 2 needs 3
+    ])
+    mase_s, rmsse_s, start = scales_after_first_nonzero(Y, 2)
+    assert mase_s[0] == pytest.approx(2.25) and rmsse_s[0] == pytest.approx(6.25)
+    assert mase_s[1] == pytest.approx(scale_mase(Y[1], 2)) and rmsse_s[1] == pytest.approx(scale_rmsse(Y[1], 2))
+    assert np.isnan(mase_s[2]) and np.isnan(rmsse_s[2])
+    assert np.isnan(mase_s[3]) and np.isnan(rmsse_s[3])
+    np.testing.assert_array_equal(start, [2, 0, 8, 6])
+
+
+def test_level_mean_excludes_series_without_a_scale():
+    df = pd.DataFrame({"unique_id": ["T", "a", "b", "c"], "scale": [1.0, 1.0, np.nan, 2.0],
+                       "mase": [1.0, 2.0, 99.0, 4.0]})
+    out = level_mean(df, {"Top": np.array(["T"], dtype=object), "Bottom": np.array(["a", "b", "c"], dtype=object)})
+    out = out.set_index("level")
+    assert out.loc["Bottom", "n_excluded"] == 1 and out.loc["Bottom", "n_series"] == 2
+    assert out.loc["Bottom", "mase"] == pytest.approx(3.0)

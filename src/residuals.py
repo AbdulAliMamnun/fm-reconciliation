@@ -24,7 +24,8 @@ import numpy as np
 import pandas as pd
 
 from src.forecasters import (
-    MODELS, QUANTILE_COLS, RESULTS, current_env, forecast_cutoffs, point_forecast, with_mean,
+    MODELS, QUANTILE_COLS, RESULTS, current_env, dataset_rule, forecast_cutoffs, point_forecast,
+    with_mean,
 )
 
 INNER_COLUMNS = ["unique_id", "inner_origin", "ds", "horizon", "y", "yhat", "mean", *QUANTILE_COLS]
@@ -55,7 +56,7 @@ def inner_origins(dates, h, n_inner):
 
 
 def inner_forecasts(model, y_train, h, n_inner=24, *, freq=None, device="cpu", dataset=None,
-                    cache_dir=RESULTS):
+                    cache_dir=RESULTS, trim_leading_zeros=None):
     """Quantile forecasts from every inner origin, with the actuals.
 
     y_train: long frame with unique_id, ds, y, every series ending at the outer
@@ -77,7 +78,9 @@ def inner_forecasts(model, y_train, h, n_inner=24, *, freq=None, device="cpu", d
 
     cutoffs = inner_origins(dates, h, n_inner)
     parts = paths["parts"] if dataset is not None else None
-    out, seconds, info = _inner_calls(model, y_train, cutoffs, h, freq, device, parts)
+    if trim_leading_zeros is None:
+        trim_leading_zeros = dataset_rule(dataset)
+    out, seconds, info = _inner_calls(model, y_train, cutoffs, h, freq, device, parts, trim_leading_zeros)
     out = out.rename(columns={"cutoff": "inner_origin"})
     out = out.merge(y_train[["unique_id", "ds", "y"]], on=["unique_id", "ds"], how="left",
                     validate="many_to_one")
@@ -102,7 +105,7 @@ def inner_forecasts(model, y_train, h, n_inner=24, *, freq=None, device="cpu", d
     return out
 
 
-def _inner_calls(model, y_train, cutoffs, h, freq, device, parts):
+def _inner_calls(model, y_train, cutoffs, h, freq, device, parts, trim):
     """Forecast from every cutoff, keeping a checkpoint per finished call.
 
     With `parts` given, each call is written to `parts` as soon as it finishes
@@ -121,7 +124,8 @@ def _inner_calls(model, y_train, cutoffs, h, freq, device, parts):
     in_process = MODELS[model].get("env") in (None, current_env())
     groups = [[c] for c in todo] if in_process else ([todo] if todo else [])
     for group in groups:
-        f, info = forecast_cutoffs(model, y_train, group, h, freq=freq, device=device)
+        f, info = forecast_cutoffs(model, y_train, group, h, freq=freq, device=device,
+                                   trim_leading_zeros=trim)
         for c, sec in zip(group, info["seconds"]):
             frame = f[f["cutoff"] == c].reset_index(drop=True)
             meta = {"seconds": sec, "load_seconds": info["load_seconds"], "env": info["env"],
@@ -139,7 +143,7 @@ def _inner_calls(model, y_train, cutoffs, h, freq, device, parts):
 
 
 def backtest_residuals(model, y_train, h, n_inner=24, *, point="median", freq=None, device="cpu",
-                       dataset=None, cache_dir=RESULTS):
+                       dataset=None, cache_dir=RESULTS, trim_leading_zeros=None):
     """h-step backtest residuals, resid = y - point forecast.
 
     point: "median" or "mean" (see src.forecasters.point_forecast).
@@ -153,7 +157,7 @@ def backtest_residuals(model, y_train, h, n_inner=24, *, point="median", freq=No
             return pd.read_parquet(path)
 
     inner = inner_forecasts(model, y_train, h, n_inner, freq=freq, device=device, dataset=dataset,
-                            cache_dir=cache_dir)
+                            cache_dir=cache_dir, trim_leading_zeros=trim_leading_zeros)
     out = inner[["unique_id", "inner_origin", "ds", "horizon", "y"]].copy()
     out["yhat"] = point_forecast(inner, point)
     out["resid"] = out["y"] - out["yhat"]

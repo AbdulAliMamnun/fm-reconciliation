@@ -259,12 +259,54 @@ def call_seed(cutoff):
     return SEED + pd.Timestamp(cutoff).toordinal()
 
 
-def run_cutoffs(model, y_df, cutoffs, h, freq, device="cpu", keep_samples=False):
+def trim_leading_zeros(y):
+    """The series from its first non-zero value on (Deviations log, M5 rules).
+    Empty if it has no non-zero value."""
+    y = np.asarray(y, dtype=np.float64)
+    nz = np.flatnonzero(y != 0)
+    return y[nz[0]:] if len(nz) else y[:0]
+
+
+def _zero_standard(n, h, std):
+    """A zero forecast with the same structure as `std`, for n series."""
+    out = {"median": np.zeros((n, h)), "mean": np.zeros((n, h)),
+           "q": np.zeros((n, h, len(QUANTILE_LEVELS))), "levels": std["levels"],
+           "native": None if std["native"] is None else np.zeros((n, h, std["native"].shape[-1])),
+           "samples": None if std["samples"] is None else np.zeros((n, h, std["samples"].shape[-1]))}
+    if std.get("var") is not None:
+        out["var"] = np.zeros((n, h))
+    return out
+
+
+def _merge_standard(std_model, std_zero, is_zero):
+    """Interleave model forecasts and zero forecasts back into the series order."""
+    out = {}
+    for k in ["median", "mean", "q", "var", "native", "samples"]:
+        a, z = std_model.get(k), std_zero.get(k)
+        if a is None:
+            out[k] = None
+            continue
+        full = np.zeros((len(is_zero),) + a.shape[1:], dtype=a.dtype)
+        full[~is_zero] = a
+        full[is_zero] = z
+        out[k] = full
+    out["levels"] = std_model["levels"]
+    return out
+
+
+def run_cutoffs(model, y_df, cutoffs, h, freq, device="cpu", keep_samples=False,
+                trim_leading_zeros_=False):
     """Forecast h steps from each cutoff, using only the data up to that cutoff.
 
     y_df: long frame with unique_id, ds, y.
-    Returns (forecasts, info): forecasts has a `cutoff` column followed by the
-    common columns; info holds the timing and, if asked, the sample paths.
+    trim_leading_zeros_: M5 rule (Deviations log). Each series' context starts
+        at its first non-zero value. A series with no non-zero value up to the
+        cutoff is not given to the model and gets a zero forecast (every
+        quantile 0, variance 0); its `context_length` is 0.
+
+    Returns (forecasts, info): forecasts has a `cutoff` column, the common
+    columns and `context_length`, the number of values the model was given for
+    that series; info holds the timing and, if asked, the sample paths.
     """
     spec = MODELS[model]
     load, predict = FAMILIES[spec["family"]]
@@ -278,24 +320,34 @@ def run_cutoffs(model, y_df, cutoffs, h, freq, device="cpu", keep_samples=False)
 
     ids = list(dict.fromkeys(y_df["unique_id"]))      # the order in which the series are given
     y_df = y_df.sort_values(["unique_id", "ds"], kind="stable")
-    frames, seconds, samples, levels = [], [], {}, None
+    frames, seconds, samples, levels, n_zero = [], [], {}, None, []
     for cutoff in cutoffs:
         cutoff = pd.Timestamp(cutoff)
         ctx = y_df[y_df["ds"] <= cutoff]
         groups = ctx.groupby("unique_id", sort=False)["y"]
         contexts = [groups.get_group(u).to_numpy(dtype=np.float64) for u in ids]
+        if trim_leading_zeros_:
+            contexts = [trim_leading_zeros(c) for c in contexts]
+        lengths = np.array([len(c) for c in contexts])
+        is_zero = lengths == 0
+        n_zero.append(int(is_zero.sum()))
         future = pd.date_range(cutoff, periods=h + 1, freq=freq)[1:]
 
+        if is_zero.all():
+            raise RuntimeError(f"No series has a non-zero value up to {cutoff.date()}.")
         t0 = time.perf_counter()
-        raw = predict(handle, contexts, h, call_seed(cutoff))
+        raw = predict(handle, [c for c, z in zip(contexts, is_zero) if not z], h, call_seed(cutoff))
         seconds.append(time.perf_counter() - t0)
 
         std = standardise(raw)
+        if is_zero.any():
+            std = _merge_standard(std, _zero_standard(int(is_zero.sum()), h, std), is_zero)
         if std["q"].shape != (len(ids), h, len(QUANTILE_LEVELS)):
             raise RuntimeError(f"Unexpected forecast shape {std['q'].shape}.")
         levels = std["levels"]
         f = to_frame(ids, future, std)
         f.insert(0, "cutoff", cutoff)
+        f["context_length"] = np.repeat(lengths, h)
         frames.append(f)
         if keep_samples and std["samples"] is not None:
             samples[cutoff] = samples_frame(ids, future, std["samples"])
@@ -305,5 +357,6 @@ def run_cutoffs(model, y_df, cutoffs, h, freq, device="cpu", keep_samples=False)
         "output": spec["output"], "native_levels": levels,
         "num_samples": NUM_SAMPLES if spec["output"] == "samples" else None,
         "load_seconds": load_seconds, "seconds": seconds, "samples": samples,
+        "zero_forecasts": n_zero, "trim_leading_zeros": bool(trim_leading_zeros_),
     }
     return pd.concat(frames, ignore_index=True), info

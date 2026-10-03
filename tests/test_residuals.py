@@ -237,3 +237,24 @@ def test_a_half_written_checkpoint_is_not_used(register_model, tmp_path):
     (paths["parts"] / f"{first.date()}.parquet").write_bytes(b"not a parquet file")   # no .json next to it
     inner_forecasts("m", _y(), H, N_INNER, dataset="Toy", cache_dir=tmp_path)
     assert len(seen) == N_INNER
+
+
+def test_backtest_calls_apply_the_m5_rule(register_model, tmp_path, monkeypatch):
+    from src import data
+    monkeypatch.setitem(data.DATASETS, "ToyM5", {"freq": "MS", "h": H, "m": 1, "trim_leading_zeros": True})
+    seen = []
+
+    def run(contexts, h):
+        seen.append(sorted(len(c) for c in contexts))
+        n = np.array([len(c) for c in contexts], dtype=float)
+        return n[:, None, None] + np.zeros((1, h, 1)) + (np.array(QUANTILE_LEVELS) - 0.5)
+
+    register_model("rec", quantiles=run)
+    y = _y()
+    y["y"] += 1.0                                                          # no zeros of its own
+    y.loc[(y["unique_id"] == "a") & (y["ds"] < DATES[20]), "y"] = 0.0     # 'a' sells from month 20
+    inner = inner_forecasts("rec", y, H, N_INNER, dataset="ToyM5", cache_dir=tmp_path)
+    # the trimmed series got 20 fewer values than the others at every inner origin
+    assert all(lens[0] == lens[1] - 20 for lens in seen)
+    assert (inner["context_length"] > 0).all()
+    assert len(inner) == len(IDS) * N_INNER * H

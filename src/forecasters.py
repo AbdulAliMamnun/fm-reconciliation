@@ -87,7 +87,7 @@ def samples_path(dataset, origin, model, cache_dir=RESULTS):
     return Path(cache_dir) / f"samples_{dataset}_{pd.Timestamp(origin).date()}_{model}.parquet"
 
 
-def _run_in_env(env, model, y_df, cutoffs, h, freq, device, keep_samples):
+def _run_in_env(env, model, y_df, cutoffs, h, freq, device, keep_samples, trim):
     conda = os.environ.get("CONDA_EXE") or shutil.which("conda")
     if conda is None:
         raise RuntimeError(f"conda not found; it is needed to run {model} in env {env}.")
@@ -102,6 +102,8 @@ def _run_in_env(env, model, y_df, cutoffs, h, freq, device, keep_samples):
         if keep_samples:
             (tmp / "samples").mkdir()
             cmd += ["--samples-dir", str(tmp / "samples")]
+        if trim:
+            cmd.append("--trim-leading-zeros")
         proc = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
         if proc.returncode != 0:
             raise RuntimeError(f"{model} failed in env {env}:\n{proc.stderr[-3000:]}")
@@ -114,9 +116,12 @@ def _run_in_env(env, model, y_df, cutoffs, h, freq, device, keep_samples):
     return forecasts, info
 
 
-def forecast_cutoffs(model, y_df, cutoffs, h, *, freq=None, device="cpu", keep_samples=False):
+def forecast_cutoffs(model, y_df, cutoffs, h, *, freq=None, device="cpu", keep_samples=False,
+                     trim_leading_zeros=False):
     """Forecast h steps from each cutoff, each with the data up to that cutoff
     only. The model is loaded once for all cutoffs.
+
+    trim_leading_zeros: the M5 rule, see src.runners.run_cutoffs.
 
     Returns (forecasts, info). forecasts has a `cutoff` column followed by
     unique_id, ds, yhat, mean, q10..q90 and any further native quantiles. info
@@ -133,9 +138,11 @@ def forecast_cutoffs(model, y_df, cutoffs, h, *, freq=None, device="cpu", keep_s
 
     env = MODELS[model].get("env")
     if env is None or env == current_env():
-        forecasts, info = run_cutoffs(model, y_df, cutoffs, h, freq, device, keep_samples)
+        forecasts, info = run_cutoffs(model, y_df, cutoffs, h, freq, device, keep_samples,
+                                      trim_leading_zeros_=trim_leading_zeros)
     else:
-        forecasts, info = _run_in_env(env, model, y_df, cutoffs, h, freq, device, keep_samples)
+        forecasts, info = _run_in_env(env, model, y_df, cutoffs, h, freq, device, keep_samples,
+                                      trim_leading_zeros)
     info["env"] = env or current_env()
 
     values = forecasts[["yhat", "mean", *QUANTILE_COLS]].to_numpy()
@@ -144,7 +151,8 @@ def forecast_cutoffs(model, y_df, cutoffs, h, *, freq=None, device="cpu", keep_s
     return forecasts, info
 
 
-def forecast(model, context_df, h, *, freq=None, device="cpu", dataset=None, cache_dir=RESULTS):
+def forecast(model, context_df, h, *, freq=None, device="cpu", dataset=None, cache_dir=RESULTS,
+             trim_leading_zeros=None):
     """Forecast h steps ahead for every series in context_df.
 
     context_df: long frame with unique_id, ds, y. Each series is passed to the
@@ -154,6 +162,8 @@ def forecast(model, context_df, h, *, freq=None, device="cpu", dataset=None, cac
     dataset: if given, the forecast is read from / written to the cache in
         `cache_dir`, keyed by (dataset, origin, model). Sample paths of
         sample-path models are written next to it.
+    trim_leading_zeros: the M5 rule (src.runners.run_cutoffs). By default it is
+        taken from the dataset's entry in src.data.DATASETS.
 
     Returns a frame with unique_id, ds, yhat (the median), mean and q10..q90,
     followed by any further native quantiles, in the order in which the series
@@ -175,8 +185,11 @@ def forecast(model, context_df, h, *, freq=None, device="cpu", dataset=None, cac
                 cached = with_sample_var(cached, samples_path(dataset, origin, model, cache_dir))
             return cached
 
+    if trim_leading_zeros is None:
+        trim_leading_zeros = dataset_rule(dataset)
     forecasts, info = forecast_cutoffs(model, context_df, [origin], h, freq=freq, device=device,
-                                       keep_samples=dataset is not None)
+                                       keep_samples=dataset is not None,
+                                       trim_leading_zeros=trim_leading_zeros)
     out = forecasts.drop(columns="cutoff")
 
     if dataset is not None:
@@ -188,5 +201,15 @@ def forecast(model, context_df, h, *, freq=None, device="cpu", dataset=None, cac
             "stage": ["base_forecast"], "seconds": [info["seconds"][0]],
             "load_seconds": [info["load_seconds"]], "device": [device], "env": [info["env"]],
             "repo": [info["repo"]], "revision": [info["revision"]],
+            "zero_forecasts": [info["zero_forecasts"][0]], "trim_leading_zeros": [info["trim_leading_zeros"]],
         }).to_parquet(timing_path, index=False)
     return out
+
+
+def dataset_rule(dataset):
+    """Whether a dataset trims leading zeros (DATASETS[...]["trim_leading_zeros"])."""
+    if dataset is None:
+        return False
+    from src.data import DATASETS
+
+    return bool(DATASETS.get(dataset, {}).get("trim_leading_zeros", False))

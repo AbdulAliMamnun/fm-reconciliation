@@ -16,7 +16,9 @@ DATASETS = {
     "TourismSmall": {"freq": "QE", "h": 8, "m": 4},
     "TourismLarge": {"freq": "MS", "h": 12, "m": 12},
     "Labour": {"freq": "MS", "h": 12, "m": 12},
-    "M5": {"freq": "D", "h": 28, "m": 7},
+    # trim_leading_zeros: Deviations log, M5 rules. Each series' model context
+    # starts at its first non-zero sale, and so does its MASE/RMSSE scale.
+    "M5": {"freq": "D", "h": 28, "m": 7, "trim_leading_zeros": True},
 }
 
 # PREREG §3: "M5 subset (1-2 stores, item -> dept -> category -> store)". The
