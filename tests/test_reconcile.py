@@ -628,3 +628,72 @@ def test_floored_W_reconciles_coherently():
     assert out[0] == pytest.approx(out[1] + out[2])
     # the series with the floored, tiny variance is almost kept as it is
     assert abs(out[1] - Y3[1]) < 1e-3
+
+
+# ------------------------------------- floor for M5 items with no sale yet
+
+def _m5_case():
+    #          store  item  item  item  item(unsold)  item(unsold)
+    scale = np.array([900.0, 1.0, 4.0, 10.0, np.nan, np.nan])
+    items = np.array([False, True, True, True, True, True])
+    unsold = np.array([False, False, False, False, True, True])
+    return scale, unsold, items
+
+
+def test_pv_floor_unsold_items_use_the_median_scale_of_sold_items():
+    scale, unsold, items = _m5_case()
+    floor = pv_floor(scale, unsold=unsold, items=items)
+    # median of the sold items' scales (1, 4, 10) is 4; the store's 900 is not an item
+    np.testing.assert_allclose(floor, [0.09, 1e-4, 4e-4, 1e-3, 4e-4, 4e-4])
+
+
+def test_pv_floor_median_is_over_sold_items_only():
+    scale = np.array([900.0, 2.0, np.nan, 6.0])           # even number of sold items: (2 + 6) / 2
+    floor = pv_floor(scale, unsold=np.array([False, False, True, False]),
+                     items=np.array([False, True, True, True]))
+    assert floor[2] == pytest.approx(4e-4)
+
+
+def test_pv_floor_without_missing_scales_is_unchanged():
+    scale = np.array([4.0, 0.0, 2.5e6])
+    np.testing.assert_array_equal(pv_floor(scale), PV_FLOOR_FACTOR * scale)
+    np.testing.assert_array_equal(
+        pv_floor(scale, unsold=np.zeros(3, bool), items=np.ones(3, bool)), PV_FLOOR_FACTOR * scale)
+
+
+def test_pv_floor_missing_scale_needs_the_masks():
+    scale, unsold, items = _m5_case()
+    with pytest.raises(ValueError, match="unsold"):
+        pv_floor(scale)
+
+
+def test_pv_floor_raises_for_a_missing_scale_the_rule_does_not_cover():
+    scale, unsold, items = _m5_case()
+    sold_but_short = unsold.copy()
+    sold_but_short[5] = False                              # has sold, but still has no scale
+    with pytest.raises(ValueError, match="no rule"):
+        pv_floor(scale, unsold=sold_but_short, items=items)
+    above = unsold.copy()
+    above[0], scale[0] = True, np.nan                      # the store itself with no sale
+    with pytest.raises(ValueError, match="items only"):
+        pv_floor(scale, unsold=above, items=items)
+    with pytest.raises(ValueError, match="No item has sold"):
+        pv_floor(np.array([np.nan, np.nan]), unsold=np.array([True, True]), items=np.array([True, True]))
+
+
+def test_unsold_item_reconciles_with_its_zero_forecast_and_floor():
+    # store = sold item + unsold item. The unsold item has a zero forecast and zero variance.
+    S = np.array([[1.0, 1.0], [1.0, 0.0], [0.0, 1.0]])
+    y_hat = np.array([10.0, 8.0, 0.0])
+    scale = np.array([50.0, 4.0, np.nan])
+    floor = pv_floor(scale, unsold=np.array([False, False, True]), items=np.array([False, True, True]))
+    v = np.array([9.0, 1.0, 0.0])
+    with pytest.raises(ValueError, match="zero"):
+        W_pv(variance=v)
+    W = W_pv(variance=v, floor=floor)
+    np.testing.assert_allclose(np.diag(W), [9.0, 1.0, 4e-4])
+    out = reconcile(y_hat, S, W)
+    assert out[0] == pytest.approx(out[1] + out[2])
+    assert abs(out[2]) < 1e-3                              # the unsold item stays at about zero
+    # the gap of 2 is split between the store and the sold item in proportion to their variances
+    assert out[1] == pytest.approx(8.0 + 2.0 * 1.0 / (9.0 + 1.0 + 4e-4), abs=1e-9)

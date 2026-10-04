@@ -250,15 +250,45 @@ def predictive_variance(quantiles):
 PV_FLOOR_FACTOR = 1e-4   # Deviations log: v_hat = max(v_hat, 1e-4 * rmsse_scale) per series
 
 
-def pv_floor(rmsse_scale):
+def pv_floor(rmsse_scale, unsold=None, items=None):
     """The floor of the predictive variance, per series (Deviations log, §5).
 
     rmsse_scale is the mean squared seasonal-naive error on the training data,
     so the floor is in the units of a variance. It says that no forecast is
     trusted more than 100 times (in standard deviation) the seasonal-naive
     forecast of the same series.
+
+    M5 rule (Deviations log, 2026-10-04): an item with no sale before the origin
+    has no rmsse_scale. Its floor uses the median rmsse_scale of the items that
+    have sold at that origin.
+        unsold: bool (n_series,), True for a series with no sale before the origin.
+        items:  bool (n_series,), True for the bottom-level series.
+    Both are needed when any scale is missing. A scale that is missing for any
+    other reason is not covered by the registration and raises.
     """
-    return PV_FLOOR_FACTOR * np.asarray(rmsse_scale, dtype=np.float64)
+    scale = np.asarray(rmsse_scale, dtype=np.float64).copy()
+    missing = ~np.isfinite(scale)
+    if not missing.any():
+        return PV_FLOOR_FACTOR * scale
+    if unsold is None or items is None:
+        raise ValueError(f"{int(missing.sum())} series have no rmsse_scale; pass `unsold` and `items`.")
+    unsold, items = np.asarray(unsold, dtype=bool), np.asarray(items, dtype=bool)
+    if unsold.shape != scale.shape or items.shape != scale.shape:
+        raise ValueError("unsold and items must have the shape of rmsse_scale.")
+    if (unsold & ~items).any():
+        raise ValueError(f"{int((unsold & ~items).sum())} series above the item level have no sale "
+                         "before the origin; the registered rule covers items only.")
+    other = missing & ~unsold
+    if other.any():
+        raise ValueError(
+            f"{int(other.sum())} series have sold but have no rmsse_scale (too few observations "
+            "since the first sale). The Deviations log has no rule for them."
+        )
+    sold = items & ~unsold & ~missing
+    if not sold.any():
+        raise ValueError("No item has sold before the origin, so there is no median scale.")
+    scale[unsold] = np.median(scale[sold])
+    return PV_FLOOR_FACTOR * scale
 
 
 def _floored(v, floor):

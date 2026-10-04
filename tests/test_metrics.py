@@ -189,3 +189,17 @@ def test_level_mean_excludes_series_without_a_scale():
     out = out.set_index("level")
     assert out.loc["Bottom", "n_excluded"] == 1 and out.loc["Bottom", "n_series"] == 2
     assert out.loc["Bottom", "mase"] == pytest.approx(3.0)
+
+
+def test_unsold_items_are_excluded_from_metrics_and_counted():
+    # scales_after_first_nonzero gives NaN to an item with no sale; level_mean drops and counts it
+    Y = np.array([[5.0, 6, 7, 8, 9, 10], [1.0, 2, 1, 2, 1, 2], [0.0, 0, 0, 0, 0, 0]])
+    mase_s, rmsse_s, start = scales_after_first_nonzero(Y, 1)
+    unsold = start == Y.shape[1]
+    np.testing.assert_array_equal(unsold, [False, False, True])
+    df = pd.DataFrame({"unique_id": ["T", "a", "b"], "scale": mase_s, "mase": [1.0, 2.0, 0.0],
+                       "rmsse": [1.0, 3.0, 0.0]})
+    out = level_mean(df, {"Top": np.array(["T"], dtype=object),
+                          "Bottom": np.array(["a", "b"], dtype=object)}).set_index("level")
+    assert out.loc["Bottom", "n_excluded"] == 1 and out.loc["Bottom", "n_series"] == 1
+    assert out.loc["Bottom", "mase"] == pytest.approx(2.0) and out.loc["Bottom", "rmsse"] == pytest.approx(3.0)
